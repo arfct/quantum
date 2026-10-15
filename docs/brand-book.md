@@ -50,7 +50,7 @@ One family, the system UI font (`--font-sans`: `system-ui`, then Segoe UI, Robot
 ## Shape and elevation
 
 - Small components (buttons, text fields, snackbars) `shape-small`; medium (cards, dialogs, menus) `shape-medium`; large (sheets, drawers, app bars) `shape-none`. Chips `shape-chip`, FABs `shape-full`.
-- Corners are squircles. Every rounded rectangle keeps its radius token but is drawn with a continuous-curvature corner through CSS `corner-shape` (radius × `squircle-scale`, `squircle-shape`), falling back to a plain rounded rect where unsupported. The components do this already; on your own elements add `.rounded-squircle` and set `--squircle-radius` to the radius token (default `shape-squircle`, 24px). Pills and circles (`shape-chip`, `shape-full`) stay round.
+- Corners are continuous. Every rounded rectangle keeps its radius token but is drawn with a continuous-curvature corner through CSS `corner-shape` (radius × `squircle-scale`, `squircle-shape`), falling back to a plain rounded rect where unsupported. The components do this already; on your own elements add `.rounded-continuous` and set `--squircle-radius` to the radius token (default `shape-squircle`, 24px). `.rounded-squircle` gives a softer corner and `.squircle-icon` the 26% icon mask; see [Squircle](components/Squircle.md). Pills and circles (`shape-chip`, `shape-full`) stay round.
 - Resting elevations: card 1, contained button 2, app bar 4, FAB and snackbar 6, bottom navigation and menu 8, drawer 16, dialog 24. Pressed states rise: contained button to 8, FAB to 12.
 
 ## Layout

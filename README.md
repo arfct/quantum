@@ -37,8 +37,8 @@ Every component forwards its ref and passes HTML attributes it does not name thr
 | --- | --- |
 | `@arfct/quantum/quantum.css` | Icon font import, tokens and component styles. Use this one unless you need them apart. |
 | `@arfct/quantum/tokens.css` | Tokens only: colour, shadow, spacing, radius, opacity and squircle custom properties per theme, and a class per type style (`.headline1` … `.overline`). |
-| `@arfct/quantum/components.css` | Component styles only (`q-` classes and `.rounded-squircle`); needs `tokens.css`. |
-| `@arfct/quantum/tailwind.css` | A Tailwind CSS v4 `@theme` mapping the tokens to utilities. |
+| `@arfct/quantum/components.css` | Component styles only (`q-` classes and the corner presets `.rounded-continuous`, `.rounded-squircle` and `.squircle-icon`); needs `tokens.css`. |
+| `@arfct/quantum/tailwind.css` | A Tailwind CSS v4 `@theme` mapping the tokens to utilities, plus the corner preset utilities. |
 | `@arfct/quantum/tokens.json` | The token source, for tools. |
 
 ### With Tailwind CSS v4
@@ -53,7 +53,7 @@ Import `quantum.css` before `tailwindcss`: it starts with the Material Symbols `
 
 This adds utilities such as `bg-primary-fill`, `text-on-primary-fill`, `text-primary`, `bg-fab`, `bg-surface-dp08`, `text-text-medium`, `border-divider`, `rounded-small`, `rounded-medium`, `rounded-chip`, `shadow-dp2` … `shadow-dp24`, `font-sans`, `font-icons` and `text-headline1` … `text-overline`. The semantic colours resolve through the runtime custom properties, so they follow `data-theme`. Tailwind's own palette already matches the palette tokens (`bg-red-500` and so on). Its default spacing scale is 4px per step, so `p-4` equals `space-16`.
 
-For squircle corners on your own elements use the `.rounded-squircle` class and set `--squircle-radius`; Tailwind's `rounded-*` utilities draw plain circular corners.
+Tailwind's `rounded-*` utilities draw plain circular corners. For the component corner on your own elements use `rounded-continuous-<value>` (`rounded-continuous-medium`, `rounded-continuous-[20px]`); `rounded-squircle-<value>` draws a softer corner and `squircle-icon` the 26% icon mask. Outside Tailwind the same presets are the classes `.rounded-continuous`, `.rounded-squircle` and `.squircle-icon`, sized with `--squircle-radius`. See [docs/components/Squircle.md](docs/components/Squircle.md).
 
 ## Develop
 
