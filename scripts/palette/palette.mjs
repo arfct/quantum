@@ -377,6 +377,28 @@ export function cusp(h, space = 'p3') {
   return { L: round(best.L, 3), C: round(best.C, 4) };
 }
 
+// --- alpha blends -------------------------------------------------------------------------
+// Each step as one saturated colour at an alpha over white (lighter than the family's pivot) or black
+// (darker), the way an alpha scale is used. The source is the pivot step's lightness and chroma at the
+// step's own hue, so it follows the bend; the alpha is the least-squares fit in sRGB, where browsers
+// composite, and deltaE says how far the blend sits from the true step.
+export function alphaBlend(target, source, over) {
+  const bg = over === 'white' ? 1 : 0;
+  let num = 0, den = 0;
+  for (let i = 0; i < 3; i++) { num += (target.rgb[i] - bg) * (source.rgb[i] - bg); den += (source.rgb[i] - bg) ** 2; }
+  const alpha = den ? Math.min(1, Math.max(0, num / den)) : 0;
+  const blended = { space: 'srgb', rgb: source.rgb.map((c) => bg + (c - bg) * alpha) };
+  return { over, source: toHex(source), alpha: round(alpha, 3), hex: toHex(blended), deltaE: round(deltaEok(spaceToOklch(target), spaceToOklch(blended)), 4) };
+}
+function alphaSteps(steps, pivot) {
+  const p = steps[pivot].oklch;
+  for (const s of stepsOf(steps)) {
+    const over = s < pivot ? 'white' : 'black';
+    const source = toGamut({ L: p.L, C: p.C, h: steps[s].oklch.h }, 'srgb');
+    steps[s].alpha = s === pivot ? { over: 'white', source: steps[s].hex, alpha: 1, hex: steps[s].hex, deltaE: 0 } : alphaBlend(toGamut(steps[s].oklch, 'srgb'), source, over);
+  }
+}
+
 // --- swatches ---------------------------------------------------------------------------
 
 // White (or the light tint) is used whenever it clears `whiteMin` Lc, even if black contrasts more.
@@ -438,9 +460,14 @@ function finishFamily(steps, hue500, ladder, opts, naturalStep) {
   const w500 = steps[500].wavelength;
   const nms = present.map((s) => steps[s].wavelength).filter((w) => w.nm !== null && w.complementary === w500.complementary).map((w) => w.nm);
   const peak = cusp(hue500, 'p3');
+  const natural = { ...peak, step: naturalStep ?? nearestStep(ladder, peak.L), cuspStep: nearestStep(ladder, peak.L) };
+  // The pivot is the family's most chromatic step: a pale cusp step (lime, chartreuse) cannot reach the darks over black.
+  const alphaPivot = code.startsWith('N') ? 500 : present.reduce((best, s) => (steps[s].oklch.C > steps[best].oklch.C ? s : best), present[0]);
+  alphaSteps(steps, alphaPivot);
   return {
     code,
-    natural: { ...peak, step: naturalStep ?? nearestStep(ladder, peak.L), cuspStep: nearestStep(ladder, peak.L) },
+    natural,
+    alphaPivot,
     wavelength: w500,
     band: (w500.purity !== null && w500.purity < 0.05 ? 'near-neutral ' : '') + bandName(w500.nm, w500.complementary),
     wavelengthRange: nms.length ? [Math.min(...nms), Math.max(...nms)] : null,

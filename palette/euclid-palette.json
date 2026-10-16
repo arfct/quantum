@@ -113,6 +113,7 @@
         "step": 600,
         "cuspStep": 600
       },
+      "alphaPivot": 600,
       "wavelength": {
         "nm": 603,
         "purity": 0.565,
@@ -163,7 +164,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R08.050"
+          "id": "R08.050",
+          "alpha": {
+            "over": "white",
+            "source": "#FF3E2E",
+            "alpha": 0.04,
+            "hex": "#FFF7F7",
+            "deltaE": 0.0013
+          }
         },
         "100": {
           "oklch": {
@@ -204,7 +212,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R08.100"
+          "id": "R08.100",
+          "alpha": {
+            "over": "white",
+            "source": "#FF3E2E",
+            "alpha": 0.102,
+            "hex": "#FFEBEA",
+            "deltaE": 0.0031
+          }
         },
         "150": {
           "oklch": {
@@ -245,7 +260,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R08.150"
+          "id": "R08.150",
+          "alpha": {
+            "over": "white",
+            "source": "#FF3E2E",
+            "alpha": 0.167,
+            "hex": "#FFDFDC",
+            "deltaE": 0.0046
+          }
         },
         "200": {
           "oklch": {
@@ -286,7 +308,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R08.200"
+          "id": "R08.200",
+          "alpha": {
+            "over": "white",
+            "source": "#FF3E2E",
+            "alpha": 0.234,
+            "hex": "#FFD2CE",
+            "deltaE": 0.0061
+          }
         },
         "250": {
           "oklch": {
@@ -327,7 +356,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R08.250"
+          "id": "R08.250",
+          "alpha": {
+            "over": "white",
+            "source": "#FF3E2E",
+            "alpha": 0.306,
+            "hex": "#FFC4BF",
+            "deltaE": 0.0075
+          }
         },
         "300": {
           "oklch": {
@@ -368,7 +404,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R08.300"
+          "id": "R08.300",
+          "alpha": {
+            "over": "white",
+            "source": "#FF3E2E",
+            "alpha": 0.381,
+            "hex": "#FFB6AF",
+            "deltaE": 0.009
+          }
         },
         "350": {
           "oklch": {
@@ -409,7 +452,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R08.350"
+          "id": "R08.350",
+          "alpha": {
+            "over": "white",
+            "source": "#FF3E2E",
+            "alpha": 0.46,
+            "hex": "#FFA69F",
+            "deltaE": 0.0102
+          }
         },
         "400": {
           "oklch": {
@@ -450,7 +500,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R08.400"
+          "id": "R08.400",
+          "alpha": {
+            "over": "white",
+            "source": "#FF3E2E",
+            "alpha": 0.544,
+            "hex": "#FF968D",
+            "deltaE": 0.0107
+          }
         },
         "450": {
           "oklch": {
@@ -491,7 +548,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R08.450"
+          "id": "R08.450",
+          "alpha": {
+            "over": "white",
+            "source": "#FF3E2E",
+            "alpha": 0.635,
+            "hex": "#FF857A",
+            "deltaE": 0.0104
+          }
         },
         "500": {
           "oklch": {
@@ -532,7 +596,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R08.500"
+          "id": "R08.500",
+          "alpha": {
+            "over": "white",
+            "source": "#FF3E2E",
+            "alpha": 0.734,
+            "hex": "#FF7165",
+            "deltaE": 0.0088
+          }
         },
         "550": {
           "oklch": {
@@ -573,7 +644,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R08.550"
+          "id": "R08.550",
+          "alpha": {
+            "over": "white",
+            "source": "#FF3E2E",
+            "alpha": 0.85,
+            "hex": "#FF5B4D",
+            "deltaE": 0.0054
+          }
         },
         "600": {
           "oklch": {
@@ -614,7 +692,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R08.600"
+          "id": "R08.600",
+          "alpha": {
+            "over": "white",
+            "source": "#FF3E2F",
+            "alpha": 1,
+            "hex": "#FF3E2F",
+            "deltaE": 0
+          }
         },
         "650": {
           "oklch": {
@@ -655,7 +740,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R08.650"
+          "id": "R08.650",
+          "alpha": {
+            "over": "black",
+            "source": "#FF3E2F",
+            "alpha": 0.924,
+            "hex": "#EC392C",
+            "deltaE": 0.0097
+          }
         },
         "700": {
           "oklch": {
@@ -696,7 +788,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R08.700"
+          "id": "R08.700",
+          "alpha": {
+            "over": "black",
+            "source": "#FF3E30",
+            "alpha": 0.836,
+            "hex": "#D53428",
+            "deltaE": 0.0099
+          }
         },
         "750": {
           "oklch": {
@@ -737,7 +836,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R08.750"
+          "id": "R08.750",
+          "alpha": {
+            "over": "black",
+            "source": "#FF3E31",
+            "alpha": 0.744,
+            "hex": "#BE2E25",
+            "deltaE": 0.0087
+          }
         },
         "800": {
           "oklch": {
@@ -778,7 +884,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R08.800"
+          "id": "R08.800",
+          "alpha": {
+            "over": "black",
+            "source": "#FF3D33",
+            "alpha": 0.648,
+            "hex": "#A52821",
+            "deltaE": 0.007
+          }
         },
         "850": {
           "oklch": {
@@ -819,7 +932,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R08.850"
+          "id": "R08.850",
+          "alpha": {
+            "over": "black",
+            "source": "#FF3D34",
+            "alpha": 0.545,
+            "hex": "#8B211D",
+            "deltaE": 0.0054
+          }
         },
         "900": {
           "oklch": {
@@ -860,7 +980,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R08.900"
+          "id": "R08.900",
+          "alpha": {
+            "over": "black",
+            "source": "#FF3D36",
+            "alpha": 0.439,
+            "hex": "#701B18",
+            "deltaE": 0.0046
+          }
         },
         "950": {
           "oklch": {
@@ -901,7 +1028,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R08.950"
+          "id": "R08.950",
+          "alpha": {
+            "over": "black",
+            "source": "#FF3C39",
+            "alpha": 0.286,
+            "hex": "#491110",
+            "deltaE": 0.0067
+          }
         }
       }
     },
@@ -923,6 +1057,7 @@
         "step": 500,
         "cuspStep": 500
       },
+      "alphaPivot": 500,
       "wavelength": {
         "nm": 594,
         "purity": 0.892,
@@ -973,7 +1108,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "O13.050"
+          "id": "O13.050",
+          "alpha": {
+            "over": "white",
+            "source": "#FF7300",
+            "alpha": 0.044,
+            "hex": "#FFF9F4",
+            "deltaE": 0.0032
+          }
         },
         "100": {
           "oklch": {
@@ -1014,7 +1156,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "O13.100"
+          "id": "O13.100",
+          "alpha": {
+            "over": "white",
+            "source": "#FF7300",
+            "alpha": 0.115,
+            "hex": "#FFEFE2",
+            "deltaE": 0.0078
+          }
         },
         "150": {
           "oklch": {
@@ -1055,7 +1204,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "O13.150"
+          "id": "O13.150",
+          "alpha": {
+            "over": "white",
+            "source": "#FF7300",
+            "alpha": 0.19,
+            "hex": "#FFE4CE",
+            "deltaE": 0.0122
+          }
         },
         "200": {
           "oklch": {
@@ -1096,7 +1252,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "O13.200"
+          "id": "O13.200",
+          "alpha": {
+            "over": "white",
+            "source": "#FF7300",
+            "alpha": 0.27,
+            "hex": "#FFD9BA",
+            "deltaE": 0.0163
+          }
         },
         "250": {
           "oklch": {
@@ -1137,7 +1300,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "O13.250"
+          "id": "O13.250",
+          "alpha": {
+            "over": "white",
+            "source": "#FF7300",
+            "alpha": 0.355,
+            "hex": "#FFCDA4",
+            "deltaE": 0.0202
+          }
         },
         "300": {
           "oklch": {
@@ -1178,7 +1348,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "O13.300"
+          "id": "O13.300",
+          "alpha": {
+            "over": "white",
+            "source": "#FF7300",
+            "alpha": 0.447,
+            "hex": "#FFC08D",
+            "deltaE": 0.0237
+          }
         },
         "350": {
           "oklch": {
@@ -1219,7 +1396,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "O13.350"
+          "id": "O13.350",
+          "alpha": {
+            "over": "white",
+            "source": "#FF7300",
+            "alpha": 0.547,
+            "hex": "#FFB274",
+            "deltaE": 0.0265
+          }
         },
         "400": {
           "oklch": {
@@ -1260,7 +1444,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "O13.400"
+          "id": "O13.400",
+          "alpha": {
+            "over": "white",
+            "source": "#FF7300",
+            "alpha": 0.659,
+            "hex": "#FFA357",
+            "deltaE": 0.0273
+          }
         },
         "450": {
           "oklch": {
@@ -1301,7 +1492,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "O13.450"
+          "id": "O13.450",
+          "alpha": {
+            "over": "white",
+            "source": "#FF7300",
+            "alpha": 0.8,
+            "hex": "#FF8F33",
+            "deltaE": 0.0221
+          }
         },
         "500": {
           "oklch": {
@@ -1342,7 +1540,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "O13.500"
+          "id": "O13.500",
+          "alpha": {
+            "over": "white",
+            "source": "#FF7300",
+            "alpha": 1,
+            "hex": "#FF7300",
+            "deltaE": 0
+          }
         },
         "550": {
           "oklch": {
@@ -1383,7 +1588,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "O13.550"
+          "id": "O13.550",
+          "alpha": {
+            "over": "black",
+            "source": "#FF7300",
+            "alpha": 0.958,
+            "hex": "#F46E00",
+            "deltaE": 0.008
+          }
         },
         "600": {
           "oklch": {
@@ -1424,7 +1636,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "O13.600"
+          "id": "O13.600",
+          "alpha": {
+            "over": "black",
+            "source": "#FF7200",
+            "alpha": 0.889,
+            "hex": "#E36600",
+            "deltaE": 0.0103
+          }
         },
         "650": {
           "oklch": {
@@ -1465,7 +1684,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "O13.650"
+          "id": "O13.650",
+          "alpha": {
+            "over": "black",
+            "source": "#FF7201",
+            "alpha": 0.818,
+            "hex": "#D15D01",
+            "deltaE": 0.0124
+          }
         },
         "700": {
           "oklch": {
@@ -1506,7 +1732,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "O13.700"
+          "id": "O13.700",
+          "alpha": {
+            "over": "black",
+            "source": "#FF710F",
+            "alpha": 0.741,
+            "hex": "#BD540B",
+            "deltaE": 0.0136
+          }
         },
         "750": {
           "oklch": {
@@ -1547,7 +1780,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "O13.750"
+          "id": "O13.750",
+          "alpha": {
+            "over": "black",
+            "source": "#FF701A",
+            "alpha": 0.659,
+            "hex": "#A84A11",
+            "deltaE": 0.0151
+          }
         },
         "800": {
           "oklch": {
@@ -1588,7 +1828,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "O13.800"
+          "id": "O13.800",
+          "alpha": {
+            "over": "black",
+            "source": "#FF6F24",
+            "alpha": 0.574,
+            "hex": "#924015",
+            "deltaE": 0.0173
+          }
         },
         "850": {
           "oklch": {
@@ -1629,7 +1876,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "O13.850"
+          "id": "O13.850",
+          "alpha": {
+            "over": "black",
+            "source": "#FF6E2E",
+            "alpha": 0.484,
+            "hex": "#7B3516",
+            "deltaE": 0.0199
+          }
         },
         "900": {
           "oklch": {
@@ -1670,7 +1924,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "O13.900"
+          "id": "O13.900",
+          "alpha": {
+            "over": "black",
+            "source": "#FF6D39",
+            "alpha": 0.39,
+            "hex": "#632B16",
+            "deltaE": 0.0228
+          }
         },
         "950": {
           "oklch": {
@@ -1711,7 +1972,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "O13.950"
+          "id": "O13.950",
+          "alpha": {
+            "over": "black",
+            "source": "#FF6C47",
+            "alpha": 0.254,
+            "hex": "#411B12",
+            "deltaE": 0.028
+          }
         }
       }
     },
@@ -1733,6 +2001,7 @@
         "step": 300,
         "cuspStep": 300
       },
+      "alphaPivot": 300,
       "wavelength": {
         "nm": 582,
         "purity": 0.867,
@@ -1783,7 +2052,14 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "Y22.050"
+          "id": "Y22.050",
+          "alpha": {
+            "over": "white",
+            "source": "#E4CB30",
+            "alpha": 0.129,
+            "hex": "#FCF8E4",
+            "deltaE": 0.0045
+          }
         },
         "100": {
           "oklch": {
@@ -1824,7 +2100,14 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "Y22.100"
+          "id": "Y22.100",
+          "alpha": {
+            "over": "white",
+            "source": "#E9C92E",
+            "alpha": 0.299,
+            "hex": "#F8EFC0",
+            "deltaE": 0.0059
+          }
         },
         "150": {
           "oklch": {
@@ -1865,7 +2148,14 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "Y22.150"
+          "id": "Y22.150",
+          "alpha": {
+            "over": "white",
+            "source": "#EDC72C",
+            "alpha": 0.467,
+            "hex": "#F7E59C",
+            "deltaE": 0.0067
+          }
         },
         "200": {
           "oklch": {
@@ -1906,7 +2196,14 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "Y22.200"
+          "id": "Y22.200",
+          "alpha": {
+            "over": "white",
+            "source": "#F1C52A",
+            "alpha": 0.647,
+            "hex": "#F6DA75",
+            "deltaE": 0.0085
+          }
         },
         "250": {
           "oklch": {
@@ -1947,7 +2244,14 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "Y22.250"
+          "id": "Y22.250",
+          "alpha": {
+            "over": "white",
+            "source": "#F5C32A",
+            "alpha": 0.872,
+            "hex": "#F6CB45",
+            "deltaE": 0.0127
+          }
         },
         "300": {
           "oklch": {
@@ -1988,7 +2292,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y22.300"
+          "id": "Y22.300",
+          "alpha": {
+            "over": "white",
+            "source": "#F9C12B",
+            "alpha": 1,
+            "hex": "#F9C12B",
+            "deltaE": 0
+          }
         },
         "350": {
           "oklch": {
@@ -2029,7 +2340,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y22.350"
+          "id": "Y22.350",
+          "alpha": {
+            "over": "black",
+            "source": "#FCC02C",
+            "alpha": 0.948,
+            "hex": "#EFB629",
+            "deltaE": 0.0066
+          }
         },
         "400": {
           "oklch": {
@@ -2070,7 +2388,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y22.400"
+          "id": "Y22.400",
+          "alpha": {
+            "over": "black",
+            "source": "#FEBE2D",
+            "alpha": 0.89,
+            "hex": "#E2A928",
+            "deltaE": 0.0143
+          }
         },
         "450": {
           "oklch": {
@@ -2111,7 +2436,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y22.450"
+          "id": "Y22.450",
+          "alpha": {
+            "over": "black",
+            "source": "#FFBD2F",
+            "alpha": 0.845,
+            "hex": "#D8A028",
+            "deltaE": 0.0152
+          }
         },
         "500": {
           "oklch": {
@@ -2152,7 +2484,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y22.500"
+          "id": "Y22.500",
+          "alpha": {
+            "over": "black",
+            "source": "#FFBB32",
+            "alpha": 0.8,
+            "hex": "#CC9628",
+            "deltaE": 0.0179
+          }
         },
         "550": {
           "oklch": {
@@ -2193,7 +2532,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y22.550"
+          "id": "Y22.550",
+          "alpha": {
+            "over": "black",
+            "source": "#FFB935",
+            "alpha": 0.751,
+            "hex": "#C08B28",
+            "deltaE": 0.0214
+          }
         },
         "600": {
           "oklch": {
@@ -2234,7 +2580,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y22.600"
+          "id": "Y22.600",
+          "alpha": {
+            "over": "black",
+            "source": "#FFB838",
+            "alpha": 0.7,
+            "hex": "#B38127",
+            "deltaE": 0.0252
+          }
         },
         "650": {
           "oklch": {
@@ -2275,7 +2628,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y22.650"
+          "id": "Y22.650",
+          "alpha": {
+            "over": "black",
+            "source": "#FFB63E",
+            "alpha": 0.644,
+            "hex": "#A47528",
+            "deltaE": 0.0294
+          }
         },
         "700": {
           "oklch": {
@@ -2316,7 +2676,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y22.700"
+          "id": "Y22.700",
+          "alpha": {
+            "over": "black",
+            "source": "#FFB54C",
+            "alpha": 0.577,
+            "hex": "#93692C",
+            "deltaE": 0.0362
+          }
         },
         "750": {
           "oklch": {
@@ -2357,7 +2724,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y22.750"
+          "id": "Y22.750",
+          "alpha": {
+            "over": "black",
+            "source": "#FFB557",
+            "alpha": 0.509,
+            "hex": "#825C2C",
+            "deltaE": 0.0419
+          }
         },
         "800": {
           "oklch": {
@@ -2398,7 +2772,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y22.800"
+          "id": "Y22.800",
+          "alpha": {
+            "over": "black",
+            "source": "#FFB461",
+            "alpha": 0.439,
+            "hex": "#704F2B",
+            "deltaE": 0.0462
+          }
         },
         "850": {
           "oklch": {
@@ -2439,7 +2820,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y22.850"
+          "id": "Y22.850",
+          "alpha": {
+            "over": "black",
+            "source": "#FFB46A",
+            "alpha": 0.366,
+            "hex": "#5D4227",
+            "deltaE": 0.0489
+          }
         },
         "900": {
           "oklch": {
@@ -2480,7 +2868,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y22.900"
+          "id": "Y22.900",
+          "alpha": {
+            "over": "black",
+            "source": "#FFB373",
+            "alpha": 0.293,
+            "hex": "#4B3422",
+            "deltaE": 0.0494
+          }
         },
         "950": {
           "oklch": {
@@ -2521,7 +2916,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y22.950"
+          "id": "Y22.950",
+          "alpha": {
+            "over": "black",
+            "source": "#FFB27E",
+            "alpha": 0.189,
+            "hex": "#302218",
+            "deltaE": 0.0472
+          }
         }
       }
     },
@@ -2543,6 +2945,7 @@
         "step": 200,
         "cuspStep": 200
       },
+      "alphaPivot": 300,
       "wavelength": {
         "nm": 575,
         "purity": 0.919,
@@ -2593,7 +2996,14 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "Y27.050"
+          "id": "Y27.050",
+          "alpha": {
+            "over": "white",
+            "source": "#E6C900",
+            "alpha": 0.106,
+            "hex": "#FCF9E4",
+            "deltaE": 0.0015
+          }
         },
         "100": {
           "oklch": {
@@ -2634,7 +3044,14 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "Y27.100"
+          "id": "Y27.100",
+          "alpha": {
+            "over": "white",
+            "source": "#E6C900",
+            "alpha": 0.249,
+            "hex": "#F9F2C0",
+            "deltaE": 0.0015
+          }
         },
         "150": {
           "oklch": {
@@ -2675,7 +3092,14 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "Y27.150"
+          "id": "Y27.150",
+          "alpha": {
+            "over": "white",
+            "source": "#E6C900",
+            "alpha": 0.393,
+            "hex": "#F5EA9B",
+            "deltaE": 0.0056
+          }
         },
         "200": {
           "oklch": {
@@ -2716,7 +3140,14 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "Y27.200"
+          "id": "Y27.200",
+          "alpha": {
+            "over": "white",
+            "source": "#E6C900",
+            "alpha": 0.549,
+            "hex": "#F1E273",
+            "deltaE": 0.0092
+          }
         },
         "250": {
           "oklch": {
@@ -2757,7 +3188,14 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "Y27.250"
+          "id": "Y27.250",
+          "alpha": {
+            "over": "white",
+            "source": "#E6C900",
+            "alpha": 0.749,
+            "hex": "#ECD740",
+            "deltaE": 0.0076
+          }
         },
         "300": {
           "oklch": {
@@ -2798,7 +3236,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y27.300"
+          "id": "Y27.300",
+          "alpha": {
+            "over": "white",
+            "source": "#E6C900",
+            "alpha": 1,
+            "hex": "#E6C900",
+            "deltaE": 0
+          }
         },
         "350": {
           "oklch": {
@@ -2839,7 +3284,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y27.350"
+          "id": "Y27.350",
+          "alpha": {
+            "over": "black",
+            "source": "#E6C900",
+            "alpha": 0.951,
+            "hex": "#DBC000",
+            "deltaE": 0.0009
+          }
         },
         "400": {
           "oklch": {
@@ -2880,7 +3332,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y27.400"
+          "id": "Y27.400",
+          "alpha": {
+            "over": "black",
+            "source": "#E6C900",
+            "alpha": 0.901,
+            "hex": "#CFB500",
+            "deltaE": 0.0014
+          }
         },
         "450": {
           "oklch": {
@@ -2921,7 +3380,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y27.450"
+          "id": "Y27.450",
+          "alpha": {
+            "over": "black",
+            "source": "#E7C900",
+            "alpha": 0.849,
+            "hex": "#C4AB00",
+            "deltaE": 0.0018
+          }
         },
         "500": {
           "oklch": {
@@ -2962,7 +3428,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y27.500"
+          "id": "Y27.500",
+          "alpha": {
+            "over": "black",
+            "source": "#E9C800",
+            "alpha": 0.797,
+            "hex": "#BA9F00",
+            "deltaE": 0.0021
+          }
         },
         "550": {
           "oklch": {
@@ -3003,7 +3476,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y27.550"
+          "id": "Y27.550",
+          "alpha": {
+            "over": "black",
+            "source": "#ECC700",
+            "alpha": 0.743,
+            "hex": "#AF9400",
+            "deltaE": 0.0023
+          }
         },
         "600": {
           "oklch": {
@@ -3044,7 +3524,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y27.600"
+          "id": "Y27.600",
+          "alpha": {
+            "over": "black",
+            "source": "#F0C500",
+            "alpha": 0.686,
+            "hex": "#A58700",
+            "deltaE": 0.0021
+          }
         },
         "650": {
           "oklch": {
@@ -3085,7 +3572,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y27.650"
+          "id": "Y27.650",
+          "alpha": {
+            "over": "black",
+            "source": "#F4C300",
+            "alpha": 0.628,
+            "hex": "#997B00",
+            "deltaE": 0.0018
+          }
         },
         "700": {
           "oklch": {
@@ -3126,7 +3620,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y27.700"
+          "id": "Y27.700",
+          "alpha": {
+            "over": "black",
+            "source": "#F8C100",
+            "alpha": 0.568,
+            "hex": "#8D6D00",
+            "deltaE": 0.0015
+          }
         },
         "750": {
           "oklch": {
@@ -3167,7 +3668,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y27.750"
+          "id": "Y27.750",
+          "alpha": {
+            "over": "black",
+            "source": "#FDBE00",
+            "alpha": 0.505,
+            "hex": "#806000",
+            "deltaE": 0.0011
+          }
         },
         "800": {
           "oklch": {
@@ -3208,7 +3716,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y27.800"
+          "id": "Y27.800",
+          "alpha": {
+            "over": "black",
+            "source": "#FFBB00",
+            "alpha": 0.444,
+            "hex": "#715300",
+            "deltaE": 0.0035
+          }
         },
         "850": {
           "oklch": {
@@ -3249,7 +3764,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y27.850"
+          "id": "Y27.850",
+          "alpha": {
+            "over": "black",
+            "source": "#FFB700",
+            "alpha": 0.379,
+            "hex": "#614500",
+            "deltaE": 0.007
+          }
         },
         "900": {
           "oklch": {
@@ -3290,7 +3812,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y27.900"
+          "id": "Y27.900",
+          "alpha": {
+            "over": "black",
+            "source": "#FFB50B",
+            "alpha": 0.309,
+            "hex": "#4F3804",
+            "deltaE": 0.0109
+          }
         },
         "950": {
           "oklch": {
@@ -3331,7 +3860,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y27.950"
+          "id": "Y27.950",
+          "alpha": {
+            "over": "black",
+            "source": "#FFB34F",
+            "alpha": 0.193,
+            "hex": "#31230F",
+            "deltaE": 0.0178
+          }
         }
       }
     },
@@ -3353,6 +3889,7 @@
         "step": 100,
         "cuspStep": 100
       },
+      "alphaPivot": 300,
       "wavelength": {
         "nm": 568,
         "purity": 0.867,
@@ -3403,7 +3940,14 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "G32.050"
+          "id": "G32.050",
+          "alpha": {
+            "over": "white",
+            "source": "#C1D500",
+            "alpha": 0.104,
+            "hex": "#F9FBE4",
+            "deltaE": 0.0029
+          }
         },
         "100": {
           "oklch": {
@@ -3444,7 +3988,14 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "G32.100"
+          "id": "G32.100",
+          "alpha": {
+            "over": "white",
+            "source": "#C1D500",
+            "alpha": 0.244,
+            "hex": "#F0F5C1",
+            "deltaE": 0.0055
+          }
         },
         "150": {
           "oklch": {
@@ -3485,7 +4036,14 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "G32.150"
+          "id": "G32.150",
+          "alpha": {
+            "over": "white",
+            "source": "#C1D500",
+            "alpha": 0.383,
+            "hex": "#E7EF9D",
+            "deltaE": 0.0095
+          }
         },
         "200": {
           "oklch": {
@@ -3526,7 +4084,14 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "G32.200"
+          "id": "G32.200",
+          "alpha": {
+            "over": "white",
+            "source": "#C1D500",
+            "alpha": 0.531,
+            "hex": "#DEE878",
+            "deltaE": 0.0136
+          }
         },
         "250": {
           "oklch": {
@@ -3567,7 +4132,14 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "G32.250"
+          "id": "G32.250",
+          "alpha": {
+            "over": "white",
+            "source": "#C1D500",
+            "alpha": 0.708,
+            "hex": "#D3E14A",
+            "deltaE": 0.0146
+          }
         },
         "300": {
           "oklch": {
@@ -3608,7 +4180,14 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "G32.300"
+          "id": "G32.300",
+          "alpha": {
+            "over": "white",
+            "source": "#C1D500",
+            "alpha": 1,
+            "hex": "#C1D500",
+            "deltaE": 0
+          }
         },
         "350": {
           "oklch": {
@@ -3649,7 +4228,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G32.350"
+          "id": "G32.350",
+          "alpha": {
+            "over": "black",
+            "source": "#C1D500",
+            "alpha": 0.95,
+            "hex": "#B8CA00",
+            "deltaE": 0.0004
+          }
         },
         "400": {
           "oklch": {
@@ -3690,7 +4276,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G32.400"
+          "id": "G32.400",
+          "alpha": {
+            "over": "black",
+            "source": "#C1D500",
+            "alpha": 0.899,
+            "hex": "#AEBF00",
+            "deltaE": 0.0006
+          }
         },
         "450": {
           "oklch": {
@@ -3731,7 +4324,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G32.450"
+          "id": "G32.450",
+          "alpha": {
+            "over": "black",
+            "source": "#C1D500",
+            "alpha": 0.847,
+            "hex": "#A4B400",
+            "deltaE": 0.0007
+          }
         },
         "500": {
           "oklch": {
@@ -3772,7 +4372,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G32.500"
+          "id": "G32.500",
+          "alpha": {
+            "over": "black",
+            "source": "#C1D500",
+            "alpha": 0.793,
+            "hex": "#99A900",
+            "deltaE": 0.0009
+          }
         },
         "550": {
           "oklch": {
@@ -3813,7 +4420,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G32.550"
+          "id": "G32.550",
+          "alpha": {
+            "over": "black",
+            "source": "#C2D400",
+            "alpha": 0.739,
+            "hex": "#8F9D00",
+            "deltaE": 0.001
+          }
         },
         "600": {
           "oklch": {
@@ -3854,7 +4468,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G32.600"
+          "id": "G32.600",
+          "alpha": {
+            "over": "black",
+            "source": "#C3D400",
+            "alpha": 0.683,
+            "hex": "#859100",
+            "deltaE": 0.0009
+          }
         },
         "650": {
           "oklch": {
@@ -3895,7 +4516,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G32.650"
+          "id": "G32.650",
+          "alpha": {
+            "over": "black",
+            "source": "#C5D300",
+            "alpha": 0.625,
+            "hex": "#7B8400",
+            "deltaE": 0.0008
+          }
         },
         "700": {
           "oklch": {
@@ -3936,7 +4564,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G32.700"
+          "id": "G32.700",
+          "alpha": {
+            "over": "black",
+            "source": "#C8D200",
+            "alpha": 0.564,
+            "hex": "#717700",
+            "deltaE": 0.0005
+          }
         },
         "750": {
           "oklch": {
@@ -3977,7 +4612,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G32.750"
+          "id": "G32.750",
+          "alpha": {
+            "over": "black",
+            "source": "#CAD200",
+            "alpha": 0.501,
+            "hex": "#666900",
+            "deltaE": 0.0002
+          }
         },
         "800": {
           "oklch": {
@@ -4018,7 +4660,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G32.800"
+          "id": "G32.800",
+          "alpha": {
+            "over": "black",
+            "source": "#CED000",
+            "alpha": 0.435,
+            "hex": "#5A5B00",
+            "deltaE": 0.0001
+          }
         },
         "850": {
           "oklch": {
@@ -4059,7 +4708,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G32.850"
+          "id": "G32.850",
+          "alpha": {
+            "over": "black",
+            "source": "#D2CF00",
+            "alpha": 0.365,
+            "hex": "#4D4C00",
+            "deltaE": 0.0005
+          }
         },
         "900": {
           "oklch": {
@@ -4100,7 +4756,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G32.900"
+          "id": "G32.900",
+          "alpha": {
+            "over": "black",
+            "source": "#D6CD00",
+            "alpha": 0.292,
+            "hex": "#3F3C00",
+            "deltaE": 0.0009
+          }
         },
         "950": {
           "oklch": {
@@ -4141,7 +4804,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G32.950"
+          "id": "G32.950",
+          "alpha": {
+            "over": "black",
+            "source": "#DDCA00",
+            "alpha": 0.187,
+            "hex": "#292600",
+            "deltaE": 0.0019
+          }
         }
       }
     },
@@ -4163,6 +4833,7 @@
         "step": 150,
         "cuspStep": 150
       },
+      "alphaPivot": 350,
       "wavelength": {
         "nm": 560,
         "purity": 0.794,
@@ -4213,7 +4884,14 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "G36.050"
+          "id": "G36.050",
+          "alpha": {
+            "over": "white",
+            "source": "#87D400",
+            "alpha": 0.097,
+            "hex": "#F3FBE6",
+            "deltaE": 0.0058
+          }
         },
         "100": {
           "oklch": {
@@ -4254,7 +4932,14 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "G36.100"
+          "id": "G36.100",
+          "alpha": {
+            "over": "white",
+            "source": "#87D400",
+            "alpha": 0.226,
+            "hex": "#E4F5C5",
+            "deltaE": 0.0093
+          }
         },
         "150": {
           "oklch": {
@@ -4295,7 +4980,14 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "G36.150"
+          "id": "G36.150",
+          "alpha": {
+            "over": "white",
+            "source": "#87D400",
+            "alpha": 0.353,
+            "hex": "#D4F0A5",
+            "deltaE": 0.0116
+          }
         },
         "200": {
           "oklch": {
@@ -4336,7 +5028,14 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "G36.200"
+          "id": "G36.200",
+          "alpha": {
+            "over": "white",
+            "source": "#87D400",
+            "alpha": 0.484,
+            "hex": "#C5EA84",
+            "deltaE": 0.0133
+          }
         },
         "250": {
           "oklch": {
@@ -4377,7 +5076,14 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "G36.250"
+          "id": "G36.250",
+          "alpha": {
+            "over": "white",
+            "source": "#87D400",
+            "alpha": 0.627,
+            "hex": "#B3E45F",
+            "deltaE": 0.0138
+          }
         },
         "300": {
           "oklch": {
@@ -4418,7 +5124,14 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "G36.300"
+          "id": "G36.300",
+          "alpha": {
+            "over": "white",
+            "source": "#87D400",
+            "alpha": 0.807,
+            "hex": "#9EDC31",
+            "deltaE": 0.0098
+          }
         },
         "350": {
           "oklch": {
@@ -4459,7 +5172,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G36.350"
+          "id": "G36.350",
+          "alpha": {
+            "over": "white",
+            "source": "#87D400",
+            "alpha": 1,
+            "hex": "#87D400",
+            "deltaE": 0
+          }
         },
         "400": {
           "oklch": {
@@ -4500,7 +5220,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G36.400"
+          "id": "G36.400",
+          "alpha": {
+            "over": "black",
+            "source": "#87D400",
+            "alpha": 0.945,
+            "hex": "#7FC800",
+            "deltaE": 0.0014
+          }
         },
         "450": {
           "oklch": {
@@ -4541,7 +5268,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G36.450"
+          "id": "G36.450",
+          "alpha": {
+            "over": "black",
+            "source": "#87D400",
+            "alpha": 0.889,
+            "hex": "#78BD00",
+            "deltaE": 0.0024
+          }
         },
         "500": {
           "oklch": {
@@ -4582,7 +5316,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G36.500"
+          "id": "G36.500",
+          "alpha": {
+            "over": "black",
+            "source": "#87D400",
+            "alpha": 0.833,
+            "hex": "#70B100",
+            "deltaE": 0.0029
+          }
         },
         "550": {
           "oklch": {
@@ -4623,7 +5364,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G36.550"
+          "id": "G36.550",
+          "alpha": {
+            "over": "black",
+            "source": "#87D400",
+            "alpha": 0.775,
+            "hex": "#68A400",
+            "deltaE": 0.0035
+          }
         },
         "600": {
           "oklch": {
@@ -4664,7 +5412,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G36.600"
+          "id": "G36.600",
+          "alpha": {
+            "over": "black",
+            "source": "#87D400",
+            "alpha": 0.715,
+            "hex": "#609800",
+            "deltaE": 0.0037
+          }
         },
         "650": {
           "oklch": {
@@ -4705,7 +5460,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G36.650"
+          "id": "G36.650",
+          "alpha": {
+            "over": "black",
+            "source": "#87D400",
+            "alpha": 0.654,
+            "hex": "#588B00",
+            "deltaE": 0.0036
+          }
         },
         "700": {
           "oklch": {
@@ -4746,7 +5508,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G36.700"
+          "id": "G36.700",
+          "alpha": {
+            "over": "black",
+            "source": "#88D400",
+            "alpha": 0.59,
+            "hex": "#507D00",
+            "deltaE": 0.0033
+          }
         },
         "750": {
           "oklch": {
@@ -4787,7 +5556,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G36.750"
+          "id": "G36.750",
+          "alpha": {
+            "over": "black",
+            "source": "#88D400",
+            "alpha": 0.524,
+            "hex": "#476F00",
+            "deltaE": 0.003
+          }
         },
         "800": {
           "oklch": {
@@ -4828,7 +5604,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G36.800"
+          "id": "G36.800",
+          "alpha": {
+            "over": "black",
+            "source": "#89D400",
+            "alpha": 0.454,
+            "hex": "#3E6000",
+            "deltaE": 0.0026
+          }
         },
         "850": {
           "oklch": {
@@ -4869,7 +5652,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G36.850"
+          "id": "G36.850",
+          "alpha": {
+            "over": "black",
+            "source": "#89D400",
+            "alpha": 0.38,
+            "hex": "#345000",
+            "deltaE": 0.0023
+          }
         },
         "900": {
           "oklch": {
@@ -4910,7 +5700,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G36.900"
+          "id": "G36.900",
+          "alpha": {
+            "over": "black",
+            "source": "#8AD300",
+            "alpha": 0.303,
+            "hex": "#2A4000",
+            "deltaE": 0.0033
+          }
         },
         "950": {
           "oklch": {
@@ -4951,7 +5748,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G36.950"
+          "id": "G36.950",
+          "alpha": {
+            "over": "black",
+            "source": "#8CD300",
+            "alpha": 0.191,
+            "hex": "#1B2800",
+            "deltaE": 0.0042
+          }
         }
       }
     },
@@ -4973,6 +5777,7 @@
         "step": 250,
         "cuspStep": 250
       },
+      "alphaPivot": 350,
       "wavelength": {
         "nm": 548,
         "purity": 0.59,
@@ -5023,7 +5828,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G40.050"
+          "id": "G40.050",
+          "alpha": {
+            "over": "white",
+            "source": "#44DB4A",
+            "alpha": 0.086,
+            "hex": "#EFFCF0",
+            "deltaE": 0.0026
+          }
         },
         "100": {
           "oklch": {
@@ -5064,7 +5876,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G40.100"
+          "id": "G40.100",
+          "alpha": {
+            "over": "white",
+            "source": "#44DB4A",
+            "alpha": 0.235,
+            "hex": "#D3F6D5",
+            "deltaE": 0.01
+          }
         },
         "150": {
           "oklch": {
@@ -5105,7 +5924,14 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "G40.150"
+          "id": "G40.150",
+          "alpha": {
+            "over": "white",
+            "source": "#44DB4A",
+            "alpha": 0.391,
+            "hex": "#B6F1B8",
+            "deltaE": 0.0161
+          }
         },
         "200": {
           "oklch": {
@@ -5146,7 +5972,14 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "G40.200"
+          "id": "G40.200",
+          "alpha": {
+            "over": "white",
+            "source": "#44DB4A",
+            "alpha": 0.537,
+            "hex": "#9BEB9E",
+            "deltaE": 0.0161
+          }
         },
         "250": {
           "oklch": {
@@ -5187,7 +6020,14 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "G40.250"
+          "id": "G40.250",
+          "alpha": {
+            "over": "white",
+            "source": "#44DB4A",
+            "alpha": 0.692,
+            "hex": "#7EE682",
+            "deltaE": 0.0147
+          }
         },
         "300": {
           "oklch": {
@@ -5228,7 +6068,14 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "G40.300"
+          "id": "G40.300",
+          "alpha": {
+            "over": "white",
+            "source": "#44DB4A",
+            "alpha": 0.869,
+            "hex": "#5DDF62",
+            "deltaE": 0.0131
+          }
         },
         "350": {
           "oklch": {
@@ -5269,7 +6116,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G40.350"
+          "id": "G40.350",
+          "alpha": {
+            "over": "white",
+            "source": "#44DB4A",
+            "alpha": 1,
+            "hex": "#44DB4A",
+            "deltaE": 0
+          }
         },
         "400": {
           "oklch": {
@@ -5310,7 +6164,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G40.400"
+          "id": "G40.400",
+          "alpha": {
+            "over": "black",
+            "source": "#44DB4A",
+            "alpha": 0.941,
+            "hex": "#40CE46",
+            "deltaE": 0.0049
+          }
         },
         "450": {
           "oklch": {
@@ -5351,7 +6212,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G40.450"
+          "id": "G40.450",
+          "alpha": {
+            "over": "black",
+            "source": "#44DB4A",
+            "alpha": 0.882,
+            "hex": "#3CC142",
+            "deltaE": 0.0085
+          }
         },
         "500": {
           "oklch": {
@@ -5392,7 +6260,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G40.500"
+          "id": "G40.500",
+          "alpha": {
+            "over": "black",
+            "source": "#44DB4A",
+            "alpha": 0.824,
+            "hex": "#38B43D",
+            "deltaE": 0.0103
+          }
         },
         "550": {
           "oklch": {
@@ -5433,7 +6308,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G40.550"
+          "id": "G40.550",
+          "alpha": {
+            "over": "black",
+            "source": "#43DB4B",
+            "alpha": 0.751,
+            "hex": "#33A438",
+            "deltaE": 0.0235
+          }
         },
         "600": {
           "oklch": {
@@ -5474,7 +6356,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G40.600"
+          "id": "G40.600",
+          "alpha": {
+            "over": "black",
+            "source": "#42DB4C",
+            "alpha": 0.674,
+            "hex": "#2C9333",
+            "deltaE": 0.0383
+          }
         },
         "650": {
           "oklch": {
@@ -5515,7 +6404,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G40.650"
+          "id": "G40.650",
+          "alpha": {
+            "over": "black",
+            "source": "#3FDB4D",
+            "alpha": 0.592,
+            "hex": "#25822E",
+            "deltaE": 0.0544
+          }
         },
         "700": {
           "oklch": {
@@ -5556,7 +6452,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G40.700"
+          "id": "G40.700",
+          "alpha": {
+            "over": "black",
+            "source": "#3BDB4F",
+            "alpha": 0.532,
+            "hex": "#20752A",
+            "deltaE": 0.0556
+          }
         },
         "750": {
           "oklch": {
@@ -5597,7 +6500,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G40.750"
+          "id": "G40.750",
+          "alpha": {
+            "over": "black",
+            "source": "#37DC51",
+            "alpha": 0.469,
+            "hex": "#1A6726",
+            "deltaE": 0.0564
+          }
         },
         "800": {
           "oklch": {
@@ -5638,7 +6548,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G40.800"
+          "id": "G40.800",
+          "alpha": {
+            "over": "black",
+            "source": "#30DC54",
+            "alpha": 0.408,
+            "hex": "#145A22",
+            "deltaE": 0.0521
+          }
         },
         "850": {
           "oklch": {
@@ -5679,7 +6596,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G40.850"
+          "id": "G40.850",
+          "alpha": {
+            "over": "black",
+            "source": "#28DC57",
+            "alpha": 0.349,
+            "hex": "#0E4D1E",
+            "deltaE": 0.0414
+          }
         },
         "900": {
           "oklch": {
@@ -5720,7 +6644,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G40.900"
+          "id": "G40.900",
+          "alpha": {
+            "over": "black",
+            "source": "#1ADD5A",
+            "alpha": 0.285,
+            "hex": "#073F1A",
+            "deltaE": 0.032
+          }
         },
         "950": {
           "oklch": {
@@ -5761,7 +6692,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G40.950"
+          "id": "G40.950",
+          "alpha": {
+            "over": "black",
+            "source": "#00DD60",
+            "alpha": 0.183,
+            "hex": "#002812",
+            "deltaE": 0.0247
+          }
         }
       }
     },
@@ -5783,6 +6721,7 @@
         "step": 400,
         "cuspStep": 200
       },
+      "alphaPivot": 250,
       "wavelength": {
         "nm": 515,
         "purity": 0.215,
@@ -5833,7 +6772,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G45.050"
+          "id": "G45.050",
+          "alpha": {
+            "over": "white",
+            "source": "#3EEEAB",
+            "alpha": 0.097,
+            "hex": "#ECFDF7",
+            "deltaE": 0.0033
+          }
         },
         "100": {
           "oklch": {
@@ -5874,7 +6820,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G45.100"
+          "id": "G45.100",
+          "alpha": {
+            "over": "white",
+            "source": "#3EEEAB",
+            "alpha": 0.266,
+            "hex": "#CCFBE9",
+            "deltaE": 0.0073
+          }
         },
         "150": {
           "oklch": {
@@ -5915,7 +6868,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G45.150"
+          "id": "G45.150",
+          "alpha": {
+            "over": "white",
+            "source": "#3EEEAB",
+            "alpha": 0.477,
+            "hex": "#A3F7D7",
+            "deltaE": 0.0104
+          }
         },
         "200": {
           "oklch": {
@@ -5956,7 +6916,14 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "G45.200"
+          "id": "G45.200",
+          "alpha": {
+            "over": "white",
+            "source": "#3EEEAB",
+            "alpha": 0.758,
+            "hex": "#6DF2C0",
+            "deltaE": 0.0115
+          }
         },
         "250": {
           "oklch": {
@@ -5997,7 +6964,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G45.250"
+          "id": "G45.250",
+          "alpha": {
+            "over": "white",
+            "source": "#3EEEAB",
+            "alpha": 1,
+            "hex": "#3EEEAB",
+            "deltaE": 0
+          }
         },
         "300": {
           "oklch": {
@@ -6038,7 +7012,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G45.300"
+          "id": "G45.300",
+          "alpha": {
+            "over": "black",
+            "source": "#3EEEAB",
+            "alpha": 0.948,
+            "hex": "#3BE2A2",
+            "deltaE": 0.0055
+          }
         },
         "350": {
           "oklch": {
@@ -6079,7 +7060,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G45.350"
+          "id": "G45.350",
+          "alpha": {
+            "over": "black",
+            "source": "#3EEEAB",
+            "alpha": 0.895,
+            "hex": "#38D599",
+            "deltaE": 0.0099
+          }
         },
         "400": {
           "oklch": {
@@ -6120,7 +7108,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G45.400"
+          "id": "G45.400",
+          "alpha": {
+            "over": "black",
+            "source": "#3EEEAB",
+            "alpha": 0.843,
+            "hex": "#34C990",
+            "deltaE": 0.0133
+          }
         },
         "450": {
           "oklch": {
@@ -6161,7 +7156,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G45.450"
+          "id": "G45.450",
+          "alpha": {
+            "over": "black",
+            "source": "#3EEEAB",
+            "alpha": 0.791,
+            "hex": "#31BC88",
+            "deltaE": 0.0156
+          }
         },
         "500": {
           "oklch": {
@@ -6202,7 +7204,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G45.500"
+          "id": "G45.500",
+          "alpha": {
+            "over": "black",
+            "source": "#3EEEAB",
+            "alpha": 0.739,
+            "hex": "#2EB07F",
+            "deltaE": 0.0164
+          }
         },
         "550": {
           "oklch": {
@@ -6243,7 +7252,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G45.550"
+          "id": "G45.550",
+          "alpha": {
+            "over": "black",
+            "source": "#3DEEAC",
+            "alpha": 0.673,
+            "hex": "#29A074",
+            "deltaE": 0.0273
+          }
         },
         "600": {
           "oklch": {
@@ -6284,7 +7300,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G45.600"
+          "id": "G45.600",
+          "alpha": {
+            "over": "black",
+            "source": "#3BEEAD",
+            "alpha": 0.623,
+            "hex": "#24946C",
+            "deltaE": 0.0265
+          }
         },
         "650": {
           "oklch": {
@@ -6325,7 +7348,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G45.650"
+          "id": "G45.650",
+          "alpha": {
+            "over": "black",
+            "source": "#37EEAE",
+            "alpha": 0.572,
+            "hex": "#208864",
+            "deltaE": 0.0249
+          }
         },
         "700": {
           "oklch": {
@@ -6366,7 +7396,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G45.700"
+          "id": "G45.700",
+          "alpha": {
+            "over": "black",
+            "source": "#32EFB0",
+            "alpha": 0.519,
+            "hex": "#1A7C5B",
+            "deltaE": 0.0225
+          }
         },
         "750": {
           "oklch": {
@@ -6407,7 +7444,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G45.750"
+          "id": "G45.750",
+          "alpha": {
+            "over": "black",
+            "source": "#2CEFB2",
+            "alpha": 0.464,
+            "hex": "#146F53",
+            "deltaE": 0.0196
+          }
         },
         "800": {
           "oklch": {
@@ -6448,7 +7492,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G45.800"
+          "id": "G45.800",
+          "alpha": {
+            "over": "black",
+            "source": "#23EFB5",
+            "alpha": 0.406,
+            "hex": "#0E6149",
+            "deltaE": 0.0164
+          }
         },
         "850": {
           "oklch": {
@@ -6489,7 +7540,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G45.850"
+          "id": "G45.850",
+          "alpha": {
+            "over": "black",
+            "source": "#14EFB8",
+            "alpha": 0.344,
+            "hex": "#07523F",
+            "deltaE": 0.013
+          }
         },
         "900": {
           "oklch": {
@@ -6530,7 +7588,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G45.900"
+          "id": "G45.900",
+          "alpha": {
+            "over": "black",
+            "source": "#00EFBC",
+            "alpha": 0.276,
+            "hex": "#004234",
+            "deltaE": 0.0109
+          }
         },
         "950": {
           "oklch": {
@@ -6571,7 +7636,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G45.950"
+          "id": "G45.950",
+          "alpha": {
+            "over": "black",
+            "source": "#00EFC2",
+            "alpha": 0.176,
+            "hex": "#002A22",
+            "deltaE": 0.0093
+          }
         }
       }
     },
@@ -6593,6 +7665,7 @@
         "step": 400,
         "cuspStep": 200
       },
+      "alphaPivot": 250,
       "wavelength": {
         "nm": 496,
         "purity": 0.279,
@@ -6643,7 +7716,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G51.050"
+          "id": "G51.050",
+          "alpha": {
+            "over": "white",
+            "source": "#2AECD5",
+            "alpha": 0.098,
+            "hex": "#EAFDFB",
+            "deltaE": 0.0021
+          }
         },
         "100": {
           "oklch": {
@@ -6684,7 +7764,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G51.100"
+          "id": "G51.100",
+          "alpha": {
+            "over": "white",
+            "source": "#2AECD5",
+            "alpha": 0.276,
+            "hex": "#C4FAF4",
+            "deltaE": 0.0053
+          }
         },
         "150": {
           "oklch": {
@@ -6725,7 +7812,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G51.150"
+          "id": "G51.150",
+          "alpha": {
+            "over": "white",
+            "source": "#2AECD5",
+            "alpha": 0.521,
+            "hex": "#90F5E9",
+            "deltaE": 0.0113
+          }
         },
         "200": {
           "oklch": {
@@ -6766,7 +7860,14 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "G51.200"
+          "id": "G51.200",
+          "alpha": {
+            "over": "white",
+            "source": "#2AECD5",
+            "alpha": 0.898,
+            "hex": "#3FEEDA",
+            "deltaE": 0.0215
+          }
         },
         "250": {
           "oklch": {
@@ -6807,7 +7908,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G51.250"
+          "id": "G51.250",
+          "alpha": {
+            "over": "white",
+            "source": "#2AECD5",
+            "alpha": 1,
+            "hex": "#2AECD5",
+            "deltaE": 0
+          }
         },
         "300": {
           "oklch": {
@@ -6848,7 +7956,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G51.300"
+          "id": "G51.300",
+          "alpha": {
+            "over": "black",
+            "source": "#2AECD5",
+            "alpha": 0.949,
+            "hex": "#27E0CB",
+            "deltaE": 0.0044
+          }
         },
         "350": {
           "oklch": {
@@ -6889,7 +8004,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G51.350"
+          "id": "G51.350",
+          "alpha": {
+            "over": "black",
+            "source": "#2AECD5",
+            "alpha": 0.895,
+            "hex": "#25D3BF",
+            "deltaE": 0.0094
+          }
         },
         "400": {
           "oklch": {
@@ -6930,7 +8052,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G51.400"
+          "id": "G51.400",
+          "alpha": {
+            "over": "black",
+            "source": "#2AECD5",
+            "alpha": 0.845,
+            "hex": "#23C7B4",
+            "deltaE": 0.0106
+          }
         },
         "450": {
           "oklch": {
@@ -6971,7 +8100,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G51.450"
+          "id": "G51.450",
+          "alpha": {
+            "over": "black",
+            "source": "#2AECD5",
+            "alpha": 0.797,
+            "hex": "#21BCAA",
+            "deltaE": 0.0104
+          }
         },
         "500": {
           "oklch": {
@@ -7012,7 +8148,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G51.500"
+          "id": "G51.500",
+          "alpha": {
+            "over": "black",
+            "source": "#2AECD5",
+            "alpha": 0.747,
+            "hex": "#1FB09F",
+            "deltaE": 0.0101
+          }
         },
         "550": {
           "oklch": {
@@ -7053,7 +8196,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G51.550"
+          "id": "G51.550",
+          "alpha": {
+            "over": "black",
+            "source": "#29ECD6",
+            "alpha": 0.697,
+            "hex": "#1CA495",
+            "deltaE": 0.0098
+          }
         },
         "600": {
           "oklch": {
@@ -7094,7 +8244,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G51.600"
+          "id": "G51.600",
+          "alpha": {
+            "over": "black",
+            "source": "#27ECD7",
+            "alpha": 0.646,
+            "hex": "#19988B",
+            "deltaE": 0.0091
+          }
         },
         "650": {
           "oklch": {
@@ -7135,7 +8292,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G51.650"
+          "id": "G51.650",
+          "alpha": {
+            "over": "black",
+            "source": "#25ECD8",
+            "alpha": 0.593,
+            "hex": "#168C80",
+            "deltaE": 0.0082
+          }
         },
         "700": {
           "oklch": {
@@ -7176,7 +8340,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G51.700"
+          "id": "G51.700",
+          "alpha": {
+            "over": "black",
+            "source": "#22ECD9",
+            "alpha": 0.537,
+            "hex": "#127F75",
+            "deltaE": 0.007
+          }
         },
         "750": {
           "oklch": {
@@ -7217,7 +8388,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G51.750"
+          "id": "G51.750",
+          "alpha": {
+            "over": "black",
+            "source": "#1EECDB",
+            "alpha": 0.479,
+            "hex": "#0E7169",
+            "deltaE": 0.0057
+          }
         },
         "800": {
           "oklch": {
@@ -7258,7 +8436,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G51.800"
+          "id": "G51.800",
+          "alpha": {
+            "over": "black",
+            "source": "#19ECDD",
+            "alpha": 0.418,
+            "hex": "#0A625D",
+            "deltaE": 0.0044
+          }
         },
         "850": {
           "oklch": {
@@ -7299,7 +8484,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G51.850"
+          "id": "G51.850",
+          "alpha": {
+            "over": "black",
+            "source": "#13EBE0",
+            "alpha": 0.352,
+            "hex": "#07534F",
+            "deltaE": 0.0031
+          }
         },
         "900": {
           "oklch": {
@@ -7340,7 +8532,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G51.900"
+          "id": "G51.900",
+          "alpha": {
+            "over": "black",
+            "source": "#0AEBE3",
+            "alpha": 0.284,
+            "hex": "#034340",
+            "deltaE": 0.0017
+          }
         },
         "950": {
           "oklch": {
@@ -7381,7 +8580,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G51.950"
+          "id": "G51.950",
+          "alpha": {
+            "over": "black",
+            "source": "#00EBE8",
+            "alpha": 0.183,
+            "hex": "#002B2A",
+            "deltaE": 0
+          }
         }
       }
     },
@@ -7403,6 +8609,7 @@
         "step": 300,
         "cuspStep": 300
       },
+      "alphaPivot": 350,
       "wavelength": {
         "nm": 486,
         "purity": 0.46,
@@ -7453,7 +8660,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B58.050"
+          "id": "B58.050",
+          "alpha": {
+            "over": "white",
+            "source": "#00D4F2",
+            "alpha": 0.065,
+            "hex": "#EEFCFE",
+            "deltaE": 0.0019
+          }
         },
         "100": {
           "oklch": {
@@ -7494,7 +8708,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B58.100"
+          "id": "B58.100",
+          "alpha": {
+            "over": "white",
+            "source": "#00D4F2",
+            "alpha": 0.173,
+            "hex": "#D3F8FD",
+            "deltaE": 0.0038
+          }
         },
         "150": {
           "oklch": {
@@ -7535,7 +8756,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B58.150"
+          "id": "B58.150",
+          "alpha": {
+            "over": "white",
+            "source": "#00D4F2",
+            "alpha": 0.297,
+            "hex": "#B3F2FB",
+            "deltaE": 0.0047
+          }
         },
         "200": {
           "oklch": {
@@ -7576,7 +8804,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B58.200"
+          "id": "B58.200",
+          "alpha": {
+            "over": "white",
+            "source": "#00D4F2",
+            "alpha": 0.446,
+            "hex": "#8DECF9",
+            "deltaE": 0.005
+          }
         },
         "250": {
           "oklch": {
@@ -7617,7 +8852,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B58.250"
+          "id": "B58.250",
+          "alpha": {
+            "over": "white",
+            "source": "#00D4F2",
+            "alpha": 0.65,
+            "hex": "#59E3F6",
+            "deltaE": 0.0085
+          }
         },
         "300": {
           "oklch": {
@@ -7658,7 +8900,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B58.300"
+          "id": "B58.300",
+          "alpha": {
+            "over": "white",
+            "source": "#00D4F2",
+            "alpha": 0.991,
+            "hex": "#02D4F2",
+            "deltaE": 0.0289
+          }
         },
         "350": {
           "oklch": {
@@ -7699,7 +8948,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B58.350"
+          "id": "B58.350",
+          "alpha": {
+            "over": "white",
+            "source": "#00D4F2",
+            "alpha": 1,
+            "hex": "#00D4F2",
+            "deltaE": 0
+          }
         },
         "400": {
           "oklch": {
@@ -7740,7 +8996,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B58.400"
+          "id": "B58.400",
+          "alpha": {
+            "over": "black",
+            "source": "#00D4F2",
+            "alpha": 0.947,
+            "hex": "#00C9E5",
+            "deltaE": 0.0004
+          }
         },
         "450": {
           "oklch": {
@@ -7781,7 +9044,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B58.450"
+          "id": "B58.450",
+          "alpha": {
+            "over": "black",
+            "source": "#00D4F2",
+            "alpha": 0.894,
+            "hex": "#00BDD8",
+            "deltaE": 0.0009
+          }
         },
         "500": {
           "oklch": {
@@ -7822,7 +9092,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B58.500"
+          "id": "B58.500",
+          "alpha": {
+            "over": "black",
+            "source": "#00D4F2",
+            "alpha": 0.839,
+            "hex": "#00B2CB",
+            "deltaE": 0.0013
+          }
         },
         "550": {
           "oklch": {
@@ -7863,7 +9140,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B58.550"
+          "id": "B58.550",
+          "alpha": {
+            "over": "black",
+            "source": "#00D4F2",
+            "alpha": 0.782,
+            "hex": "#00A6BD",
+            "deltaE": 0.0019
+          }
         },
         "600": {
           "oklch": {
@@ -7904,7 +9188,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B58.600"
+          "id": "B58.600",
+          "alpha": {
+            "over": "black",
+            "source": "#00D4F2",
+            "alpha": 0.724,
+            "hex": "#0099AF",
+            "deltaE": 0.0024
+          }
         },
         "650": {
           "oklch": {
@@ -7945,7 +9236,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B58.650"
+          "id": "B58.650",
+          "alpha": {
+            "over": "black",
+            "source": "#00D4F3",
+            "alpha": 0.664,
+            "hex": "#008DA1",
+            "deltaE": 0.0031
+          }
         },
         "700": {
           "oklch": {
@@ -7986,7 +9284,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B58.700"
+          "id": "B58.700",
+          "alpha": {
+            "over": "black",
+            "source": "#00D4F4",
+            "alpha": 0.602,
+            "hex": "#007F93",
+            "deltaE": 0.0038
+          }
         },
         "750": {
           "oklch": {
@@ -8027,7 +9332,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B58.750"
+          "id": "B58.750",
+          "alpha": {
+            "over": "black",
+            "source": "#00D3F5",
+            "alpha": 0.537,
+            "hex": "#007283",
+            "deltaE": 0.0046
+          }
         },
         "800": {
           "oklch": {
@@ -8068,7 +9380,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B58.800"
+          "id": "B58.800",
+          "alpha": {
+            "over": "black",
+            "source": "#00D3F6",
+            "alpha": 0.469,
+            "hex": "#006373",
+            "deltaE": 0.0055
+          }
         },
         "850": {
           "oklch": {
@@ -8109,7 +9428,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B58.850"
+          "id": "B58.850",
+          "alpha": {
+            "over": "black",
+            "source": "#00D3F7",
+            "alpha": 0.395,
+            "hex": "#005362",
+            "deltaE": 0.0058
+          }
         },
         "900": {
           "oklch": {
@@ -8150,7 +9476,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B58.900"
+          "id": "B58.900",
+          "alpha": {
+            "over": "black",
+            "source": "#00D3F9",
+            "alpha": 0.317,
+            "hex": "#00434F",
+            "deltaE": 0.0057
+          }
         },
         "950": {
           "oklch": {
@@ -8191,7 +9524,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B58.950"
+          "id": "B58.950",
+          "alpha": {
+            "over": "black",
+            "source": "#00D2FC",
+            "alpha": 0.205,
+            "hex": "#002B34",
+            "deltaE": 0.0062
+          }
         }
       }
     },
@@ -8213,6 +9553,7 @@
         "step": 500,
         "cuspStep": 500
       },
+      "alphaPivot": 500,
       "wavelength": {
         "nm": 481,
         "purity": 0.53,
@@ -8263,7 +9604,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B65.050"
+          "id": "B65.050",
+          "alpha": {
+            "over": "white",
+            "source": "#00ACEE",
+            "alpha": 0.045,
+            "hex": "#F4FBFE",
+            "deltaE": 0.0031
+          }
         },
         "100": {
           "oklch": {
@@ -8304,7 +9652,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B65.100"
+          "id": "B65.100",
+          "alpha": {
+            "over": "white",
+            "source": "#00ACEE",
+            "alpha": 0.117,
+            "hex": "#E1F5FD",
+            "deltaE": 0.0073
+          }
         },
         "150": {
           "oklch": {
@@ -8345,7 +9700,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B65.150"
+          "id": "B65.150",
+          "alpha": {
+            "over": "white",
+            "source": "#00ACEE",
+            "alpha": 0.193,
+            "hex": "#CEEFFC",
+            "deltaE": 0.0109
+          }
         },
         "200": {
           "oklch": {
@@ -8386,7 +9748,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B65.200"
+          "id": "B65.200",
+          "alpha": {
+            "over": "white",
+            "source": "#00ACEE",
+            "alpha": 0.274,
+            "hex": "#B9E8FA",
+            "deltaE": 0.014
+          }
         },
         "250": {
           "oklch": {
@@ -8427,7 +9796,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B65.250"
+          "id": "B65.250",
+          "alpha": {
+            "over": "white",
+            "source": "#00ACEE",
+            "alpha": 0.361,
+            "hex": "#A3E1F9",
+            "deltaE": 0.0166
+          }
         },
         "300": {
           "oklch": {
@@ -8468,7 +9844,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B65.300"
+          "id": "B65.300",
+          "alpha": {
+            "over": "white",
+            "source": "#00ACEE",
+            "alpha": 0.456,
+            "hex": "#8BD9F7",
+            "deltaE": 0.0185
+          }
         },
         "350": {
           "oklch": {
@@ -8509,7 +9892,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B65.350"
+          "id": "B65.350",
+          "alpha": {
+            "over": "white",
+            "source": "#00ACEE",
+            "alpha": 0.564,
+            "hex": "#6FD0F6",
+            "deltaE": 0.0189
+          }
         },
         "400": {
           "oklch": {
@@ -8550,7 +9940,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B65.400"
+          "id": "B65.400",
+          "alpha": {
+            "over": "white",
+            "source": "#00ACEE",
+            "alpha": 0.694,
+            "hex": "#4EC5F3",
+            "deltaE": 0.0157
+          }
         },
         "450": {
           "oklch": {
@@ -8591,7 +9988,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B65.450"
+          "id": "B65.450",
+          "alpha": {
+            "over": "white",
+            "source": "#00ACEE",
+            "alpha": 0.926,
+            "hex": "#13B2EF",
+            "deltaE": 0.0143
+          }
         },
         "500": {
           "oklch": {
@@ -8632,7 +10036,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B65.500"
+          "id": "B65.500",
+          "alpha": {
+            "over": "white",
+            "source": "#00ACEE",
+            "alpha": 1,
+            "hex": "#00ACEE",
+            "deltaE": 0
+          }
         },
         "550": {
           "oklch": {
@@ -8673,7 +10084,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B65.550"
+          "id": "B65.550",
+          "alpha": {
+            "over": "black",
+            "source": "#00ABEE",
+            "alpha": 0.931,
+            "hex": "#00A0DE",
+            "deltaE": 0.0001
+          }
         },
         "600": {
           "oklch": {
@@ -8714,7 +10132,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B65.600"
+          "id": "B65.600",
+          "alpha": {
+            "over": "black",
+            "source": "#00ABEF",
+            "alpha": 0.86,
+            "hex": "#0093CD",
+            "deltaE": 0.0001
+          }
         },
         "650": {
           "oklch": {
@@ -8755,7 +10180,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B65.650"
+          "id": "B65.650",
+          "alpha": {
+            "over": "black",
+            "source": "#00ABF0",
+            "alpha": 0.786,
+            "hex": "#0086BC",
+            "deltaE": 0.0003
+          }
         },
         "700": {
           "oklch": {
@@ -8796,7 +10228,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B65.700"
+          "id": "B65.700",
+          "alpha": {
+            "over": "black",
+            "source": "#00AAF0",
+            "alpha": 0.71,
+            "hex": "#0079AB",
+            "deltaE": 0.0003
+          }
         },
         "750": {
           "oklch": {
@@ -8837,7 +10276,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B65.750"
+          "id": "B65.750",
+          "alpha": {
+            "over": "black",
+            "source": "#00AAF2",
+            "alpha": 0.631,
+            "hex": "#006B98",
+            "deltaE": 0.0012
+          }
         },
         "800": {
           "oklch": {
@@ -8878,7 +10324,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B65.800"
+          "id": "B65.800",
+          "alpha": {
+            "over": "black",
+            "source": "#00A9F3",
+            "alpha": 0.548,
+            "hex": "#005D85",
+            "deltaE": 0.0037
+          }
         },
         "850": {
           "oklch": {
@@ -8919,7 +10372,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B65.850"
+          "id": "B65.850",
+          "alpha": {
+            "over": "black",
+            "source": "#0FA8F4",
+            "alpha": 0.462,
+            "hex": "#074E71",
+            "deltaE": 0.0032
+          }
         },
         "900": {
           "oklch": {
@@ -8960,7 +10420,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B65.900"
+          "id": "B65.900",
+          "alpha": {
+            "over": "black",
+            "source": "#21A7F6",
+            "alpha": 0.372,
+            "hex": "#0C3E5B",
+            "deltaE": 0.0024
+          }
         },
         "950": {
           "oklch": {
@@ -9001,7 +10468,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B65.950"
+          "id": "B65.950",
+          "alpha": {
+            "over": "black",
+            "source": "#33A5F8",
+            "alpha": 0.241,
+            "hex": "#0C283C",
+            "deltaE": 0.0058
+          }
         }
       }
     },
@@ -9023,6 +10497,7 @@
         "step": 750,
         "cuspStep": 750
       },
+      "alphaPivot": 750,
       "wavelength": {
         "nm": 473,
         "purity": 0.535,
@@ -9073,7 +10548,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B72.050"
+          "id": "B72.050",
+          "alpha": {
+            "over": "white",
+            "source": "#0055F7",
+            "alpha": 0.035,
+            "hex": "#F6F9FF",
+            "deltaE": 0.0007
+          }
         },
         "100": {
           "oklch": {
@@ -9114,7 +10596,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B72.100"
+          "id": "B72.100",
+          "alpha": {
+            "over": "white",
+            "source": "#0055F7",
+            "alpha": 0.089,
+            "hex": "#E8F0FE",
+            "deltaE": 0.0016
+          }
         },
         "150": {
           "oklch": {
@@ -9155,7 +10644,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B72.150"
+          "id": "B72.150",
+          "alpha": {
+            "over": "white",
+            "source": "#0055F7",
+            "alpha": 0.145,
+            "hex": "#DAE6FE",
+            "deltaE": 0.0029
+          }
         },
         "200": {
           "oklch": {
@@ -9196,7 +10692,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B72.200"
+          "id": "B72.200",
+          "alpha": {
+            "over": "white",
+            "source": "#0055F7",
+            "alpha": 0.203,
+            "hex": "#CBDCFD",
+            "deltaE": 0.0047
+          }
         },
         "250": {
           "oklch": {
@@ -9237,7 +10740,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B72.250"
+          "id": "B72.250",
+          "alpha": {
+            "over": "white",
+            "source": "#0055F7",
+            "alpha": 0.264,
+            "hex": "#BCD2FD",
+            "deltaE": 0.0067
+          }
         },
         "300": {
           "oklch": {
@@ -9278,7 +10788,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B72.300"
+          "id": "B72.300",
+          "alpha": {
+            "over": "white",
+            "source": "#0055F7",
+            "alpha": 0.327,
+            "hex": "#ACC8FD",
+            "deltaE": 0.009
+          }
         },
         "350": {
           "oklch": {
@@ -9319,7 +10836,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B72.350"
+          "id": "B72.350",
+          "alpha": {
+            "over": "white",
+            "source": "#0055F7",
+            "alpha": 0.392,
+            "hex": "#9BBCFC",
+            "deltaE": 0.0112
+          }
         },
         "400": {
           "oklch": {
@@ -9360,7 +10884,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B72.400"
+          "id": "B72.400",
+          "alpha": {
+            "over": "white",
+            "source": "#0055F7",
+            "alpha": 0.46,
+            "hex": "#8AB1FC",
+            "deltaE": 0.0134
+          }
         },
         "450": {
           "oklch": {
@@ -9401,7 +10932,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B72.450"
+          "id": "B72.450",
+          "alpha": {
+            "over": "white",
+            "source": "#0055F7",
+            "alpha": 0.53,
+            "hex": "#78A5FB",
+            "deltaE": 0.0154
+          }
         },
         "500": {
           "oklch": {
@@ -9442,7 +10980,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B72.500"
+          "id": "B72.500",
+          "alpha": {
+            "over": "white",
+            "source": "#0055F7",
+            "alpha": 0.605,
+            "hex": "#6598FA",
+            "deltaE": 0.0173
+          }
         },
         "550": {
           "oklch": {
@@ -9483,7 +11028,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B72.550"
+          "id": "B72.550",
+          "alpha": {
+            "over": "white",
+            "source": "#0055F7",
+            "alpha": 0.68,
+            "hex": "#528BFA",
+            "deltaE": 0.0177
+          }
         },
         "600": {
           "oklch": {
@@ -9524,7 +11076,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B72.600"
+          "id": "B72.600",
+          "alpha": {
+            "over": "white",
+            "source": "#0055F8",
+            "alpha": 0.758,
+            "hex": "#3E7EF9",
+            "deltaE": 0.0174
+          }
         },
         "650": {
           "oklch": {
@@ -9565,7 +11124,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B72.650"
+          "id": "B72.650",
+          "alpha": {
+            "over": "white",
+            "source": "#0054F8",
+            "alpha": 0.841,
+            "hex": "#286FF9",
+            "deltaE": 0.0173
+          }
         },
         "700": {
           "oklch": {
@@ -9606,7 +11172,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B72.700"
+          "id": "B72.700",
+          "alpha": {
+            "over": "white",
+            "source": "#0054F8",
+            "alpha": 0.944,
+            "hex": "#0E5DF8",
+            "deltaE": 0.0197
+          }
         },
         "750": {
           "oklch": {
@@ -9647,7 +11220,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B72.750"
+          "id": "B72.750",
+          "alpha": {
+            "over": "white",
+            "source": "#0053F8",
+            "alpha": 1,
+            "hex": "#0053F8",
+            "deltaE": 0
+          }
         },
         "800": {
           "oklch": {
@@ -9688,7 +11268,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B72.800"
+          "id": "B72.800",
+          "alpha": {
+            "over": "black",
+            "source": "#0052F8",
+            "alpha": 0.897,
+            "hex": "#004ADF",
+            "deltaE": 0.0105
+          }
         },
         "850": {
           "oklch": {
@@ -9729,7 +11316,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B72.850"
+          "id": "B72.850",
+          "alpha": {
+            "over": "black",
+            "source": "#0D51F8",
+            "alpha": 0.774,
+            "hex": "#0A3FC0",
+            "deltaE": 0.0188
+          }
         },
         "900": {
           "oklch": {
@@ -9770,7 +11364,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B72.900"
+          "id": "B72.900",
+          "alpha": {
+            "over": "black",
+            "source": "#1950F8",
+            "alpha": 0.638,
+            "hex": "#10339E",
+            "deltaE": 0.0233
+          }
         },
         "950": {
           "oklch": {
@@ -9811,7 +11412,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B72.950"
+          "id": "B72.950",
+          "alpha": {
+            "over": "black",
+            "source": "#264EF9",
+            "alpha": 0.407,
+            "hex": "#102065",
+            "deltaE": 0.0148
+          }
         }
       }
     },
@@ -9833,6 +11441,7 @@
         "step": 800,
         "cuspStep": 800
       },
+      "alphaPivot": 800,
       "wavelength": {
         "nm": 466,
         "purity": 0.485,
@@ -9883,7 +11492,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B77.050"
+          "id": "B77.050",
+          "alpha": {
+            "over": "white",
+            "source": "#4B2BF1",
+            "alpha": 0.034,
+            "hex": "#F9F8FF",
+            "deltaE": 0.003
+          }
         },
         "100": {
           "oklch": {
@@ -9924,7 +11540,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B77.100"
+          "id": "B77.100",
+          "alpha": {
+            "over": "white",
+            "source": "#4B2BF1",
+            "alpha": 0.087,
+            "hex": "#EFEDFE",
+            "deltaE": 0.0073
+          }
         },
         "150": {
           "oklch": {
@@ -9965,7 +11588,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B77.150"
+          "id": "B77.150",
+          "alpha": {
+            "over": "white",
+            "source": "#4B2BF1",
+            "alpha": 0.141,
+            "hex": "#E6E1FD",
+            "deltaE": 0.0116
+          }
         },
         "200": {
           "oklch": {
@@ -10006,7 +11636,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B77.200"
+          "id": "B77.200",
+          "alpha": {
+            "over": "white",
+            "source": "#4B2BF1",
+            "alpha": 0.195,
+            "hex": "#DCD6FC",
+            "deltaE": 0.0159
+          }
         },
         "250": {
           "oklch": {
@@ -10047,7 +11684,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B77.250"
+          "id": "B77.250",
+          "alpha": {
+            "over": "white",
+            "source": "#4B2BF1",
+            "alpha": 0.252,
+            "hex": "#D2CAFB",
+            "deltaE": 0.0204
+          }
         },
         "300": {
           "oklch": {
@@ -10088,7 +11732,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B77.300"
+          "id": "B77.300",
+          "alpha": {
+            "over": "white",
+            "source": "#4B2BF1",
+            "alpha": 0.31,
+            "hex": "#C7BDFB",
+            "deltaE": 0.0247
+          }
         },
         "350": {
           "oklch": {
@@ -10129,7 +11780,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B77.350"
+          "id": "B77.350",
+          "alpha": {
+            "over": "white",
+            "source": "#4B2BF1",
+            "alpha": 0.37,
+            "hex": "#BCB1FA",
+            "deltaE": 0.0287
+          }
         },
         "400": {
           "oklch": {
@@ -10170,7 +11828,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B77.400"
+          "id": "B77.400",
+          "alpha": {
+            "over": "white",
+            "source": "#4B2BF1",
+            "alpha": 0.431,
+            "hex": "#B1A4F9",
+            "deltaE": 0.0321
+          }
         },
         "450": {
           "oklch": {
@@ -10211,7 +11876,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B77.450"
+          "id": "B77.450",
+          "alpha": {
+            "over": "white",
+            "source": "#4B2BF1",
+            "alpha": 0.493,
+            "hex": "#A696F8",
+            "deltaE": 0.0348
+          }
         },
         "500": {
           "oklch": {
@@ -10252,7 +11924,14 @@
           },
           "clamped": true,
           "capped": false,
-          "id": "B77.500"
+          "id": "B77.500",
+          "alpha": {
+            "over": "white",
+            "source": "#4B2BF1",
+            "alpha": 0.557,
+            "hex": "#9B89F7",
+            "deltaE": 0.0365
+          }
         },
         "550": {
           "oklch": {
@@ -10293,7 +11972,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B77.550"
+          "id": "B77.550",
+          "alpha": {
+            "over": "white",
+            "source": "#4B2BF1",
+            "alpha": 0.622,
+            "hex": "#8F7BF6",
+            "deltaE": 0.0369
+          }
         },
         "600": {
           "oklch": {
@@ -10334,7 +12020,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B77.600"
+          "id": "B77.600",
+          "alpha": {
+            "over": "white",
+            "source": "#4B2BF1",
+            "alpha": 0.689,
+            "hex": "#836DF5",
+            "deltaE": 0.036
+          }
         },
         "650": {
           "oklch": {
@@ -10375,7 +12068,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B77.650"
+          "id": "B77.650",
+          "alpha": {
+            "over": "white",
+            "source": "#4C2BF0",
+            "alpha": 0.758,
+            "hex": "#775EF4",
+            "deltaE": 0.0334
+          }
         },
         "700": {
           "oklch": {
@@ -10416,7 +12116,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B77.700"
+          "id": "B77.700",
+          "alpha": {
+            "over": "white",
+            "source": "#4C2AF0",
+            "alpha": 0.831,
+            "hex": "#6A4EF3",
+            "deltaE": 0.0294
+          }
         },
         "750": {
           "oklch": {
@@ -10457,7 +12164,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B77.750"
+          "id": "B77.750",
+          "alpha": {
+            "over": "white",
+            "source": "#4D2AF0",
+            "alpha": 0.912,
+            "hex": "#5C3DF2",
+            "deltaE": 0.0204
+          }
         },
         "800": {
           "oklch": {
@@ -10498,7 +12212,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B77.800"
+          "id": "B77.800",
+          "alpha": {
+            "over": "white",
+            "source": "#4D2AF0",
+            "alpha": 1,
+            "hex": "#4D2AF0",
+            "deltaE": 0
+          }
         },
         "850": {
           "oklch": {
@@ -10539,7 +12260,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B77.850"
+          "id": "B77.850",
+          "alpha": {
+            "over": "black",
+            "source": "#4E29F0",
+            "alpha": 0.828,
+            "hex": "#4122C7",
+            "deltaE": 0.006
+          }
         },
         "900": {
           "oklch": {
@@ -10580,7 +12308,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B77.900"
+          "id": "B77.900",
+          "alpha": {
+            "over": "black",
+            "source": "#4F28F0",
+            "alpha": 0.655,
+            "hex": "#341A9D",
+            "deltaE": 0.0101
+          }
         },
         "950": {
           "oklch": {
@@ -10621,7 +12356,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B77.950"
+          "id": "B77.950",
+          "alpha": {
+            "over": "black",
+            "source": "#5127F0",
+            "alpha": 0.422,
+            "hex": "#221165",
+            "deltaE": 0.01
+          }
         }
       }
     },
@@ -10643,6 +12385,7 @@
         "step": 750,
         "cuspStep": 750
       },
+      "alphaPivot": 750,
       "wavelength": {
         "nm": 448,
         "purity": 0.448,
@@ -10693,7 +12436,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P81.050"
+          "id": "P81.050",
+          "alpha": {
+            "over": "white",
+            "source": "#801DFF",
+            "alpha": 0.033,
+            "hex": "#FBF7FF",
+            "deltaE": 0.0032
+          }
         },
         "100": {
           "oklch": {
@@ -10734,7 +12484,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P81.100"
+          "id": "P81.100",
+          "alpha": {
+            "over": "white",
+            "source": "#801DFF",
+            "alpha": 0.085,
+            "hex": "#F4ECFF",
+            "deltaE": 0.0075
+          }
         },
         "150": {
           "oklch": {
@@ -10775,7 +12532,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P81.150"
+          "id": "P81.150",
+          "alpha": {
+            "over": "white",
+            "source": "#801DFF",
+            "alpha": 0.137,
+            "hex": "#EEE0FF",
+            "deltaE": 0.0114
+          }
         },
         "200": {
           "oklch": {
@@ -10816,7 +12580,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P81.200"
+          "id": "P81.200",
+          "alpha": {
+            "over": "white",
+            "source": "#801DFF",
+            "alpha": 0.191,
+            "hex": "#E7D4FF",
+            "deltaE": 0.0151
+          }
         },
         "250": {
           "oklch": {
@@ -10857,7 +12628,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P81.250"
+          "id": "P81.250",
+          "alpha": {
+            "over": "white",
+            "source": "#801DFF",
+            "alpha": 0.246,
+            "hex": "#E0C7FF",
+            "deltaE": 0.0187
+          }
         },
         "300": {
           "oklch": {
@@ -10898,7 +12676,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P81.300"
+          "id": "P81.300",
+          "alpha": {
+            "over": "white",
+            "source": "#801DFF",
+            "alpha": 0.302,
+            "hex": "#D9BBFF",
+            "deltaE": 0.022
+          }
         },
         "350": {
           "oklch": {
@@ -10939,7 +12724,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P81.350"
+          "id": "P81.350",
+          "alpha": {
+            "over": "white",
+            "source": "#801DFF",
+            "alpha": 0.36,
+            "hex": "#D1AEFF",
+            "deltaE": 0.0249
+          }
         },
         "400": {
           "oklch": {
@@ -10980,7 +12772,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P81.400"
+          "id": "P81.400",
+          "alpha": {
+            "over": "white",
+            "source": "#801DFF",
+            "alpha": 0.42,
+            "hex": "#CAA0FF",
+            "deltaE": 0.0273
+          }
         },
         "450": {
           "oklch": {
@@ -11021,7 +12820,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P81.450"
+          "id": "P81.450",
+          "alpha": {
+            "over": "white",
+            "source": "#801DFF",
+            "alpha": 0.482,
+            "hex": "#C292FF",
+            "deltaE": 0.029
+          }
         },
         "500": {
           "oklch": {
@@ -11062,7 +12868,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P81.500"
+          "id": "P81.500",
+          "alpha": {
+            "over": "white",
+            "source": "#801DFF",
+            "alpha": 0.547,
+            "hex": "#B983FF",
+            "deltaE": 0.0299
+          }
         },
         "550": {
           "oklch": {
@@ -11103,7 +12916,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P81.550"
+          "id": "P81.550",
+          "alpha": {
+            "over": "white",
+            "source": "#801DFF",
+            "alpha": 0.616,
+            "hex": "#B174FF",
+            "deltaE": 0.0298
+          }
         },
         "600": {
           "oklch": {
@@ -11144,7 +12964,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P81.600"
+          "id": "P81.600",
+          "alpha": {
+            "over": "white",
+            "source": "#801DFF",
+            "alpha": 0.689,
+            "hex": "#A763FF",
+            "deltaE": 0.0282
+          }
         },
         "650": {
           "oklch": {
@@ -11185,7 +13012,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P81.650"
+          "id": "P81.650",
+          "alpha": {
+            "over": "white",
+            "source": "#801DFF",
+            "alpha": 0.769,
+            "hex": "#9D51FF",
+            "deltaE": 0.0246
+          }
         },
         "700": {
           "oklch": {
@@ -11226,7 +13060,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P81.700"
+          "id": "P81.700",
+          "alpha": {
+            "over": "white",
+            "source": "#801DFF",
+            "alpha": 0.863,
+            "hex": "#913CFF",
+            "deltaE": 0.0176
+          }
         },
         "750": {
           "oklch": {
@@ -11267,7 +13108,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P81.750"
+          "id": "P81.750",
+          "alpha": {
+            "over": "white",
+            "source": "#801CFF",
+            "alpha": 1,
+            "hex": "#801CFF",
+            "deltaE": 0
+          }
         },
         "800": {
           "oklch": {
@@ -11308,7 +13156,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P81.800"
+          "id": "P81.800",
+          "alpha": {
+            "over": "black",
+            "source": "#801CFF",
+            "alpha": 0.882,
+            "hex": "#7119E1",
+            "deltaE": 0.0037
+          }
         },
         "850": {
           "oklch": {
@@ -11349,7 +13204,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P81.850"
+          "id": "P81.850",
+          "alpha": {
+            "over": "black",
+            "source": "#811CFF",
+            "alpha": 0.736,
+            "hex": "#5F15BC",
+            "deltaE": 0.004
+          }
         },
         "900": {
           "oklch": {
@@ -11390,7 +13252,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P81.900"
+          "id": "P81.900",
+          "alpha": {
+            "over": "black",
+            "source": "#811CFF",
+            "alpha": 0.588,
+            "hex": "#4C1096",
+            "deltaE": 0.0065
+          }
         },
         "950": {
           "oklch": {
@@ -11431,7 +13300,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P81.950"
+          "id": "P81.950",
+          "alpha": {
+            "over": "black",
+            "source": "#811BFF",
+            "alpha": 0.383,
+            "hex": "#320A62",
+            "deltaE": 0.0069
+          }
         }
       }
     },
@@ -11453,6 +13329,7 @@
         "step": 700,
         "cuspStep": 700
       },
+      "alphaPivot": 700,
       "wavelength": {
         "nm": 565,
         "purity": null,
@@ -11503,7 +13380,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P84.050"
+          "id": "P84.050",
+          "alpha": {
+            "over": "white",
+            "source": "#A61AFF",
+            "alpha": 0.033,
+            "hex": "#FCF7FF",
+            "deltaE": 0.0025
+          }
         },
         "100": {
           "oklch": {
@@ -11544,7 +13428,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P84.100"
+          "id": "P84.100",
+          "alpha": {
+            "over": "white",
+            "source": "#A61AFF",
+            "alpha": 0.085,
+            "hex": "#F7ECFF",
+            "deltaE": 0.0057
+          }
         },
         "150": {
           "oklch": {
@@ -11585,7 +13476,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P84.150"
+          "id": "P84.150",
+          "alpha": {
+            "over": "white",
+            "source": "#A61AFF",
+            "alpha": 0.138,
+            "hex": "#F3DFFF",
+            "deltaE": 0.0085
+          }
         },
         "200": {
           "oklch": {
@@ -11626,7 +13524,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P84.200"
+          "id": "P84.200",
+          "alpha": {
+            "over": "white",
+            "source": "#A61AFF",
+            "alpha": 0.192,
+            "hex": "#EED3FF",
+            "deltaE": 0.0111
+          }
         },
         "250": {
           "oklch": {
@@ -11667,7 +13572,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P84.250"
+          "id": "P84.250",
+          "alpha": {
+            "over": "white",
+            "source": "#A61AFF",
+            "alpha": 0.248,
+            "hex": "#E9C6FF",
+            "deltaE": 0.0134
+          }
         },
         "300": {
           "oklch": {
@@ -11708,7 +13620,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P84.300"
+          "id": "P84.300",
+          "alpha": {
+            "over": "white",
+            "source": "#A61AFF",
+            "alpha": 0.306,
+            "hex": "#E4B9FF",
+            "deltaE": 0.0154
+          }
         },
         "350": {
           "oklch": {
@@ -11749,7 +13668,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P84.350"
+          "id": "P84.350",
+          "alpha": {
+            "over": "white",
+            "source": "#A61AFF",
+            "alpha": 0.366,
+            "hex": "#DEABFF",
+            "deltaE": 0.0171
+          }
         },
         "400": {
           "oklch": {
@@ -11790,7 +13716,14 @@
           },
           "clamped": true,
           "capped": false,
-          "id": "P84.400"
+          "id": "P84.400",
+          "alpha": {
+            "over": "white",
+            "source": "#A61AFF",
+            "alpha": 0.429,
+            "hex": "#D99DFF",
+            "deltaE": 0.0186
+          }
         },
         "450": {
           "oklch": {
@@ -11831,7 +13764,14 @@
           },
           "clamped": true,
           "capped": false,
-          "id": "P84.450"
+          "id": "P84.450",
+          "alpha": {
+            "over": "white",
+            "source": "#A61AFF",
+            "alpha": 0.495,
+            "hex": "#D38DFF",
+            "deltaE": 0.02
+          }
         },
         "500": {
           "oklch": {
@@ -11872,7 +13812,14 @@
           },
           "clamped": true,
           "capped": false,
-          "id": "P84.500"
+          "id": "P84.500",
+          "alpha": {
+            "over": "white",
+            "source": "#A61AFF",
+            "alpha": 0.565,
+            "hex": "#CD7DFF",
+            "deltaE": 0.0208
+          }
         },
         "550": {
           "oklch": {
@@ -11913,7 +13860,14 @@
           },
           "clamped": true,
           "capped": false,
-          "id": "P84.550"
+          "id": "P84.550",
+          "alpha": {
+            "over": "white",
+            "source": "#A619FF",
+            "alpha": 0.642,
+            "hex": "#C66CFF",
+            "deltaE": 0.0205
+          }
         },
         "600": {
           "oklch": {
@@ -11954,7 +13908,14 @@
           },
           "clamped": true,
           "capped": false,
-          "id": "P84.600"
+          "id": "P84.600",
+          "alpha": {
+            "over": "white",
+            "source": "#A619FF",
+            "alpha": 0.729,
+            "hex": "#BE57FF",
+            "deltaE": 0.0186
+          }
         },
         "650": {
           "oklch": {
@@ -11995,7 +13956,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P84.650"
+          "id": "P84.650",
+          "alpha": {
+            "over": "white",
+            "source": "#A619FF",
+            "alpha": 0.835,
+            "hex": "#B53FFF",
+            "deltaE": 0.014
+          }
         },
         "700": {
           "oklch": {
@@ -12036,7 +14004,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P84.700"
+          "id": "P84.700",
+          "alpha": {
+            "over": "white",
+            "source": "#A719FF",
+            "alpha": 1,
+            "hex": "#A719FF",
+            "deltaE": 0
+          }
         },
         "750": {
           "oklch": {
@@ -12077,7 +14052,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P84.750"
+          "id": "P84.750",
+          "alpha": {
+            "over": "black",
+            "source": "#A718FF",
+            "alpha": 0.927,
+            "hex": "#9B17EC",
+            "deltaE": 0.0137
+          }
         },
         "800": {
           "oklch": {
@@ -12118,7 +14100,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P84.800"
+          "id": "P84.800",
+          "alpha": {
+            "over": "black",
+            "source": "#A718FF",
+            "alpha": 0.801,
+            "hex": "#8613CC",
+            "deltaE": 0.0102
+          }
         },
         "850": {
           "oklch": {
@@ -12159,7 +14148,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P84.850"
+          "id": "P84.850",
+          "alpha": {
+            "over": "black",
+            "source": "#A817FF",
+            "alpha": 0.669,
+            "hex": "#7010AB",
+            "deltaE": 0.007
+          }
         },
         "900": {
           "oklch": {
@@ -12200,7 +14196,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P84.900"
+          "id": "P84.900",
+          "alpha": {
+            "over": "black",
+            "source": "#A817FF",
+            "alpha": 0.534,
+            "hex": "#5A0C88",
+            "deltaE": 0.0066
+          }
         },
         "950": {
           "oklch": {
@@ -12241,7 +14244,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P84.950"
+          "id": "P84.950",
+          "alpha": {
+            "over": "black",
+            "source": "#A916FF",
+            "alpha": 0.347,
+            "hex": "#3B0859",
+            "deltaE": 0.0066
+          }
         }
       }
     },
@@ -12263,6 +14273,7 @@
         "step": 600,
         "cuspStep": 600
       },
+      "alphaPivot": 600,
       "wavelength": {
         "nm": 555,
         "purity": null,
@@ -12313,7 +14324,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P89.050"
+          "id": "P89.050",
+          "alpha": {
+            "over": "white",
+            "source": "#E904FF",
+            "alpha": 0.032,
+            "hex": "#FEF7FF",
+            "deltaE": 0.0013
+          }
         },
         "100": {
           "oklch": {
@@ -12354,7 +14372,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P89.100"
+          "id": "P89.100",
+          "alpha": {
+            "over": "white",
+            "source": "#E904FF",
+            "alpha": 0.082,
+            "hex": "#FDEAFF",
+            "deltaE": 0.0024
+          }
         },
         "150": {
           "oklch": {
@@ -12395,7 +14420,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P89.150"
+          "id": "P89.150",
+          "alpha": {
+            "over": "white",
+            "source": "#E904FF",
+            "alpha": 0.135,
+            "hex": "#FCDDFF",
+            "deltaE": 0.0026
+          }
         },
         "200": {
           "oklch": {
@@ -12436,7 +14468,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P89.200"
+          "id": "P89.200",
+          "alpha": {
+            "over": "white",
+            "source": "#E904FF",
+            "alpha": 0.19,
+            "hex": "#FBCFFF",
+            "deltaE": 0.0025
+          }
         },
         "250": {
           "oklch": {
@@ -12477,7 +14516,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P89.250"
+          "id": "P89.250",
+          "alpha": {
+            "over": "white",
+            "source": "#E904FF",
+            "alpha": 0.248,
+            "hex": "#FAC1FF",
+            "deltaE": 0.0025
+          }
         },
         "300": {
           "oklch": {
@@ -12518,7 +14564,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P89.300"
+          "id": "P89.300",
+          "alpha": {
+            "over": "white",
+            "source": "#E904FF",
+            "alpha": 0.31,
+            "hex": "#F8B1FF",
+            "deltaE": 0.0023
+          }
         },
         "350": {
           "oklch": {
@@ -12559,7 +14612,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P89.350"
+          "id": "P89.350",
+          "alpha": {
+            "over": "white",
+            "source": "#E904FF",
+            "alpha": 0.376,
+            "hex": "#F7A0FF",
+            "deltaE": 0.0024
+          }
         },
         "400": {
           "oklch": {
@@ -12600,7 +14660,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P89.400"
+          "id": "P89.400",
+          "alpha": {
+            "over": "white",
+            "source": "#E904FF",
+            "alpha": 0.448,
+            "hex": "#F58EFF",
+            "deltaE": 0.0025
+          }
         },
         "450": {
           "oklch": {
@@ -12641,7 +14708,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P89.450"
+          "id": "P89.450",
+          "alpha": {
+            "over": "white",
+            "source": "#E904FF",
+            "alpha": 0.528,
+            "hex": "#F37AFF",
+            "deltaE": 0.0029
+          }
         },
         "500": {
           "oklch": {
@@ -12682,7 +14756,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P89.500"
+          "id": "P89.500",
+          "alpha": {
+            "over": "white",
+            "source": "#E904FF",
+            "alpha": 0.62,
+            "hex": "#F163FF",
+            "deltaE": 0.0037
+          }
         },
         "550": {
           "oklch": {
@@ -12723,7 +14804,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P89.550"
+          "id": "P89.550",
+          "alpha": {
+            "over": "white",
+            "source": "#E903FF",
+            "alpha": 0.738,
+            "hex": "#EF45FF",
+            "deltaE": 0.0044
+          }
         },
         "600": {
           "oklch": {
@@ -12764,7 +14852,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P89.600"
+          "id": "P89.600",
+          "alpha": {
+            "over": "white",
+            "source": "#EA02FF",
+            "alpha": 1,
+            "hex": "#EA02FF",
+            "deltaE": 0
+          }
         },
         "650": {
           "oklch": {
@@ -12805,7 +14900,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P89.650"
+          "id": "P89.650",
+          "alpha": {
+            "over": "black",
+            "source": "#EA00FF",
+            "alpha": 0.944,
+            "hex": "#DD00F1",
+            "deltaE": 0.0071
+          }
         },
         "700": {
           "oklch": {
@@ -12846,7 +14948,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P89.700"
+          "id": "P89.700",
+          "alpha": {
+            "over": "black",
+            "source": "#EB00FF",
+            "alpha": 0.848,
+            "hex": "#C700D8",
+            "deltaE": 0.0053
+          }
         },
         "750": {
           "oklch": {
@@ -12887,7 +14996,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P89.750"
+          "id": "P89.750",
+          "alpha": {
+            "over": "black",
+            "source": "#EB00FF",
+            "alpha": 0.748,
+            "hex": "#B000BF",
+            "deltaE": 0.0035
+          }
         },
         "800": {
           "oklch": {
@@ -12928,7 +15044,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P89.800"
+          "id": "P89.800",
+          "alpha": {
+            "over": "black",
+            "source": "#EC00FF",
+            "alpha": 0.645,
+            "hex": "#9800A4",
+            "deltaE": 0.0035
+          }
         },
         "850": {
           "oklch": {
@@ -12969,7 +15092,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P89.850"
+          "id": "P89.850",
+          "alpha": {
+            "over": "black",
+            "source": "#ED00FF",
+            "alpha": 0.536,
+            "hex": "#7F0089",
+            "deltaE": 0.0078
+          }
         },
         "900": {
           "oklch": {
@@ -13010,7 +15140,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P89.900"
+          "id": "P89.900",
+          "alpha": {
+            "over": "black",
+            "source": "#EE00FD",
+            "alpha": 0.429,
+            "hex": "#66006D",
+            "deltaE": 0.0116
+          }
         },
         "950": {
           "oklch": {
@@ -13051,7 +15188,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P89.950"
+          "id": "P89.950",
+          "alpha": {
+            "over": "black",
+            "source": "#F000FA",
+            "alpha": 0.279,
+            "hex": "#430046",
+            "deltaE": 0.0128
+          }
         }
       }
     },
@@ -13073,6 +15217,7 @@
         "step": 600,
         "cuspStep": 600
       },
+      "alphaPivot": 600,
       "wavelength": {
         "nm": 501,
         "purity": null,
@@ -13123,7 +15268,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R98.050"
+          "id": "R98.050",
+          "alpha": {
+            "over": "white",
+            "source": "#F53D9B",
+            "alpha": 0.042,
+            "hex": "#FFF7FB",
+            "deltaE": 0.0027
+          }
         },
         "100": {
           "oklch": {
@@ -13164,7 +15316,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R98.100"
+          "id": "R98.100",
+          "alpha": {
+            "over": "white",
+            "source": "#F53D9B",
+            "alpha": 0.108,
+            "hex": "#FEEAF4",
+            "deltaE": 0.0063
+          }
         },
         "150": {
           "oklch": {
@@ -13205,7 +15364,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R98.150"
+          "id": "R98.150",
+          "alpha": {
+            "over": "white",
+            "source": "#F53D9B",
+            "alpha": 0.176,
+            "hex": "#FDDDED",
+            "deltaE": 0.0093
+          }
         },
         "200": {
           "oklch": {
@@ -13246,7 +15412,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R98.200"
+          "id": "R98.200",
+          "alpha": {
+            "over": "white",
+            "source": "#F53D9B",
+            "alpha": 0.246,
+            "hex": "#FCCFE6",
+            "deltaE": 0.0117
+          }
         },
         "250": {
           "oklch": {
@@ -13287,7 +15460,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R98.250"
+          "id": "R98.250",
+          "alpha": {
+            "over": "white",
+            "source": "#F53D9B",
+            "alpha": 0.319,
+            "hex": "#FCC1DF",
+            "deltaE": 0.0136
+          }
         },
         "300": {
           "oklch": {
@@ -13328,7 +15508,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R98.300"
+          "id": "R98.300",
+          "alpha": {
+            "over": "white",
+            "source": "#F53D9B",
+            "alpha": 0.395,
+            "hex": "#FBB2D8",
+            "deltaE": 0.0151
+          }
         },
         "350": {
           "oklch": {
@@ -13369,7 +15556,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R98.350"
+          "id": "R98.350",
+          "alpha": {
+            "over": "white",
+            "source": "#F53D9B",
+            "alpha": 0.476,
+            "hex": "#FAA3D0",
+            "deltaE": 0.016
+          }
         },
         "400": {
           "oklch": {
@@ -13410,7 +15604,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R98.400"
+          "id": "R98.400",
+          "alpha": {
+            "over": "white",
+            "source": "#F53D9B",
+            "alpha": 0.562,
+            "hex": "#F992C7",
+            "deltaE": 0.0162
+          }
         },
         "450": {
           "oklch": {
@@ -13451,7 +15652,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R98.450"
+          "id": "R98.450",
+          "alpha": {
+            "over": "white",
+            "source": "#F53D9B",
+            "alpha": 0.654,
+            "hex": "#F880BE",
+            "deltaE": 0.0156
+          }
         },
         "500": {
           "oklch": {
@@ -13492,7 +15700,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R98.500"
+          "id": "R98.500",
+          "alpha": {
+            "over": "white",
+            "source": "#F53D9B",
+            "alpha": 0.756,
+            "hex": "#F76CB4",
+            "deltaE": 0.0136
+          }
         },
         "550": {
           "oklch": {
@@ -13533,7 +15748,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R98.550"
+          "id": "R98.550",
+          "alpha": {
+            "over": "white",
+            "source": "#F53D9B",
+            "alpha": 0.881,
+            "hex": "#F654A7",
+            "deltaE": 0.0121
+          }
         },
         "600": {
           "oklch": {
@@ -13574,7 +15796,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R98.600"
+          "id": "R98.600",
+          "alpha": {
+            "over": "white",
+            "source": "#F53D9A",
+            "alpha": 1,
+            "hex": "#F53D9A",
+            "deltaE": 0
+          }
         },
         "650": {
           "oklch": {
@@ -13615,7 +15844,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R98.650"
+          "id": "R98.650",
+          "alpha": {
+            "over": "black",
+            "source": "#F53C99",
+            "alpha": 0.918,
+            "hex": "#E1388C",
+            "deltaE": 0.0029
+          }
         },
         "700": {
           "oklch": {
@@ -13656,7 +15892,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R98.700"
+          "id": "R98.700",
+          "alpha": {
+            "over": "black",
+            "source": "#F63C98",
+            "alpha": 0.832,
+            "hex": "#CC327E",
+            "deltaE": 0.0048
+          }
         },
         "750": {
           "oklch": {
@@ -13697,7 +15940,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R98.750"
+          "id": "R98.750",
+          "alpha": {
+            "over": "black",
+            "source": "#F63C96",
+            "alpha": 0.741,
+            "hex": "#B62C6F",
+            "deltaE": 0.0062
+          }
         },
         "800": {
           "oklch": {
@@ -13738,7 +15988,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R98.800"
+          "id": "R98.800",
+          "alpha": {
+            "over": "black",
+            "source": "#F73C94",
+            "alpha": 0.646,
+            "hex": "#9F2660",
+            "deltaE": 0.0068
+          }
         },
         "850": {
           "oklch": {
@@ -13779,7 +16036,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R98.850"
+          "id": "R98.850",
+          "alpha": {
+            "over": "black",
+            "source": "#F73B92",
+            "alpha": 0.544,
+            "hex": "#87204F",
+            "deltaE": 0.0074
+          }
         },
         "900": {
           "oklch": {
@@ -13820,7 +16084,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R98.900"
+          "id": "R98.900",
+          "alpha": {
+            "over": "black",
+            "source": "#F83B8F",
+            "alpha": 0.438,
+            "hex": "#6D1A3F",
+            "deltaE": 0.0079
+          }
         },
         "950": {
           "oklch": {
@@ -13861,7 +16132,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R98.950"
+          "id": "R98.950",
+          "alpha": {
+            "over": "black",
+            "source": "#F93A8A",
+            "alpha": 0.286,
+            "hex": "#471127",
+            "deltaE": 0.0108
+          }
         }
       }
     },
@@ -13883,6 +16161,7 @@
         "step": 600,
         "cuspStep": 600
       },
+      "alphaPivot": 600,
       "wavelength": {
         "nm": 630,
         "purity": 0.407,
@@ -13933,7 +16212,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R05.050"
+          "id": "R05.050",
+          "alpha": {
+            "over": "white",
+            "source": "#FF2A5B",
+            "alpha": 0.039,
+            "hex": "#FFF7F9",
+            "deltaE": 0.0029
+          }
         },
         "100": {
           "oklch": {
@@ -13974,7 +16260,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R05.100"
+          "id": "R05.100",
+          "alpha": {
+            "over": "white",
+            "source": "#FF2A5B",
+            "alpha": 0.101,
+            "hex": "#FFEAEE",
+            "deltaE": 0.0073
+          }
         },
         "150": {
           "oklch": {
@@ -14015,7 +16308,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R05.150"
+          "id": "R05.150",
+          "alpha": {
+            "over": "white",
+            "source": "#FF2A5B",
+            "alpha": 0.165,
+            "hex": "#FFDCE4",
+            "deltaE": 0.0117
+          }
         },
         "200": {
           "oklch": {
@@ -14056,7 +16356,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R05.200"
+          "id": "R05.200",
+          "alpha": {
+            "over": "white",
+            "source": "#FF2A5B",
+            "alpha": 0.231,
+            "hex": "#FFCED9",
+            "deltaE": 0.016
+          }
         },
         "250": {
           "oklch": {
@@ -14097,7 +16404,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R05.250"
+          "id": "R05.250",
+          "alpha": {
+            "over": "white",
+            "source": "#FF2A5B",
+            "alpha": 0.301,
+            "hex": "#FFBFCE",
+            "deltaE": 0.0201
+          }
         },
         "300": {
           "oklch": {
@@ -14138,7 +16452,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R05.300"
+          "id": "R05.300",
+          "alpha": {
+            "over": "white",
+            "source": "#FF2A5B",
+            "alpha": 0.375,
+            "hex": "#FFAFC2",
+            "deltaE": 0.0237
+          }
         },
         "350": {
           "oklch": {
@@ -14179,7 +16500,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R05.350"
+          "id": "R05.350",
+          "alpha": {
+            "over": "white",
+            "source": "#FF2A5B",
+            "alpha": 0.452,
+            "hex": "#FF9FB5",
+            "deltaE": 0.0267
+          }
         },
         "400": {
           "oklch": {
@@ -14220,7 +16548,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R05.400"
+          "id": "R05.400",
+          "alpha": {
+            "over": "white",
+            "source": "#FF2A5B",
+            "alpha": 0.535,
+            "hex": "#FF8DA7",
+            "deltaE": 0.0286
+          }
         },
         "450": {
           "oklch": {
@@ -14261,7 +16596,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R05.450"
+          "id": "R05.450",
+          "alpha": {
+            "over": "white",
+            "source": "#FF2A5B",
+            "alpha": 0.623,
+            "hex": "#FF7A99",
+            "deltaE": 0.0287
+          }
         },
         "500": {
           "oklch": {
@@ -14302,7 +16644,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R05.500"
+          "id": "R05.500",
+          "alpha": {
+            "over": "white",
+            "source": "#FF2A5B",
+            "alpha": 0.722,
+            "hex": "#FF6589",
+            "deltaE": 0.0261
+          }
         },
         "550": {
           "oklch": {
@@ -14343,7 +16692,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R05.550"
+          "id": "R05.550",
+          "alpha": {
+            "over": "white",
+            "source": "#FF2A5B",
+            "alpha": 0.838,
+            "hex": "#FF4C76",
+            "deltaE": 0.0183
+          }
         },
         "600": {
           "oklch": {
@@ -14384,7 +16740,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R05.600"
+          "id": "R05.600",
+          "alpha": {
+            "over": "white",
+            "source": "#FF2A5B",
+            "alpha": 1,
+            "hex": "#FF2A5B",
+            "deltaE": 0
+          }
         },
         "650": {
           "oklch": {
@@ -14425,7 +16788,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R05.650"
+          "id": "R05.650",
+          "alpha": {
+            "over": "black",
+            "source": "#FF2A5A",
+            "alpha": 0.943,
+            "hex": "#F12855",
+            "deltaE": 0.0104
+          }
         },
         "700": {
           "oklch": {
@@ -14466,7 +16836,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R05.700"
+          "id": "R05.700",
+          "alpha": {
+            "over": "black",
+            "source": "#FF2A59",
+            "alpha": 0.854,
+            "hex": "#DA244C",
+            "deltaE": 0.0102
+          }
         },
         "750": {
           "oklch": {
@@ -14507,7 +16884,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R05.750"
+          "id": "R05.750",
+          "alpha": {
+            "over": "black",
+            "source": "#FF2A58",
+            "alpha": 0.761,
+            "hex": "#C22043",
+            "deltaE": 0.0096
+          }
         },
         "800": {
           "oklch": {
@@ -14548,7 +16932,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R05.800"
+          "id": "R05.800",
+          "alpha": {
+            "over": "black",
+            "source": "#FF2A57",
+            "alpha": 0.663,
+            "hex": "#A91C3A",
+            "deltaE": 0.0086
+          }
         },
         "850": {
           "oklch": {
@@ -14589,7 +16980,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R05.850"
+          "id": "R05.850",
+          "alpha": {
+            "over": "black",
+            "source": "#FF2A56",
+            "alpha": 0.558,
+            "hex": "#8E1830",
+            "deltaE": 0.0078
+          }
         },
         "900": {
           "oklch": {
@@ -14630,7 +17028,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R05.900"
+          "id": "R05.900",
+          "alpha": {
+            "over": "black",
+            "source": "#FF2B54",
+            "alpha": 0.45,
+            "hex": "#731326",
+            "deltaE": 0.0075
+          }
         },
         "950": {
           "oklch": {
@@ -14671,7 +17076,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R05.950"
+          "id": "R05.950",
+          "alpha": {
+            "over": "black",
+            "source": "#FF2B51",
+            "alpha": 0.294,
+            "hex": "#4B0D18",
+            "deltaE": 0.0092
+          }
         }
       }
     },
@@ -14693,6 +17105,7 @@
         "step": 700,
         "cuspStep": 700
       },
+      "alphaPivot": 500,
       "wavelength": {
         "nm": 477,
         "purity": 0.197,
@@ -14743,7 +17156,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N72.050"
+          "id": "N72.050",
+          "alpha": {
+            "over": "white",
+            "source": "#8DA1BF",
+            "alpha": 0.063,
+            "hex": "#F8F9FB",
+            "deltaE": 0.0005
+          }
         },
         "100": {
           "oklch": {
@@ -14784,7 +17204,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N72.100"
+          "id": "N72.100",
+          "alpha": {
+            "over": "white",
+            "source": "#8DA1BF",
+            "alpha": 0.159,
+            "hex": "#EDF0F5",
+            "deltaE": 0.0012
+          }
         },
         "150": {
           "oklch": {
@@ -14825,7 +17252,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N72.150"
+          "id": "N72.150",
+          "alpha": {
+            "over": "white",
+            "source": "#8DA1BF",
+            "alpha": 0.257,
+            "hex": "#E2E7EE",
+            "deltaE": 0.0015
+          }
         },
         "200": {
           "oklch": {
@@ -14866,7 +17300,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N72.200"
+          "id": "N72.200",
+          "alpha": {
+            "over": "white",
+            "source": "#8DA1BF",
+            "alpha": 0.356,
+            "hex": "#D6DEE8",
+            "deltaE": 0.0016
+          }
         },
         "250": {
           "oklch": {
@@ -14907,7 +17348,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N72.250"
+          "id": "N72.250",
+          "alpha": {
+            "over": "white",
+            "source": "#8DA1BF",
+            "alpha": 0.458,
+            "hex": "#CBD4E2",
+            "deltaE": 0.0016
+          }
         },
         "300": {
           "oklch": {
@@ -14948,7 +17396,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N72.300"
+          "id": "N72.300",
+          "alpha": {
+            "over": "white",
+            "source": "#8DA1BF",
+            "alpha": 0.561,
+            "hex": "#BFCADB",
+            "deltaE": 0.0013
+          }
         },
         "350": {
           "oklch": {
@@ -14989,7 +17444,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N72.350"
+          "id": "N72.350",
+          "alpha": {
+            "over": "white",
+            "source": "#8DA1BF",
+            "alpha": 0.667,
+            "hex": "#B3C0D4",
+            "deltaE": 0.0009
+          }
         },
         "400": {
           "oklch": {
@@ -15030,7 +17492,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N72.400"
+          "id": "N72.400",
+          "alpha": {
+            "over": "white",
+            "source": "#8DA1BF",
+            "alpha": 0.775,
+            "hex": "#A6B6CD",
+            "deltaE": 0.0006
+          }
         },
         "450": {
           "oklch": {
@@ -15071,7 +17540,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N72.450"
+          "id": "N72.450",
+          "alpha": {
+            "over": "white",
+            "source": "#8DA1BF",
+            "alpha": 0.886,
+            "hex": "#9AACC6",
+            "deltaE": 0.0003
+          }
         },
         "500": {
           "oklch": {
@@ -15112,7 +17588,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N72.500"
+          "id": "N72.500",
+          "alpha": {
+            "over": "white",
+            "source": "#8DA1BF",
+            "alpha": 1,
+            "hex": "#8DA1BF",
+            "deltaE": 0
+          }
         },
         "550": {
           "oklch": {
@@ -15153,7 +17636,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N72.550"
+          "id": "N72.550",
+          "alpha": {
+            "over": "black",
+            "source": "#8DA1BF",
+            "alpha": 0.937,
+            "hex": "#8497B3",
+            "deltaE": 0.0089
+          }
         },
         "600": {
           "oklch": {
@@ -15194,7 +17684,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N72.600"
+          "id": "N72.600",
+          "alpha": {
+            "over": "black",
+            "source": "#8DA1BF",
+            "alpha": 0.872,
+            "hex": "#7B8DA6",
+            "deltaE": 0.0179
+          }
         },
         "650": {
           "oklch": {
@@ -15235,7 +17732,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N72.650"
+          "id": "N72.650",
+          "alpha": {
+            "over": "black",
+            "source": "#8DA1BF",
+            "alpha": 0.804,
+            "hex": "#728299",
+            "deltaE": 0.0266
+          }
         },
         "700": {
           "oklch": {
@@ -15276,7 +17780,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N72.700"
+          "id": "N72.700",
+          "alpha": {
+            "over": "black",
+            "source": "#8EA1BF",
+            "alpha": 0.734,
+            "hex": "#68768C",
+            "deltaE": 0.0351
+          }
         },
         "750": {
           "oklch": {
@@ -15317,7 +17828,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N72.750"
+          "id": "N72.750",
+          "alpha": {
+            "over": "black",
+            "source": "#8EA1BF",
+            "alpha": 0.651,
+            "hex": "#5C697C",
+            "deltaE": 0.0324
+          }
         },
         "800": {
           "oklch": {
@@ -15358,7 +17876,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N72.800"
+          "id": "N72.800",
+          "alpha": {
+            "over": "black",
+            "source": "#8EA1BF",
+            "alpha": 0.566,
+            "hex": "#515B6C",
+            "deltaE": 0.0296
+          }
         },
         "850": {
           "oklch": {
@@ -15399,7 +17924,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N72.850"
+          "id": "N72.850",
+          "alpha": {
+            "over": "black",
+            "source": "#8FA1BF",
+            "alpha": 0.475,
+            "hex": "#444C5B",
+            "deltaE": 0.0272
+          }
         },
         "900": {
           "oklch": {
@@ -15440,7 +17972,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N72.900"
+          "id": "N72.900",
+          "alpha": {
+            "over": "black",
+            "source": "#90A0BF",
+            "alpha": 0.381,
+            "hex": "#373D49",
+            "deltaE": 0.0253
+          }
         },
         "950": {
           "oklch": {
@@ -15481,7 +18020,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N72.950"
+          "id": "N72.950",
+          "alpha": {
+            "over": "black",
+            "source": "#91A0BF",
+            "alpha": 0.245,
+            "hex": "#23272F",
+            "deltaE": 0.0231
+          }
         }
       }
     },
@@ -15503,6 +18049,7 @@
         "step": 800,
         "cuspStep": 800
       },
+      "alphaPivot": 500,
       "wavelength": {
         "nm": 476,
         "purity": 0.088,
@@ -15553,7 +18100,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N73.050"
+          "id": "N73.050",
+          "alpha": {
+            "over": "white",
+            "source": "#99A0AE",
+            "alpha": 0.064,
+            "hex": "#F9F9FA",
+            "deltaE": 0.0003
+          }
         },
         "100": {
           "oklch": {
@@ -15594,7 +18148,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N73.100"
+          "id": "N73.100",
+          "alpha": {
+            "over": "white",
+            "source": "#99A0AE",
+            "alpha": 0.161,
+            "hex": "#EFF0F2",
+            "deltaE": 0.0006
+          }
         },
         "150": {
           "oklch": {
@@ -15635,7 +18196,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N73.150"
+          "id": "N73.150",
+          "alpha": {
+            "over": "white",
+            "source": "#99A0AE",
+            "alpha": 0.259,
+            "hex": "#E5E6EA",
+            "deltaE": 0.0007
+          }
         },
         "200": {
           "oklch": {
@@ -15676,7 +18244,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N73.200"
+          "id": "N73.200",
+          "alpha": {
+            "over": "white",
+            "source": "#99A0AE",
+            "alpha": 0.358,
+            "hex": "#DADDE2",
+            "deltaE": 0.0007
+          }
         },
         "250": {
           "oklch": {
@@ -15717,7 +18292,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N73.250"
+          "id": "N73.250",
+          "alpha": {
+            "over": "white",
+            "source": "#99A0AE",
+            "alpha": 0.46,
+            "hex": "#D0D3DA",
+            "deltaE": 0.0008
+          }
         },
         "300": {
           "oklch": {
@@ -15758,7 +18340,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N73.300"
+          "id": "N73.300",
+          "alpha": {
+            "over": "white",
+            "source": "#99A0AE",
+            "alpha": 0.564,
+            "hex": "#C6C9D1",
+            "deltaE": 0.0007
+          }
         },
         "350": {
           "oklch": {
@@ -15799,7 +18388,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N73.350"
+          "id": "N73.350",
+          "alpha": {
+            "over": "white",
+            "source": "#99A0AE",
+            "alpha": 0.669,
+            "hex": "#BBBFC9",
+            "deltaE": 0.0005
+          }
         },
         "400": {
           "oklch": {
@@ -15840,7 +18436,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N73.400"
+          "id": "N73.400",
+          "alpha": {
+            "over": "white",
+            "source": "#99A0AE",
+            "alpha": 0.777,
+            "hex": "#B0B5C0",
+            "deltaE": 0.0003
+          }
         },
         "450": {
           "oklch": {
@@ -15881,7 +18484,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N73.450"
+          "id": "N73.450",
+          "alpha": {
+            "over": "white",
+            "source": "#99A0AE",
+            "alpha": 0.887,
+            "hex": "#A5ABB7",
+            "deltaE": 0.0001
+          }
         },
         "500": {
           "oklch": {
@@ -15922,7 +18532,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N73.500"
+          "id": "N73.500",
+          "alpha": {
+            "over": "white",
+            "source": "#99A0AE",
+            "alpha": 1,
+            "hex": "#99A0AE",
+            "deltaE": 0
+          }
         },
         "550": {
           "oklch": {
@@ -15963,7 +18580,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N73.550"
+          "id": "N73.550",
+          "alpha": {
+            "over": "black",
+            "source": "#99A0AE",
+            "alpha": 0.934,
+            "hex": "#8F95A2",
+            "deltaE": 0.0048
+          }
         },
         "600": {
           "oklch": {
@@ -16004,7 +18628,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N73.600"
+          "id": "N73.600",
+          "alpha": {
+            "over": "black",
+            "source": "#99A0AE",
+            "alpha": 0.867,
+            "hex": "#858B97",
+            "deltaE": 0.0099
+          }
         },
         "650": {
           "oklch": {
@@ -16045,7 +18676,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N73.650"
+          "id": "N73.650",
+          "alpha": {
+            "over": "black",
+            "source": "#99A0AE",
+            "alpha": 0.797,
+            "hex": "#7A7F8A",
+            "deltaE": 0.0152
+          }
         },
         "700": {
           "oklch": {
@@ -16086,7 +18724,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N73.700"
+          "id": "N73.700",
+          "alpha": {
+            "over": "black",
+            "source": "#99A0AE",
+            "alpha": 0.724,
+            "hex": "#6F747E",
+            "deltaE": 0.0208
+          }
         },
         "750": {
           "oklch": {
@@ -16127,7 +18772,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N73.750"
+          "id": "N73.750",
+          "alpha": {
+            "over": "black",
+            "source": "#99A0AE",
+            "alpha": 0.648,
+            "hex": "#636871",
+            "deltaE": 0.0268
+          }
         },
         "800": {
           "oklch": {
@@ -16168,7 +18820,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N73.800"
+          "id": "N73.800",
+          "alpha": {
+            "over": "black",
+            "source": "#9AA0AE",
+            "alpha": 0.567,
+            "hex": "#575B62",
+            "deltaE": 0.0304
+          }
         },
         "850": {
           "oklch": {
@@ -16209,7 +18868,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N73.850"
+          "id": "N73.850",
+          "alpha": {
+            "over": "black",
+            "source": "#9AA0AE",
+            "alpha": 0.475,
+            "hex": "#494C52",
+            "deltaE": 0.0268
+          }
         },
         "900": {
           "oklch": {
@@ -16250,7 +18916,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N73.900"
+          "id": "N73.900",
+          "alpha": {
+            "over": "black",
+            "source": "#9AA0AE",
+            "alpha": 0.38,
+            "hex": "#3A3D42",
+            "deltaE": 0.0229
+          }
         },
         "950": {
           "oklch": {
@@ -16291,7 +18964,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N73.950"
+          "id": "N73.950",
+          "alpha": {
+            "over": "black",
+            "source": "#9AA0AE",
+            "alpha": 0.242,
+            "hex": "#25272A",
+            "deltaE": 0.0177
+          }
         }
       }
     },
@@ -16313,6 +18993,7 @@
         "step": 750,
         "cuspStep": 750
       },
+      "alphaPivot": 500,
       "wavelength": {
         "nm": 464,
         "purity": 0.037,
@@ -16363,7 +19044,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N79.050"
+          "id": "N79.050",
+          "alpha": {
+            "over": "white",
+            "source": "#9F9FA6",
+            "alpha": 0.064,
+            "hex": "#F9F9F9",
+            "deltaE": 0.0001
+          }
         },
         "100": {
           "oklch": {
@@ -16404,7 +19092,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N79.100"
+          "id": "N79.100",
+          "alpha": {
+            "over": "white",
+            "source": "#9F9FA6",
+            "alpha": 0.161,
+            "hex": "#F0F0F1",
+            "deltaE": 0.0003
+          }
         },
         "150": {
           "oklch": {
@@ -16445,7 +19140,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N79.150"
+          "id": "N79.150",
+          "alpha": {
+            "over": "white",
+            "source": "#9F9FA6",
+            "alpha": 0.259,
+            "hex": "#E6E6E8",
+            "deltaE": 0.0004
+          }
         },
         "200": {
           "oklch": {
@@ -16486,7 +19188,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N79.200"
+          "id": "N79.200",
+          "alpha": {
+            "over": "white",
+            "source": "#9F9FA6",
+            "alpha": 0.358,
+            "hex": "#DDDDDF",
+            "deltaE": 0.0004
+          }
         },
         "250": {
           "oklch": {
@@ -16527,7 +19236,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N79.250"
+          "id": "N79.250",
+          "alpha": {
+            "over": "white",
+            "source": "#9F9FA6",
+            "alpha": 0.46,
+            "hex": "#D3D3D6",
+            "deltaE": 0.0004
+          }
         },
         "300": {
           "oklch": {
@@ -16568,7 +19284,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N79.300"
+          "id": "N79.300",
+          "alpha": {
+            "over": "white",
+            "source": "#9F9FA6",
+            "alpha": 0.563,
+            "hex": "#C9C9CD",
+            "deltaE": 0.0003
+          }
         },
         "350": {
           "oklch": {
@@ -16609,7 +19332,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N79.350"
+          "id": "N79.350",
+          "alpha": {
+            "over": "white",
+            "source": "#9F9FA6",
+            "alpha": 0.669,
+            "hex": "#BFBFC4",
+            "deltaE": 0.0002
+          }
         },
         "400": {
           "oklch": {
@@ -16650,7 +19380,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N79.400"
+          "id": "N79.400",
+          "alpha": {
+            "over": "white",
+            "source": "#9F9FA6",
+            "alpha": 0.777,
+            "hex": "#B4B4BA",
+            "deltaE": 0.0002
+          }
         },
         "450": {
           "oklch": {
@@ -16691,7 +19428,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N79.450"
+          "id": "N79.450",
+          "alpha": {
+            "over": "white",
+            "source": "#9F9FA6",
+            "alpha": 0.887,
+            "hex": "#AAAAB0",
+            "deltaE": 0
+          }
         },
         "500": {
           "oklch": {
@@ -16732,7 +19476,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N79.500"
+          "id": "N79.500",
+          "alpha": {
+            "over": "white",
+            "source": "#9F9FA6",
+            "alpha": 1,
+            "hex": "#9F9FA6",
+            "deltaE": 0
+          }
         },
         "550": {
           "oklch": {
@@ -16773,7 +19524,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N79.550"
+          "id": "N79.550",
+          "alpha": {
+            "over": "black",
+            "source": "#9F9FA6",
+            "alpha": 0.933,
+            "hex": "#94949B",
+            "deltaE": 0.0025
+          }
         },
         "600": {
           "oklch": {
@@ -16814,7 +19572,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N79.600"
+          "id": "N79.600",
+          "alpha": {
+            "over": "black",
+            "source": "#9F9FA6",
+            "alpha": 0.864,
+            "hex": "#898990",
+            "deltaE": 0.005
+          }
         },
         "650": {
           "oklch": {
@@ -16855,7 +19620,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N79.650"
+          "id": "N79.650",
+          "alpha": {
+            "over": "black",
+            "source": "#9F9FA6",
+            "alpha": 0.793,
+            "hex": "#7E7E84",
+            "deltaE": 0.0076
+          }
         },
         "700": {
           "oklch": {
@@ -16896,7 +19668,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N79.700"
+          "id": "N79.700",
+          "alpha": {
+            "over": "black",
+            "source": "#9F9FA6",
+            "alpha": 0.719,
+            "hex": "#727278",
+            "deltaE": 0.0105
+          }
         },
         "750": {
           "oklch": {
@@ -16937,7 +19716,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N79.750"
+          "id": "N79.750",
+          "alpha": {
+            "over": "black",
+            "source": "#9F9FA6",
+            "alpha": 0.64,
+            "hex": "#66666A",
+            "deltaE": 0.0123
+          }
         },
         "800": {
           "oklch": {
@@ -16978,7 +19764,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N79.800"
+          "id": "N79.800",
+          "alpha": {
+            "over": "black",
+            "source": "#9F9FA6",
+            "alpha": 0.555,
+            "hex": "#58585C",
+            "deltaE": 0.0111
+          }
         },
         "850": {
           "oklch": {
@@ -17019,7 +19812,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N79.850"
+          "id": "N79.850",
+          "alpha": {
+            "over": "black",
+            "source": "#9F9FA6",
+            "alpha": 0.464,
+            "hex": "#4A4A4D",
+            "deltaE": 0.0098
+          }
         },
         "900": {
           "oklch": {
@@ -17060,7 +19860,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N79.900"
+          "id": "N79.900",
+          "alpha": {
+            "over": "black",
+            "source": "#9F9FA6",
+            "alpha": 0.371,
+            "hex": "#3B3B3E",
+            "deltaE": 0.0084
+          }
         },
         "950": {
           "oklch": {
@@ -17101,7 +19908,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N79.950"
+          "id": "N79.950",
+          "alpha": {
+            "over": "black",
+            "source": "#9F9FA6",
+            "alpha": 0.235,
+            "hex": "#252527",
+            "deltaE": 0.0066
+          }
         }
       }
     },
@@ -17123,6 +19937,7 @@
         "step": 550,
         "cuspStep": 550
       },
+      "alphaPivot": 500,
       "wavelength": {
         "nm": null,
         "purity": 0,
@@ -17170,7 +19985,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N00.050"
+          "id": "N00.050",
+          "alpha": {
+            "over": "white",
+            "source": "#A0A0A0",
+            "alpha": 0.063,
+            "hex": "#F9F9F9",
+            "deltaE": 0
+          }
         },
         "100": {
           "oklch": {
@@ -17211,7 +20033,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N00.100"
+          "id": "N00.100",
+          "alpha": {
+            "over": "white",
+            "source": "#A0A0A0",
+            "alpha": 0.16,
+            "hex": "#F0F0F0",
+            "deltaE": 0
+          }
         },
         "150": {
           "oklch": {
@@ -17252,7 +20081,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N00.150"
+          "id": "N00.150",
+          "alpha": {
+            "over": "white",
+            "source": "#A0A0A0",
+            "alpha": 0.258,
+            "hex": "#E6E6E6",
+            "deltaE": 0
+          }
         },
         "200": {
           "oklch": {
@@ -17293,7 +20129,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N00.200"
+          "id": "N00.200",
+          "alpha": {
+            "over": "white",
+            "source": "#A0A0A0",
+            "alpha": 0.358,
+            "hex": "#DDDDDD",
+            "deltaE": 0
+          }
         },
         "250": {
           "oklch": {
@@ -17334,7 +20177,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N00.250"
+          "id": "N00.250",
+          "alpha": {
+            "over": "white",
+            "source": "#A0A0A0",
+            "alpha": 0.46,
+            "hex": "#D3D3D3",
+            "deltaE": 0
+          }
         },
         "300": {
           "oklch": {
@@ -17375,7 +20225,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N00.300"
+          "id": "N00.300",
+          "alpha": {
+            "over": "white",
+            "source": "#A0A0A0",
+            "alpha": 0.563,
+            "hex": "#C9C9C9",
+            "deltaE": 0
+          }
         },
         "350": {
           "oklch": {
@@ -17416,7 +20273,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N00.350"
+          "id": "N00.350",
+          "alpha": {
+            "over": "white",
+            "source": "#A0A0A0",
+            "alpha": 0.669,
+            "hex": "#BFBFBF",
+            "deltaE": 0
+          }
         },
         "400": {
           "oklch": {
@@ -17457,7 +20321,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N00.400"
+          "id": "N00.400",
+          "alpha": {
+            "over": "white",
+            "source": "#A0A0A0",
+            "alpha": 0.777,
+            "hex": "#B5B5B5",
+            "deltaE": 0
+          }
         },
         "450": {
           "oklch": {
@@ -17498,7 +20369,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N00.450"
+          "id": "N00.450",
+          "alpha": {
+            "over": "white",
+            "source": "#A0A0A0",
+            "alpha": 0.887,
+            "hex": "#AAAAAA",
+            "deltaE": 0
+          }
         },
         "500": {
           "oklch": {
@@ -17539,7 +20417,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N00.500"
+          "id": "N00.500",
+          "alpha": {
+            "over": "white",
+            "source": "#A0A0A0",
+            "alpha": 1,
+            "hex": "#A0A0A0",
+            "deltaE": 0
+          }
         },
         "550": {
           "oklch": {
@@ -17580,7 +20465,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N00.550"
+          "id": "N00.550",
+          "alpha": {
+            "over": "black",
+            "source": "#A0A0A0",
+            "alpha": 0.931,
+            "hex": "#959595",
+            "deltaE": 0
+          }
         },
         "600": {
           "oklch": {
@@ -17621,7 +20513,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N00.600"
+          "id": "N00.600",
+          "alpha": {
+            "over": "black",
+            "source": "#A0A0A0",
+            "alpha": 0.859,
+            "hex": "#898989",
+            "deltaE": 0
+          }
         },
         "650": {
           "oklch": {
@@ -17662,7 +20561,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N00.650"
+          "id": "N00.650",
+          "alpha": {
+            "over": "black",
+            "source": "#A0A0A0",
+            "alpha": 0.785,
+            "hex": "#7D7D7D",
+            "deltaE": 0
+          }
         },
         "700": {
           "oklch": {
@@ -17703,7 +20609,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N00.700"
+          "id": "N00.700",
+          "alpha": {
+            "over": "black",
+            "source": "#A0A0A0",
+            "alpha": 0.709,
+            "hex": "#717171",
+            "deltaE": 0
+          }
         },
         "750": {
           "oklch": {
@@ -17744,7 +20657,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N00.750"
+          "id": "N00.750",
+          "alpha": {
+            "over": "black",
+            "source": "#A0A0A0",
+            "alpha": 0.629,
+            "hex": "#646464",
+            "deltaE": 0
+          }
         },
         "800": {
           "oklch": {
@@ -17785,7 +20705,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N00.800"
+          "id": "N00.800",
+          "alpha": {
+            "over": "black",
+            "source": "#A0A0A0",
+            "alpha": 0.545,
+            "hex": "#575757",
+            "deltaE": 0
+          }
         },
         "850": {
           "oklch": {
@@ -17826,7 +20753,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N00.850"
+          "id": "N00.850",
+          "alpha": {
+            "over": "black",
+            "source": "#A0A0A0",
+            "alpha": 0.456,
+            "hex": "#494949",
+            "deltaE": 0
+          }
         },
         "900": {
           "oklch": {
@@ -17867,7 +20801,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N00.900"
+          "id": "N00.900",
+          "alpha": {
+            "over": "black",
+            "source": "#A0A0A0",
+            "alpha": 0.364,
+            "hex": "#3A3A3A",
+            "deltaE": 0
+          }
         },
         "950": {
           "oklch": {
@@ -17908,7 +20849,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N00.950"
+          "id": "N00.950",
+          "alpha": {
+            "over": "black",
+            "source": "#A0A0A0",
+            "alpha": 0.23,
+            "hex": "#252525",
+            "deltaE": 0
+          }
         }
       }
     },
@@ -17930,6 +20878,7 @@
         "step": 400,
         "cuspStep": 400
       },
+      "alphaPivot": 500,
       "wavelength": {
         "nm": 583,
         "purity": 0.032,
@@ -17980,7 +20929,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N16.050"
+          "id": "N16.050",
+          "alpha": {
+            "over": "white",
+            "source": "#A39F9C",
+            "alpha": 0.063,
+            "hex": "#F9F9F9",
+            "deltaE": 0
+          }
         },
         "100": {
           "oklch": {
@@ -18021,7 +20977,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N16.100"
+          "id": "N16.100",
+          "alpha": {
+            "over": "white",
+            "source": "#A39F9C",
+            "alpha": 0.16,
+            "hex": "#F0F0EF",
+            "deltaE": 0.0001
+          }
         },
         "150": {
           "oklch": {
@@ -18062,7 +21025,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N16.150"
+          "id": "N16.150",
+          "alpha": {
+            "over": "white",
+            "source": "#A39F9C",
+            "alpha": 0.259,
+            "hex": "#E7E6E5",
+            "deltaE": 0.0002
+          }
         },
         "200": {
           "oklch": {
@@ -18103,7 +21073,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N16.200"
+          "id": "N16.200",
+          "alpha": {
+            "over": "white",
+            "source": "#A39F9C",
+            "alpha": 0.358,
+            "hex": "#DEDDDB",
+            "deltaE": 0.0005
+          }
         },
         "250": {
           "oklch": {
@@ -18144,7 +21121,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N16.250"
+          "id": "N16.250",
+          "alpha": {
+            "over": "white",
+            "source": "#A39F9C",
+            "alpha": 0.46,
+            "hex": "#D5D3D1",
+            "deltaE": 0.0007
+          }
         },
         "300": {
           "oklch": {
@@ -18185,7 +21169,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N16.300"
+          "id": "N16.300",
+          "alpha": {
+            "over": "white",
+            "source": "#A39F9C",
+            "alpha": 0.564,
+            "hex": "#CBC9C7",
+            "deltaE": 0.001
+          }
         },
         "350": {
           "oklch": {
@@ -18226,7 +21217,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N16.350"
+          "id": "N16.350",
+          "alpha": {
+            "over": "white",
+            "source": "#A39F9C",
+            "alpha": 0.67,
+            "hex": "#C2BFBD",
+            "deltaE": 0.0014
+          }
         },
         "400": {
           "oklch": {
@@ -18267,7 +21265,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N16.400"
+          "id": "N16.400",
+          "alpha": {
+            "over": "white",
+            "source": "#A39F9C",
+            "alpha": 0.778,
+            "hex": "#B8B4B2",
+            "deltaE": 0.002
+          }
         },
         "450": {
           "oklch": {
@@ -18308,7 +21313,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N16.450"
+          "id": "N16.450",
+          "alpha": {
+            "over": "white",
+            "source": "#A39F9C",
+            "alpha": 0.888,
+            "hex": "#AEAAA7",
+            "deltaE": 0.0012
+          }
         },
         "500": {
           "oklch": {
@@ -18349,7 +21361,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N16.500"
+          "id": "N16.500",
+          "alpha": {
+            "over": "white",
+            "source": "#A39F9C",
+            "alpha": 1,
+            "hex": "#A39F9C",
+            "deltaE": 0
+          }
         },
         "550": {
           "oklch": {
@@ -18390,7 +21409,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N16.550"
+          "id": "N16.550",
+          "alpha": {
+            "over": "black",
+            "source": "#A39F9C",
+            "alpha": 0.93,
+            "hex": "#989491",
+            "deltaE": 0.0009
+          }
         },
         "600": {
           "oklch": {
@@ -18431,7 +21457,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N16.600"
+          "id": "N16.600",
+          "alpha": {
+            "over": "black",
+            "source": "#A39F9C",
+            "alpha": 0.859,
+            "hex": "#8C8886",
+            "deltaE": 0.0016
+          }
         },
         "650": {
           "oklch": {
@@ -18472,7 +21505,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N16.650"
+          "id": "N16.650",
+          "alpha": {
+            "over": "black",
+            "source": "#A39F9C",
+            "alpha": 0.785,
+            "hex": "#807D7A",
+            "deltaE": 0.0023
+          }
         },
         "700": {
           "oklch": {
@@ -18513,7 +21553,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N16.700"
+          "id": "N16.700",
+          "alpha": {
+            "over": "black",
+            "source": "#A39F9C",
+            "alpha": 0.708,
+            "hex": "#74706E",
+            "deltaE": 0.003
+          }
         },
         "750": {
           "oklch": {
@@ -18554,7 +21601,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N16.750"
+          "id": "N16.750",
+          "alpha": {
+            "over": "black",
+            "source": "#A39F9C",
+            "alpha": 0.628,
+            "hex": "#676462",
+            "deltaE": 0.0036
+          }
         },
         "800": {
           "oklch": {
@@ -18595,7 +21649,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N16.800"
+          "id": "N16.800",
+          "alpha": {
+            "over": "black",
+            "source": "#A49F9C",
+            "alpha": 0.545,
+            "hex": "#595655",
+            "deltaE": 0.0041
+          }
         },
         "850": {
           "oklch": {
@@ -18636,7 +21697,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N16.850"
+          "id": "N16.850",
+          "alpha": {
+            "over": "black",
+            "source": "#A49F9C",
+            "alpha": 0.456,
+            "hex": "#4B4847",
+            "deltaE": 0.0044
+          }
         },
         "900": {
           "oklch": {
@@ -18677,7 +21745,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N16.900"
+          "id": "N16.900",
+          "alpha": {
+            "over": "black",
+            "source": "#A49F9D",
+            "alpha": 0.364,
+            "hex": "#3C3A39",
+            "deltaE": 0.0047
+          }
         },
         "950": {
           "oklch": {
@@ -18718,7 +21793,14 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N16.950"
+          "id": "N16.950",
+          "alpha": {
+            "over": "black",
+            "source": "#A49F9D",
+            "alpha": 0.23,
+            "hex": "#262524",
+            "deltaE": 0.0049
+          }
         }
       }
     }

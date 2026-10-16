@@ -137,6 +137,7 @@
         <button type="button" id="gamut-srgb" aria-pressed="false">sRGB</button>
       </div>
       <label class="ctl"><input type="checkbox" id="tinted" checked> Tinted text (nearest family step meeting Lc 75)</label>
+      <label class="ctl"><input type="checkbox" id="alpha"> Alpha blends (one colour per family over white or black)</label>
     </div>
   </header>
 
@@ -248,7 +249,7 @@ const $ = (id) => document.getElementById(id);
 const fmtL = (L) => Number(L).toFixed(3).replace(/^0/, '');
 const pad = (s) => String(s).padStart(3, '0');
 
-const state = { view: 'proposed', gamut: 'p3', tinted: true, selected: null, hidden: new Set(), spec: null, palettes: {} };
+const state = { view: 'proposed', gamut: 'p3', tinted: true, alpha: false, selected: null, hidden: new Set(), spec: null, palettes: {} };
 
 // Edits are kept in this browser against the repo spec they were made on; a rebuilt page with a different
 // repo spec starts from that spec, so a change in the repo is never hidden behind an old saved one.
@@ -305,6 +306,12 @@ function renderGrid() {
       const natural = !neutral && f.natural.step === s;
       const marks = star || natural ? `<span class="marks">${star}${natural ? `<span class="dot" title="natural step: cusp L ${fmtL(f.natural.L)}"></span>` : ''}</span>` : '';
       const title = inkFails(sw) ? ' title="no family step meets Lc 75; strongest shown"' : natural ? ` title="natural step: cusp L ${fmtL(f.natural.L)}"` : '';
+      if (state.alpha && sw.alpha) {
+        const a = sw.alpha;
+        const src = parseHex(a.source).rgb.map((c) => Math.round(c * 255)).join(' ');
+        rows.push(`<td class="c" style="background:${a.over}"><button type="button" class="sw${natural ? ' natural' : ''}" data-fam="${fam}" data-step="${s}" aria-pressed="${selected}" style="background:rgb(${src} / ${a.alpha});color:${inkFor(sw)}" aria-label="${fam} ${s}, ${a.source} at ${Math.round(a.alpha * 100)}% over ${a.over}" title="${a.source} at ${a.alpha} over ${a.over}; ΔE ${a.deltaE} from the true step">${marks}<span class="lc">${Math.round(a.alpha * 100)}%</span><span class="hex">Δ${a.deltaE.toFixed(3).replace(/^0/, '')}</span></button></td>`);
+        continue;
+      }
       rows.push(`<td class="c" style="background:${sw.hex};background:${cssColor(sw)}"><button type="button" class="sw${natural ? ' natural' : ''}" data-fam="${fam}" data-step="${s}" aria-pressed="${selected}" style="background:${sw.hex};background:${cssColor(sw)};color:${inkFor(sw)}" aria-label="${fam} ${s}${natural ? ', natural step' : ''}"${title}>${marks}<span class="lc">1:${ratio(sw).toFixed(1)}</span><span class="hex">${sw.hex}</span></button></td>`);
     }
     rows.push('</tr>');
@@ -349,6 +356,7 @@ function renderDetail() {
       <dt>tinted ink</dt><dd><span class="chip" style="background:${tint.hex}"></span>${tint.ink === 'white' || tint.ink === 'black' ? tint.ink : `${fam}-${pad(tint.ink)}`} · Lc ${tint.lc.toFixed(1)}${tint.passes ? '' : ' <span class="fail">below 75</span>'}</dd>
       ${other ? `<dt>vs ${state.view === 'proposed' ? 'Tailwind' : 'Euclid'}</dt><dd><span class="chip" style="background:${cssColor(other)}"></span>${other.css} · ΔE ${dE.toFixed(3)}</dd>` : ''}
       ${sw.clamped ? '<dt>chroma</dt><dd class="fail">share above 1; clamped to Display P3</dd>' : ''}
+      ${sw.alpha ? `<dt>alpha blend</dt><dd><span class="chip" style="background:${sw.alpha.hex}"></span>${sw.alpha.source} at ${Math.round(sw.alpha.alpha * 100)}% over ${sw.alpha.over} → ${sw.alpha.hex} · ΔE ${sw.alpha.deltaE.toFixed(3)} · pivot ${fam}-${pad(f.alphaPivot)}</dd>` : ''}
     </dl>`;
 }
 
@@ -708,6 +716,7 @@ const seg = (ids, key, values) => ids.forEach((id, i) => { $(id).onclick = () =>
 seg(['view-proposed', 'view-current'], 'view', ['proposed', 'current']);
 seg(['gamut-p3', 'gamut-srgb'], 'gamut', ['p3', 'srgb']);
 $('tinted').onchange = (e) => { state.tinted = e.target.checked; renderGrid(); };
+$('alpha').onchange = (e) => { state.alpha = e.target.checked; renderGrid(); };
 $('field-steps').onchange = renderFieldOverlay;
 $('field-names').onchange = renderFieldOverlay;
 $('field-hues').onchange = renderFieldOverlay;
