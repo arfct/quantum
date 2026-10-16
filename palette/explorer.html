@@ -75,14 +75,7 @@
   .sw .dot { width: 7px; height: 7px; border-radius: 50%; background: currentColor; display: inline-block; }
   .sw .hex { font-weight: 400; font-family: var(--mono); font-size: 9px; letter-spacing: 0.02em; opacity: 0; }
   .sw[aria-pressed="true"] .hex { opacity: 0.85; }
-  .two { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 20px; }
-  @media (max-width: 900px) { .two { grid-template-columns: 1fr; } }
-  .detail dl { display: grid; grid-template-columns: max-content 1fr; gap: 4px 12px; margin: 10px 0 0; font-family: var(--mono); font-size: 12px; }
-  .detail dt { color: var(--muted); font-family: var(--font); }
-  .detail dd { margin: 0; word-break: break-all; }
   .chip { display: inline-block; width: 12px; height: 12px; border-radius: 3px; vertical-align: -2px; margin-right: 6px; border: 1px solid var(--line); }
-  .detail .big { height: 72px; border-radius: 6px; display: flex; align-items: flex-end; gap: 10px; padding: 8px 10px; font-size: 12px; margin-top: 8px; }
-  .detail .big span { padding: 2px 6px; border-radius: 3px; }
   .spec { display: grid; gap: 14px; }
   .ladder { display: grid; grid-template-columns: repeat(auto-fill, minmax(56px, 1fr)); gap: 6px; }
   .ladder label { display: grid; gap: 3px; font-size: 11px; color: var(--muted); text-align: left; }
@@ -143,23 +136,17 @@
     <h2><span id="grid-title">Euclid palette</span> <button type="button" class="info" aria-expanded="false" aria-label="About the grid">i</button></h2>
     <ul class="note"><li>Dot: the family's natural step. ★: Byrne's red, yellow and blue.</li><li>Click a swatch to select it and copy its hex.</li></ul>
     <p class="note about" id="grid-note"></p>
-    <p class="note about">Every value is derived from the OKLCH reference; the hex is the sRGB gamut mapping. A dot in the corner marks a family's natural step, the one nearest its gamut cusp (where the hue reaches the most chroma); ★ marks where Byrne's red, yellow and blue sit. With Tinted on, text is the family step nearest the colour that still meets APCA Lc 75 (lighter first, white and black as the ends); a square where nothing passes shows the strongest ink and says so in the swatch panel. With it off, text is white wherever white clears Lc 60, else the stronger of white and black. Clicking a square selects it, shows its hex and contrast ratio, and copies the hex. The code under each name is the family's designation: a hue-sector letter (R O Y G B P, or N under chroma 0.06) and OKLCH h at the 500 as hundredths of the circle; a step is written P85.300.</p>
+    <p class="note about">Every value is derived from the OKLCH reference; the hex is the sRGB gamut mapping. A dot in the corner marks a family's natural step, the one nearest its gamut cusp (where the hue reaches the most chroma); ★ marks where Byrne's red, yellow and blue sit. With Tinted on, text is the family step nearest the colour that still meets APCA Lc 75 (lighter first, white and black as the ends); a square where nothing passes shows the strongest ink. With it off, text is white wherever white clears Lc 60, else the stronger of white and black. Clicking a square selects it and copies its hex. The code under each name is the family's designation: a hue-sector letter (R O Y G B P, or N under chroma 0.06) and OKLCH h at the 500 as hundredths of the circle; a step is written P85.300.</p>
     <div class="grid-wrap"><table class="grid" id="grid" aria-labelledby="grid-title"></table></div>
   </section>
 
-  <div class="two">
-    <section class="card">
+  <section class="card">
       <h2>Lightness by step <button type="button" class="info" aria-expanded="false" aria-label="About the chart">i</button></h2>
       <ul class="note"><li>OKLab L of every family at each step.</li></ul>
       <p class="note about">OKLab L of every family at each step. The Euclid ladder is one line for the neutrals; chromatic families sit above or below it where their luminance is equalized. Tailwind spreads up to 0.24 at the 500.</p>
       <svg class="chart" id="chart" viewBox="0 0 760 300" role="img" aria-label="Lightness of each family by step"></svg>
       <div class="readout" id="chart-readout">Hover a point for the family, step and lightness.</div>
     </section>
-    <section class="card detail" id="detail">
-      <h2>Swatch</h2>
-      <p class="note">Select a swatch in the grid.</p>
-    </section>
-  </div>
 
   <section class="card">
     <h2>Continuous field <button type="button" class="info" aria-expanded="false" aria-label="About the wheel">i</button></h2>
@@ -1553,46 +1540,6 @@ function renderGrid() {
   $('grid').innerHTML = rows.join('');
 }
 
-function renderDetail() {
-  const el = $('detail');
-  if (!state.selected) return;
-  const { fam, step } = state.selected;
-  const palette = state.palettes[state.view];
-  const f = palette.families[fam];
-  if (!f) { el.innerHTML = `<h2>Swatch</h2><p class="note">${fam} is not in ${palette.name}. Select a swatch in the grid.</p>`; return; }
-  const sw = f.steps[step];
-  if (!sw) { el.innerHTML = `<h2>Swatch</h2><p class="note">${fam}-${pad(step)} is not in ${palette.name}. Select a swatch in the grid.</p>`; return; }
-  const other = state.palettes[state.view === 'proposed' ? 'current' : 'proposed'].families[fam]?.steps[step];
-  const dE = other ? deltaEok(sw.oklch, other.oklch) : null;
-  const level = (lc) => { const a = Math.abs(lc); return a >= 90 ? 'preferred body' : a >= 75 ? 'body' : a >= 60 ? 'large/bold' : a >= 45 ? 'headline' : a >= 30 ? 'spot' : 'fails'; };
-  const row = (name, lc) => `<dt>${name}</dt><dd>${lc >= 0 ? '+' : ''}${lc.toFixed(1)} <span class="${Math.abs(lc) >= 60 ? 'pass' : 'fail'}">${level(lc)}</span></dd>`;
-  const tint = sw.text.tint;
-  el.innerHTML = `<h2>${fam}-${pad(step)} <span class="note">${sw.id} · ${formatWavelength(sw.wavelength)} · ${palette.name}</span></h2>
-    <div class="big" style="background:${sw.hex};background:${cssColor(sw)}">
-      <span style="color:#fff">white ${Math.abs(sw.text.white).toFixed(0)}</span>
-      <span style="color:#000">black ${sw.text.black.toFixed(0)}</span>
-      <span style="color:${cssColor(f.steps[950])}">950 ${Math.abs(sw.text.dark).toFixed(0)}</span>
-      <span style="color:${cssColor(f.steps[50])}">50 ${Math.abs(sw.text.light).toFixed(0)}</span>
-    </div>
-    <dl>
-      <dt>oklch</dt><dd>${sw.css}</dd>
-      <dt>display-p3</dt><dd>${sw.p3}</dd>
-      <dt>P3 hex</dt><dd>${sw.p3hex} <span class="note">channels only; not CSS</span></dd>
-      <dt>sRGB</dt><dd>${sw.hex}${sw.srgbInGamut ? '' : ' <span class="fail">gamut-mapped</span>'}</dd>
-      <dt>Y (APCA)</dt><dd>${sw.Y.toFixed(4)}</dd>
-      <dt>wavelength</dt><dd>${formatWavelength(sw.wavelength)} ${bandName(sw.wavelength.nm, sw.wavelength.complementary)}${sw.wavelength.purity !== null ? ` · purity ${sw.wavelength.purity.toFixed(2)}` : ' · non-spectral'}</dd>
-      <dt>natural step</dt><dd>${fam}-${pad(f.natural.step)} · cusp L ${fmtL(f.natural.L)} C ${f.natural.C.toFixed(3)}</dd>
-      ${row('Lc white text', sw.text.white)}
-      ${row('Lc black text', sw.text.black)}
-      ${row(`Lc ${fam}-950 text`, sw.text.dark)}
-      ${row(`Lc ${fam}-50 text`, sw.text.light)}
-      <dt>tinted ink</dt><dd><span class="chip" style="background:${tint.hex}"></span>${tint.ink === 'white' || tint.ink === 'black' ? tint.ink : `${fam}-${pad(tint.ink)}`} · Lc ${tint.lc.toFixed(1)}${tint.passes ? '' : ' <span class="fail">below 75</span>'}</dd>
-      ${other ? `<dt>vs ${state.view === 'proposed' ? 'Tailwind' : 'Euclid'}</dt><dd><span class="chip" style="background:${cssColor(other)}"></span>${other.css} · ΔE ${dE.toFixed(3)}</dd>` : ''}
-      ${sw.clamped ? '<dt>chroma</dt><dd class="fail">share above 1; clamped to Display P3</dd>' : ''}
-      ${sw.alpha ? `<dt>alpha blend</dt><dd><span class="chip" style="background:${sw.alpha.hex}"></span>${sw.alpha.source} at ${Math.round(sw.alpha.alpha * 100)}% over ${sw.alpha.over} → ${sw.alpha.hex} · ΔE ${sw.alpha.deltaE.toFixed(3)} · pivot ${fam}-${pad(f.alphaPivot)}</dd>` : ''}
-    </dl>`;
-}
-
 function renderChart() {
   const svg = $('chart');
   const W = 760, H = 300, left = 44, right = 16, top = 12, bottom = 28;
@@ -1900,7 +1847,6 @@ function readSpec() {
 
 function renderAll({ spec = false } = {}) {
   renderGrid();
-  renderDetail();
   renderChart();
   renderBendChart();
   if (spec) renderSpec();
@@ -1951,10 +1897,9 @@ $('grid').addEventListener('click', (e) => {
   if (!b) return;
   state.selected = { fam: b.dataset.fam, step: Number(b.dataset.step) };
   renderGrid();
-  renderDetail();
   const sw = state.palettes[state.view].families[b.dataset.fam].steps[Number(b.dataset.step)];
   const done = () => { $('status').textContent = `${sw.hex} copied (${b.dataset.fam}-${pad(b.dataset.step)}).`; };
-  const fail = () => { $('status').textContent = `Clipboard unavailable; ${sw.hex} is in the swatch panel.`; };
+  const fail = () => { $('status').textContent = `Clipboard unavailable; ${b.dataset.fam}-${pad(b.dataset.step)} is ${sw.hex}.`; };
   if (navigator.clipboard?.writeText) navigator.clipboard.writeText(sw.hex).then(done, fail); else fail();
 });
 document.querySelector('.spec').addEventListener('change', (e) => { if (e.target.matches('input, select')) update(); });
