@@ -950,7 +950,11 @@ function alphaSteps(steps, pivot) {
   const p = steps[pivot].oklch;
   for (const s of stepsOf(steps)) {
     const over = s < pivot ? 'white' : 'black';
-    const source = toGamut({ L: p.L, C: p.C, h: steps[s].oklch.h }, 'srgb');
+    const h = steps[s].oklch.h;
+    // Over white the source is the pivot at the step's hue. Over black a light pivot (amber, yellow) blends
+    // to grey, so the source is the most chromatic sRGB colour of the step's hue instead.
+    const peak = over === 'black' && p.C >= 0.06 ? cusp(h, 'srgb') : p;
+    const source = toGamut({ L: peak.L, C: peak.C, h }, 'srgb');
     steps[s].alpha = s === pivot ? { over: 'white', source: steps[s].hex, alpha: 1, hex: steps[s].hex, deltaE: 0 } : alphaBlend(toGamut(steps[s].oklch, 'srgb'), source, over);
   }
 }

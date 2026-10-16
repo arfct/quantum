@@ -743,10 +743,10 @@
           "id": "R08.650",
           "alpha": {
             "over": "black",
-            "source": "#FF3E2F",
-            "alpha": 0.919,
-            "hex": "#EA392C",
-            "deltaE": 0.0106
+            "source": "#FF0001",
+            "alpha": 0.987,
+            "hex": "#FC0001",
+            "deltaE": 0.0295
           }
         },
         "700": {
@@ -791,10 +791,10 @@
           "id": "R08.700",
           "alpha": {
             "over": "black",
-            "source": "#FF3E30",
-            "alpha": 0.832,
-            "hex": "#D43328",
-            "deltaE": 0.0108
+            "source": "#FF0004",
+            "alpha": 0.895,
+            "hex": "#E40003",
+            "deltaE": 0.0275
           }
         },
         "750": {
@@ -839,10 +839,10 @@
           "id": "R08.750",
           "alpha": {
             "over": "black",
-            "source": "#FF3E31",
-            "alpha": 0.74,
-            "hex": "#BD2E25",
-            "deltaE": 0.0095
+            "source": "#FF0008",
+            "alpha": 0.8,
+            "hex": "#CC0007",
+            "deltaE": 0.0269
           }
         },
         "800": {
@@ -887,10 +887,10 @@
           "id": "R08.800",
           "alpha": {
             "over": "black",
-            "source": "#FF3D33",
-            "alpha": 0.644,
-            "hex": "#A42821",
-            "deltaE": 0.0077
+            "source": "#FF000D",
+            "alpha": 0.699,
+            "hex": "#B20009",
+            "deltaE": 0.0267
           }
         },
         "850": {
@@ -935,10 +935,10 @@
           "id": "R08.850",
           "alpha": {
             "over": "black",
-            "source": "#FF3D34",
-            "alpha": 0.543,
-            "hex": "#8A211C",
-            "deltaE": 0.0059
+            "source": "#FF0012",
+            "alpha": 0.593,
+            "hex": "#97000B",
+            "deltaE": 0.0267
           }
         },
         "900": {
@@ -983,10 +983,10 @@
           "id": "R08.900",
           "alpha": {
             "over": "black",
-            "source": "#FF3D36",
-            "alpha": 0.437,
-            "hex": "#6F1B18",
-            "deltaE": 0.005
+            "source": "#FF0016",
+            "alpha": 0.483,
+            "hex": "#7B000B",
+            "deltaE": 0.0258
           }
         },
         "950": {
@@ -1031,10 +1031,10 @@
           "id": "R08.950",
           "alpha": {
             "over": "black",
-            "source": "#FF3C39",
-            "alpha": 0.283,
-            "hex": "#481110",
-            "deltaE": 0.0074
+            "source": "#FE001D",
+            "alpha": 0.323,
+            "hex": "#520009",
+            "deltaE": 0.0221
           }
         }
       }
@@ -1591,10 +1591,10 @@
           "id": "O13.550",
           "alpha": {
             "over": "black",
-            "source": "#FF7300",
-            "alpha": 0.951,
-            "hex": "#F26D00",
-            "deltaE": 0.0084
+            "source": "#FF7100",
+            "alpha": 0.956,
+            "hex": "#F36C00",
+            "deltaE": 0.0062
           }
         },
         "600": {
@@ -1639,10 +1639,10 @@
           "id": "O13.600",
           "alpha": {
             "over": "black",
-            "source": "#FF7200",
-            "alpha": 0.88,
-            "hex": "#E06400",
-            "deltaE": 0.0108
+            "source": "#FF7000",
+            "alpha": 0.887,
+            "hex": "#E26300",
+            "deltaE": 0.0068
           }
         },
         "650": {
@@ -1687,10 +1687,10 @@
           "id": "O13.650",
           "alpha": {
             "over": "black",
-            "source": "#FF7201",
-            "alpha": 0.807,
-            "hex": "#CE5C01",
-            "deltaE": 0.013
+            "source": "#FE6D00",
+            "alpha": 0.819,
+            "hex": "#D05900",
+            "deltaE": 0.0069
           }
         },
         "700": {
@@ -1735,10 +1735,10 @@
           "id": "O13.700",
           "alpha": {
             "over": "black",
-            "source": "#FF710F",
-            "alpha": 0.73,
-            "hex": "#BA520B",
-            "deltaE": 0.0146
+            "source": "#FE6A00",
+            "alpha": 0.747,
+            "hex": "#BE4F00",
+            "deltaE": 0.0065
           }
         },
         "750": {
@@ -1783,10 +1783,10 @@
           "id": "O13.750",
           "alpha": {
             "over": "black",
-            "source": "#FF701A",
-            "alpha": 0.65,
-            "hex": "#A64911",
-            "deltaE": 0.0164
+            "source": "#FF6600",
+            "alpha": 0.67,
+            "hex": "#AB4500",
+            "deltaE": 0.0055
           }
         },
         "800": {
@@ -1831,10 +1831,10 @@
           "id": "O13.800",
           "alpha": {
             "over": "black",
-            "source": "#FF6F24",
-            "alpha": 0.566,
-            "hex": "#903F14",
-            "deltaE": 0.0187
+            "source": "#FF6100",
+            "alpha": 0.591,
+            "hex": "#973A00",
+            "deltaE": 0.005
           }
         },
         "850": {
@@ -1879,10 +1879,10 @@
           "id": "O13.850",
           "alpha": {
             "over": "black",
-            "source": "#FF6E2E",
-            "alpha": 0.475,
-            "hex": "#793416",
-            "deltaE": 0.0214
+            "source": "#FF5B00",
+            "alpha": 0.506,
+            "hex": "#812E00",
+            "deltaE": 0.0052
           }
         },
         "900": {
@@ -1927,10 +1927,10 @@
           "id": "O13.900",
           "alpha": {
             "over": "black",
-            "source": "#FF6D39",
-            "alpha": 0.381,
-            "hex": "#612A16",
-            "deltaE": 0.0245
+            "source": "#FE5200",
+            "alpha": 0.417,
+            "hex": "#6A2200",
+            "deltaE": 0.0058
           }
         },
         "950": {
@@ -1975,10 +1975,10 @@
           "id": "O13.950",
           "alpha": {
             "over": "black",
-            "source": "#FF6C47",
-            "alpha": 0.244,
-            "hex": "#3E1A11",
-            "deltaE": 0.0301
+            "source": "#FF4000",
+            "alpha": 0.283,
+            "hex": "#481200",
+            "deltaE": 0.0073
           }
         }
       }
@@ -2343,10 +2343,10 @@
           "id": "Y22.350",
           "alpha": {
             "over": "black",
-            "source": "#FCC02C",
+            "source": "#FFBF00",
             "alpha": 0.951,
-            "hex": "#EFB62A",
-            "deltaE": 0.0056
+            "hex": "#F2B600",
+            "deltaE": 0.0044
           }
         },
         "400": {
@@ -2391,10 +2391,10 @@
           "id": "Y22.400",
           "alpha": {
             "over": "black",
-            "source": "#FEBE2D",
-            "alpha": 0.901,
-            "hex": "#E5AB29",
-            "deltaE": 0.0106
+            "source": "#FFBB00",
+            "alpha": 0.913,
+            "hex": "#E8AA00",
+            "deltaE": 0.0005
           }
         },
         "450": {
@@ -2439,10 +2439,10 @@
           "id": "Y22.450",
           "alpha": {
             "over": "black",
-            "source": "#FFBD2F",
-            "alpha": 0.853,
-            "hex": "#D9A128",
-            "deltaE": 0.0131
+            "source": "#FFB701",
+            "alpha": 0.873,
+            "hex": "#DE9F00",
+            "deltaE": 0.0029
           }
         },
         "500": {
@@ -2487,10 +2487,10 @@
           "id": "Y22.500",
           "alpha": {
             "over": "black",
-            "source": "#FFBB32",
-            "alpha": 0.804,
-            "hex": "#CD9628",
-            "deltaE": 0.017
+            "source": "#FEB200",
+            "alpha": 0.83,
+            "hex": "#D39400",
+            "deltaE": 0.0052
           }
         },
         "550": {
@@ -2535,10 +2535,10 @@
           "id": "Y22.550",
           "alpha": {
             "over": "black",
-            "source": "#FFB935",
-            "alpha": 0.752,
-            "hex": "#C08B28",
-            "deltaE": 0.0212
+            "source": "#FEAE00",
+            "alpha": 0.784,
+            "hex": "#C78800",
+            "deltaE": 0.0073
           }
         },
         "600": {
@@ -2583,10 +2583,10 @@
           "id": "Y22.600",
           "alpha": {
             "over": "black",
-            "source": "#FFB838",
-            "alpha": 0.699,
-            "hex": "#B28027",
-            "deltaE": 0.0254
+            "source": "#FEAA01",
+            "alpha": 0.736,
+            "hex": "#BB7D00",
+            "deltaE": 0.0092
           }
         },
         "650": {
@@ -2631,10 +2631,10 @@
           "id": "Y22.650",
           "alpha": {
             "over": "black",
-            "source": "#FFB63E",
-            "alpha": 0.642,
-            "hex": "#A47528",
-            "deltaE": 0.0297
+            "source": "#FFA500",
+            "alpha": 0.683,
+            "hex": "#AE7100",
+            "deltaE": 0.0109
           }
         },
         "700": {
@@ -2679,10 +2679,10 @@
           "id": "Y22.700",
           "alpha": {
             "over": "black",
-            "source": "#FFB54C",
-            "alpha": 0.58,
-            "hex": "#94692C",
-            "deltaE": 0.0355
+            "source": "#FFA000",
+            "alpha": 0.627,
+            "hex": "#A06400",
+            "deltaE": 0.0123
           }
         },
         "750": {
@@ -2727,10 +2727,10 @@
           "id": "Y22.750",
           "alpha": {
             "over": "black",
-            "source": "#FFB557",
-            "alpha": 0.515,
-            "hex": "#835D2D",
-            "deltaE": 0.0405
+            "source": "#FF9B00",
+            "alpha": 0.567,
+            "hex": "#905800",
+            "deltaE": 0.0134
           }
         },
         "800": {
@@ -2775,10 +2775,10 @@
           "id": "Y22.800",
           "alpha": {
             "over": "black",
-            "source": "#FFB461",
-            "alpha": 0.447,
-            "hex": "#72512B",
-            "deltaE": 0.0444
+            "source": "#FF9500",
+            "alpha": 0.502,
+            "hex": "#804B00",
+            "deltaE": 0.0142
           }
         },
         "850": {
@@ -2823,10 +2823,10 @@
           "id": "Y22.850",
           "alpha": {
             "over": "black",
-            "source": "#FFB46A",
-            "alpha": 0.374,
-            "hex": "#5F4328",
-            "deltaE": 0.0471
+            "source": "#FF8E01",
+            "alpha": 0.43,
+            "hex": "#6E3D01",
+            "deltaE": 0.015
           }
         },
         "900": {
@@ -2871,10 +2871,10 @@
           "id": "Y22.900",
           "alpha": {
             "over": "black",
-            "source": "#FFB373",
-            "alpha": 0.299,
-            "hex": "#4C3622",
-            "deltaE": 0.048
+            "source": "#FF8701",
+            "alpha": 0.353,
+            "hex": "#5A3000",
+            "deltaE": 0.0156
           }
         },
         "950": {
@@ -2919,10 +2919,10 @@
           "id": "Y22.950",
           "alpha": {
             "over": "black",
-            "source": "#FFB27E",
-            "alpha": 0.189,
-            "hex": "#302218",
-            "deltaE": 0.047
+            "source": "#FF7A00",
+            "alpha": 0.236,
+            "hex": "#3C1D00",
+            "deltaE": 0.018
           }
         }
       }
@@ -3287,10 +3287,10 @@
           "id": "Y27.350",
           "alpha": {
             "over": "black",
-            "source": "#E6C900",
-            "alpha": 0.95,
-            "hex": "#DBBF00",
-            "deltaE": 0.0008
+            "source": "#FEE201",
+            "alpha": 0.851,
+            "hex": "#D9C001",
+            "deltaE": 0.0046
           }
         },
         "400": {
@@ -3335,10 +3335,10 @@
           "id": "Y27.400",
           "alpha": {
             "over": "black",
-            "source": "#E6C900",
-            "alpha": 0.899,
-            "hex": "#CFB500",
-            "deltaE": 0.0013
+            "source": "#FEE201",
+            "alpha": 0.806,
+            "hex": "#CDB601",
+            "deltaE": 0.0049
           }
         },
         "450": {
@@ -3383,10 +3383,10 @@
           "id": "Y27.450",
           "alpha": {
             "over": "black",
-            "source": "#E7C900",
-            "alpha": 0.848,
-            "hex": "#C4AA00",
-            "deltaE": 0.0015
+            "source": "#FFE100",
+            "alpha": 0.761,
+            "hex": "#C2AB00",
+            "deltaE": 0.0052
           }
         },
         "500": {
@@ -3431,10 +3431,10 @@
           "id": "Y27.500",
           "alpha": {
             "over": "black",
-            "source": "#E9C800",
-            "alpha": 0.795,
-            "hex": "#BA9F00",
-            "deltaE": 0.0019
+            "source": "#FFDE01",
+            "alpha": 0.72,
+            "hex": "#B7A000",
+            "deltaE": 0.0057
           }
         },
         "550": {
@@ -3479,10 +3479,10 @@
           "id": "Y27.550",
           "alpha": {
             "over": "black",
-            "source": "#ECC700",
-            "alpha": 0.741,
-            "hex": "#AF9300",
-            "deltaE": 0.002
+            "source": "#FEDA00",
+            "alpha": 0.679,
+            "hex": "#AD9400",
+            "deltaE": 0.0061
           }
         },
         "600": {
@@ -3527,10 +3527,10 @@
           "id": "Y27.600",
           "alpha": {
             "over": "black",
-            "source": "#F0C500",
-            "alpha": 0.685,
-            "hex": "#A48700",
-            "deltaE": 0.0019
+            "source": "#FFD601",
+            "alpha": 0.635,
+            "hex": "#A28800",
+            "deltaE": 0.0063
           }
         },
         "650": {
@@ -3575,10 +3575,10 @@
           "id": "Y27.650",
           "alpha": {
             "over": "black",
-            "source": "#F4C300",
-            "alpha": 0.627,
-            "hex": "#997A00",
-            "deltaE": 0.0017
+            "source": "#FFD101",
+            "alpha": 0.591,
+            "hex": "#967B00",
+            "deltaE": 0.0064
           }
         },
         "700": {
@@ -3623,10 +3623,10 @@
           "id": "Y27.700",
           "alpha": {
             "over": "black",
-            "source": "#F8C100",
-            "alpha": 0.567,
-            "hex": "#8D6D00",
-            "deltaE": 0.0014
+            "source": "#FFCB02",
+            "alpha": 0.542,
+            "hex": "#8A6E01",
+            "deltaE": 0.0062
           }
         },
         "750": {
@@ -3671,10 +3671,10 @@
           "id": "Y27.750",
           "alpha": {
             "over": "black",
-            "source": "#FDBE00",
-            "alpha": 0.504,
-            "hex": "#806000",
-            "deltaE": 0.0011
+            "source": "#FEC400",
+            "alpha": 0.492,
+            "hex": "#7D6100",
+            "deltaE": 0.006
           }
         },
         "800": {
@@ -3719,10 +3719,10 @@
           "id": "Y27.800",
           "alpha": {
             "over": "black",
-            "source": "#FFBB00",
-            "alpha": 0.441,
-            "hex": "#705200",
-            "deltaE": 0.0033
+            "source": "#FEBD00",
+            "alpha": 0.438,
+            "hex": "#6F5300",
+            "deltaE": 0.0056
           }
         },
         "850": {
@@ -3767,10 +3767,10 @@
           "id": "Y27.850",
           "alpha": {
             "over": "black",
-            "source": "#FFB700",
-            "alpha": 0.374,
-            "hex": "#5F4400",
-            "deltaE": 0.0065
+            "source": "#FEB500",
+            "alpha": 0.377,
+            "hex": "#604400",
+            "deltaE": 0.0052
           }
         },
         "900": {
@@ -3815,10 +3815,10 @@
           "id": "Y27.900",
           "alpha": {
             "over": "black",
-            "source": "#FFB50B",
-            "alpha": 0.301,
-            "hex": "#4D3603",
-            "deltaE": 0.0103
+            "source": "#FFAB00",
+            "alpha": 0.311,
+            "hex": "#4F3500",
+            "deltaE": 0.0057
           }
         },
         "950": {
@@ -3863,10 +3863,10 @@
           "id": "Y27.950",
           "alpha": {
             "over": "black",
-            "source": "#FFB34F",
-            "alpha": 0.19,
-            "hex": "#31220F",
-            "deltaE": 0.0184
+            "source": "#FF9B00",
+            "alpha": 0.209,
+            "hex": "#352000",
+            "deltaE": 0.0083
           }
         }
       }
@@ -4231,10 +4231,10 @@
           "id": "G32.350",
           "alpha": {
             "over": "black",
-            "source": "#C1D500",
-            "alpha": 0.95,
+            "source": "#E9FF00",
+            "alpha": 0.793,
             "hex": "#B8CA00",
-            "deltaE": 0.0003
+            "deltaE": 0.001
           }
         },
         "400": {
@@ -4279,10 +4279,10 @@
           "id": "G32.400",
           "alpha": {
             "over": "black",
-            "source": "#C1D500",
-            "alpha": 0.9,
+            "source": "#E9FF00",
+            "alpha": 0.75,
             "hex": "#AEBF00",
-            "deltaE": 0.0005
+            "deltaE": 0.0012
           }
         },
         "450": {
@@ -4327,10 +4327,10 @@
           "id": "G32.450",
           "alpha": {
             "over": "black",
-            "source": "#C1D500",
-            "alpha": 0.848,
+            "source": "#E9FF00",
+            "alpha": 0.707,
             "hex": "#A4B400",
-            "deltaE": 0.0006
+            "deltaE": 0.0012
           }
         },
         "500": {
@@ -4375,10 +4375,10 @@
           "id": "G32.500",
           "alpha": {
             "over": "black",
-            "source": "#C1D500",
-            "alpha": 0.794,
+            "source": "#E9FF00",
+            "alpha": 0.662,
             "hex": "#9AA900",
-            "deltaE": 0.0007
+            "deltaE": 0.0013
           }
         },
         "550": {
@@ -4423,10 +4423,10 @@
           "id": "G32.550",
           "alpha": {
             "over": "black",
-            "source": "#C2D400",
-            "alpha": 0.74,
+            "source": "#E9FE00",
+            "alpha": 0.617,
             "hex": "#909D00",
-            "deltaE": 0.0008
+            "deltaE": 0.0014
           }
         },
         "600": {
@@ -4471,10 +4471,10 @@
           "id": "G32.600",
           "alpha": {
             "over": "black",
-            "source": "#C3D400",
-            "alpha": 0.683,
+            "source": "#ECFF00",
+            "alpha": 0.568,
             "hex": "#869100",
-            "deltaE": 0.0008
+            "deltaE": 0.0012
           }
         },
         "650": {
@@ -4519,10 +4519,10 @@
           "id": "G32.650",
           "alpha": {
             "over": "black",
-            "source": "#C5D300",
-            "alpha": 0.625,
-            "hex": "#7B8400",
-            "deltaE": 0.0006
+            "source": "#EEFF00",
+            "alpha": 0.519,
+            "hex": "#7C8400",
+            "deltaE": 0.001
           }
         },
         "700": {
@@ -4567,10 +4567,10 @@
           "id": "G32.700",
           "alpha": {
             "over": "black",
-            "source": "#C8D200",
-            "alpha": 0.565,
+            "source": "#F2FE00",
+            "alpha": 0.467,
             "hex": "#717700",
-            "deltaE": 0.0004
+            "deltaE": 0.0006
           }
         },
         "750": {
@@ -4615,10 +4615,10 @@
           "id": "G32.750",
           "alpha": {
             "over": "black",
-            "source": "#CAD200",
-            "alpha": 0.502,
+            "source": "#F6FF00",
+            "alpha": 0.413,
             "hex": "#666900",
-            "deltaE": 0.0002
+            "deltaE": 0.0001
           }
         },
         "800": {
@@ -4663,10 +4663,10 @@
           "id": "G32.800",
           "alpha": {
             "over": "black",
-            "source": "#CED000",
-            "alpha": 0.435,
-            "hex": "#5A5B00",
-            "deltaE": 0.0001
+            "source": "#FBFF00",
+            "alpha": 0.356,
+            "hex": "#595B00",
+            "deltaE": 0.0004
           }
         },
         "850": {
@@ -4711,10 +4711,10 @@
           "id": "G32.850",
           "alpha": {
             "over": "black",
-            "source": "#D2CF00",
-            "alpha": 0.365,
-            "hex": "#4D4B00",
-            "deltaE": 0.0004
+            "source": "#FEFC00",
+            "alpha": 0.3,
+            "hex": "#4C4C00",
+            "deltaE": 0.0009
           }
         },
         "900": {
@@ -4759,10 +4759,10 @@
           "id": "G32.900",
           "alpha": {
             "over": "black",
-            "source": "#D6CD00",
-            "alpha": 0.292,
+            "source": "#FFF600",
+            "alpha": 0.244,
             "hex": "#3E3C00",
-            "deltaE": 0.0007
+            "deltaE": 0.0015
           }
         },
         "950": {
@@ -4807,10 +4807,10 @@
           "id": "G32.950",
           "alpha": {
             "over": "black",
-            "source": "#DDCA00",
-            "alpha": 0.186,
+            "source": "#FFED03",
+            "alpha": 0.159,
             "hex": "#292600",
-            "deltaE": 0.0017
+            "deltaE": 0.0024
           }
         }
       }
@@ -5223,10 +5223,10 @@
           "id": "G36.400",
           "alpha": {
             "over": "black",
-            "source": "#87D400",
-            "alpha": 0.947,
-            "hex": "#7FC900",
-            "deltaE": 0.001
+            "source": "#A4FF01",
+            "alpha": 0.788,
+            "hex": "#81C801",
+            "deltaE": 0.0029
           }
         },
         "450": {
@@ -5271,10 +5271,10 @@
           "id": "G36.450",
           "alpha": {
             "over": "black",
-            "source": "#87D400",
-            "alpha": 0.892,
-            "hex": "#78BD00",
-            "deltaE": 0.0017
+            "source": "#A4FF01",
+            "alpha": 0.742,
+            "hex": "#7ABD01",
+            "deltaE": 0.0035
           }
         },
         "500": {
@@ -5319,10 +5319,10 @@
           "id": "G36.500",
           "alpha": {
             "over": "black",
-            "source": "#87D400",
-            "alpha": 0.836,
-            "hex": "#70B100",
-            "deltaE": 0.0021
+            "source": "#A4FF01",
+            "alpha": 0.696,
+            "hex": "#72B101",
+            "deltaE": 0.0039
           }
         },
         "550": {
@@ -5367,10 +5367,10 @@
           "id": "G36.550",
           "alpha": {
             "over": "black",
-            "source": "#87D400",
-            "alpha": 0.778,
-            "hex": "#69A500",
-            "deltaE": 0.0025
+            "source": "#A4FE00",
+            "alpha": 0.648,
+            "hex": "#6AA500",
+            "deltaE": 0.0042
           }
         },
         "600": {
@@ -5415,10 +5415,10 @@
           "id": "G36.600",
           "alpha": {
             "over": "black",
-            "source": "#87D400",
-            "alpha": 0.719,
-            "hex": "#619800",
-            "deltaE": 0.0026
+            "source": "#A4FE00",
+            "alpha": 0.598,
+            "hex": "#629800",
+            "deltaE": 0.0042
           }
         },
         "650": {
@@ -5463,10 +5463,10 @@
           "id": "G36.650",
           "alpha": {
             "over": "black",
-            "source": "#87D400",
-            "alpha": 0.657,
-            "hex": "#598B00",
-            "deltaE": 0.0026
+            "source": "#A5FE00",
+            "alpha": 0.547,
+            "hex": "#5A8B00",
+            "deltaE": 0.0042
           }
         },
         "700": {
@@ -5511,10 +5511,10 @@
           "id": "G36.700",
           "alpha": {
             "over": "black",
-            "source": "#88D400",
-            "alpha": 0.593,
-            "hex": "#507E00",
-            "deltaE": 0.0024
+            "source": "#A6FF00",
+            "alpha": 0.492,
+            "hex": "#527D00",
+            "deltaE": 0.0039
           }
         },
         "750": {
@@ -5559,10 +5559,10 @@
           "id": "G36.750",
           "alpha": {
             "over": "black",
-            "source": "#88D400",
-            "alpha": 0.526,
-            "hex": "#487000",
-            "deltaE": 0.0022
+            "source": "#A7FF00",
+            "alpha": 0.437,
+            "hex": "#496F00",
+            "deltaE": 0.0036
           }
         },
         "800": {
@@ -5607,10 +5607,10 @@
           "id": "G36.800",
           "alpha": {
             "over": "black",
-            "source": "#89D400",
-            "alpha": 0.456,
-            "hex": "#3E6100",
-            "deltaE": 0.0019
+            "source": "#A7FF01",
+            "alpha": 0.379,
+            "hex": "#3F6000",
+            "deltaE": 0.0033
           }
         },
         "850": {
@@ -5655,10 +5655,10 @@
           "id": "G36.850",
           "alpha": {
             "over": "black",
-            "source": "#89D400",
-            "alpha": 0.382,
+            "source": "#A8FE00",
+            "alpha": 0.317,
             "hex": "#355100",
-            "deltaE": 0.0019
+            "deltaE": 0.0028
           }
         },
         "900": {
@@ -5703,10 +5703,10 @@
           "id": "G36.900",
           "alpha": {
             "over": "black",
-            "source": "#8AD300",
-            "alpha": 0.306,
-            "hex": "#2A4100",
-            "deltaE": 0.0032
+            "source": "#AAFF00",
+            "alpha": 0.253,
+            "hex": "#2B4000",
+            "deltaE": 0.0035
           }
         },
         "950": {
@@ -5751,10 +5751,10 @@
           "id": "G36.950",
           "alpha": {
             "over": "black",
-            "source": "#8CD300",
-            "alpha": 0.194,
-            "hex": "#1B2900",
-            "deltaE": 0.0039
+            "source": "#ACFE00",
+            "alpha": 0.161,
+            "hex": "#1C2900",
+            "deltaE": 0.0042
           }
         }
       }
@@ -6167,10 +6167,10 @@
           "id": "G40.400",
           "alpha": {
             "over": "black",
-            "source": "#44DB4A",
-            "alpha": 0.946,
-            "hex": "#41CF46",
-            "deltaE": 0.0028
+            "source": "#00FE30",
+            "alpha": 0.825,
+            "hex": "#00D227",
+            "deltaE": 0.0282
           }
         },
         "450": {
@@ -6215,10 +6215,10 @@
           "id": "G40.450",
           "alpha": {
             "over": "black",
-            "source": "#44DB4A",
-            "alpha": 0.892,
-            "hex": "#3DC342",
-            "deltaE": 0.0049
+            "source": "#00FE30",
+            "alpha": 0.777,
+            "hex": "#00C625",
+            "deltaE": 0.0251
           }
         },
         "500": {
@@ -6263,10 +6263,10 @@
           "id": "G40.500",
           "alpha": {
             "over": "black",
-            "source": "#44DB4A",
-            "alpha": 0.836,
-            "hex": "#39B73E",
-            "deltaE": 0.0059
+            "source": "#00FE30",
+            "alpha": 0.729,
+            "hex": "#00B923",
+            "deltaE": 0.023
           }
         },
         "550": {
@@ -6311,10 +6311,10 @@
           "id": "G40.550",
           "alpha": {
             "over": "black",
-            "source": "#43DB4B",
-            "alpha": 0.778,
-            "hex": "#34AA3A",
-            "deltaE": 0.0129
+            "source": "#00FE33",
+            "alpha": 0.679,
+            "hex": "#00AD22",
+            "deltaE": 0.014
           }
         },
         "600": {
@@ -6359,10 +6359,10 @@
           "id": "G40.600",
           "alpha": {
             "over": "black",
-            "source": "#42DB4C",
-            "alpha": 0.718,
-            "hex": "#2F9D37",
-            "deltaE": 0.0194
+            "source": "#00FF38",
+            "alpha": 0.625,
+            "hex": "#009F23",
+            "deltaE": 0.0048
           }
         },
         "650": {
@@ -6407,10 +6407,10 @@
           "id": "G40.650",
           "alpha": {
             "over": "black",
-            "source": "#3FDB4D",
-            "alpha": 0.657,
-            "hex": "#299033",
-            "deltaE": 0.0244
+            "source": "#00FF3E",
+            "alpha": 0.573,
+            "hex": "#009224",
+            "deltaE": 0.004
           }
         },
         "700": {
@@ -6455,10 +6455,10 @@
           "id": "G40.700",
           "alpha": {
             "over": "black",
-            "source": "#3BDB4F",
-            "alpha": 0.596,
-            "hex": "#23832F",
-            "deltaE": 0.0261
+            "source": "#00FF45",
+            "alpha": 0.52,
+            "hex": "#008424",
+            "deltaE": 0.0097
           }
         },
         "750": {
@@ -6503,10 +6503,10 @@
           "id": "G40.750",
           "alpha": {
             "over": "black",
-            "source": "#37DC51",
-            "alpha": 0.532,
-            "hex": "#1D752B",
-            "deltaE": 0.0275
+            "source": "#00FE4D",
+            "alpha": 0.464,
+            "hex": "#007624",
+            "deltaE": 0.0149
           }
         },
         "800": {
@@ -6551,10 +6551,10 @@
           "id": "G40.800",
           "alpha": {
             "over": "black",
-            "source": "#30DC54",
-            "alpha": 0.463,
-            "hex": "#166627",
-            "deltaE": 0.0268
+            "source": "#00FF55",
+            "alpha": 0.403,
+            "hex": "#006722",
+            "deltaE": 0.0179
           }
         },
         "850": {
@@ -6599,10 +6599,10 @@
           "id": "G40.850",
           "alpha": {
             "over": "black",
-            "source": "#28DC57",
-            "alpha": 0.389,
-            "hex": "#0F5622",
-            "deltaE": 0.0236
+            "source": "#00FF5D",
+            "alpha": 0.339,
+            "hex": "#005620",
+            "deltaE": 0.0181
           }
         },
         "900": {
@@ -6647,10 +6647,10 @@
           "id": "G40.900",
           "alpha": {
             "over": "black",
-            "source": "#1ADD5A",
-            "alpha": 0.312,
-            "hex": "#08451C",
-            "deltaE": 0.0203
+            "source": "#00FE66",
+            "alpha": 0.272,
+            "hex": "#00451C",
+            "deltaE": 0.0177
           }
         },
         "950": {
@@ -6695,10 +6695,10 @@
           "id": "G40.950",
           "alpha": {
             "over": "black",
-            "source": "#00DD60",
-            "alpha": 0.201,
-            "hex": "#002D13",
-            "deltaE": 0.0165
+            "source": "#00FF72",
+            "alpha": 0.175,
+            "hex": "#002C14",
+            "deltaE": 0.0175
           }
         }
       }
@@ -7015,10 +7015,10 @@
           "id": "G45.300",
           "alpha": {
             "over": "black",
-            "source": "#3EEEAB",
-            "alpha": 0.953,
-            "hex": "#3BE3A3",
-            "deltaE": 0.0036
+            "source": "#01FFB2",
+            "alpha": 0.898,
+            "hex": "#01E5A0",
+            "deltaE": 0.011
           }
         },
         "350": {
@@ -7063,10 +7063,10 @@
           "id": "G45.350",
           "alpha": {
             "over": "black",
-            "source": "#3EEEAB",
-            "alpha": 0.906,
-            "hex": "#38D89B",
-            "deltaE": 0.0062
+            "source": "#01FFB2",
+            "alpha": 0.854,
+            "hex": "#01DA98",
+            "deltaE": 0.0079
           }
         },
         "400": {
@@ -7111,10 +7111,10 @@
           "id": "G45.400",
           "alpha": {
             "over": "black",
-            "source": "#3EEEAB",
-            "alpha": 0.857,
-            "hex": "#35CC93",
-            "deltaE": 0.0081
+            "source": "#01FFB2",
+            "alpha": 0.808,
+            "hex": "#01CE90",
+            "deltaE": 0.0057
           }
         },
         "450": {
@@ -7159,10 +7159,10 @@
           "id": "G45.450",
           "alpha": {
             "over": "black",
-            "source": "#3EEEAB",
-            "alpha": 0.808,
-            "hex": "#32C08A",
-            "deltaE": 0.0093
+            "source": "#01FFB2",
+            "alpha": 0.762,
+            "hex": "#01C288",
+            "deltaE": 0.0042
           }
         },
         "500": {
@@ -7207,10 +7207,10 @@
           "id": "G45.500",
           "alpha": {
             "over": "black",
-            "source": "#3EEEAB",
-            "alpha": 0.757,
-            "hex": "#2FB482",
-            "deltaE": 0.0097
+            "source": "#01FFB2",
+            "alpha": 0.714,
+            "hex": "#01B67F",
+            "deltaE": 0.0034
           }
         },
         "550": {
@@ -7255,10 +7255,10 @@
           "id": "G45.550",
           "alpha": {
             "over": "black",
-            "source": "#3DEEAC",
-            "alpha": 0.705,
-            "hex": "#2BA879",
-            "deltaE": 0.0136
+            "source": "#00FFB3",
+            "alpha": 0.665,
+            "hex": "#00A977",
+            "deltaE": 0.0024
           }
         },
         "600": {
@@ -7303,10 +7303,10 @@
           "id": "G45.600",
           "alpha": {
             "over": "black",
-            "source": "#3BEEAD",
-            "alpha": 0.653,
-            "hex": "#269C71",
-            "deltaE": 0.014
+            "source": "#00FFB4",
+            "alpha": 0.616,
+            "hex": "#009D6F",
+            "deltaE": 0.0047
           }
         },
         "650": {
@@ -7351,10 +7351,10 @@
           "id": "G45.650",
           "alpha": {
             "over": "black",
-            "source": "#37EEAE",
-            "alpha": 0.599,
-            "hex": "#218F68",
-            "deltaE": 0.0139
+            "source": "#01FFB6",
+            "alpha": 0.566,
+            "hex": "#009067",
+            "deltaE": 0.0064
           }
         },
         "700": {
@@ -7399,10 +7399,10 @@
           "id": "G45.700",
           "alpha": {
             "over": "black",
-            "source": "#32EFB0",
-            "alpha": 0.542,
-            "hex": "#1B8160",
-            "deltaE": 0.0134
+            "source": "#01FEB9",
+            "alpha": 0.513,
+            "hex": "#00825F",
+            "deltaE": 0.0077
           }
         },
         "750": {
@@ -7447,10 +7447,10 @@
           "id": "G45.750",
           "alpha": {
             "over": "black",
-            "source": "#2CEFB2",
-            "alpha": 0.483,
-            "hex": "#157356",
-            "deltaE": 0.0125
+            "source": "#01FFBC",
+            "alpha": 0.455,
+            "hex": "#007456",
+            "deltaE": 0.0085
           }
         },
         "800": {
@@ -7495,10 +7495,10 @@
           "id": "G45.800",
           "alpha": {
             "over": "black",
-            "source": "#23EFB5",
-            "alpha": 0.42,
-            "hex": "#0F644C",
-            "deltaE": 0.0113
+            "source": "#00FFBF",
+            "alpha": 0.396,
+            "hex": "#00654C",
+            "deltaE": 0.0089
           }
         },
         "850": {
@@ -7543,10 +7543,10 @@
           "id": "G45.850",
           "alpha": {
             "over": "black",
-            "source": "#14EFB8",
-            "alpha": 0.353,
-            "hex": "#075441",
-            "deltaE": 0.0098
+            "source": "#00FFC4",
+            "alpha": 0.333,
+            "hex": "#005541",
+            "deltaE": 0.0088
           }
         },
         "900": {
@@ -7591,10 +7591,10 @@
           "id": "G45.900",
           "alpha": {
             "over": "black",
-            "source": "#00EFBC",
-            "alpha": 0.285,
+            "source": "#01FEC8",
+            "alpha": 0.267,
             "hex": "#004435",
-            "deltaE": 0.0081
+            "deltaE": 0.0083
           }
         },
         "950": {
@@ -7639,10 +7639,10 @@
           "id": "G45.950",
           "alpha": {
             "over": "black",
-            "source": "#00EFC2",
-            "alpha": 0.183,
-            "hex": "#002C23",
-            "deltaE": 0.007
+            "source": "#01FFCF",
+            "alpha": 0.172,
+            "hex": "#002C24",
+            "deltaE": 0.0075
           }
         }
       }
@@ -7959,10 +7959,10 @@
           "id": "G51.300",
           "alpha": {
             "over": "black",
-            "source": "#2AECD5",
-            "alpha": 0.954,
-            "hex": "#28E1CC",
-            "deltaE": 0.003
+            "source": "#00FEE6",
+            "alpha": 0.887,
+            "hex": "#00E2CC",
+            "deltaE": 0.0027
           }
         },
         "350": {
@@ -8007,10 +8007,10 @@
           "id": "G51.350",
           "alpha": {
             "over": "black",
-            "source": "#2AECD5",
-            "alpha": 0.906,
-            "hex": "#26D6C1",
-            "deltaE": 0.0053
+            "source": "#00FEE6",
+            "alpha": 0.843,
+            "hex": "#00D6C2",
+            "deltaE": 0.0005
           }
         },
         "400": {
@@ -8055,10 +8055,10 @@
           "id": "G51.400",
           "alpha": {
             "over": "black",
-            "source": "#2AECD5",
-            "alpha": 0.858,
-            "hex": "#24CAB7",
-            "deltaE": 0.0058
+            "source": "#00FEE6",
+            "alpha": 0.799,
+            "hex": "#00CBB7",
+            "deltaE": 0.0005
           }
         },
         "450": {
@@ -8103,10 +8103,10 @@
           "id": "G51.450",
           "alpha": {
             "over": "black",
-            "source": "#2AECD5",
-            "alpha": 0.809,
-            "hex": "#22BFAD",
-            "deltaE": 0.0058
+            "source": "#00FEE6",
+            "alpha": 0.753,
+            "hex": "#00C0AD",
+            "deltaE": 0.0008
           }
         },
         "500": {
@@ -8151,10 +8151,10 @@
           "id": "G51.500",
           "alpha": {
             "over": "black",
-            "source": "#2AECD5",
-            "alpha": 0.758,
-            "hex": "#1FB3A2",
-            "deltaE": 0.0057
+            "source": "#00FEE6",
+            "alpha": 0.706,
+            "hex": "#00B4A2",
+            "deltaE": 0.0009
           }
         },
         "550": {
@@ -8199,10 +8199,10 @@
           "id": "G51.550",
           "alpha": {
             "over": "black",
-            "source": "#29ECD6",
-            "alpha": 0.708,
-            "hex": "#1DA797",
-            "deltaE": 0.0058
+            "source": "#01FEE6",
+            "alpha": 0.659,
+            "hex": "#01A898",
+            "deltaE": 0.0015
           }
         },
         "600": {
@@ -8247,10 +8247,10 @@
           "id": "G51.600",
           "alpha": {
             "over": "black",
-            "source": "#27ECD7",
-            "alpha": 0.655,
-            "hex": "#1A9B8D",
-            "deltaE": 0.0056
+            "source": "#00FFE8",
+            "alpha": 0.609,
+            "hex": "#009B8D",
+            "deltaE": 0.0019
           }
         },
         "650": {
@@ -8295,10 +8295,10 @@
           "id": "G51.650",
           "alpha": {
             "over": "black",
-            "source": "#25ECD8",
-            "alpha": 0.601,
-            "hex": "#168E82",
-            "deltaE": 0.0053
+            "source": "#00FFE9",
+            "alpha": 0.558,
+            "hex": "#008E82",
+            "deltaE": 0.0022
           }
         },
         "700": {
@@ -8343,10 +8343,10 @@
           "id": "G51.700",
           "alpha": {
             "over": "black",
-            "source": "#22ECD9",
-            "alpha": 0.544,
-            "hex": "#128076",
-            "deltaE": 0.0048
+            "source": "#00FFEB",
+            "alpha": 0.505,
+            "hex": "#008177",
+            "deltaE": 0.0022
           }
         },
         "750": {
@@ -8391,10 +8391,10 @@
           "id": "G51.750",
           "alpha": {
             "over": "black",
-            "source": "#1EECDB",
-            "alpha": 0.484,
-            "hex": "#0E726A",
-            "deltaE": 0.0043
+            "source": "#00FEED",
+            "alpha": 0.45,
+            "hex": "#00726A",
+            "deltaE": 0.0021
           }
         },
         "800": {
@@ -8439,10 +8439,10 @@
           "id": "G51.800",
           "alpha": {
             "over": "black",
-            "source": "#19ECDD",
-            "alpha": 0.421,
-            "hex": "#0B635D",
-            "deltaE": 0.0036
+            "source": "#01FFF0",
+            "alpha": 0.39,
+            "hex": "#01635E",
+            "deltaE": 0.0019
           }
         },
         "850": {
@@ -8487,10 +8487,10 @@
           "id": "G51.850",
           "alpha": {
             "over": "black",
-            "source": "#13EBE0",
-            "alpha": 0.354,
-            "hex": "#07534F",
-            "deltaE": 0.0028
+            "source": "#01FEF2",
+            "alpha": 0.328,
+            "hex": "#005350",
+            "deltaE": 0.0014
           }
         },
         "900": {
@@ -8535,10 +8535,10 @@
           "id": "G51.900",
           "alpha": {
             "over": "black",
-            "source": "#0AEBE3",
-            "alpha": 0.284,
-            "hex": "#034341",
-            "deltaE": 0.0016
+            "source": "#01FFF6",
+            "alpha": 0.263,
+            "hex": "#004341",
+            "deltaE": 0.0009
           }
         },
         "950": {
@@ -8583,8 +8583,8 @@
           "id": "G51.950",
           "alpha": {
             "over": "black",
-            "source": "#00EBE8",
-            "alpha": 0.183,
+            "source": "#00FFFC",
+            "alpha": 0.169,
             "hex": "#002B2B",
             "deltaE": 0
           }
@@ -8999,10 +8999,10 @@
           "id": "B58.400",
           "alpha": {
             "over": "black",
-            "source": "#00D4F2",
-            "alpha": 0.947,
-            "hex": "#00C9E5",
-            "deltaE": 0.0004
+            "source": "#01E3FF",
+            "alpha": 0.885,
+            "hex": "#01C9E1",
+            "deltaE": 0.0057
           }
         },
         "450": {
@@ -9047,10 +9047,10 @@
           "id": "B58.450",
           "alpha": {
             "over": "black",
-            "source": "#00D4F2",
-            "alpha": 0.893,
-            "hex": "#00BDD8",
-            "deltaE": 0.0007
+            "source": "#01E3FF",
+            "alpha": 0.834,
+            "hex": "#01BED5",
+            "deltaE": 0.0059
           }
         },
         "500": {
@@ -9095,10 +9095,10 @@
           "id": "B58.500",
           "alpha": {
             "over": "black",
-            "source": "#00D4F2",
-            "alpha": 0.837,
-            "hex": "#00B1CA",
-            "deltaE": 0.0011
+            "source": "#01E3FF",
+            "alpha": 0.782,
+            "hex": "#01B2C7",
+            "deltaE": 0.006
           }
         },
         "550": {
@@ -9143,10 +9143,10 @@
           "id": "B58.550",
           "alpha": {
             "over": "black",
-            "source": "#00D4F2",
-            "alpha": 0.78,
-            "hex": "#00A5BD",
-            "deltaE": 0.0016
+            "source": "#02E3FF",
+            "alpha": 0.729,
+            "hex": "#01A6BA",
+            "deltaE": 0.0062
           }
         },
         "600": {
@@ -9191,10 +9191,10 @@
           "id": "B58.600",
           "alpha": {
             "over": "black",
-            "source": "#00D4F2",
-            "alpha": 0.721,
-            "hex": "#0099AF",
-            "deltaE": 0.002
+            "source": "#01E2FF",
+            "alpha": 0.676,
+            "hex": "#0099AC",
+            "deltaE": 0.0064
           }
         },
         "650": {
@@ -9239,10 +9239,10 @@
           "id": "B58.650",
           "alpha": {
             "over": "black",
-            "source": "#00D4F3",
-            "alpha": 0.661,
-            "hex": "#008CA1",
-            "deltaE": 0.0026
+            "source": "#00E2FE",
+            "alpha": 0.622,
+            "hex": "#008C9E",
+            "deltaE": 0.0067
           }
         },
         "700": {
@@ -9287,10 +9287,10 @@
           "id": "B58.700",
           "alpha": {
             "over": "black",
-            "source": "#00D4F4",
-            "alpha": 0.598,
-            "hex": "#007F92",
-            "deltaE": 0.0032
+            "source": "#00E1FE",
+            "alpha": 0.564,
+            "hex": "#007F90",
+            "deltaE": 0.0071
           }
         },
         "750": {
@@ -9335,10 +9335,10 @@
           "id": "B58.750",
           "alpha": {
             "over": "black",
-            "source": "#00D3F5",
-            "alpha": 0.533,
-            "hex": "#007182",
-            "deltaE": 0.0039
+            "source": "#00E0FF",
+            "alpha": 0.504,
+            "hex": "#007180",
+            "deltaE": 0.0076
           }
         },
         "800": {
@@ -9383,10 +9383,10 @@
           "id": "B58.800",
           "alpha": {
             "over": "black",
-            "source": "#00D3F6",
-            "alpha": 0.464,
-            "hex": "#006272",
-            "deltaE": 0.0046
+            "source": "#00DFFF",
+            "alpha": 0.44,
+            "hex": "#006270",
+            "deltaE": 0.0081
           }
         },
         "850": {
@@ -9431,10 +9431,10 @@
           "id": "B58.850",
           "alpha": {
             "over": "black",
-            "source": "#00D3F7",
-            "alpha": 0.39,
-            "hex": "#005260",
-            "deltaE": 0.0049
+            "source": "#01DDFF",
+            "alpha": 0.372,
+            "hex": "#00525F",
+            "deltaE": 0.008
           }
         },
         "900": {
@@ -9479,10 +9479,10 @@
           "id": "B58.900",
           "alpha": {
             "over": "black",
-            "source": "#00D3F9",
-            "alpha": 0.312,
-            "hex": "#00424E",
-            "deltaE": 0.0048
+            "source": "#00DCFF",
+            "alpha": 0.3,
+            "hex": "#00424C",
+            "deltaE": 0.0075
           }
         },
         "950": {
@@ -9527,10 +9527,10 @@
           "id": "B58.950",
           "alpha": {
             "over": "black",
-            "source": "#00D2FC",
-            "alpha": 0.2,
+            "source": "#00D9FF",
+            "alpha": 0.194,
             "hex": "#002A32",
-            "deltaE": 0.0052
+            "deltaE": 0.0072
           }
         }
       }
@@ -10087,10 +10087,10 @@
           "id": "B65.550",
           "alpha": {
             "over": "black",
-            "source": "#00ABEE",
-            "alpha": 0.931,
-            "hex": "#00A0DE",
-            "deltaE": 0.0001
+            "source": "#00BCFF",
+            "alpha": 0.853,
+            "hex": "#00A0D9",
+            "deltaE": 0.0074
           }
         },
         "600": {
@@ -10135,10 +10135,10 @@
           "id": "B65.600",
           "alpha": {
             "over": "black",
-            "source": "#00ABEF",
-            "alpha": 0.86,
-            "hex": "#0093CD",
-            "deltaE": 0.0001
+            "source": "#02BBFF",
+            "alpha": 0.79,
+            "hex": "#0294CA",
+            "deltaE": 0.0065
           }
         },
         "650": {
@@ -10183,10 +10183,10 @@
           "id": "B65.650",
           "alpha": {
             "over": "black",
-            "source": "#00ABF0",
-            "alpha": 0.787,
-            "hex": "#0086BD",
-            "deltaE": 0.0003
+            "source": "#00B9FF",
+            "alpha": 0.728,
+            "hex": "#0087B9",
+            "deltaE": 0.0051
           }
         },
         "700": {
@@ -10231,10 +10231,10 @@
           "id": "B65.700",
           "alpha": {
             "over": "black",
-            "source": "#00AAF0",
-            "alpha": 0.711,
-            "hex": "#0079AB",
-            "deltaE": 0.0003
+            "source": "#01B7FF",
+            "alpha": 0.661,
+            "hex": "#0179A9",
+            "deltaE": 0.0038
           }
         },
         "750": {
@@ -10279,10 +10279,10 @@
           "id": "B65.750",
           "alpha": {
             "over": "black",
-            "source": "#00AAF2",
-            "alpha": 0.632,
-            "hex": "#006B99",
-            "deltaE": 0.0011
+            "source": "#00B5FF",
+            "alpha": 0.593,
+            "hex": "#006B97",
+            "deltaE": 0.0025
           }
         },
         "800": {
@@ -10327,10 +10327,10 @@
           "id": "B65.800",
           "alpha": {
             "over": "black",
-            "source": "#00A9F3",
-            "alpha": 0.55,
-            "hex": "#005D86",
-            "deltaE": 0.0035
+            "source": "#01B2FF",
+            "alpha": 0.522,
+            "hex": "#015D85",
+            "deltaE": 0.0034
           }
         },
         "850": {
@@ -10375,10 +10375,10 @@
           "id": "B65.850",
           "alpha": {
             "over": "black",
-            "source": "#0FA8F4",
-            "alpha": 0.462,
-            "hex": "#074E71",
-            "deltaE": 0.0032
+            "source": "#01AEFE",
+            "alpha": 0.446,
+            "hex": "#004E72",
+            "deltaE": 0.0056
           }
         },
         "900": {
@@ -10423,10 +10423,10 @@
           "id": "B65.900",
           "alpha": {
             "over": "black",
-            "source": "#21A7F6",
-            "alpha": 0.37,
-            "hex": "#0C3E5B",
-            "deltaE": 0.0022
+            "source": "#01AAFE",
+            "alpha": 0.365,
+            "hex": "#003E5D",
+            "deltaE": 0.0073
           }
         },
         "950": {
@@ -10471,10 +10471,10 @@
           "id": "B65.950",
           "alpha": {
             "over": "black",
-            "source": "#33A5F8",
-            "alpha": 0.235,
-            "hex": "#0C273A",
-            "deltaE": 0.0056
+            "source": "#00A2FF",
+            "alpha": 0.243,
+            "hex": "#00273E",
+            "deltaE": 0.0078
           }
         }
       }
@@ -11271,10 +11271,10 @@
           "id": "B72.800",
           "alpha": {
             "over": "black",
-            "source": "#0052F8",
-            "alpha": 0.873,
-            "hex": "#0048D9",
-            "deltaE": 0.0128
+            "source": "#0057FF",
+            "alpha": 0.839,
+            "hex": "#0049D6",
+            "deltaE": 0.0176
           }
         },
         "850": {
@@ -11319,10 +11319,10 @@
           "id": "B72.850",
           "alpha": {
             "over": "black",
-            "source": "#0D51F8",
-            "alpha": 0.734,
-            "hex": "#093BB6",
-            "deltaE": 0.0231
+            "source": "#0049FE",
+            "alpha": 0.757,
+            "hex": "#0038C1",
+            "deltaE": 0.0048
           }
         },
         "900": {
@@ -11367,10 +11367,10 @@
           "id": "B72.900",
           "alpha": {
             "over": "black",
-            "source": "#1950F8",
-            "alpha": 0.591,
-            "hex": "#0F2F93",
-            "deltaE": 0.029
+            "source": "#0600FE",
+            "alpha": 0.789,
+            "hex": "#0500C9",
+            "deltaE": 0.0664
           }
         },
         "950": {
@@ -11415,10 +11415,10 @@
           "id": "B72.950",
           "alpha": {
             "over": "black",
-            "source": "#264EF9",
-            "alpha": 0.381,
-            "hex": "#0F1E5F",
-            "deltaE": 0.0182
+            "source": "#1A00FF",
+            "alpha": 0.528,
+            "hex": "#0E0086",
+            "deltaE": 0.0577
           }
         }
       }
@@ -12263,10 +12263,10 @@
           "id": "B77.850",
           "alpha": {
             "over": "black",
-            "source": "#4E29F0",
-            "alpha": 0.843,
-            "hex": "#4223CA",
-            "deltaE": 0.008
+            "source": "#5000FE",
+            "alpha": 0.876,
+            "hex": "#4600DF",
+            "deltaE": 0.043
           }
         },
         "900": {
@@ -12311,10 +12311,10 @@
           "id": "B77.900",
           "alpha": {
             "over": "black",
-            "source": "#4F28F0",
-            "alpha": 0.68,
-            "hex": "#361BA3",
-            "deltaE": 0.0133
+            "source": "#5101FF",
+            "alpha": 0.71,
+            "hex": "#3901B5",
+            "deltaE": 0.0452
           }
         },
         "950": {
@@ -12359,10 +12359,10 @@
           "id": "B77.950",
           "alpha": {
             "over": "black",
-            "source": "#5127F0",
-            "alpha": 0.442,
-            "hex": "#24116A",
-            "deltaE": 0.0124
+            "source": "#5303FF",
+            "alpha": 0.472,
+            "hex": "#270178",
+            "deltaE": 0.04
           }
         }
       }
@@ -13159,10 +13159,10 @@
           "id": "P81.800",
           "alpha": {
             "over": "black",
-            "source": "#801CFF",
-            "alpha": 0.876,
-            "hex": "#7119DF",
-            "deltaE": 0.0042
+            "source": "#7D02FF",
+            "alpha": 0.913,
+            "hex": "#7202E9",
+            "deltaE": 0.0131
           }
         },
         "850": {
@@ -13207,10 +13207,10 @@
           "id": "P81.850",
           "alpha": {
             "over": "black",
-            "source": "#811CFF",
-            "alpha": 0.739,
-            "hex": "#5F15BC",
-            "deltaE": 0.0043
+            "source": "#7E01FF",
+            "alpha": 0.774,
+            "hex": "#6101C5",
+            "deltaE": 0.0185
           }
         },
         "900": {
@@ -13255,10 +13255,10 @@
           "id": "P81.900",
           "alpha": {
             "over": "black",
-            "source": "#811CFF",
-            "alpha": 0.597,
-            "hex": "#4D1198",
-            "deltaE": 0.0076
+            "source": "#7E00FF",
+            "alpha": 0.63,
+            "hex": "#4F00A1",
+            "deltaE": 0.0228
           }
         },
         "950": {
@@ -13303,10 +13303,10 @@
           "id": "P81.950",
           "alpha": {
             "over": "black",
-            "source": "#811BFF",
-            "alpha": 0.389,
-            "hex": "#320B63",
-            "deltaE": 0.0075
+            "source": "#7E00FE",
+            "alpha": 0.42,
+            "hex": "#35006B",
+            "deltaE": 0.0224
           }
         }
       }
@@ -14055,10 +14055,10 @@
           "id": "P84.750",
           "alpha": {
             "over": "black",
-            "source": "#A718FF",
-            "alpha": 0.906,
-            "hex": "#9716E7",
-            "deltaE": 0.0163
+            "source": "#A102FF",
+            "alpha": 0.941,
+            "hex": "#9802F0",
+            "deltaE": 0.0014
           }
         },
         "800": {
@@ -14103,10 +14103,10 @@
           "id": "P84.800",
           "alpha": {
             "over": "black",
-            "source": "#A718FF",
-            "alpha": 0.787,
-            "hex": "#8313C9",
-            "deltaE": 0.0116
+            "source": "#A100FF",
+            "alpha": 0.82,
+            "hex": "#8400D1",
+            "deltaE": 0.0043
           }
         },
         "850": {
@@ -14151,10 +14151,10 @@
           "id": "P84.850",
           "alpha": {
             "over": "black",
-            "source": "#A817FF",
-            "alpha": 0.663,
-            "hex": "#6F10A9",
-            "deltaE": 0.007
+            "source": "#A200FE",
+            "alpha": 0.694,
+            "hex": "#7000B0",
+            "deltaE": 0.0106
           }
         },
         "900": {
@@ -14199,10 +14199,10 @@
           "id": "P84.900",
           "alpha": {
             "over": "black",
-            "source": "#A817FF",
-            "alpha": 0.536,
-            "hex": "#5A0C89",
-            "deltaE": 0.0067
+            "source": "#A300FF",
+            "alpha": 0.561,
+            "hex": "#5B008F",
+            "deltaE": 0.0157
           }
         },
         "950": {
@@ -14247,10 +14247,10 @@
           "id": "P84.950",
           "alpha": {
             "over": "black",
-            "source": "#A916FF",
-            "alpha": 0.35,
-            "hex": "#3B0859",
-            "deltaE": 0.0069
+            "source": "#A401FF",
+            "alpha": 0.371,
+            "hex": "#3D005F",
+            "deltaE": 0.0167
           }
         }
       }
@@ -14903,10 +14903,10 @@
           "id": "P89.650",
           "alpha": {
             "over": "black",
-            "source": "#EA00FF",
-            "alpha": 0.939,
-            "hex": "#DC00EF",
-            "deltaE": 0.007
+            "source": "#E600FF",
+            "alpha": 0.952,
+            "hex": "#DB00F3",
+            "deltaE": 0.0012
           }
         },
         "700": {
@@ -14951,10 +14951,10 @@
           "id": "P89.700",
           "alpha": {
             "over": "black",
-            "source": "#EB00FF",
-            "alpha": 0.844,
-            "hex": "#C600D7",
-            "deltaE": 0.0052
+            "source": "#E700FF",
+            "alpha": 0.854,
+            "hex": "#C500DA",
+            "deltaE": 0.0009
           }
         },
         "750": {
@@ -14999,10 +14999,10 @@
           "id": "P89.750",
           "alpha": {
             "over": "black",
-            "source": "#EB00FF",
-            "alpha": 0.746,
-            "hex": "#B000BE",
-            "deltaE": 0.0034
+            "source": "#E800FF",
+            "alpha": 0.753,
+            "hex": "#AF00C0",
+            "deltaE": 0.0005
           }
         },
         "800": {
@@ -15047,10 +15047,10 @@
           "id": "P89.800",
           "alpha": {
             "over": "black",
-            "source": "#EC00FF",
-            "alpha": 0.648,
-            "hex": "#9900A5",
-            "deltaE": 0.004
+            "source": "#EB02FF",
+            "alpha": 0.65,
+            "hex": "#9902A6",
+            "deltaE": 0.0032
           }
         },
         "850": {
@@ -15095,10 +15095,10 @@
           "id": "P89.850",
           "alpha": {
             "over": "black",
-            "source": "#ED00FF",
-            "alpha": 0.547,
+            "source": "#ED00FE",
+            "alpha": 0.549,
             "hex": "#82008C",
-            "deltaE": 0.0093
+            "deltaE": 0.0092
           }
         },
         "900": {
@@ -15143,10 +15143,10 @@
           "id": "P89.900",
           "alpha": {
             "over": "black",
-            "source": "#EE00FD",
-            "alpha": 0.444,
-            "hex": "#6A0070",
-            "deltaE": 0.0137
+            "source": "#F002FF",
+            "alpha": 0.44,
+            "hex": "#6A0170",
+            "deltaE": 0.0128
           }
         },
         "950": {
@@ -15191,10 +15191,10 @@
           "id": "P89.950",
           "alpha": {
             "over": "black",
-            "source": "#F000FA",
-            "alpha": 0.294,
+            "source": "#F500FE",
+            "alpha": 0.289,
             "hex": "#47004A",
-            "deltaE": 0.0151
+            "deltaE": 0.0149
           }
         }
       }
@@ -15847,10 +15847,10 @@
           "id": "R98.650",
           "alpha": {
             "over": "black",
-            "source": "#F53C99",
-            "alpha": 0.916,
-            "hex": "#E1378C",
-            "deltaE": 0.0032
+            "source": "#FF0097",
+            "alpha": 0.945,
+            "hex": "#F1008F",
+            "deltaE": 0.038
           }
         },
         "700": {
@@ -15895,10 +15895,10 @@
           "id": "R98.700",
           "alpha": {
             "over": "black",
-            "source": "#F63C98",
-            "alpha": 0.828,
-            "hex": "#CC327E",
-            "deltaE": 0.0054
+            "source": "#FF0096",
+            "alpha": 0.857,
+            "hex": "#DA0080",
+            "deltaE": 0.0339
           }
         },
         "750": {
@@ -15943,10 +15943,10 @@
           "id": "R98.750",
           "alpha": {
             "over": "black",
-            "source": "#F63C96",
-            "alpha": 0.737,
-            "hex": "#B52C6F",
-            "deltaE": 0.0069
+            "source": "#FE0093",
+            "alpha": 0.768,
+            "hex": "#C30071",
+            "deltaE": 0.0304
           }
         },
         "800": {
@@ -15991,10 +15991,10 @@
           "id": "R98.800",
           "alpha": {
             "over": "black",
-            "source": "#F73C94",
-            "alpha": 0.641,
-            "hex": "#9E265F",
-            "deltaE": 0.0076
+            "source": "#FF0091",
+            "alpha": 0.671,
+            "hex": "#AB0061",
+            "deltaE": 0.0276
           }
         },
         "850": {
@@ -16039,10 +16039,10 @@
           "id": "R98.850",
           "alpha": {
             "over": "black",
-            "source": "#F73B92",
-            "alpha": 0.539,
-            "hex": "#86204F",
-            "deltaE": 0.0082
+            "source": "#FF028E",
+            "alpha": 0.568,
+            "hex": "#910151",
+            "deltaE": 0.0243
           }
         },
         "900": {
@@ -16087,10 +16087,10 @@
           "id": "R98.900",
           "alpha": {
             "over": "black",
-            "source": "#F83B8F",
-            "alpha": 0.434,
-            "hex": "#6C1A3E",
-            "deltaE": 0.0088
+            "source": "#FF008A",
+            "alpha": 0.464,
+            "hex": "#760040",
+            "deltaE": 0.0231
           }
         },
         "950": {
@@ -16135,10 +16135,10 @@
           "id": "R98.950",
           "alpha": {
             "over": "black",
-            "source": "#F93A8A",
-            "alpha": 0.28,
-            "hex": "#461027",
-            "deltaE": 0.0121
+            "source": "#FF0084",
+            "alpha": 0.31,
+            "hex": "#4F0029",
+            "deltaE": 0.0189
           }
         }
       }
@@ -16791,10 +16791,10 @@
           "id": "R05.650",
           "alpha": {
             "over": "black",
-            "source": "#FF2A5A",
-            "alpha": 0.941,
-            "hex": "#F02755",
-            "deltaE": 0.011
+            "source": "#FF0050",
+            "alpha": 0.976,
+            "hex": "#F9004E",
+            "deltaE": 0.0098
           }
         },
         "700": {
@@ -16839,10 +16839,10 @@
           "id": "R05.700",
           "alpha": {
             "over": "black",
-            "source": "#FF2A59",
-            "alpha": 0.852,
-            "hex": "#D9244C",
-            "deltaE": 0.0107
+            "source": "#FF004F",
+            "alpha": 0.885,
+            "hex": "#E20046",
+            "deltaE": 0.0098
           }
         },
         "750": {
@@ -16887,10 +16887,10 @@
           "id": "R05.750",
           "alpha": {
             "over": "black",
-            "source": "#FF2A58",
-            "alpha": 0.759,
-            "hex": "#C12043",
-            "deltaE": 0.01
+            "source": "#FF004E",
+            "alpha": 0.79,
+            "hex": "#C9003E",
+            "deltaE": 0.0105
           }
         },
         "800": {
@@ -16935,10 +16935,10 @@
           "id": "R05.800",
           "alpha": {
             "over": "black",
-            "source": "#FF2A57",
-            "alpha": 0.661,
-            "hex": "#A91C3A",
-            "deltaE": 0.0089
+            "source": "#FF004D",
+            "alpha": 0.691,
+            "hex": "#B00035",
+            "deltaE": 0.0118
           }
         },
         "850": {
@@ -16983,10 +16983,10 @@
           "id": "R05.850",
           "alpha": {
             "over": "black",
-            "source": "#FF2A56",
-            "alpha": 0.557,
-            "hex": "#8E1830",
-            "deltaE": 0.008
+            "source": "#FF014B",
+            "alpha": 0.585,
+            "hex": "#95012C",
+            "deltaE": 0.0128
           }
         },
         "900": {
@@ -17031,10 +17031,10 @@
           "id": "R05.900",
           "alpha": {
             "over": "black",
-            "source": "#FF2B54",
-            "alpha": 0.45,
-            "hex": "#731326",
-            "deltaE": 0.0075
+            "source": "#FF034A",
+            "alpha": 0.476,
+            "hex": "#790123",
+            "deltaE": 0.0135
           }
         },
         "950": {
@@ -17079,10 +17079,10 @@
           "id": "R05.950",
           "alpha": {
             "over": "black",
-            "source": "#FF2B51",
-            "alpha": 0.293,
-            "hex": "#4B0D18",
-            "deltaE": 0.0096
+            "source": "#FE0046",
+            "alpha": 0.319,
+            "hex": "#510016",
+            "deltaE": 0.0148
           }
         }
       }
