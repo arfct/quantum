@@ -106,7 +106,7 @@
       },
       "bend": -2.5,
       "peakChroma": 0.2311,
-      "code": "R08",
+      "code": "r08",
       "natural": {
         "L": 0.652,
         "C": 0.2956,
@@ -164,7 +164,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R08.050",
+          "id": "r08.050",
           "alpha": {
             "over": "white",
             "source": "#FF3E2E",
@@ -212,7 +212,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R08.100",
+          "id": "r08.100",
           "alpha": {
             "over": "white",
             "source": "#FF3E2E",
@@ -260,7 +260,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R08.150",
+          "id": "r08.150",
           "alpha": {
             "over": "white",
             "source": "#FF3E2E",
@@ -308,7 +308,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R08.200",
+          "id": "r08.200",
           "alpha": {
             "over": "white",
             "source": "#FF3E2E",
@@ -356,7 +356,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R08.250",
+          "id": "r08.250",
           "alpha": {
             "over": "white",
             "source": "#FF3E2E",
@@ -404,7 +404,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R08.300",
+          "id": "r08.300",
           "alpha": {
             "over": "white",
             "source": "#FF3E2E",
@@ -452,7 +452,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R08.350",
+          "id": "r08.350",
           "alpha": {
             "over": "white",
             "source": "#FF3E2E",
@@ -500,7 +500,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R08.400",
+          "id": "r08.400",
           "alpha": {
             "over": "white",
             "source": "#FF3E2E",
@@ -548,7 +548,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R08.450",
+          "id": "r08.450",
           "alpha": {
             "over": "white",
             "source": "#FF3E2E",
@@ -596,7 +596,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R08.500",
+          "id": "r08.500",
           "alpha": {
             "over": "white",
             "source": "#FF3E2E",
@@ -644,7 +644,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R08.550",
+          "id": "r08.550",
           "alpha": {
             "over": "white",
             "source": "#FF3E2E",
@@ -692,7 +692,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R08.600",
+          "id": "r08.600",
           "alpha": {
             "over": "white",
             "source": "#FF3E2F",
@@ -740,7 +740,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R08.650",
+          "id": "r08.650",
           "alpha": {
             "over": "black",
             "source": "#FF0001",
@@ -788,7 +788,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R08.700",
+          "id": "r08.700",
           "alpha": {
             "over": "black",
             "source": "#FF0004",
@@ -836,7 +836,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R08.750",
+          "id": "r08.750",
           "alpha": {
             "over": "black",
             "source": "#FF0008",
@@ -884,7 +884,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R08.800",
+          "id": "r08.800",
           "alpha": {
             "over": "black",
             "source": "#FF000D",
@@ -932,7 +932,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R08.850",
+          "id": "r08.850",
           "alpha": {
             "over": "black",
             "source": "#FF0012",
@@ -980,7 +980,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R08.900",
+          "id": "r08.900",
           "alpha": {
             "over": "black",
             "source": "#FF0016",
@@ -1028,7 +1028,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R08.950",
+          "id": "r08.950",
           "alpha": {
             "over": "black",
             "source": "#FE001D",
@@ -1050,7 +1050,7 @@
       },
       "bend": -13,
       "peakChroma": 0.2036,
-      "code": "O13",
+      "code": "o13",
       "natural": {
         "L": 0.73,
         "C": 0.2271,
@@ -1108,7 +1108,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "O13.050",
+          "id": "o13.050",
           "alpha": {
             "over": "white",
             "source": "#FF7300",
@@ -1156,7 +1156,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "O13.100",
+          "id": "o13.100",
           "alpha": {
             "over": "white",
             "source": "#FF7300",
@@ -1204,7 +1204,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "O13.150",
+          "id": "o13.150",
           "alpha": {
             "over": "white",
             "source": "#FF7300",
@@ -1252,7 +1252,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "O13.200",
+          "id": "o13.200",
           "alpha": {
             "over": "white",
             "source": "#FF7300",
@@ -1300,7 +1300,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "O13.250",
+          "id": "o13.250",
           "alpha": {
             "over": "white",
             "source": "#FF7300",
@@ -1348,7 +1348,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "O13.300",
+          "id": "o13.300",
           "alpha": {
             "over": "white",
             "source": "#FF7300",
@@ -1396,7 +1396,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "O13.350",
+          "id": "o13.350",
           "alpha": {
             "over": "white",
             "source": "#FF7300",
@@ -1444,7 +1444,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "O13.400",
+          "id": "o13.400",
           "alpha": {
             "over": "white",
             "source": "#FF7300",
@@ -1492,7 +1492,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "O13.450",
+          "id": "o13.450",
           "alpha": {
             "over": "white",
             "source": "#FF7300",
@@ -1540,7 +1540,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "O13.500",
+          "id": "o13.500",
           "alpha": {
             "over": "white",
             "source": "#FF7300",
@@ -1588,7 +1588,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "O13.550",
+          "id": "o13.550",
           "alpha": {
             "over": "black",
             "source": "#FF7100",
@@ -1636,7 +1636,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "O13.600",
+          "id": "o13.600",
           "alpha": {
             "over": "black",
             "source": "#FF7000",
@@ -1684,7 +1684,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "O13.650",
+          "id": "o13.650",
           "alpha": {
             "over": "black",
             "source": "#FE6D00",
@@ -1732,7 +1732,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "O13.700",
+          "id": "o13.700",
           "alpha": {
             "over": "black",
             "source": "#FE6A00",
@@ -1780,7 +1780,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "O13.750",
+          "id": "o13.750",
           "alpha": {
             "over": "black",
             "source": "#FF6600",
@@ -1828,7 +1828,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "O13.800",
+          "id": "o13.800",
           "alpha": {
             "over": "black",
             "source": "#FF6100",
@@ -1876,7 +1876,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "O13.850",
+          "id": "o13.850",
           "alpha": {
             "over": "black",
             "source": "#FF5B00",
@@ -1924,7 +1924,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "O13.900",
+          "id": "o13.900",
           "alpha": {
             "over": "black",
             "source": "#FE5200",
@@ -1972,7 +1972,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "O13.950",
+          "id": "o13.950",
           "alpha": {
             "over": "black",
             "source": "#FF4000",
@@ -1994,7 +1994,7 @@
       },
       "bend": -27.3,
       "peakChroma": 0.1622,
-      "code": "Y22",
+      "code": "y24",
       "natural": {
         "L": 0.828,
         "C": 0.1986,
@@ -2052,7 +2052,7 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "Y22.050",
+          "id": "y24.050",
           "alpha": {
             "over": "white",
             "source": "#E4CB30",
@@ -2100,7 +2100,7 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "Y22.100",
+          "id": "y24.100",
           "alpha": {
             "over": "white",
             "source": "#E9C92E",
@@ -2148,7 +2148,7 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "Y22.150",
+          "id": "y24.150",
           "alpha": {
             "over": "white",
             "source": "#EDC72C",
@@ -2196,7 +2196,7 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "Y22.200",
+          "id": "y24.200",
           "alpha": {
             "over": "white",
             "source": "#F1C52A",
@@ -2244,7 +2244,7 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "Y22.250",
+          "id": "y24.250",
           "alpha": {
             "over": "white",
             "source": "#F5C32A",
@@ -2292,7 +2292,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y22.300",
+          "id": "y24.300",
           "alpha": {
             "over": "white",
             "source": "#F9C12B",
@@ -2340,7 +2340,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y22.350",
+          "id": "y24.350",
           "alpha": {
             "over": "black",
             "source": "#FFBF00",
@@ -2388,7 +2388,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y22.400",
+          "id": "y24.400",
           "alpha": {
             "over": "black",
             "source": "#FFBB00",
@@ -2436,7 +2436,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y22.450",
+          "id": "y24.450",
           "alpha": {
             "over": "black",
             "source": "#FFB701",
@@ -2484,7 +2484,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y22.500",
+          "id": "y24.500",
           "alpha": {
             "over": "black",
             "source": "#FEB200",
@@ -2532,7 +2532,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y22.550",
+          "id": "y24.550",
           "alpha": {
             "over": "black",
             "source": "#FEAE00",
@@ -2580,7 +2580,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y22.600",
+          "id": "y24.600",
           "alpha": {
             "over": "black",
             "source": "#FEAA01",
@@ -2628,7 +2628,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y22.650",
+          "id": "y24.650",
           "alpha": {
             "over": "black",
             "source": "#FFA500",
@@ -2676,7 +2676,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y22.700",
+          "id": "y24.700",
           "alpha": {
             "over": "black",
             "source": "#FFA000",
@@ -2724,7 +2724,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y22.750",
+          "id": "y24.750",
           "alpha": {
             "over": "black",
             "source": "#FF9B00",
@@ -2772,7 +2772,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y22.800",
+          "id": "y24.800",
           "alpha": {
             "over": "black",
             "source": "#FF9500",
@@ -2820,7 +2820,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y22.850",
+          "id": "y24.850",
           "alpha": {
             "over": "black",
             "source": "#FF8E01",
@@ -2868,7 +2868,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y22.900",
+          "id": "y24.900",
           "alpha": {
             "over": "black",
             "source": "#FF8701",
@@ -2916,7 +2916,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y22.950",
+          "id": "y24.950",
           "alpha": {
             "over": "black",
             "source": "#FF7A00",
@@ -2938,7 +2938,7 @@
       },
       "bend": -32.5,
       "peakChroma": 0.1894,
-      "code": "Y27",
+      "code": "y28",
       "natural": {
         "L": 0.902,
         "C": 0.2159,
@@ -2996,7 +2996,7 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "Y27.050",
+          "id": "y28.050",
           "alpha": {
             "over": "white",
             "source": "#E6C900",
@@ -3044,7 +3044,7 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "Y27.100",
+          "id": "y28.100",
           "alpha": {
             "over": "white",
             "source": "#E6C900",
@@ -3092,7 +3092,7 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "Y27.150",
+          "id": "y28.150",
           "alpha": {
             "over": "white",
             "source": "#E6C900",
@@ -3140,7 +3140,7 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "Y27.200",
+          "id": "y28.200",
           "alpha": {
             "over": "white",
             "source": "#E6C900",
@@ -3188,7 +3188,7 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "Y27.250",
+          "id": "y28.250",
           "alpha": {
             "over": "white",
             "source": "#E6C900",
@@ -3236,7 +3236,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y27.300",
+          "id": "y28.300",
           "alpha": {
             "over": "white",
             "source": "#E6C900",
@@ -3284,7 +3284,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y27.350",
+          "id": "y28.350",
           "alpha": {
             "over": "black",
             "source": "#FEE201",
@@ -3332,7 +3332,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y27.400",
+          "id": "y28.400",
           "alpha": {
             "over": "black",
             "source": "#FEE201",
@@ -3380,7 +3380,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y27.450",
+          "id": "y28.450",
           "alpha": {
             "over": "black",
             "source": "#FFE100",
@@ -3428,7 +3428,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y27.500",
+          "id": "y28.500",
           "alpha": {
             "over": "black",
             "source": "#FFDE01",
@@ -3476,7 +3476,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y27.550",
+          "id": "y28.550",
           "alpha": {
             "over": "black",
             "source": "#FEDA00",
@@ -3524,7 +3524,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y27.600",
+          "id": "y28.600",
           "alpha": {
             "over": "black",
             "source": "#FFD601",
@@ -3572,7 +3572,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y27.650",
+          "id": "y28.650",
           "alpha": {
             "over": "black",
             "source": "#FFD101",
@@ -3620,7 +3620,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y27.700",
+          "id": "y28.700",
           "alpha": {
             "over": "black",
             "source": "#FFCB02",
@@ -3668,7 +3668,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y27.750",
+          "id": "y28.750",
           "alpha": {
             "over": "black",
             "source": "#FEC400",
@@ -3716,7 +3716,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y27.800",
+          "id": "y28.800",
           "alpha": {
             "over": "black",
             "source": "#FEBD00",
@@ -3764,7 +3764,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y27.850",
+          "id": "y28.850",
           "alpha": {
             "over": "black",
             "source": "#FEB500",
@@ -3812,7 +3812,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y27.900",
+          "id": "y28.900",
           "alpha": {
             "over": "black",
             "source": "#FFAB00",
@@ -3860,7 +3860,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "Y27.950",
+          "id": "y28.950",
           "alpha": {
             "over": "black",
             "source": "#FF9B00",
@@ -3882,7 +3882,7 @@
       },
       "bend": -12.2,
       "peakChroma": 0.198,
-      "code": "G32",
+      "code": "g32",
       "natural": {
         "L": 0.948,
         "C": 0.2521,
@@ -3940,7 +3940,7 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "G32.050",
+          "id": "g32.050",
           "alpha": {
             "over": "white",
             "source": "#C1D500",
@@ -3988,7 +3988,7 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "G32.100",
+          "id": "g32.100",
           "alpha": {
             "over": "white",
             "source": "#C1D500",
@@ -4036,7 +4036,7 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "G32.150",
+          "id": "g32.150",
           "alpha": {
             "over": "white",
             "source": "#C1D500",
@@ -4084,7 +4084,7 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "G32.200",
+          "id": "g32.200",
           "alpha": {
             "over": "white",
             "source": "#C1D500",
@@ -4132,7 +4132,7 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "G32.250",
+          "id": "g32.250",
           "alpha": {
             "over": "white",
             "source": "#C1D500",
@@ -4180,7 +4180,7 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "G32.300",
+          "id": "g32.300",
           "alpha": {
             "over": "white",
             "source": "#C1D500",
@@ -4228,7 +4228,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G32.350",
+          "id": "g32.350",
           "alpha": {
             "over": "black",
             "source": "#E9FF00",
@@ -4276,7 +4276,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G32.400",
+          "id": "g32.400",
           "alpha": {
             "over": "black",
             "source": "#E9FF00",
@@ -4324,7 +4324,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G32.450",
+          "id": "g32.450",
           "alpha": {
             "over": "black",
             "source": "#E9FF00",
@@ -4372,7 +4372,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G32.500",
+          "id": "g32.500",
           "alpha": {
             "over": "black",
             "source": "#E9FF00",
@@ -4420,7 +4420,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G32.550",
+          "id": "g32.550",
           "alpha": {
             "over": "black",
             "source": "#E9FE00",
@@ -4468,7 +4468,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G32.600",
+          "id": "g32.600",
           "alpha": {
             "over": "black",
             "source": "#ECFF00",
@@ -4516,7 +4516,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G32.650",
+          "id": "g32.650",
           "alpha": {
             "over": "black",
             "source": "#EEFF00",
@@ -4564,7 +4564,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G32.700",
+          "id": "g32.700",
           "alpha": {
             "over": "black",
             "source": "#F2FE00",
@@ -4612,7 +4612,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G32.750",
+          "id": "g32.750",
           "alpha": {
             "over": "black",
             "source": "#F6FF00",
@@ -4660,7 +4660,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G32.800",
+          "id": "g32.800",
           "alpha": {
             "over": "black",
             "source": "#FBFF00",
@@ -4708,7 +4708,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G32.850",
+          "id": "g32.850",
           "alpha": {
             "over": "black",
             "source": "#FEFC00",
@@ -4756,7 +4756,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G32.900",
+          "id": "g32.900",
           "alpha": {
             "over": "black",
             "source": "#FFF600",
@@ -4804,7 +4804,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G32.950",
+          "id": "g32.950",
           "alpha": {
             "over": "black",
             "source": "#FFED03",
@@ -4826,7 +4826,7 @@
       },
       "bend": -1.4,
       "peakChroma": 0.2188,
-      "code": "G36",
+      "code": "g36",
       "natural": {
         "L": 0.904,
         "C": 0.2881,
@@ -4884,7 +4884,7 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "G36.050",
+          "id": "g36.050",
           "alpha": {
             "over": "white",
             "source": "#87D400",
@@ -4932,7 +4932,7 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "G36.100",
+          "id": "g36.100",
           "alpha": {
             "over": "white",
             "source": "#87D400",
@@ -4980,7 +4980,7 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "G36.150",
+          "id": "g36.150",
           "alpha": {
             "over": "white",
             "source": "#87D400",
@@ -5028,7 +5028,7 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "G36.200",
+          "id": "g36.200",
           "alpha": {
             "over": "white",
             "source": "#87D400",
@@ -5076,7 +5076,7 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "G36.250",
+          "id": "g36.250",
           "alpha": {
             "over": "white",
             "source": "#87D400",
@@ -5124,7 +5124,7 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "G36.300",
+          "id": "g36.300",
           "alpha": {
             "over": "white",
             "source": "#87D400",
@@ -5172,7 +5172,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G36.350",
+          "id": "g36.350",
           "alpha": {
             "over": "white",
             "source": "#87D400",
@@ -5220,7 +5220,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G36.400",
+          "id": "g36.400",
           "alpha": {
             "over": "black",
             "source": "#A4FF01",
@@ -5268,7 +5268,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G36.450",
+          "id": "g36.450",
           "alpha": {
             "over": "black",
             "source": "#A4FF01",
@@ -5316,7 +5316,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G36.500",
+          "id": "g36.500",
           "alpha": {
             "over": "black",
             "source": "#A4FF01",
@@ -5364,7 +5364,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G36.550",
+          "id": "g36.550",
           "alpha": {
             "over": "black",
             "source": "#A4FE00",
@@ -5412,7 +5412,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G36.600",
+          "id": "g36.600",
           "alpha": {
             "over": "black",
             "source": "#A4FE00",
@@ -5460,7 +5460,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G36.650",
+          "id": "g36.650",
           "alpha": {
             "over": "black",
             "source": "#A5FE00",
@@ -5508,7 +5508,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G36.700",
+          "id": "g36.700",
           "alpha": {
             "over": "black",
             "source": "#A6FF00",
@@ -5556,7 +5556,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G36.750",
+          "id": "g36.750",
           "alpha": {
             "over": "black",
             "source": "#A7FF00",
@@ -5604,7 +5604,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G36.800",
+          "id": "g36.800",
           "alpha": {
             "over": "black",
             "source": "#A7FF01",
@@ -5652,7 +5652,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G36.850",
+          "id": "g36.850",
           "alpha": {
             "over": "black",
             "source": "#A8FE00",
@@ -5700,7 +5700,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G36.900",
+          "id": "g36.900",
           "alpha": {
             "over": "black",
             "source": "#AAFF00",
@@ -5748,7 +5748,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G36.950",
+          "id": "g36.950",
           "alpha": {
             "over": "black",
             "source": "#ACFE00",
@@ -5770,7 +5770,7 @@
       },
       "bend": 5.6,
       "peakChroma": 0.2238,
-      "code": "G40",
+      "code": "g40",
       "natural": {
         "L": 0.856,
         "C": 0.3523,
@@ -5828,7 +5828,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G40.050",
+          "id": "g40.050",
           "alpha": {
             "over": "white",
             "source": "#44DB4A",
@@ -5876,7 +5876,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G40.100",
+          "id": "g40.100",
           "alpha": {
             "over": "white",
             "source": "#44DB4A",
@@ -5924,7 +5924,7 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "G40.150",
+          "id": "g40.150",
           "alpha": {
             "over": "white",
             "source": "#44DB4A",
@@ -5972,7 +5972,7 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "G40.200",
+          "id": "g40.200",
           "alpha": {
             "over": "white",
             "source": "#44DB4A",
@@ -6020,7 +6020,7 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "G40.250",
+          "id": "g40.250",
           "alpha": {
             "over": "white",
             "source": "#44DB4A",
@@ -6068,7 +6068,7 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "G40.300",
+          "id": "g40.300",
           "alpha": {
             "over": "white",
             "source": "#44DB4A",
@@ -6116,7 +6116,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G40.350",
+          "id": "g40.350",
           "alpha": {
             "over": "white",
             "source": "#44DB4A",
@@ -6164,7 +6164,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G40.400",
+          "id": "g40.400",
           "alpha": {
             "over": "black",
             "source": "#00FE30",
@@ -6212,7 +6212,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G40.450",
+          "id": "g40.450",
           "alpha": {
             "over": "black",
             "source": "#00FE30",
@@ -6260,7 +6260,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G40.500",
+          "id": "g40.500",
           "alpha": {
             "over": "black",
             "source": "#00FE30",
@@ -6308,7 +6308,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G40.550",
+          "id": "g40.550",
           "alpha": {
             "over": "black",
             "source": "#00FE33",
@@ -6356,7 +6356,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G40.600",
+          "id": "g40.600",
           "alpha": {
             "over": "black",
             "source": "#00FF38",
@@ -6404,7 +6404,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G40.650",
+          "id": "g40.650",
           "alpha": {
             "over": "black",
             "source": "#00FF3E",
@@ -6452,7 +6452,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G40.700",
+          "id": "g40.700",
           "alpha": {
             "over": "black",
             "source": "#00FF45",
@@ -6500,7 +6500,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G40.750",
+          "id": "g40.750",
           "alpha": {
             "over": "black",
             "source": "#00FE4D",
@@ -6548,7 +6548,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G40.800",
+          "id": "g40.800",
           "alpha": {
             "over": "black",
             "source": "#00FF55",
@@ -6596,7 +6596,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G40.850",
+          "id": "g40.850",
           "alpha": {
             "over": "black",
             "source": "#00FF5D",
@@ -6644,7 +6644,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G40.900",
+          "id": "g40.900",
           "alpha": {
             "over": "black",
             "source": "#00FE66",
@@ -6692,7 +6692,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G40.950",
+          "id": "g40.950",
           "alpha": {
             "over": "black",
             "source": "#00FF72",
@@ -6714,7 +6714,7 @@
       },
       "bend": 10.3,
       "peakChroma": 0.1689,
-      "code": "G45",
+      "code": "g45",
       "natural": {
         "L": 0.866,
         "C": 0.259,
@@ -6772,7 +6772,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G45.050",
+          "id": "g45.050",
           "alpha": {
             "over": "white",
             "source": "#3EEEAB",
@@ -6820,7 +6820,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G45.100",
+          "id": "g45.100",
           "alpha": {
             "over": "white",
             "source": "#3EEEAB",
@@ -6868,7 +6868,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G45.150",
+          "id": "g45.150",
           "alpha": {
             "over": "white",
             "source": "#3EEEAB",
@@ -6916,7 +6916,7 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "G45.200",
+          "id": "g45.200",
           "alpha": {
             "over": "white",
             "source": "#3EEEAB",
@@ -6964,7 +6964,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G45.250",
+          "id": "g45.250",
           "alpha": {
             "over": "white",
             "source": "#3EEEAB",
@@ -7012,7 +7012,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G45.300",
+          "id": "g45.300",
           "alpha": {
             "over": "black",
             "source": "#01FFB2",
@@ -7060,7 +7060,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G45.350",
+          "id": "g45.350",
           "alpha": {
             "over": "black",
             "source": "#01FFB2",
@@ -7108,7 +7108,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G45.400",
+          "id": "g45.400",
           "alpha": {
             "over": "black",
             "source": "#01FFB2",
@@ -7156,7 +7156,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G45.450",
+          "id": "g45.450",
           "alpha": {
             "over": "black",
             "source": "#01FFB2",
@@ -7204,7 +7204,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G45.500",
+          "id": "g45.500",
           "alpha": {
             "over": "black",
             "source": "#01FFB2",
@@ -7252,7 +7252,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G45.550",
+          "id": "g45.550",
           "alpha": {
             "over": "black",
             "source": "#00FFB3",
@@ -7300,7 +7300,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G45.600",
+          "id": "g45.600",
           "alpha": {
             "over": "black",
             "source": "#00FFB4",
@@ -7348,7 +7348,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G45.650",
+          "id": "g45.650",
           "alpha": {
             "over": "black",
             "source": "#01FFB6",
@@ -7396,7 +7396,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G45.700",
+          "id": "g45.700",
           "alpha": {
             "over": "black",
             "source": "#01FEB9",
@@ -7444,7 +7444,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G45.750",
+          "id": "g45.750",
           "alpha": {
             "over": "black",
             "source": "#01FFBC",
@@ -7492,7 +7492,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G45.800",
+          "id": "g45.800",
           "alpha": {
             "over": "black",
             "source": "#00FFBF",
@@ -7540,7 +7540,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G45.850",
+          "id": "g45.850",
           "alpha": {
             "over": "black",
             "source": "#00FFC4",
@@ -7588,7 +7588,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G45.900",
+          "id": "g45.900",
           "alpha": {
             "over": "black",
             "source": "#01FEC8",
@@ -7636,7 +7636,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G45.950",
+          "id": "g45.950",
           "alpha": {
             "over": "black",
             "source": "#01FFCF",
@@ -7658,7 +7658,7 @@
       },
       "bend": 10.9,
       "peakChroma": 0.1457,
-      "code": "G51",
+      "code": "g51",
       "natural": {
         "L": 0.882,
         "C": 0.2132,
@@ -7716,7 +7716,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G51.050",
+          "id": "g51.050",
           "alpha": {
             "over": "white",
             "source": "#2AECD5",
@@ -7764,7 +7764,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G51.100",
+          "id": "g51.100",
           "alpha": {
             "over": "white",
             "source": "#2AECD5",
@@ -7812,7 +7812,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G51.150",
+          "id": "g51.150",
           "alpha": {
             "over": "white",
             "source": "#2AECD5",
@@ -7860,7 +7860,7 @@
           },
           "clamped": false,
           "capped": true,
-          "id": "G51.200",
+          "id": "g51.200",
           "alpha": {
             "over": "white",
             "source": "#2AECD5",
@@ -7908,7 +7908,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G51.250",
+          "id": "g51.250",
           "alpha": {
             "over": "white",
             "source": "#2AECD5",
@@ -7956,7 +7956,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G51.300",
+          "id": "g51.300",
           "alpha": {
             "over": "black",
             "source": "#00FEE6",
@@ -8004,7 +8004,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G51.350",
+          "id": "g51.350",
           "alpha": {
             "over": "black",
             "source": "#00FEE6",
@@ -8052,7 +8052,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G51.400",
+          "id": "g51.400",
           "alpha": {
             "over": "black",
             "source": "#00FEE6",
@@ -8100,7 +8100,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G51.450",
+          "id": "g51.450",
           "alpha": {
             "over": "black",
             "source": "#00FEE6",
@@ -8148,7 +8148,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G51.500",
+          "id": "g51.500",
           "alpha": {
             "over": "black",
             "source": "#00FEE6",
@@ -8196,7 +8196,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G51.550",
+          "id": "g51.550",
           "alpha": {
             "over": "black",
             "source": "#01FEE6",
@@ -8244,7 +8244,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G51.600",
+          "id": "g51.600",
           "alpha": {
             "over": "black",
             "source": "#00FFE8",
@@ -8292,7 +8292,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G51.650",
+          "id": "g51.650",
           "alpha": {
             "over": "black",
             "source": "#00FFE9",
@@ -8340,7 +8340,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G51.700",
+          "id": "g51.700",
           "alpha": {
             "over": "black",
             "source": "#00FFEB",
@@ -8388,7 +8388,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G51.750",
+          "id": "g51.750",
           "alpha": {
             "over": "black",
             "source": "#00FEED",
@@ -8436,7 +8436,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G51.800",
+          "id": "g51.800",
           "alpha": {
             "over": "black",
             "source": "#01FFF0",
@@ -8484,7 +8484,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G51.850",
+          "id": "g51.850",
           "alpha": {
             "over": "black",
             "source": "#01FEF2",
@@ -8532,7 +8532,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G51.900",
+          "id": "g51.900",
           "alpha": {
             "over": "black",
             "source": "#01FFF6",
@@ -8580,7 +8580,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "G51.950",
+          "id": "g51.950",
           "alpha": {
             "over": "black",
             "source": "#00FFFC",
@@ -8602,7 +8602,7 @@
       },
       "bend": 6.2,
       "peakChroma": 0.1639,
-      "code": "B58",
+      "code": "b58",
       "natural": {
         "L": 0.81,
         "C": 0.1868,
@@ -8660,7 +8660,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B58.050",
+          "id": "b58.050",
           "alpha": {
             "over": "white",
             "source": "#00D4F2",
@@ -8708,7 +8708,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B58.100",
+          "id": "b58.100",
           "alpha": {
             "over": "white",
             "source": "#00D4F2",
@@ -8756,7 +8756,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B58.150",
+          "id": "b58.150",
           "alpha": {
             "over": "white",
             "source": "#00D4F2",
@@ -8804,7 +8804,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B58.200",
+          "id": "b58.200",
           "alpha": {
             "over": "white",
             "source": "#00D4F2",
@@ -8852,7 +8852,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B58.250",
+          "id": "b58.250",
           "alpha": {
             "over": "white",
             "source": "#00D4F2",
@@ -8900,7 +8900,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B58.300",
+          "id": "b58.300",
           "alpha": {
             "over": "white",
             "source": "#00D4F2",
@@ -8948,7 +8948,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B58.350",
+          "id": "b58.350",
           "alpha": {
             "over": "white",
             "source": "#00D4F2",
@@ -8996,7 +8996,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B58.400",
+          "id": "b58.400",
           "alpha": {
             "over": "black",
             "source": "#01E3FF",
@@ -9044,7 +9044,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B58.450",
+          "id": "b58.450",
           "alpha": {
             "over": "black",
             "source": "#01E3FF",
@@ -9092,7 +9092,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B58.500",
+          "id": "b58.500",
           "alpha": {
             "over": "black",
             "source": "#01E3FF",
@@ -9140,7 +9140,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B58.550",
+          "id": "b58.550",
           "alpha": {
             "over": "black",
             "source": "#02E3FF",
@@ -9188,7 +9188,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B58.600",
+          "id": "b58.600",
           "alpha": {
             "over": "black",
             "source": "#01E2FF",
@@ -9236,7 +9236,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B58.650",
+          "id": "b58.650",
           "alpha": {
             "over": "black",
             "source": "#00E2FE",
@@ -9284,7 +9284,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B58.700",
+          "id": "b58.700",
           "alpha": {
             "over": "black",
             "source": "#00E1FE",
@@ -9332,7 +9332,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B58.750",
+          "id": "b58.750",
           "alpha": {
             "over": "black",
             "source": "#00E0FF",
@@ -9380,7 +9380,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B58.800",
+          "id": "b58.800",
           "alpha": {
             "over": "black",
             "source": "#00DFFF",
@@ -9428,7 +9428,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B58.850",
+          "id": "b58.850",
           "alpha": {
             "over": "black",
             "source": "#01DDFF",
@@ -9476,7 +9476,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B58.900",
+          "id": "b58.900",
           "alpha": {
             "over": "black",
             "source": "#00DCFF",
@@ -9524,7 +9524,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B58.950",
+          "id": "b58.950",
           "alpha": {
             "over": "black",
             "source": "#00D9FF",
@@ -9546,7 +9546,7 @@
       },
       "bend": 12.4,
       "peakChroma": 0.157,
-      "code": "B65",
+      "code": "b65",
       "natural": {
         "L": 0.712,
         "C": 0.1933,
@@ -9604,7 +9604,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B65.050",
+          "id": "b65.050",
           "alpha": {
             "over": "white",
             "source": "#00ACEE",
@@ -9652,7 +9652,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B65.100",
+          "id": "b65.100",
           "alpha": {
             "over": "white",
             "source": "#00ACEE",
@@ -9700,7 +9700,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B65.150",
+          "id": "b65.150",
           "alpha": {
             "over": "white",
             "source": "#00ACEE",
@@ -9748,7 +9748,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B65.200",
+          "id": "b65.200",
           "alpha": {
             "over": "white",
             "source": "#00ACEE",
@@ -9796,7 +9796,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B65.250",
+          "id": "b65.250",
           "alpha": {
             "over": "white",
             "source": "#00ACEE",
@@ -9844,7 +9844,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B65.300",
+          "id": "b65.300",
           "alpha": {
             "over": "white",
             "source": "#00ACEE",
@@ -9892,7 +9892,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B65.350",
+          "id": "b65.350",
           "alpha": {
             "over": "white",
             "source": "#00ACEE",
@@ -9940,7 +9940,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B65.400",
+          "id": "b65.400",
           "alpha": {
             "over": "white",
             "source": "#00ACEE",
@@ -9988,7 +9988,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B65.450",
+          "id": "b65.450",
           "alpha": {
             "over": "white",
             "source": "#00ACEE",
@@ -10036,7 +10036,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B65.500",
+          "id": "b65.500",
           "alpha": {
             "over": "white",
             "source": "#00ACEE",
@@ -10084,7 +10084,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B65.550",
+          "id": "b65.550",
           "alpha": {
             "over": "black",
             "source": "#00BCFF",
@@ -10132,7 +10132,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B65.600",
+          "id": "b65.600",
           "alpha": {
             "over": "black",
             "source": "#02BBFF",
@@ -10180,7 +10180,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B65.650",
+          "id": "b65.650",
           "alpha": {
             "over": "black",
             "source": "#00B9FF",
@@ -10228,7 +10228,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B65.700",
+          "id": "b65.700",
           "alpha": {
             "over": "black",
             "source": "#01B7FF",
@@ -10276,7 +10276,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B65.750",
+          "id": "b65.750",
           "alpha": {
             "over": "black",
             "source": "#00B5FF",
@@ -10324,7 +10324,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B65.800",
+          "id": "b65.800",
           "alpha": {
             "over": "black",
             "source": "#01B2FF",
@@ -10372,7 +10372,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B65.850",
+          "id": "b65.850",
           "alpha": {
             "over": "black",
             "source": "#01AEFE",
@@ -10420,7 +10420,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B65.900",
+          "id": "b65.900",
           "alpha": {
             "over": "black",
             "source": "#01AAFE",
@@ -10468,7 +10468,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B65.950",
+          "id": "b65.950",
           "alpha": {
             "over": "black",
             "source": "#00A2FF",
@@ -10490,7 +10490,7 @@
       },
       "bend": 6.4,
       "peakChroma": 0.2551,
-      "code": "B72",
+      "code": "b73",
       "natural": {
         "L": 0.54,
         "C": 0.2744,
@@ -10548,7 +10548,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B72.050",
+          "id": "b73.050",
           "alpha": {
             "over": "white",
             "source": "#0055F7",
@@ -10596,7 +10596,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B72.100",
+          "id": "b73.100",
           "alpha": {
             "over": "white",
             "source": "#0055F7",
@@ -10644,7 +10644,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B72.150",
+          "id": "b73.150",
           "alpha": {
             "over": "white",
             "source": "#0055F7",
@@ -10692,7 +10692,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B72.200",
+          "id": "b73.200",
           "alpha": {
             "over": "white",
             "source": "#0055F7",
@@ -10740,7 +10740,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B72.250",
+          "id": "b73.250",
           "alpha": {
             "over": "white",
             "source": "#0055F7",
@@ -10788,7 +10788,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B72.300",
+          "id": "b73.300",
           "alpha": {
             "over": "white",
             "source": "#0055F7",
@@ -10836,7 +10836,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B72.350",
+          "id": "b73.350",
           "alpha": {
             "over": "white",
             "source": "#0055F7",
@@ -10884,7 +10884,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B72.400",
+          "id": "b73.400",
           "alpha": {
             "over": "white",
             "source": "#0055F7",
@@ -10932,7 +10932,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B72.450",
+          "id": "b73.450",
           "alpha": {
             "over": "white",
             "source": "#0055F7",
@@ -10980,7 +10980,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B72.500",
+          "id": "b73.500",
           "alpha": {
             "over": "white",
             "source": "#0055F7",
@@ -11028,7 +11028,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B72.550",
+          "id": "b73.550",
           "alpha": {
             "over": "white",
             "source": "#0055F7",
@@ -11076,7 +11076,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B72.600",
+          "id": "b73.600",
           "alpha": {
             "over": "white",
             "source": "#0055F8",
@@ -11124,7 +11124,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B72.650",
+          "id": "b73.650",
           "alpha": {
             "over": "white",
             "source": "#0054F8",
@@ -11172,7 +11172,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B72.700",
+          "id": "b73.700",
           "alpha": {
             "over": "white",
             "source": "#0054F8",
@@ -11220,7 +11220,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B72.750",
+          "id": "b73.750",
           "alpha": {
             "over": "white",
             "source": "#0053F8",
@@ -11268,7 +11268,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B72.800",
+          "id": "b73.800",
           "alpha": {
             "over": "black",
             "source": "#0057FF",
@@ -11316,7 +11316,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B72.850",
+          "id": "b73.850",
           "alpha": {
             "over": "black",
             "source": "#0049FE",
@@ -11364,7 +11364,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B72.900",
+          "id": "b73.900",
           "alpha": {
             "over": "black",
             "source": "#0600FE",
@@ -11412,7 +11412,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B72.950",
+          "id": "b73.950",
           "alpha": {
             "over": "black",
             "source": "#1A00FF",
@@ -11434,7 +11434,7 @@
       },
       "bend": 2.1,
       "peakChroma": 0.2673,
-      "code": "B77",
+      "code": "b77",
       "natural": {
         "L": 0.494,
         "C": 0.3087,
@@ -11492,7 +11492,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B77.050",
+          "id": "b77.050",
           "alpha": {
             "over": "white",
             "source": "#4B2BF1",
@@ -11540,7 +11540,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B77.100",
+          "id": "b77.100",
           "alpha": {
             "over": "white",
             "source": "#4B2BF1",
@@ -11588,7 +11588,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B77.150",
+          "id": "b77.150",
           "alpha": {
             "over": "white",
             "source": "#4B2BF1",
@@ -11636,7 +11636,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B77.200",
+          "id": "b77.200",
           "alpha": {
             "over": "white",
             "source": "#4B2BF1",
@@ -11684,7 +11684,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B77.250",
+          "id": "b77.250",
           "alpha": {
             "over": "white",
             "source": "#4B2BF1",
@@ -11732,7 +11732,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B77.300",
+          "id": "b77.300",
           "alpha": {
             "over": "white",
             "source": "#4B2BF1",
@@ -11780,7 +11780,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B77.350",
+          "id": "b77.350",
           "alpha": {
             "over": "white",
             "source": "#4B2BF1",
@@ -11828,7 +11828,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B77.400",
+          "id": "b77.400",
           "alpha": {
             "over": "white",
             "source": "#4B2BF1",
@@ -11876,7 +11876,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B77.450",
+          "id": "b77.450",
           "alpha": {
             "over": "white",
             "source": "#4B2BF1",
@@ -11924,7 +11924,7 @@
           },
           "clamped": true,
           "capped": false,
-          "id": "B77.500",
+          "id": "b77.500",
           "alpha": {
             "over": "white",
             "source": "#4B2BF1",
@@ -11972,7 +11972,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B77.550",
+          "id": "b77.550",
           "alpha": {
             "over": "white",
             "source": "#4B2BF1",
@@ -12020,7 +12020,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B77.600",
+          "id": "b77.600",
           "alpha": {
             "over": "white",
             "source": "#4B2BF1",
@@ -12068,7 +12068,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B77.650",
+          "id": "b77.650",
           "alpha": {
             "over": "white",
             "source": "#4C2BF0",
@@ -12116,7 +12116,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B77.700",
+          "id": "b77.700",
           "alpha": {
             "over": "white",
             "source": "#4C2AF0",
@@ -12164,7 +12164,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B77.750",
+          "id": "b77.750",
           "alpha": {
             "over": "white",
             "source": "#4D2AF0",
@@ -12212,7 +12212,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B77.800",
+          "id": "b77.800",
           "alpha": {
             "over": "white",
             "source": "#4D2AF0",
@@ -12260,7 +12260,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B77.850",
+          "id": "b77.850",
           "alpha": {
             "over": "black",
             "source": "#5000FE",
@@ -12308,7 +12308,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B77.900",
+          "id": "b77.900",
           "alpha": {
             "over": "black",
             "source": "#5101FF",
@@ -12356,7 +12356,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "B77.950",
+          "id": "b77.950",
           "alpha": {
             "over": "black",
             "source": "#5303FF",
@@ -12378,7 +12378,7 @@
       },
       "bend": 0.7,
       "peakChroma": 0.287,
-      "code": "P81",
+      "code": "p81",
       "natural": {
         "L": 0.536,
         "C": 0.3067,
@@ -12436,7 +12436,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P81.050",
+          "id": "p81.050",
           "alpha": {
             "over": "white",
             "source": "#801DFF",
@@ -12484,7 +12484,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P81.100",
+          "id": "p81.100",
           "alpha": {
             "over": "white",
             "source": "#801DFF",
@@ -12532,7 +12532,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P81.150",
+          "id": "p81.150",
           "alpha": {
             "over": "white",
             "source": "#801DFF",
@@ -12580,7 +12580,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P81.200",
+          "id": "p81.200",
           "alpha": {
             "over": "white",
             "source": "#801DFF",
@@ -12628,7 +12628,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P81.250",
+          "id": "p81.250",
           "alpha": {
             "over": "white",
             "source": "#801DFF",
@@ -12676,7 +12676,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P81.300",
+          "id": "p81.300",
           "alpha": {
             "over": "white",
             "source": "#801DFF",
@@ -12724,7 +12724,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P81.350",
+          "id": "p81.350",
           "alpha": {
             "over": "white",
             "source": "#801DFF",
@@ -12772,7 +12772,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P81.400",
+          "id": "p81.400",
           "alpha": {
             "over": "white",
             "source": "#801DFF",
@@ -12820,7 +12820,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P81.450",
+          "id": "p81.450",
           "alpha": {
             "over": "white",
             "source": "#801DFF",
@@ -12868,7 +12868,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P81.500",
+          "id": "p81.500",
           "alpha": {
             "over": "white",
             "source": "#801DFF",
@@ -12916,7 +12916,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P81.550",
+          "id": "p81.550",
           "alpha": {
             "over": "white",
             "source": "#801DFF",
@@ -12964,7 +12964,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P81.600",
+          "id": "p81.600",
           "alpha": {
             "over": "white",
             "source": "#801DFF",
@@ -13012,7 +13012,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P81.650",
+          "id": "p81.650",
           "alpha": {
             "over": "white",
             "source": "#801DFF",
@@ -13060,7 +13060,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P81.700",
+          "id": "p81.700",
           "alpha": {
             "over": "white",
             "source": "#801DFF",
@@ -13108,7 +13108,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P81.750",
+          "id": "p81.750",
           "alpha": {
             "over": "white",
             "source": "#801CFF",
@@ -13156,7 +13156,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P81.800",
+          "id": "p81.800",
           "alpha": {
             "over": "black",
             "source": "#7D02FF",
@@ -13204,7 +13204,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P81.850",
+          "id": "p81.850",
           "alpha": {
             "over": "black",
             "source": "#7E01FF",
@@ -13252,7 +13252,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P81.900",
+          "id": "p81.900",
           "alpha": {
             "over": "black",
             "source": "#7E00FF",
@@ -13300,7 +13300,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P81.950",
+          "id": "p81.950",
           "alpha": {
             "over": "black",
             "source": "#7E00FE",
@@ -13322,7 +13322,7 @@
       },
       "bend": 1.4,
       "peakChroma": 0.2969,
-      "code": "P84",
+      "code": "p84",
       "natural": {
         "L": 0.574,
         "C": 0.3141,
@@ -13380,7 +13380,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P84.050",
+          "id": "p84.050",
           "alpha": {
             "over": "white",
             "source": "#A61AFF",
@@ -13428,7 +13428,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P84.100",
+          "id": "p84.100",
           "alpha": {
             "over": "white",
             "source": "#A61AFF",
@@ -13476,7 +13476,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P84.150",
+          "id": "p84.150",
           "alpha": {
             "over": "white",
             "source": "#A61AFF",
@@ -13524,7 +13524,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P84.200",
+          "id": "p84.200",
           "alpha": {
             "over": "white",
             "source": "#A61AFF",
@@ -13572,7 +13572,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P84.250",
+          "id": "p84.250",
           "alpha": {
             "over": "white",
             "source": "#A61AFF",
@@ -13620,7 +13620,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P84.300",
+          "id": "p84.300",
           "alpha": {
             "over": "white",
             "source": "#A61AFF",
@@ -13668,7 +13668,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P84.350",
+          "id": "p84.350",
           "alpha": {
             "over": "white",
             "source": "#A61AFF",
@@ -13716,7 +13716,7 @@
           },
           "clamped": true,
           "capped": false,
-          "id": "P84.400",
+          "id": "p84.400",
           "alpha": {
             "over": "white",
             "source": "#A61AFF",
@@ -13764,7 +13764,7 @@
           },
           "clamped": true,
           "capped": false,
-          "id": "P84.450",
+          "id": "p84.450",
           "alpha": {
             "over": "white",
             "source": "#A61AFF",
@@ -13812,7 +13812,7 @@
           },
           "clamped": true,
           "capped": false,
-          "id": "P84.500",
+          "id": "p84.500",
           "alpha": {
             "over": "white",
             "source": "#A61AFF",
@@ -13860,7 +13860,7 @@
           },
           "clamped": true,
           "capped": false,
-          "id": "P84.550",
+          "id": "p84.550",
           "alpha": {
             "over": "white",
             "source": "#A619FF",
@@ -13908,7 +13908,7 @@
           },
           "clamped": true,
           "capped": false,
-          "id": "P84.600",
+          "id": "p84.600",
           "alpha": {
             "over": "white",
             "source": "#A619FF",
@@ -13956,7 +13956,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P84.650",
+          "id": "p84.650",
           "alpha": {
             "over": "white",
             "source": "#A619FF",
@@ -14004,7 +14004,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P84.700",
+          "id": "p84.700",
           "alpha": {
             "over": "white",
             "source": "#A719FF",
@@ -14052,7 +14052,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P84.750",
+          "id": "p84.750",
           "alpha": {
             "over": "black",
             "source": "#A102FF",
@@ -14100,7 +14100,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P84.800",
+          "id": "p84.800",
           "alpha": {
             "over": "black",
             "source": "#A100FF",
@@ -14148,7 +14148,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P84.850",
+          "id": "p84.850",
           "alpha": {
             "over": "black",
             "source": "#A200FE",
@@ -14196,7 +14196,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P84.900",
+          "id": "p84.900",
           "alpha": {
             "over": "black",
             "source": "#A300FF",
@@ -14244,7 +14244,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P84.950",
+          "id": "p84.950",
           "alpha": {
             "over": "black",
             "source": "#A401FF",
@@ -14266,7 +14266,7 @@
       },
       "bend": 4.1,
       "peakChroma": 0.3189,
-      "code": "P89",
+      "code": "p90",
       "natural": {
         "L": 0.662,
         "C": 0.3397,
@@ -14324,7 +14324,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P89.050",
+          "id": "p90.050",
           "alpha": {
             "over": "white",
             "source": "#E904FF",
@@ -14372,7 +14372,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P89.100",
+          "id": "p90.100",
           "alpha": {
             "over": "white",
             "source": "#E904FF",
@@ -14420,7 +14420,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P89.150",
+          "id": "p90.150",
           "alpha": {
             "over": "white",
             "source": "#E904FF",
@@ -14468,7 +14468,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P89.200",
+          "id": "p90.200",
           "alpha": {
             "over": "white",
             "source": "#E904FF",
@@ -14516,7 +14516,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P89.250",
+          "id": "p90.250",
           "alpha": {
             "over": "white",
             "source": "#E904FF",
@@ -14564,7 +14564,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P89.300",
+          "id": "p90.300",
           "alpha": {
             "over": "white",
             "source": "#E904FF",
@@ -14612,7 +14612,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P89.350",
+          "id": "p90.350",
           "alpha": {
             "over": "white",
             "source": "#E904FF",
@@ -14660,7 +14660,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P89.400",
+          "id": "p90.400",
           "alpha": {
             "over": "white",
             "source": "#E904FF",
@@ -14708,7 +14708,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P89.450",
+          "id": "p90.450",
           "alpha": {
             "over": "white",
             "source": "#E904FF",
@@ -14756,7 +14756,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P89.500",
+          "id": "p90.500",
           "alpha": {
             "over": "white",
             "source": "#E904FF",
@@ -14804,7 +14804,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P89.550",
+          "id": "p90.550",
           "alpha": {
             "over": "white",
             "source": "#E903FF",
@@ -14852,7 +14852,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P89.600",
+          "id": "p90.600",
           "alpha": {
             "over": "white",
             "source": "#EA02FF",
@@ -14900,7 +14900,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P89.650",
+          "id": "p90.650",
           "alpha": {
             "over": "black",
             "source": "#E600FF",
@@ -14948,7 +14948,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P89.700",
+          "id": "p90.700",
           "alpha": {
             "over": "black",
             "source": "#E700FF",
@@ -14996,7 +14996,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P89.750",
+          "id": "p90.750",
           "alpha": {
             "over": "black",
             "source": "#E800FF",
@@ -15044,7 +15044,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P89.800",
+          "id": "p90.800",
           "alpha": {
             "over": "black",
             "source": "#EB02FF",
@@ -15092,7 +15092,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P89.850",
+          "id": "p90.850",
           "alpha": {
             "over": "black",
             "source": "#ED00FE",
@@ -15140,7 +15140,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P89.900",
+          "id": "p90.900",
           "alpha": {
             "over": "black",
             "source": "#F002FF",
@@ -15188,7 +15188,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "P89.950",
+          "id": "p90.950",
           "alpha": {
             "over": "black",
             "source": "#F500FE",
@@ -15210,7 +15210,7 @@
       },
       "bend": 6.8,
       "peakChroma": 0.2311,
-      "code": "R98",
+      "code": "r99",
       "natural": {
         "L": 0.678,
         "C": 0.3126,
@@ -15268,7 +15268,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R98.050",
+          "id": "r99.050",
           "alpha": {
             "over": "white",
             "source": "#F53D9B",
@@ -15316,7 +15316,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R98.100",
+          "id": "r99.100",
           "alpha": {
             "over": "white",
             "source": "#F53D9B",
@@ -15364,7 +15364,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R98.150",
+          "id": "r99.150",
           "alpha": {
             "over": "white",
             "source": "#F53D9B",
@@ -15412,7 +15412,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R98.200",
+          "id": "r99.200",
           "alpha": {
             "over": "white",
             "source": "#F53D9B",
@@ -15460,7 +15460,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R98.250",
+          "id": "r99.250",
           "alpha": {
             "over": "white",
             "source": "#F53D9B",
@@ -15508,7 +15508,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R98.300",
+          "id": "r99.300",
           "alpha": {
             "over": "white",
             "source": "#F53D9B",
@@ -15556,7 +15556,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R98.350",
+          "id": "r99.350",
           "alpha": {
             "over": "white",
             "source": "#F53D9B",
@@ -15604,7 +15604,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R98.400",
+          "id": "r99.400",
           "alpha": {
             "over": "white",
             "source": "#F53D9B",
@@ -15652,7 +15652,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R98.450",
+          "id": "r99.450",
           "alpha": {
             "over": "white",
             "source": "#F53D9B",
@@ -15700,7 +15700,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R98.500",
+          "id": "r99.500",
           "alpha": {
             "over": "white",
             "source": "#F53D9B",
@@ -15748,7 +15748,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R98.550",
+          "id": "r99.550",
           "alpha": {
             "over": "white",
             "source": "#F53D9B",
@@ -15796,7 +15796,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R98.600",
+          "id": "r99.600",
           "alpha": {
             "over": "white",
             "source": "#F53D9A",
@@ -15844,7 +15844,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R98.650",
+          "id": "r99.650",
           "alpha": {
             "over": "black",
             "source": "#FF0097",
@@ -15892,7 +15892,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R98.700",
+          "id": "r99.700",
           "alpha": {
             "over": "black",
             "source": "#FF0096",
@@ -15940,7 +15940,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R98.750",
+          "id": "r99.750",
           "alpha": {
             "over": "black",
             "source": "#FE0093",
@@ -15988,7 +15988,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R98.800",
+          "id": "r99.800",
           "alpha": {
             "over": "black",
             "source": "#FF0091",
@@ -16036,7 +16036,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R98.850",
+          "id": "r99.850",
           "alpha": {
             "over": "black",
             "source": "#FF028E",
@@ -16084,7 +16084,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R98.900",
+          "id": "r99.900",
           "alpha": {
             "over": "black",
             "source": "#FF008A",
@@ -16132,7 +16132,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R98.950",
+          "id": "r99.950",
           "alpha": {
             "over": "black",
             "source": "#FF0084",
@@ -16154,7 +16154,7 @@
       },
       "bend": 2.9,
       "peakChroma": 0.2463,
-      "code": "R05",
+      "code": "r05",
       "natural": {
         "L": 0.656,
         "C": 0.2956,
@@ -16212,7 +16212,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R05.050",
+          "id": "r05.050",
           "alpha": {
             "over": "white",
             "source": "#FF2A5B",
@@ -16260,7 +16260,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R05.100",
+          "id": "r05.100",
           "alpha": {
             "over": "white",
             "source": "#FF2A5B",
@@ -16308,7 +16308,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R05.150",
+          "id": "r05.150",
           "alpha": {
             "over": "white",
             "source": "#FF2A5B",
@@ -16356,7 +16356,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R05.200",
+          "id": "r05.200",
           "alpha": {
             "over": "white",
             "source": "#FF2A5B",
@@ -16404,7 +16404,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R05.250",
+          "id": "r05.250",
           "alpha": {
             "over": "white",
             "source": "#FF2A5B",
@@ -16452,7 +16452,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R05.300",
+          "id": "r05.300",
           "alpha": {
             "over": "white",
             "source": "#FF2A5B",
@@ -16500,7 +16500,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R05.350",
+          "id": "r05.350",
           "alpha": {
             "over": "white",
             "source": "#FF2A5B",
@@ -16548,7 +16548,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R05.400",
+          "id": "r05.400",
           "alpha": {
             "over": "white",
             "source": "#FF2A5B",
@@ -16596,7 +16596,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R05.450",
+          "id": "r05.450",
           "alpha": {
             "over": "white",
             "source": "#FF2A5B",
@@ -16644,7 +16644,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R05.500",
+          "id": "r05.500",
           "alpha": {
             "over": "white",
             "source": "#FF2A5B",
@@ -16692,7 +16692,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R05.550",
+          "id": "r05.550",
           "alpha": {
             "over": "white",
             "source": "#FF2A5B",
@@ -16740,7 +16740,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R05.600",
+          "id": "r05.600",
           "alpha": {
             "over": "white",
             "source": "#FF2A5B",
@@ -16788,7 +16788,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R05.650",
+          "id": "r05.650",
           "alpha": {
             "over": "black",
             "source": "#FF0050",
@@ -16836,7 +16836,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R05.700",
+          "id": "r05.700",
           "alpha": {
             "over": "black",
             "source": "#FF004F",
@@ -16884,7 +16884,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R05.750",
+          "id": "r05.750",
           "alpha": {
             "over": "black",
             "source": "#FF004E",
@@ -16932,7 +16932,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R05.800",
+          "id": "r05.800",
           "alpha": {
             "over": "black",
             "source": "#FF004D",
@@ -16980,7 +16980,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R05.850",
+          "id": "r05.850",
           "alpha": {
             "over": "black",
             "source": "#FF014B",
@@ -17028,7 +17028,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R05.900",
+          "id": "r05.900",
           "alpha": {
             "over": "black",
             "source": "#FF034A",
@@ -17076,7 +17076,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "R05.950",
+          "id": "r05.950",
           "alpha": {
             "over": "black",
             "source": "#FE0046",
@@ -17098,7 +17098,7 @@
       },
       "bend": 7.1,
       "peakChroma": 0.0707,
-      "code": "N72",
+      "code": "n72",
       "natural": {
         "L": 0.564,
         "C": 0.2589,
@@ -17156,7 +17156,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N72.050",
+          "id": "n72.050",
           "alpha": {
             "over": "white",
             "source": "#8DA1BF",
@@ -17204,7 +17204,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N72.100",
+          "id": "n72.100",
           "alpha": {
             "over": "white",
             "source": "#8DA1BF",
@@ -17252,7 +17252,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N72.150",
+          "id": "n72.150",
           "alpha": {
             "over": "white",
             "source": "#8DA1BF",
@@ -17300,7 +17300,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N72.200",
+          "id": "n72.200",
           "alpha": {
             "over": "white",
             "source": "#8DA1BF",
@@ -17348,7 +17348,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N72.250",
+          "id": "n72.250",
           "alpha": {
             "over": "white",
             "source": "#8DA1BF",
@@ -17396,7 +17396,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N72.300",
+          "id": "n72.300",
           "alpha": {
             "over": "white",
             "source": "#8DA1BF",
@@ -17444,7 +17444,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N72.350",
+          "id": "n72.350",
           "alpha": {
             "over": "white",
             "source": "#8DA1BF",
@@ -17492,7 +17492,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N72.400",
+          "id": "n72.400",
           "alpha": {
             "over": "white",
             "source": "#8DA1BF",
@@ -17540,7 +17540,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N72.450",
+          "id": "n72.450",
           "alpha": {
             "over": "white",
             "source": "#8DA1BF",
@@ -17588,7 +17588,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N72.500",
+          "id": "n72.500",
           "alpha": {
             "over": "white",
             "source": "#8DA1BF",
@@ -17636,7 +17636,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N72.550",
+          "id": "n72.550",
           "alpha": {
             "over": "black",
             "source": "#8DA1BF",
@@ -17684,7 +17684,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N72.600",
+          "id": "n72.600",
           "alpha": {
             "over": "black",
             "source": "#8DA1BF",
@@ -17732,7 +17732,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N72.650",
+          "id": "n72.650",
           "alpha": {
             "over": "black",
             "source": "#8DA1BF",
@@ -17780,7 +17780,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N72.700",
+          "id": "n72.700",
           "alpha": {
             "over": "black",
             "source": "#8EA1BF",
@@ -17828,7 +17828,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N72.750",
+          "id": "n72.750",
           "alpha": {
             "over": "black",
             "source": "#8EA1BF",
@@ -17876,7 +17876,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N72.800",
+          "id": "n72.800",
           "alpha": {
             "over": "black",
             "source": "#8EA1BF",
@@ -17924,7 +17924,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N72.850",
+          "id": "n72.850",
           "alpha": {
             "over": "black",
             "source": "#8FA1BF",
@@ -17972,7 +17972,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N72.900",
+          "id": "n72.900",
           "alpha": {
             "over": "black",
             "source": "#90A0BF",
@@ -18020,7 +18020,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N72.950",
+          "id": "n72.950",
           "alpha": {
             "over": "black",
             "source": "#91A0BF",
@@ -18042,7 +18042,7 @@
       },
       "bend": 5.1,
       "peakChroma": 0.0414,
-      "code": "N73",
+      "code": "n73",
       "natural": {
         "L": 0.466,
         "C": 0.322,
@@ -18100,7 +18100,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N73.050",
+          "id": "n73.050",
           "alpha": {
             "over": "white",
             "source": "#99A0AE",
@@ -18148,7 +18148,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N73.100",
+          "id": "n73.100",
           "alpha": {
             "over": "white",
             "source": "#99A0AE",
@@ -18196,7 +18196,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N73.150",
+          "id": "n73.150",
           "alpha": {
             "over": "white",
             "source": "#99A0AE",
@@ -18244,7 +18244,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N73.200",
+          "id": "n73.200",
           "alpha": {
             "over": "white",
             "source": "#99A0AE",
@@ -18292,7 +18292,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N73.250",
+          "id": "n73.250",
           "alpha": {
             "over": "white",
             "source": "#99A0AE",
@@ -18340,7 +18340,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N73.300",
+          "id": "n73.300",
           "alpha": {
             "over": "white",
             "source": "#99A0AE",
@@ -18388,7 +18388,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N73.350",
+          "id": "n73.350",
           "alpha": {
             "over": "white",
             "source": "#99A0AE",
@@ -18436,7 +18436,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N73.400",
+          "id": "n73.400",
           "alpha": {
             "over": "white",
             "source": "#99A0AE",
@@ -18484,7 +18484,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N73.450",
+          "id": "n73.450",
           "alpha": {
             "over": "white",
             "source": "#99A0AE",
@@ -18532,7 +18532,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N73.500",
+          "id": "n73.500",
           "alpha": {
             "over": "white",
             "source": "#99A0AE",
@@ -18580,7 +18580,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N73.550",
+          "id": "n73.550",
           "alpha": {
             "over": "black",
             "source": "#99A0AE",
@@ -18628,7 +18628,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N73.600",
+          "id": "n73.600",
           "alpha": {
             "over": "black",
             "source": "#99A0AE",
@@ -18676,7 +18676,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N73.650",
+          "id": "n73.650",
           "alpha": {
             "over": "black",
             "source": "#99A0AE",
@@ -18724,7 +18724,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N73.700",
+          "id": "n73.700",
           "alpha": {
             "over": "black",
             "source": "#99A0AE",
@@ -18772,7 +18772,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N73.750",
+          "id": "n73.750",
           "alpha": {
             "over": "black",
             "source": "#99A0AE",
@@ -18820,7 +18820,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N73.800",
+          "id": "n73.800",
           "alpha": {
             "over": "black",
             "source": "#9AA0AE",
@@ -18868,7 +18868,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N73.850",
+          "id": "n73.850",
           "alpha": {
             "over": "black",
             "source": "#9AA0AE",
@@ -18916,7 +18916,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N73.900",
+          "id": "n73.900",
           "alpha": {
             "over": "black",
             "source": "#9AA0AE",
@@ -18964,7 +18964,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N73.950",
+          "id": "n73.950",
           "alpha": {
             "over": "black",
             "source": "#9AA0AE",
@@ -18986,7 +18986,7 @@
       },
       "bend": 1,
       "peakChroma": 0.0181,
-      "code": "N79",
+      "code": "n79",
       "natural": {
         "L": 0.516,
         "C": 0.3058,
@@ -19044,7 +19044,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N79.050",
+          "id": "n79.050",
           "alpha": {
             "over": "white",
             "source": "#9F9FA6",
@@ -19092,7 +19092,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N79.100",
+          "id": "n79.100",
           "alpha": {
             "over": "white",
             "source": "#9F9FA6",
@@ -19140,7 +19140,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N79.150",
+          "id": "n79.150",
           "alpha": {
             "over": "white",
             "source": "#9F9FA6",
@@ -19188,7 +19188,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N79.200",
+          "id": "n79.200",
           "alpha": {
             "over": "white",
             "source": "#9F9FA6",
@@ -19236,7 +19236,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N79.250",
+          "id": "n79.250",
           "alpha": {
             "over": "white",
             "source": "#9F9FA6",
@@ -19284,7 +19284,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N79.300",
+          "id": "n79.300",
           "alpha": {
             "over": "white",
             "source": "#9F9FA6",
@@ -19332,7 +19332,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N79.350",
+          "id": "n79.350",
           "alpha": {
             "over": "white",
             "source": "#9F9FA6",
@@ -19380,7 +19380,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N79.400",
+          "id": "n79.400",
           "alpha": {
             "over": "white",
             "source": "#9F9FA6",
@@ -19428,7 +19428,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N79.450",
+          "id": "n79.450",
           "alpha": {
             "over": "white",
             "source": "#9F9FA6",
@@ -19476,7 +19476,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N79.500",
+          "id": "n79.500",
           "alpha": {
             "over": "white",
             "source": "#9F9FA6",
@@ -19524,7 +19524,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N79.550",
+          "id": "n79.550",
           "alpha": {
             "over": "black",
             "source": "#9F9FA6",
@@ -19572,7 +19572,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N79.600",
+          "id": "n79.600",
           "alpha": {
             "over": "black",
             "source": "#9F9FA6",
@@ -19620,7 +19620,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N79.650",
+          "id": "n79.650",
           "alpha": {
             "over": "black",
             "source": "#9F9FA6",
@@ -19668,7 +19668,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N79.700",
+          "id": "n79.700",
           "alpha": {
             "over": "black",
             "source": "#9F9FA6",
@@ -19716,7 +19716,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N79.750",
+          "id": "n79.750",
           "alpha": {
             "over": "black",
             "source": "#9F9FA6",
@@ -19764,7 +19764,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N79.800",
+          "id": "n79.800",
           "alpha": {
             "over": "black",
             "source": "#9F9FA6",
@@ -19812,7 +19812,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N79.850",
+          "id": "n79.850",
           "alpha": {
             "over": "black",
             "source": "#9F9FA6",
@@ -19860,7 +19860,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N79.900",
+          "id": "n79.900",
           "alpha": {
             "over": "black",
             "source": "#9F9FA6",
@@ -19908,7 +19908,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N79.950",
+          "id": "n79.950",
           "alpha": {
             "over": "black",
             "source": "#9F9FA6",
@@ -19930,7 +19930,7 @@
       },
       "bend": 6.4,
       "peakChroma": 0,
-      "code": "N00",
+      "code": "n00",
       "natural": {
         "L": 0.67,
         "C": 0.3058,
@@ -19985,7 +19985,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N00.050",
+          "id": "n00.050",
           "alpha": {
             "over": "white",
             "source": "#A0A0A0",
@@ -20033,7 +20033,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N00.100",
+          "id": "n00.100",
           "alpha": {
             "over": "white",
             "source": "#A0A0A0",
@@ -20081,7 +20081,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N00.150",
+          "id": "n00.150",
           "alpha": {
             "over": "white",
             "source": "#A0A0A0",
@@ -20129,7 +20129,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N00.200",
+          "id": "n00.200",
           "alpha": {
             "over": "white",
             "source": "#A0A0A0",
@@ -20177,7 +20177,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N00.250",
+          "id": "n00.250",
           "alpha": {
             "over": "white",
             "source": "#A0A0A0",
@@ -20225,7 +20225,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N00.300",
+          "id": "n00.300",
           "alpha": {
             "over": "white",
             "source": "#A0A0A0",
@@ -20273,7 +20273,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N00.350",
+          "id": "n00.350",
           "alpha": {
             "over": "white",
             "source": "#A0A0A0",
@@ -20321,7 +20321,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N00.400",
+          "id": "n00.400",
           "alpha": {
             "over": "white",
             "source": "#A0A0A0",
@@ -20369,7 +20369,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N00.450",
+          "id": "n00.450",
           "alpha": {
             "over": "white",
             "source": "#A0A0A0",
@@ -20417,7 +20417,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N00.500",
+          "id": "n00.500",
           "alpha": {
             "over": "white",
             "source": "#A0A0A0",
@@ -20465,7 +20465,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N00.550",
+          "id": "n00.550",
           "alpha": {
             "over": "black",
             "source": "#A0A0A0",
@@ -20513,7 +20513,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N00.600",
+          "id": "n00.600",
           "alpha": {
             "over": "black",
             "source": "#A0A0A0",
@@ -20561,7 +20561,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N00.650",
+          "id": "n00.650",
           "alpha": {
             "over": "black",
             "source": "#A0A0A0",
@@ -20609,7 +20609,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N00.700",
+          "id": "n00.700",
           "alpha": {
             "over": "black",
             "source": "#A0A0A0",
@@ -20657,7 +20657,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N00.750",
+          "id": "n00.750",
           "alpha": {
             "over": "black",
             "source": "#A0A0A0",
@@ -20705,7 +20705,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N00.800",
+          "id": "n00.800",
           "alpha": {
             "over": "black",
             "source": "#A0A0A0",
@@ -20753,7 +20753,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N00.850",
+          "id": "n00.850",
           "alpha": {
             "over": "black",
             "source": "#A0A0A0",
@@ -20801,7 +20801,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N00.900",
+          "id": "n00.900",
           "alpha": {
             "over": "black",
             "source": "#A0A0A0",
@@ -20849,7 +20849,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N00.950",
+          "id": "n00.950",
           "alpha": {
             "over": "black",
             "source": "#A0A0A0",
@@ -20871,7 +20871,7 @@
       },
       "bend": -19.4,
       "peakChroma": 0.0081,
-      "code": "N16",
+      "code": "n16",
       "natural": {
         "L": 0.764,
         "C": 0.2086,
@@ -20929,7 +20929,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N16.050",
+          "id": "n16.050",
           "alpha": {
             "over": "white",
             "source": "#A39F9C",
@@ -20977,7 +20977,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N16.100",
+          "id": "n16.100",
           "alpha": {
             "over": "white",
             "source": "#A39F9C",
@@ -21025,7 +21025,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N16.150",
+          "id": "n16.150",
           "alpha": {
             "over": "white",
             "source": "#A39F9C",
@@ -21073,7 +21073,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N16.200",
+          "id": "n16.200",
           "alpha": {
             "over": "white",
             "source": "#A39F9C",
@@ -21121,7 +21121,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N16.250",
+          "id": "n16.250",
           "alpha": {
             "over": "white",
             "source": "#A39F9C",
@@ -21169,7 +21169,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N16.300",
+          "id": "n16.300",
           "alpha": {
             "over": "white",
             "source": "#A39F9C",
@@ -21217,7 +21217,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N16.350",
+          "id": "n16.350",
           "alpha": {
             "over": "white",
             "source": "#A39F9C",
@@ -21265,7 +21265,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N16.400",
+          "id": "n16.400",
           "alpha": {
             "over": "white",
             "source": "#A39F9C",
@@ -21313,7 +21313,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N16.450",
+          "id": "n16.450",
           "alpha": {
             "over": "white",
             "source": "#A39F9C",
@@ -21361,7 +21361,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N16.500",
+          "id": "n16.500",
           "alpha": {
             "over": "white",
             "source": "#A39F9C",
@@ -21409,7 +21409,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N16.550",
+          "id": "n16.550",
           "alpha": {
             "over": "black",
             "source": "#A39F9C",
@@ -21457,7 +21457,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N16.600",
+          "id": "n16.600",
           "alpha": {
             "over": "black",
             "source": "#A39F9C",
@@ -21505,7 +21505,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N16.650",
+          "id": "n16.650",
           "alpha": {
             "over": "black",
             "source": "#A39F9C",
@@ -21553,7 +21553,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N16.700",
+          "id": "n16.700",
           "alpha": {
             "over": "black",
             "source": "#A39F9C",
@@ -21601,7 +21601,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N16.750",
+          "id": "n16.750",
           "alpha": {
             "over": "black",
             "source": "#A39F9C",
@@ -21649,7 +21649,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N16.800",
+          "id": "n16.800",
           "alpha": {
             "over": "black",
             "source": "#A49F9C",
@@ -21697,7 +21697,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N16.850",
+          "id": "n16.850",
           "alpha": {
             "over": "black",
             "source": "#A49F9C",
@@ -21745,7 +21745,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N16.900",
+          "id": "n16.900",
           "alpha": {
             "over": "black",
             "source": "#A49F9D",
@@ -21793,7 +21793,7 @@
           },
           "clamped": false,
           "capped": false,
-          "id": "N16.950",
+          "id": "n16.950",
           "alpha": {
             "over": "black",
             "source": "#A49F9D",

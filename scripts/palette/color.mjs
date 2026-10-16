@@ -253,11 +253,11 @@ export const HUE_SECTORS = [
   [45, 'R'], [60, 'O'], [110, 'Y'], [200, 'G'], [285, 'B'], [345, 'P'], [360, 'R'],
 ];
 export function hueLetter(h, C) {
-  if (C < 0.06) return 'N';
+  if (C < 0.06) return 'n';
   const hue = ((h % 360) + 360) % 360;
-  return HUE_SECTORS.find(([end]) => hue < end)[1];
+  return HUE_SECTORS.find(([end]) => hue < end)[1].toLowerCase();
 }
-// Designation: sector letter, the family's hue at the 500, then the step: P86.300.
+// Designation: sector letter in lower case, the family's hue at its natural step, then the step: p86.300.
 // hueFormat 'percent' writes the hue as hundredths of the circle, 00–99 (3.6° each);
 // 'degrees' writes it rounded to `rounding` degrees as three digits, 000–350.
 export function hueCode(hue500, format = 'percent', rounding = 10) {

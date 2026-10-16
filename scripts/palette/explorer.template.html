@@ -136,7 +136,7 @@
     <h2><span id="grid-title">Euclid palette</span> <button type="button" class="info" aria-expanded="false" aria-label="About the grid">i</button></h2>
     <ul class="note"><li>Dot: the family's natural step. ★: Byrne's red, yellow and blue.</li><li>Click a swatch to select it and copy its hex.</li></ul>
     <p class="note about" id="grid-note"></p>
-    <p class="note about">Every value is derived from the OKLCH reference; the hex is the sRGB gamut mapping. A dot in the corner marks a family's natural step, the one nearest its gamut cusp (where the hue reaches the most chroma); ★ marks where Byrne's red, yellow and blue sit. With Tinted on, text is the family step nearest the colour that still meets APCA Lc 75 (lighter first, white and black as the ends); a square where nothing passes shows the strongest ink. With it off, text is white wherever white clears Lc 60, else the stronger of white and black. Clicking a square selects it and copies its hex. The code under each name is the family's designation: a hue-sector letter (R O Y G B P, or N under chroma 0.06) and OKLCH h at the 500 as hundredths of the circle; a step is written P85.300.</p>
+    <p class="note about">Every value is derived from the OKLCH reference; the hex is the sRGB gamut mapping. A dot in the corner marks a family's natural step, the one nearest its gamut cusp (where the hue reaches the most chroma); ★ marks where Byrne's red, yellow and blue sit. With Tinted on, text is the family step nearest the colour that still meets APCA Lc 75 (lighter first, white and black as the ends); a square where nothing passes shows the strongest ink. With it off, text is white wherever white clears Lc 60, else the stronger of white and black. Clicking a square selects it and copies its hex. The code under each name is the family's designation: a hue-sector letter (r o y g b p, or n under chroma 0.06) and OKLCH h at the family's natural step as hundredths of the circle; a step is written p85.300.</p>
     <div class="grid-wrap"><table class="grid" id="grid" aria-labelledby="grid-title"></table></div>
   </section>
 
@@ -277,7 +277,7 @@ function renderGrid() {
   let previousNeutral = false;
   for (const fam of famsOf(palette)) {
     const f = palette.families[fam];
-    const neutral = f.code.startsWith('N');
+    const neutral = f.code.startsWith('n');
     if (neutral && !previousNeutral) rows.push(`<tr class="break"><td colspan="${STEPS.length + 1}"></td></tr>`);
     previousNeutral = neutral;
     rows.push(`<tr><th><span class="nm">${f.code}</span>${fam}</th>`);
@@ -559,9 +559,9 @@ function renderSpec() {
       <td><input type="number" id="shift-${fam}" min="-90" max="90" step="1" value="${f.hueShift ?? ''}" placeholder="${a ? pf.hueShift : '0'}" aria-label="${fam} hue shift"></td>
       <td><span class="note">${pf.bend >= 0 ? '+' : ''}${pf.bend}°</span></td>
       <td><input type="number" id="chroma-${fam}" min="0" max="2" step="0.05" value="${f.chroma ?? ''}" placeholder="1" aria-label="${fam} saturation multiplier"></td>
-      <td><span class="note">${pf.code.startsWith('N') ? '–' : pf.saturation.toFixed(2)}</span></td>
-      <td><span class="note">${pf.envelope && !pf.code.startsWith('N') ? `${pf.envelope.light.toFixed(2)} / ${pf.envelope.dark.toFixed(2)}` : '–'}</span></td>
-      <td>${pf.code.startsWith('N') ? '<span class="note">–</span>' : `<span class="note">${pad(pf.natural.step)} · cusp L ${fmtL(pf.natural.L)}</span> <select id="natural-${fam}" aria-label="${fam} natural step" style="width:64px">${['auto', ...STEPS].map((v) => `<option value="${v}"${String(f.naturalStep ?? 'auto') === String(v) ? ' selected' : ''}>${v}</option>`).join('')}</select>`}</td>
+      <td><span class="note">${pf.code.startsWith('n') ? '–' : pf.saturation.toFixed(2)}</span></td>
+      <td><span class="note">${pf.envelope && !pf.code.startsWith('n') ? `${pf.envelope.light.toFixed(2)} / ${pf.envelope.dark.toFixed(2)}` : '–'}</span></td>
+      <td>${pf.code.startsWith('n') ? '<span class="note">–</span>' : `<span class="note">${pad(pf.natural.step)} · cusp L ${fmtL(pf.natural.L)}</span> <select id="natural-${fam}" aria-label="${fam} natural step" style="width:64px">${['auto', ...STEPS].map((v) => `<option value="${v}"${String(f.naturalStep ?? 'auto') === String(v) ? ' selected' : ''}>${v}</option>`).join('')}</select>`}</td>
       <td><span class="note">${formatWavelength(pf.wavelength)}</span></td>
     </tr>`;
   }).join('');

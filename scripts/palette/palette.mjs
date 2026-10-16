@@ -468,14 +468,16 @@ function finishFamily(steps, hue500, ladder, opts, naturalStep) {
     steps[s].text.light = round(apcaContrast({ space: 'p3', rgb: steps[50].p3rgb }, bg), 1);
     steps[s].text.tint = trackTint(steps, s, opts.textMin);
   }
-  const code = hueLetter(steps[500].oklch.h, steps[500].oklch.C) + hueCode(steps[500].oklch.h, opts.hueFormat, opts.hueRounding);
+  const peak = cusp(hue500, 'p3');
+  const natural = { ...peak, step: naturalStep ?? nearestStep(ladder, peak.L), cuspStep: nearestStep(ladder, peak.L) };
+  // The designation is read at the natural step: the colour the family is known by.
+  const named = steps[500].oklch.C < 0.06 ? steps[500].oklch : steps[natural.step].oklch;
+  const code = hueLetter(named.h, named.C) + hueCode(named.h, opts.hueFormat, opts.hueRounding);
   for (const s of present) steps[s].id = `${code}.${String(s).padStart(3, '0')}`;
   const w500 = steps[500].wavelength;
   const nms = present.map((s) => steps[s].wavelength).filter((w) => w.nm !== null && w.complementary === w500.complementary).map((w) => w.nm);
-  const peak = cusp(hue500, 'p3');
-  const natural = { ...peak, step: naturalStep ?? nearestStep(ladder, peak.L), cuspStep: nearestStep(ladder, peak.L) };
   // The pivot is the family's most chromatic step: a pale cusp step (lime, chartreuse) cannot reach the darks over black.
-  const alphaPivot = code.startsWith('N') ? 500 : present.reduce((best, s) => (steps[s].oklch.C > steps[best].oklch.C ? s : best), present[0]);
+  const alphaPivot = code.startsWith('n') ? 500 : present.reduce((best, s) => (steps[s].oklch.C > steps[best].oklch.C ? s : best), present[0]);
   alphaSteps(steps, alphaPivot);
   return {
     code,
