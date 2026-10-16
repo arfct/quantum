@@ -81,6 +81,33 @@ for (const group of tokens.type.groups) {
   }
 }
 tw.push('}');
+// Corner presets from arfct/squircle as Tailwind utilities; they read --squircle-scale and --squircle-shape from tokens.css.
+tw.push(`
+@utility rounded-continuous-* {
+  --rounded-radius: --value(--radius-*, [length], [percentage], [*]);
+  border-radius: var(--rounded-radius);
+  @supports (corner-shape: superellipse(1)) {
+    border-radius: calc(var(--rounded-radius) * var(--squircle-scale));
+    corner-shape: var(--squircle-shape);
+  }
+}
+
+@utility rounded-squircle-* {
+  --rounded-radius: --value(--radius-*, [length], [percentage], [*]);
+  border-radius: var(--rounded-radius);
+  @supports (corner-shape: squircle) {
+    corner-shape: squircle;
+    border-radius: calc(var(--rounded-radius) * 2);
+  }
+}
+
+@utility squircle-icon {
+  border-radius: 26%;
+  @supports (corner-shape: superellipse(1)) {
+    border-radius: calc(26% * var(--squircle-scale));
+    corner-shape: var(--squircle-shape);
+  }
+}`);
 writeFileSync(join(out, 'tailwind.css'), tw.join('\n') + '\n');
 
 writeFileSync(join(out, 'tokens.json'), JSON.stringify(tokens, null, 2) + '\n');

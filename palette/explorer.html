@@ -1,0 +1,1935 @@
+<title>Euclid Palette Explorer</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+  /* Layout: a neutral tool chrome so the swatches read true. Grid of families × steps on top,
+     the analysis and the selected swatch below it, then the spec controls. */
+  :root {
+    --bg: oklch(0.985 0.003 250);
+    --surface: oklch(1 0 0);
+    --line: oklch(0.9 0.006 250);
+    --fg: oklch(0.25 0.015 250);
+    --muted: oklch(0.55 0.015 250);
+    --accent: oklch(0.51 0.11 240);
+    --ok: oklch(0.52 0.12 155);
+    --warn: oklch(0.6 0.14 60);
+    --font: system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: oklch(0.19 0.008 250); --surface: oklch(0.24 0.008 250); --line: oklch(0.32 0.01 250);
+      --fg: oklch(0.92 0.005 250); --muted: oklch(0.68 0.012 250); --accent: oklch(0.78 0.09 240);
+      --ok: oklch(0.75 0.13 155); --warn: oklch(0.8 0.13 70); color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: oklch(0.19 0.008 250); --surface: oklch(0.24 0.008 250); --line: oklch(0.32 0.01 250);
+    --fg: oklch(0.92 0.005 250); --muted: oklch(0.68 0.012 250); --accent: oklch(0.78 0.09 240);
+    --ok: oklch(0.75 0.13 155); --warn: oklch(0.8 0.13 70); color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 14px/1.45 var(--font); font-variant-numeric: tabular-nums; }
+  .page { padding-block: 20px 48px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); max-width: 1480px; margin: 0 auto; display: grid; gap: 20px; }
+  h1 { font-size: 20px; font-weight: 600; margin: 0; letter-spacing: -0.01em; }
+  h2 { font-size: 13px; font-weight: 600; margin: 0; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+  p { margin: 0; max-width: 68ch; }
+  header { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; }
+  .byrne { display: inline-flex; gap: 2px; vertical-align: -3px; margin-right: 8px; }
+  .byrne i { width: 14px; height: 14px; display: block; }
+  .toolbar { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; }
+  .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; background: var(--surface); }
+  .seg button { font: inherit; color: var(--muted); background: none; border: 0; padding: 5px 10px; cursor: pointer; }
+  .seg button[aria-pressed="true"] { background: var(--accent); color: var(--bg); }
+  .seg button:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+  label.ctl { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; min-width: 0; }
+  .note { font-size: 12px; color: var(--muted); }
+  ul.note { margin: 0; padding-left: 16px; }
+  .info { font: 600 10px/1 var(--mono); width: 16px; height: 16px; border-radius: 50%; border: 1px solid var(--line); background: none; color: var(--muted); cursor: pointer; vertical-align: 2px; margin-left: 6px; }
+  .info[aria-expanded="true"] { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+  .about { display: none; }
+  .about.open { display: block; }
+  .grid-wrap { overflow-x: auto; padding: 32px 32px; margin: -16px -32px; }
+  table.grid { border-collapse: collapse; border-spacing: 0; table-layout: fixed; min-width: 720px; width: 100%; }
+  table.grid th { font-weight: 500; text-align: left; color: var(--muted); font-size: 12px; padding: 0 6px; white-space: nowrap; }
+  table.grid th:first-child { width: 120px; }
+  table.grid th .nm { font-family: var(--mono); font-weight: 400; font-size: 11px; color: var(--muted); }
+  table.grid tbody th .nm { display: inline-block; width: 36px; }
+  table.grid thead th .nm { display: block; }
+  table.grid thead th .nm { opacity: 0.5; }
+  table.grid td { padding: 0; line-height: 0; vertical-align: top; }
+  table.grid td.c { background-clip: padding-box; }
+  table.grid tr.break td { height: 14px; }
+  .sw { width: 100%; aspect-ratio: 1; border-radius: 0; padding: 4px 6px; font-size: 11px; line-height: 1.2; cursor: pointer; display: flex; flex-direction: column; justify-content: space-between; border: 0; position: relative; }
+  .sw[aria-pressed="true"] { transform: scale(2); transform-origin: center; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(0, 0, 0, 0.15); z-index: 5; }
+  .sw[aria-pressed="true"] .lc { font-size: 5.5px; }
+  .sw[aria-pressed="true"] .hex { font-size: 4.5px; }
+  .sw[aria-pressed="true"] .marks { font-size: 5.5px; top: 2px; right: 3px; gap: 2px; }
+  .sw[aria-pressed="true"] .dot { width: 3.5px; height: 3.5px; }
+  .sw[aria-pressed="true"] { padding: 2px 3px; }
+  table.grid td.c { position: relative; }
+  table.grid td.c:has(.sw[aria-pressed="true"]) { z-index: 5; }
+  .sw .lc { display: none; }
+  .sw[aria-pressed="true"] .lc { display: block; opacity: 0.85; }
+  .sw .marks { position: absolute; top: 3px; right: 5px; display: flex; gap: 3px; align-items: center; font-size: 11px; line-height: 1; }
+  .sw .dot { width: 7px; height: 7px; border-radius: 50%; background: currentColor; display: inline-block; }
+  .sw .hex { font-weight: 400; font-family: var(--mono); font-size: 9px; letter-spacing: 0.02em; opacity: 0; }
+  .sw[aria-pressed="true"] .hex { opacity: 0.85; }
+  .chip { display: inline-block; width: 12px; height: 12px; border-radius: 3px; vertical-align: -2px; margin-right: 6px; border: 1px solid var(--line); }
+  .spec { display: grid; gap: 14px; }
+  .ladder { display: grid; grid-template-columns: repeat(auto-fill, minmax(56px, 1fr)); gap: 6px; }
+  .ladder label { display: grid; gap: 3px; font-size: 11px; color: var(--muted); text-align: left; }
+  input[type="number"], input[type="text"], select, textarea { font: inherit; font-family: var(--mono); font-size: 12px; color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: 4px; padding: 4px 6px; width: 100%; min-width: 0; }
+  input[type="number"]:disabled { color: var(--muted); border-style: dashed; }
+  input[type="range"] { width: 160px; accent-color: var(--accent); }
+  .sliders { display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: center; }
+  .sliders input[type="number"] { width: 72px; }
+  table.fams { border-collapse: collapse; width: 100%; font-size: 12px; }
+  table.fams th, table.fams td { text-align: left; padding: 4px 6px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+  table.fams th { color: var(--muted); font-weight: 500; }
+  table.fams td input[type="text"] { width: 180px; }
+  table.fams td input[type="number"] { width: 64px; }
+  table.fams td select { width: 72px; }
+  .btns { display: flex; flex-wrap: wrap; gap: 8px; }
+  .btn { font: inherit; font-size: 13px; color: var(--fg); background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 6px 12px; cursor: pointer; }
+  .btn.primary { background: var(--accent); color: var(--bg); border-color: transparent; }
+  .status { color: var(--muted); font-size: 12px; min-height: 1.4em; }
+  textarea { height: 120px; resize: vertical; }
+  .fail { color: var(--warn); }
+  .pass { color: var(--ok); }
+  .chart { width: 100%; height: auto; display: block; }
+  .chart .grid line { stroke: var(--line); stroke-width: 1; }
+  .chart text { fill: var(--muted); font-size: 11px; font-family: var(--font); }
+  .chart .series { fill: none; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+  .chart .series.dim { opacity: 0.25; }
+  .chart .hover { fill: var(--surface); stroke: var(--fg); stroke-width: 2; }
+  .chart .zero { stroke: var(--muted); stroke-width: 1; }
+  .chart .attr { stroke: var(--fg); stroke-width: 1; stroke-dasharray: 3 3; opacity: 0.6; }
+  .chart .rep { stroke: var(--muted); stroke-width: 1; stroke-dasharray: 1 3; }
+  .chart .bend-shade { fill: none; stroke: var(--fg); stroke-width: 2; }
+  .chart .bend-tint { fill: none; stroke: var(--fg); stroke-width: 2; stroke-dasharray: 6 4; opacity: 0.7; }
+  .chart .pt { stroke: var(--surface); stroke-width: 1; }
+  .chart .pt.tint { fill: var(--surface); stroke-width: 2; }
+  .chart .pt.radix { stroke: var(--fg); stroke-width: 1; }
+  .readout { font-family: var(--mono); font-size: 12px; color: var(--muted); min-height: 1.4em; }
+  @media (prefers-reduced-motion: no-preference) { .sw { transition: box-shadow 120ms; } }
+</style>
+
+<div class="page">
+  <header>
+    <h1><span class="byrne" aria-hidden="true"><i style="background:#D42A20"></i><i style="background:#0E638E"></i><i style="background:#FAC22B"></i></span>Euclid Palette Explorer</h1>
+    <div class="toolbar">
+      <div class="seg" role="group" aria-label="Palette">
+        <button type="button" id="view-proposed" aria-pressed="true">Euclid</button>
+        <button type="button" id="view-current" aria-pressed="false">Tailwind 4.1</button>
+      </div>
+      <div class="seg" role="group" aria-label="Display gamut">
+        <button type="button" id="gamut-p3" aria-pressed="true">Display P3</button>
+        <button type="button" id="gamut-srgb" aria-pressed="false">sRGB</button>
+      </div>
+      <label class="ctl"><input type="checkbox" id="tinted" checked> Tinted text (nearest family step meeting Lc 75)</label>
+      <label class="ctl"><input type="checkbox" id="alpha"> Alpha blends (one colour per family over white or black)</label>
+    </div>
+  </header>
+
+  <section class="card">
+    <h2><span id="grid-title">Euclid palette</span> <button type="button" class="info" aria-expanded="false" aria-label="About the grid">i</button></h2>
+    <ul class="note"><li>Dot: the family's natural step. ★: Byrne's red, yellow and blue.</li><li>Click a swatch to select it and copy its hex.</li></ul>
+    <p class="note about" id="grid-note"></p>
+    <p class="note about">Every value is derived from the OKLCH reference; the hex is the sRGB gamut mapping. A dot in the corner marks a family's natural step, the one nearest its gamut cusp (where the hue reaches the most chroma); ★ marks where Byrne's red, yellow and blue sit. With Tinted on, text is the family step nearest the colour that still meets APCA Lc 75 (lighter first, white and black as the ends); a square where nothing passes shows the strongest ink. With it off, text is white wherever white clears Lc 60, else the stronger of white and black. Clicking a square selects it and copies its hex. The code under each name is the family's designation: a hue-sector letter (r o y g b p, or n under chroma 0.06) and OKLCH h at the family's natural step as hundredths of the circle; a step is written p85.300.</p>
+    <div class="grid-wrap"><table class="grid" id="grid" aria-labelledby="grid-title"></table></div>
+  </section>
+
+  <section class="card">
+      <h2>Lightness by step <button type="button" class="info" aria-expanded="false" aria-label="About the chart">i</button></h2>
+      <ul class="note"><li>OKLab L of every family at each step.</li></ul>
+      <p class="note about">OKLab L of every family at each step. The Euclid ladder is one line for the neutrals; chromatic families sit above or below it where their luminance is equalized. Tailwind spreads up to 0.24 at the 500.</p>
+      <svg class="chart" id="chart" viewBox="0 0 760 300" role="img" aria-label="Lightness of each family by step"></svg>
+      <div class="readout" id="chart-readout">Hover a point for the family, step and lightness.</div>
+    </section>
+
+  <section class="card">
+    <h2>Continuous field <button type="button" class="info" aria-expanded="false" aria-label="About the wheel">i</button></h2>
+    <ul class="note"><li>Hue by angle, white at the centre, black at the rim; each family drawn as the path its ramp takes.</li><li>Rings are the steps; a ring on a path is the natural step.</li></ul>
+    <p class="note about">The colour space as a wheel: every angle is one hue, white at the centre (step 0), the ladder outward through 050 … 950, black at the rim (step 1000); from the 850 the ladder continues at its own slope and a power term carries it to the rim. Hue runs clockwise from the top, starting just before red so the families follow the grid's order; chroma is the share interpolated between the two families nearest in hue, applied to the Display P3 maximum. Drawn in P3 where the browser allows, else gamut-mapped to sRGB. Each family is drawn over it as the path its ramp takes from the rim to the centre (continued past the 950 and the 050 at the slope of its last two steps): a dot per step, the natural step ringed, curving where the bend carries the ramp off its pivot hue. Hue lines every 10° (heavier every 30°) and the ladder steps as rings are optional; Natural line traces the step at every hue where the ladder's lightness meets that hue's gamut cusp.</p>
+    <div class="toolbar" style="margin-bottom:8px">
+      <label class="ctl"><input type="checkbox" id="field-names" checked> Families</label>
+      <label class="ctl"><input type="checkbox" id="field-steps" checked> Step rings</label>
+      <label class="ctl"><input type="checkbox" id="field-hues"> Hue lines</label>
+      <label class="ctl"><input type="checkbox" id="field-natural"> Natural line</label>
+      <span class="status" id="field-status"></span>
+    </div>
+    <div style="position:relative;max-width:540px">
+      <canvas id="field" width="540" height="540" style="width:100%;max-width:540px;height:auto;display:block"></canvas>
+      <svg id="field-overlay" viewBox="0 0 540 540" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none"></svg>
+    </div>
+    <div class="readout" id="field-readout">Hover for the colour at a point.</div>
+  </section>
+
+  <section class="card">
+    <h2>Hue bend by hue <button type="button" class="info" aria-expanded="false" aria-label="About the bend chart">i</button></h2>
+    <ul class="note"><li>Hue drift at the ramp ends: measured as dots, the fitted bend as lines.</li><li>Solid and filled: shading. Dashed and hollow: tinting. Squares: Radix.</li></ul>
+    <p class="note about">How far a hue drifts, in degrees, by the time a ramp reaches its end: measured from Tailwind (500 → 950 and 500 → 050) and Radix (9 → 12 and 9 → 1), with the bend function in use drawn over them. Solid line and filled dots: shading. Dashed line and hollow dots: tinting. Squares are Radix. Vertical dashes mark where the curve crosses zero downward (attractors when shading); dotted lines where it crosses upward (repellers).</p>
+    <svg class="chart" id="bend-chart" viewBox="0 0 760 300" role="img" aria-label="Hue drift against hue, measured and modelled"></svg>
+    <div class="readout" id="bend-readout">Hover a point for the family and its drift.</div>
+  </section>
+
+  <section class="card spec">
+    <h2>Spec <button type="button" class="info" aria-expanded="false" aria-label="About the spec">i</button></h2>
+    <ul class="note"><li>Edits regenerate the palette here and are kept in this browser.</li><li>Copy the spec into <code>palette/spec.json</code> and run <code>npm run palette</code> to bring a change into the repo.</li></ul>
+    <p class="note about">A ladder, Tailwind's ramps, and three anchors. Ladder: one lightness per column, a curve from the top (050), the mid (500) and the bottom (950) with a gain that steepens the middle, fitted by least squares to Tailwind's mean lightness per step (the fitted values show in the fields), set by hand, or replaced by explicit steps; or a perceptual ramp between top and bottom with equal OKLab L steps (equal CIE L* for greys) or equal APCA contrast steps against white or black (APCA is polarity-aware, so the two ramps differ). From the 850 the ladder continues at its own slope and a power term (exponent dive, 5) carries it to black at 1000, which places the 900 and 950; before the 050 the mirror runs to white. Each family's hue and relative saturation are read off its Tailwind ramp at the ladder's lightness (the ramp as a curve over L; saturation as chroma's share of the Display P3 maximum), and Saturation multiplies that share, and Chroma cap limits chroma near white with a curve fitted to Tailwind's most chromatic tints, so a wide-gamut hue such as yellow cannot outrun its neighbours there. Hue starts from Tailwind's 500 and bends as the ramp leaves it by a smooth function of hue: a Fourier series of a few harmonics, fitted by least squares to the measured drift of the reference palettes ticked under Fit to, Tailwind by default (the coefficients show below, scaled by Scale ×); zero harmonics means no bend; an anchor sets the 500 hue so the ramp passes through the anchor at its step. Equal luminance moves each chromatic step to the OKLab L whose luminance matches the neutral's at that step (1 is exact, 0 is equal OKLab L as before), so APCA contrast is the same across a row. Chroma bell replaces the sampled shares with one fitted curve over the ladder times a light and a dark number per family (shown under Envelope); Hues from anchors places the unanchored families between the anchored ones at Tailwind's spacing; Keep C scales a family so its anchor step carries the anchor's chroma. Hue shift and Sat × adjust a family by hand. Edits regenerate the palette here and are kept in this browser; copy the spec into <code>palette/spec.json</code> and run <code>npm run palette</code> to bring a change into the repo.</p>
+    <div class="sliders">
+      <label class="ctl">Ladder <select id="ladder-mode" style="width:auto"><option value="base">Fitted to Tailwind</option><option value="curve">Curve</option><option value="uniform">Equal OKLab L steps</option><option value="apca">Equal APCA contrast steps</option><option value="explicit">Explicit steps</option></select></label>
+      <label class="ctl" id="against-ctl">against <select id="ladder-against" style="width:auto"><option value="white">white</option><option value="black">black</option><option value="both">both (mean)</option></select></label>
+      <label class="ctl">Top <input type="number" id="ladder-top" min="0.9" max="1" step="0.005"></label>
+      <label class="ctl">Mid (500) <input type="number" id="ladder-mid" min="0.4" max="0.8" step="0.005"></label>
+      <label class="ctl">Bottom <input type="number" id="ladder-bottom" min="0.05" max="0.5" step="0.005"></label>
+      <label class="ctl">Gain <input type="number" id="ladder-gain" min="0.2" max="0.8" step="0.01"></label>
+    </div>
+    <div class="ladder" id="ladder"></div>
+    <div class="sliders">
+      <label class="ctl">Saturation × <input type="range" id="saturation" min="0.5" max="1.4" step="0.01"> <output id="saturation-out"></output></label>
+      <label class="ctl"><input type="checkbox" id="cap-on"> Chroma cap ×</label><input type="number" id="cap-scale" min="0.5" max="1.5" step="0.05" style="width:64px" aria-label="chroma cap scale"> <span class="note" id="cap-fit"></span>
+      <label class="ctl">Equal luminance <input type="number" id="equalize" min="0" max="1" step="0.1" style="width:64px" aria-label="luminance equalization amount"></label>
+      <label class="ctl"><input type="checkbox" id="chroma-bell"> Chroma bell</label> <span class="note" id="bell-fit"></span>
+      <label class="ctl"><input type="checkbox" id="hues-anchors"> Hues from anchors</label>
+    </div>
+    <div class="grid-wrap">
+      <table class="fams" id="bend-table" aria-label="Hue bend">
+        <thead></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div class="grid-wrap">
+      <table class="fams" id="fams">
+        <thead><tr><th>Family</th><th>Code</th><th>Anchor (oklch or hex)</th><th>At step</th><th>Keep C</th><th>Fit ΔL</th><th>Hue at 500</th><th>Hue shift °</th><th>Drift to 950</th><th>Sat ×</th><th>Share at 500</th><th>Envelope light / dark</th><th>Natural (override)</th><th>λ at 500</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div class="btns">
+      <button type="button" class="btn" id="copy-spec">Copy spec JSON</button>
+      <button type="button" class="btn" id="copy-palette">Copy palette JSON</button>
+      <button type="button" class="btn" id="copy-css">Copy CSS</button>
+      <button type="button" class="btn" id="reset">Reset to repo spec</button>
+    </div>
+    <div class="status" id="status"></div>
+    <details>
+      <summary>Paste a spec</summary>
+      <textarea id="paste" aria-label="Spec JSON"></textarea>
+      <div class="btns" style="margin-top:8px"><button type="button" class="btn primary" id="apply">Apply</button></div>
+    </details>
+  </section>
+
+</div>
+
+<script>
+// Colour maths for the palette tools: sRGB and Display P3 in and out of OKLab/OKLCH,
+// CSS Color 4 gamut mapping, OKLab ΔE and APCA contrast. No dependencies, so the
+// same file is inlined into the palette explorer page.
+
+// --- transfer functions ---------------------------------------------------------
+
+const toLinear = (c) => (c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4);
+const toGamma = (c) => (c <= 0.0031308 ? 12.92 * c : 1.055 * c ** (1 / 2.4) - 0.055);
+
+// --- matrices -------------------------------------------------------------------
+
+const mul = (m, v) => m.map((row) => row[0] * v[0] + row[1] * v[1] + row[2] * v[2]);
+
+const LSRGB_TO_LMS = [
+  [0.4122214708, 0.5363325363, 0.0514459929],
+  [0.2119034982, 0.6806995451, 0.1073969566],
+  [0.0883024619, 0.2817188376, 0.6299787005],
+];
+const LMS_TO_OKLAB = [
+  [0.2104542553, 0.793617785, -0.0040720468],
+  [1.9779984951, -2.428592205, 0.4505937099],
+  [0.0259040371, 0.7827717662, -0.808675766],
+];
+const OKLAB_TO_LMS = [
+  [1, 0.3963377774, 0.2158037573],
+  [1, -0.1055613458, -0.0638541728],
+  [1, -0.0894841775, -1.291485548],
+];
+const LMS_TO_LSRGB = [
+  [4.0767416621, -3.3077115913, 0.2309699292],
+  [-1.2684380046, 2.6097574011, -0.3413193965],
+  [-0.0041960863, -0.7034186147, 1.707614701],
+];
+const LSRGB_TO_XYZ = [
+  [0.4123907993, 0.3575843394, 0.1804807884],
+  [0.2126390059, 0.7151686788, 0.0721923154],
+  [0.0193308187, 0.1191947798, 0.9505321522],
+];
+const XYZ_TO_LSRGB = [
+  [3.2409699419, -1.5373831776, -0.4986107603],
+  [-0.9692436363, 1.8759675015, 0.0415550574],
+  [0.0556300797, -0.2039769589, 1.0569715142],
+];
+const LP3_TO_XYZ = [
+  [0.4865709486, 0.2656676932, 0.1982172852],
+  [0.2289745641, 0.6917385218, 0.0792869141],
+  [0, 0.0451133819, 1.0439443689],
+];
+const XYZ_TO_LP3 = [
+  [2.4934969119, -0.9313836179, -0.4027107845],
+  [-0.8294889696, 1.7626640603, 0.0236246858],
+  [0.0358458302, -0.0761723893, 0.956884524],
+];
+
+// --- OKLab / OKLCH ----------------------------------------------------------------
+
+function linearSrgbToOklab(rgb) {
+  const lms = mul(LSRGB_TO_LMS, rgb).map(Math.cbrt);
+  const [L, a, b] = mul(LMS_TO_OKLAB, lms);
+  return { L, a, b };
+}
+
+function oklabToLinearSrgb({ L, a, b }) {
+  const lms = mul(OKLAB_TO_LMS, [L, a, b]).map((v) => v ** 3);
+  return mul(LMS_TO_LSRGB, lms);
+}
+
+function oklabToOklch({ L, a, b }) {
+  const C = Math.hypot(a, b);
+  let h = (Math.atan2(b, a) * 180) / Math.PI;
+  if (h < 0) h += 360;
+  return { L, C, h: C < 1e-7 ? 0 : h };
+}
+
+function oklchToOklab({ L, C, h }) {
+  const rad = (h * Math.PI) / 180;
+  return { L, a: C * Math.cos(rad), b: C * Math.sin(rad) };
+}
+
+// --- spaces -----------------------------------------------------------------------
+// A colour in a display space is {space: 'srgb'|'p3', rgb: [r,g,b]} with gamma-encoded 0–1 channels.
+
+function toLinearRgb({ space, rgb }) {
+  return { space, rgb: rgb.map(toLinear) };
+}
+
+function oklchToSpace(lch, space) {
+  const lsrgb = oklabToLinearSrgb(oklchToOklab(lch));
+  const lin = space === 'p3' ? mul(XYZ_TO_LP3, mul(LSRGB_TO_XYZ, lsrgb)) : lsrgb;
+  return { space, rgb: lin.map(toGamma) };
+}
+
+function spaceToOklch({ space, rgb }) {
+  const lin = rgb.map(toLinear);
+  const lsrgb = space === 'p3' ? mul(XYZ_TO_LSRGB, mul(LP3_TO_XYZ, lin)) : lin;
+  return oklabToOklch(linearSrgbToOklab(lsrgb));
+}
+
+const EPS = 1e-6;
+const inGamut = (color) => color.rgb.every((c) => c >= -EPS && c <= 1 + EPS);
+const clip = (color) => ({ space: color.space, rgb: color.rgb.map((c) => Math.min(1, Math.max(0, c))) });
+
+function deltaEok(a, b) {
+  const x = oklchToOklab(a);
+  const y = oklchToOklab(b);
+  return Math.hypot(x.L - y.L, x.a - y.a, x.b - y.b);
+}
+
+// CSS Color 4 gamut mapping: lower chroma until the clipped colour is within a just-noticeable
+// difference (ΔEOK 0.02) of the candidate. Lightness and hue are kept.
+function toGamut(lch, space) {
+  if (lch.L >= 1) return { space, rgb: [1, 1, 1] };
+  if (lch.L <= 0) return { space, rgb: [0, 0, 0] };
+  const direct = oklchToSpace(lch, space);
+  if (inGamut(direct)) return direct;
+  const JND = 0.02;
+  let min = 0;
+  let max = lch.C;
+  let minInGamut = true;
+  let current = direct;
+  while (max - min > 1e-4) {
+    const C = (min + max) / 2;
+    const candidate = { ...lch, C };
+    current = oklchToSpace(candidate, space);
+    if (minInGamut && inGamut(current)) {
+      min = C;
+      continue;
+    }
+    const clipped = clip(current);
+    const dE = deltaEok(spaceToOklch(clipped), candidate);
+    if (dE < JND) {
+      if (JND - dE < 1e-4) return clipped;
+      minInGamut = false;
+      min = C;
+    } else {
+      max = C;
+    }
+  }
+  return clip(current);
+}
+
+// Largest chroma at this lightness and hue that fits the space; used to shape ramps.
+function maxChroma(L, h, space, limit = 0.5) {
+  let lo = 0;
+  let hi = limit;
+  while (hi - lo > 1e-4) {
+    const C = (lo + hi) / 2;
+    if (inGamut(oklchToSpace({ L, C, h }, space))) lo = C;
+    else hi = C;
+  }
+  return lo;
+}
+
+// --- parsing and formatting ---------------------------------------------------------
+
+function parseHex(hex) {
+  const s = hex.replace('#', '');
+  const n = s.length === 3 ? s.split('').map((c) => c + c).join('') : s;
+  const rgb = [0, 2, 4].map((i) => parseInt(n.slice(i, i + 2), 16) / 255);
+  return { space: 'srgb', rgb };
+}
+
+function parseOklch(str) {
+  const m = str.match(/oklch\(\s*([\d.]+)(%?)\s+([\d.]+)\s+([\d.]+)/);
+  if (!m) throw new Error(`not an oklch() colour: ${str}`);
+  return { L: m[2] ? +m[1] / 100 : +m[1], C: +m[3], h: +m[4] };
+}
+
+function parseColor(str) {
+  if (str.startsWith('#')) return spaceToOklch(parseHex(str));
+  if (str.startsWith('oklch')) return parseOklch(str);
+  const p3 = str.match(/color\(display-p3\s+([\d.]+)\s+([\d.]+)\s+([\d.]+)/);
+  if (p3) return spaceToOklch({ space: 'p3', rgb: [+p3[1], +p3[2], +p3[3]] });
+  throw new Error(`unsupported colour: ${str}`);
+}
+
+const to255 = (c) => Math.round(Math.min(1, Math.max(0, c)) * 255);
+const toHex = ({ rgb }) => '#' + rgb.map((c) => to255(c).toString(16).padStart(2, '0')).join('').toUpperCase();
+const round = (v, d) => Number(v.toFixed(d));
+const formatOklch = ({ L, C, h }) => `oklch(${round(L, 4)} ${round(C, 4)} ${round(h, 2)})`;
+const formatP3 = ({ rgb }) => `color(display-p3 ${rgb.map((c) => round(Math.min(1, Math.max(0, c)), 4)).join(' ')})`;
+
+// --- dominant wavelength ------------------------------------------------------------
+
+// CIE 1931 2° spectral locus in xy chromaticity, 380–700 nm at 10 nm.
+const LOCUS = [
+  [380, 0.1741, 0.005], [390, 0.1738, 0.0049], [400, 0.1733, 0.0048], [410, 0.1726, 0.0048], [420, 0.1714, 0.0051],
+  [430, 0.1689, 0.0069], [440, 0.1644, 0.0109], [450, 0.1566, 0.0177], [460, 0.144, 0.0297], [470, 0.1241, 0.0578],
+  [480, 0.0913, 0.1327], [490, 0.0454, 0.295], [500, 0.0082, 0.5384], [510, 0.0139, 0.7502], [520, 0.0743, 0.8338],
+  [530, 0.1547, 0.8059], [540, 0.2296, 0.7543], [550, 0.3016, 0.6923], [560, 0.3731, 0.6245], [570, 0.4441, 0.5547],
+  [580, 0.5125, 0.4866], [590, 0.5752, 0.4242], [600, 0.627, 0.3725], [610, 0.6658, 0.334], [620, 0.6915, 0.3083],
+  [630, 0.7079, 0.292], [640, 0.719, 0.2809], [650, 0.726, 0.274], [660, 0.73, 0.27], [670, 0.732, 0.268],
+  [680, 0.7334, 0.2666], [690, 0.7344, 0.2656], [700, 0.7347, 0.2653],
+];
+const D65_XY = [0.3127, 0.329];
+
+function oklchToXy(lch) {
+  const [X, Y, Z] = mul(LSRGB_TO_XYZ, oklabToLinearSrgb(oklchToOklab(lch)));
+  const sum = X + Y + Z;
+  return sum > 0 ? [X / sum, Y / sum] : D65_XY;
+}
+
+// Intersects the ray from the white point through xy with the locus; returns {nm, t} for the
+// first segment hit in the given direction (t is the ray parameter at the locus).
+function hitLocus(xy, direction) {
+  const [wx, wy] = D65_XY;
+  const dx = (xy[0] - wx) * direction;
+  const dy = (xy[1] - wy) * direction;
+  for (let i = 0; i < LOCUS.length - 1; i++) {
+    const [nm0, x0, y0] = LOCUS[i];
+    const [nm1, x1, y1] = LOCUS[i + 1];
+    const ex = x1 - x0;
+    const ey = y1 - y0;
+    const det = dx * ey - dy * ex;
+    if (Math.abs(det) < 1e-12) continue;
+    const t = ((x0 - wx) * ey - (y0 - wy) * ex) / det;
+    const u = ((x0 - wx) * dy - (y0 - wy) * dx) / det;
+    if (t > 0 && u >= 0 && u <= 1) return { nm: nm0 + u * (nm1 - nm0), t };
+  }
+  return null;
+}
+
+// Dominant wavelength (nm) and excitation purity of a colour. Purples have no dominant wavelength;
+// they get the complementary one, flagged `complementary: true` (written 560c by convention).
+function dominantWavelength(lch) {
+  const xy = oklchToXy(lch);
+  const dist = Math.hypot(xy[0] - D65_XY[0], xy[1] - D65_XY[1]);
+  if (dist < 1e-4) return { nm: null, purity: 0, complementary: false };
+  const hit = hitLocus(xy, 1);
+  if (hit) return { nm: round(hit.nm, 0), purity: round(Math.min(1, 1 / hit.t), 3), complementary: false };
+  const comp = hitLocus(xy, -1);
+  return { nm: comp ? round(comp.nm, 0) : null, purity: null, complementary: true };
+}
+
+// Conventional spectral bands, for naming a wavelength.
+const SPECTRAL_BANDS = [
+  [380, 450, 'violet'], [450, 485, 'blue'], [485, 500, 'cyan'], [500, 565, 'green'],
+  [565, 590, 'yellow'], [590, 625, 'orange'], [625, 700, 'red'],
+];
+const bandName = (nm, complementary) => {
+  if (nm === null) return 'achromatic';
+  if (complementary) return 'purple';
+  const band = SPECTRAL_BANDS.find(([lo, hi]) => nm >= lo && nm < hi);
+  return band ? band[2] : nm < 380 ? 'violet' : 'red';
+};
+const formatWavelength = ({ nm, complementary }) => (nm === null ? '–' : `${nm}${complementary ? 'c' : ''} nm`);
+
+// --- hue sectors ----------------------------------------------------------------------
+
+// Euclid's hue sectors in OKLCH, set so the Tailwind family hues at the 500 fall in the sector that
+// matches their name. A family whose 500 has chroma under 0.06 is N (neutral).
+const HUE_SECTORS = [
+  [45, 'R'], [60, 'O'], [110, 'Y'], [200, 'G'], [285, 'B'], [345, 'P'], [360, 'R'],
+];
+function hueLetter(h, C) {
+  if (C < 0.06) return 'n';
+  const hue = ((h % 360) + 360) % 360;
+  return HUE_SECTORS.find(([end]) => hue < end)[1].toLowerCase();
+}
+// Designation: sector letter in lower case, the family's hue at its natural step, then the step: p86.300.
+// hueFormat 'percent' writes the hue as hundredths of the circle, 00–99 (3.6° each);
+// 'degrees' writes it rounded to `rounding` degrees as three digits, 000–350.
+function hueCode(hue500, format = 'percent', rounding = 10) {
+  const hue = ((hue500 % 360) + 360) % 360;
+  if (format === 'degrees') return String((Math.round(hue / rounding) * rounding) % 360).padStart(3, '0');
+  return String(Math.round(hue / 3.6) % 100).padStart(2, '0');
+}
+
+// Display P3 channels as 8-bit hex. CSS has no hex form for P3 (only color(display-p3 r g b)); this is
+// the informal notation design tools show, and it is not a valid CSS colour.
+const toP3Hex = ({ rgb }) => '#' + rgb.map((c) => to255(c).toString(16).padStart(2, '0')).join('').toUpperCase();
+
+// --- luminance and APCA -------------------------------------------------------------
+
+// APCA 0.0.98G-4g (W3 version). Y is computed from the colour's own space; the Display P3
+// coefficients are the ones published with apca-w3.
+const APCA = {
+  srgb: { r: 0.2126729, g: 0.7151522, b: 0.072175 },
+  p3: { r: 0.228982959480578, g: 0.691749262585238, b: 0.0792677779341829 },
+  trc: 2.4,
+  blkThrs: 0.022,
+  blkClmp: 1.414,
+  normBG: 0.56,
+  normTXT: 0.57,
+  revTXT: 0.62,
+  revBG: 0.65,
+  scale: 1.14,
+  loClip: 0.1,
+  offset: 0.027,
+  deltaYmin: 0.0005,
+};
+
+function apcaY({ space, rgb }) {
+  const k = APCA[space];
+  const [r, g, b] = rgb.map((c) => Math.min(1, Math.max(0, c)) ** APCA.trc);
+  return k.r * r + k.g * g + k.b * b;
+}
+
+const softClamp = (Y) => (Y > APCA.blkThrs ? Y : Y + (APCA.blkThrs - Y) ** APCA.blkClmp);
+
+// Lc: positive for dark text on a light background, negative for light text on dark. |Lc| is the contrast.
+function apcaContrast(text, bg) {
+  const Ytxt = softClamp(apcaY(text));
+  const Ybg = softClamp(apcaY(bg));
+  if (Math.abs(Ybg - Ytxt) < APCA.deltaYmin) return 0;
+  let sapc;
+  if (Ybg > Ytxt) {
+    sapc = (Ybg ** APCA.normBG - Ytxt ** APCA.normTXT) * APCA.scale;
+    return sapc < APCA.loClip ? 0 : (sapc - APCA.offset) * 100;
+  }
+  sapc = (Ybg ** APCA.revBG - Ytxt ** APCA.revTXT) * APCA.scale;
+  return sapc > -APCA.loClip ? 0 : (sapc + APCA.offset) * 100;
+}
+
+// WCAG 2 relative luminance and ratio, for comparison with the APCA figures.
+// Relative luminance (CIE Y) of an OKLCH colour, from its linear sRGB coordinates, inside the gamut or not.
+function luminanceOf(lch) {
+  const [r, g, b] = oklabToLinearSrgb(oklchToOklab(lch));
+  return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+}
+
+function wcagLuminance({ space, rgb }) {
+  const lin = rgb.map(toLinear);
+  const lsrgb = space === 'p3' ? mul(XYZ_TO_LSRGB, mul(LP3_TO_XYZ, lin)) : lin;
+  return 0.2126 * lsrgb[0] + 0.7152 * lsrgb[1] + 0.0722 * lsrgb[2];
+}
+
+function wcagRatio(a, b) {
+  const [hi, lo] = [wcagLuminance(a), wcagLuminance(b)].sort((x, y) => y - x);
+  return (hi + 0.05) / (lo + 0.05);
+}
+
+// APCA's published minimums (Lc) by use, from the APCA readme's "font lookup" guidance.
+const APCA_LEVELS = [
+  { lc: 90, use: 'preferred body text' },
+  { lc: 75, use: 'body text minimum' },
+  { lc: 60, use: 'large or bold text; headlines, labels' },
+  { lc: 45, use: 'large headlines, non-text, 36px+' },
+  { lc: 30, use: 'spot text, disabled, placeholders' },
+  { lc: 15, use: 'invisible to many; decorative only' },
+];
+
+// Palette generator. Everything is derived in OKLCH from a short spec:
+//   ladder      one lightness per step, shared by every family: equal APCA contrast steps between a top
+//               and a bottom (against white, black or the mean of both), equal OKLab L steps, a curve
+//               from top, mid and bottom with a gain (Schlick bias/gain), that curve fitted to the base
+//               palette's mean lightness per step ({from: 'base'}), or an explicit list
+//   hue         the base (Tailwind) hue at the 500 (or the family's hue), bent as the ramp leaves it by a
+//               Fourier series fitted to the measured drift of the reference palettes (bendAt); a family
+//               can move the pivot step (bendPivot), set its own ease (bendEase), scale either side (shadeBend, tintBend), add its own
+//               degrees at the ends (shadeDrift, tintDrift) and scale chroma toward them (shadeChroma, tintChroma)
+//   share       chroma as a share of the P3 gamut: read off the base ramp at each step's lightness, or
+//               (chroma: {from: 'bell'}) one fitted bell over the ladder times a light and a dark number
+//               per family, fitted to its base ramp
+//   hues        'anchors' places the unanchored families between the anchored ones at the base spacing
+//   luminance   {equalize: 1} moves each chromatic step to the OKLab L whose luminance matches the neutral's
+//   saturation  a multiplier on that share
+//   chromaCap   a ceiling on chroma near white, fitted to the base palette's most chromatic tints
+//   anchors     a colour a family passes through in hue and lightness: it shifts the family's hue by its
+//               difference from the base ramp at that lightness (and scales chroma with keepChroma)
+// Hex and display-p3 values are gamut-mapped from the OKLCH reference. The "natural" step of a family
+// is the one nearest the gamut cusp: the lightness at which its hue reaches the most chroma.
+
+// The base (Tailwind) palette has 11 steps; Euclid adds the x50s between them.
+const BASE_STEPS = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950];
+const STEPS = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900, 950];
+const stepsOf = (steps) => Object.keys(steps).map(Number).sort((a, b) => a - b);
+// Position of a step along the ladder, 0 at 050 and 1 at 950.
+const tOf = (s) => STEPS.indexOf(s) / (STEPS.length - 1);
+const DEFAULTS = { ladder: { top: 0.975, mid: 0.63, bottom: 0.26, gain: 0.4 }, saturation: 1, bendEase: 1.5, whiteMinLc: 60, textMinLc: 75, hueFormat: 'percent' };
+const WHITE = { space: 'srgb', rgb: [1, 1, 1] };
+const BLACK = { space: 'srgb', rgb: [0, 0, 0] };
+const wrap180 = (d) => ((((d + 180) % 360) + 360) % 360) - 180;
+const norm = (h) => ((h % 360) + 360) % 360;
+
+// --- ladder ---------------------------------------------------------------------------
+
+// Schlick's bias and gain: bias(t, b) passes through (0.5, b); gain below 0.5 makes an S-curve.
+const bias = (t, b) => t / ((1 / b - 2) * (1 - t) + 1);
+const gain = (t, g) => (t < 0.5 ? bias(2 * t, g) / 2 : 1 - bias(2 - 2 * t, g) / 2);
+
+// L(t) for t = 0 (050) … 1 (950): top at 0, mid at 0.5, bottom at 1; gain shapes the ends.
+function ladderFrom(spec, base) {
+  const fn = ladderFunction(spec, base);
+  return Object.fromEntries(STEPS.map((s) => [s, round(fn.at(s), 4)]));
+}
+
+// The ladder as a function of step number over 0–1000: the curve (fitted to the base palette, given, or
+// interpolated from explicit steps) over 050–950 unchanged, then power eases to white at 0 and black at
+// 1000 from the tail step (default 850, so the 900 and 950 take part in the drop) and the mirror before the
+// 050: each continues the ladder's slope and adds a power term (exponent dive) that reaches the edge.
+function ladderFunction(spec, base) {
+  const dive = spec.ladder?.dive ?? 5;
+  const tail = spec.ladder?.tail ?? 850;
+  let core, fit = null, top, bottom;
+  if (spec.lightness) {
+    const pts = STEPS.map((s) => [s, Number(spec.lightness[s])]);
+    core = (step) => {
+      const i = Math.min(pts.length - 2, Math.max(0, pts.findIndex(([s]) => s > step) - 1));
+      const [s0, L0] = pts[i], [s1, L1] = pts[i + 1];
+      return L0 + ((L1 - L0) * (step - s0)) / (s1 - s0);
+    };
+    top = Number(spec.lightness[50]);
+    bottom = Number(spec.lightness[950]);
+  } else {
+    let params;
+    if (spec.ladder?.from === 'uniform' || spec.ladder?.from === 'apca') {
+      // Perceptual ramps between top and bottom: equal OKLab L steps (equal CIE L* for greys), or equal
+      // APCA contrast steps against white (the unclipped SAPC curve, so it inverts everywhere).
+      top = spec.ladder.top ?? DEFAULTS.ladder.top;
+      bottom = spec.ladder.bottom ?? DEFAULTS.ladder.bottom;
+      // APCA's two polarities: dark text on white (Ybg^0.56 − Ytxt^0.57) or light text on black (Ybg^0.65 − Ytxt^0.62).
+      // Both written so the value falls as L rises, which the bisection below assumes.
+      const onWhite = (L) => ((1 - (L ** 3) ** 0.57) * 1.14 - 0.027) * 100;
+      const onBlack = (L) => -(((L ** 3) ** 0.62) * 1.14 - 0.027) * 100;
+      const invert = (f) => (lc) => { let lo = 0, hi = 1; for (let k = 0; k < 60; k++) { const m = (lo + hi) / 2; if (f(m) > lc) lo = m; else hi = m; } return (lo + hi) / 2; };
+      const t = (step) => (step - 50) / 900;
+      const ramp = (f) => { const inv = invert(f); return (step) => inv(f(top) + (f(bottom) - f(top)) * t(step)); };
+      const against = spec.ladder.against ?? 'white';
+      // 'both' splits the difference: the mean of the two ramps at each step.
+      const apcaRamp = against === 'both' ? ((w, b) => (step) => (w(step) + b(step)) / 2)(ramp(onWhite), ramp(onBlack)) : ramp(against === 'black' ? onBlack : onWhite);
+      core = spec.ladder.from === 'uniform' ? (step) => top - (top - bottom) * t(step) : apcaRamp;
+    } else if (spec.ladder?.from === 'base' && base) {
+      const means = baseLadder(base);
+      fit = fitLadder(means);
+      params = fit;
+      top = curveAt(params, 0);
+      bottom = curveAt(params, 1);
+    } else {
+      params = { ...DEFAULTS.ladder, ...spec.ladder };
+      top = params.top;
+      bottom = params.bottom;
+    }
+    if (params && !core) core = (step) => curveAt(params, (step - 50) / 900);
+  }
+  // The ends continue the ladder's own slope where they leave it (no visible seam), then a power term
+  // takes them the rest of the way to black or white.
+  const slopeAt = (step) => (core(step + 1) - core(step - 1)) / 2;
+  const L50 = core(50), Ltail = core(tail), mTail = Math.min(0, slopeAt(tail)), mHead = Math.min(0, slopeAt(50));
+  const tailLen = 1000 - tail;
+  const tailFn = (step) => { const u = (step - tail) / tailLen; return Ltail + mTail * (step - tail) - (Ltail + mTail * tailLen) * u ** dive; };
+  const headFn = (step) => { const v = (50 - step) / 50; return L50 + mHead * (step - 50) + (1 - L50 + mHead * 50) * v ** dive; };
+  const at = (step) => (step < 50 ? headFn(step) : step > tail ? tailFn(step) : core(step));
+  return { at, fit, dive, tail, top, bottom: at(950) };
+}
+
+// The curve at any position t in [0, 1] (050 → 950).
+const curveAt = ({ top, mid, bottom, gain: g }, t) => top - (top - bottom) * bias(gain(t, g), (top - mid) / (top - bottom));
+
+// The curve's values for a {top, mid, bottom, gain}.
+const curveLadder = ({ top, mid, bottom, gain: g }) => {
+  const b = (top - mid) / (top - bottom);
+  return Object.fromEntries(STEPS.map((s) => [s, round(top - (top - bottom) * bias(gain(tOf(s), g), b), 4)]));
+};
+
+// Fits {top, mid, bottom, gain} to a ladder by least squares: a coarse grid, then a finer one around the best.
+function fitLadder(target) {
+  const steps = stepsOf(target);
+  const err = (p) => { const c = curveLadder(p); return steps.reduce((e, s) => e + (c[s] - target[s]) ** 2, 0); };
+  let best = { top: target[50], mid: target[500], bottom: target[950], gain: 0.5 };
+  let bestErr = err(best);
+  const search = (span, n) => {
+    const around = { ...best };
+    for (let a = -n; a <= n; a++) for (let b = -n; b <= n; b++) for (let c = -n; c <= n; c++) for (let d = -n; d <= n; d++) {
+      const p = { top: around.top + (a / n) * span.L, mid: around.mid + (b / n) * span.L, bottom: around.bottom + (c / n) * span.L, gain: around.gain + (d / n) * span.g };
+      if (p.gain <= 0.05 || p.gain >= 0.95 || p.top <= p.mid || p.mid <= p.bottom) continue;
+      const e = err(p);
+      if (e < bestErr) { bestErr = e; best = p; }
+    }
+  };
+  search({ L: 0.03, g: 0.2 }, 6);
+  search({ L: 0.006, g: 0.04 }, 6);
+  search({ L: 0.001, g: 0.008 }, 4);
+  return { top: round(best.top, 4), mid: round(best.mid, 4), bottom: round(best.bottom, 4), gain: round(best.gain, 3), rms: round(Math.sqrt(bestErr / steps.length), 4) };
+}
+
+// The base palette's mean lightness per step over its chromatic families (chroma 0.06 or more at the 500).
+function baseLadder(base) {
+  const fams = Object.values(base).filter((f) => f[500].C >= 0.06);
+  return Object.fromEntries(BASE_STEPS.map((s) => [s, round(fams.reduce((sum, f) => sum + f[s].L, 0) / fams.length, 4)]));
+}
+
+// Position of a step along the ramp: 0 at the 500, 1 at the darkest step, -1 at the lightest.
+function rampPosition(ladder, step, pivot = 500) {
+  const L = ladder[step];
+  const Lp = ladder[pivot];
+  if (L < Lp) return (Lp - L) / (Lp - ladder[950]);
+  if (L > Lp) return -((L - Lp) / (ladder[50] - Lp));
+  return 0;
+}
+
+function nearestStep(ladder, L) {
+  return stepsOf(ladder).map((s) => [s, Math.abs(ladder[s] - L)]).sort((a, b) => a[1] - b[1])[0][0];
+}
+
+// --- base ramps as curves over lightness --------------------------------------------------
+
+// A family's base (Tailwind) ramp as samples by lightness: hue, and chroma as a share of the gamut
+// maximum at that lightness and hue. Hue is unwrapped so it interpolates across 0°.
+function rampCurve(baseFamily) {
+  const samples = BASE_STEPS.map((s) => {
+    const { L, C, h } = baseFamily[s];
+    return { L, h, share: C < 0.005 ? 0 : C / maxChroma(L, h, 'p3'), C };
+  }).sort((a, b) => b.L - a.L);
+  for (let i = 1; i < samples.length; i++) {
+    while (samples[i].h - samples[i - 1].h > 180) samples[i].h -= 360;
+    while (samples[i].h - samples[i - 1].h < -180) samples[i].h += 360;
+  }
+  return samples;
+}
+
+// Hue and share of a base ramp at any lightness, interpolated between its steps and held at the ends.
+function sampleRamp(curve, L) {
+  if (L >= curve[0].L) return { h: curve[0].h, share: curve[0].share };
+  const last = curve[curve.length - 1];
+  if (L <= last.L) return { h: last.h, share: last.share };
+  const i = curve.findIndex((p) => p.L <= L);
+  const a = curve[i - 1];
+  const b = curve[i];
+  const t = (a.L - L) / (a.L - b.L);
+  return { h: a.h + (b.h - a.h) * t, share: a.share + (b.share - a.share) * t };
+}
+
+// A base ramp made between two others, step by step: mean lightness and chroma, hue along the shorter arc.
+function mixFamilies(a, b, t = 0.5) {
+  const out = {};
+  for (const s of BASE_STEPS) {
+    const h = a[s].h + wrap180(b[s].h - a[s].h) * t;
+    out[s] = { L: a[s].L + (b[s].L - a[s].L) * t, C: a[s].C + (b[s].C - a[s].C) * t, h: norm(h) };
+  }
+  return out;
+}
+
+// The base families in order, with spec families declared `between` two of them inserted after the first.
+function orderedBase(spec, base) {
+  const ordered = {};
+  for (const [name, fam] of Object.entries(base)) {
+    ordered[name] = fam;
+    for (const [extra, f] of Object.entries(spec.families ?? {})) {
+      if (f.between && f.between[0] === name && base[f.between[0]] && base[f.between[1]]) ordered[extra] = mixFamilies(base[f.between[0]], base[f.between[1]], f.mix ?? 0.5);
+    }
+  }
+  return ordered;
+}
+
+// --- hue bend ----------------------------------------------------------------------------
+// How far a hue drifts from its 500 by the end of the ramp, as a function of hue: shading bends toward
+// red or blue, tinting toward yellow-green or pink. bend(h) = Σ a_n cos(n·h) + b_n sin(n·h), the
+// coefficients fitted by least squares at generate time to the measured drift of the reference palettes
+// (the base palette's own ramps, and Radix). cfg.coef holds [a1, b1, a2, b2, …]; cfg.scale multiplies.
+function harmonicBasis(h, harmonics) {
+  const th = (h * Math.PI) / 180;
+  const b = [];
+  for (let n = 1; n <= harmonics; n++) b.push(Math.cos(n * th), Math.sin(n * th));
+  return b;
+}
+
+// Least squares via the normal equations (Gauss-Jordan); small systems only.
+function fitHarmonics(points, harmonics) {
+  const n = 2 * harmonics;
+  const M = Array.from({ length: n }, () => Array(n + 1).fill(0));
+  for (const { h, d } of points) {
+    const b = harmonicBasis(h, harmonics);
+    for (let i = 0; i < n; i++) {
+      for (let j = 0; j < n; j++) M[i][j] += b[i] * b[j];
+      M[i][n] += b[i] * d;
+    }
+  }
+  for (let i = 0; i < n; i++) {
+    let p = i;
+    for (let r = i + 1; r < n; r++) if (Math.abs(M[r][i]) > Math.abs(M[p][i])) p = r;
+    [M[i], M[p]] = [M[p], M[i]];
+    for (let r = 0; r < n; r++) {
+      if (r === i) continue;
+      const f = M[r][i] / M[i][i];
+      for (let k = i; k <= n; k++) M[r][k] -= f * M[i][k];
+    }
+  }
+  const coef = M.map((row, i) => round(row[n] / row[i], 3));
+  const rms = round(Math.sqrt(points.reduce((e, p) => e + (harmonicBasis(p.h, harmonics).reduce((s, v, i) => s + v * coef[i], 0) - p.d) ** 2, 0) / points.length), 2);
+  return { coef, rms };
+}
+
+// Measured drift of the base palette: hue at the 500 and the change to the 950 (shade) and the 050 (tint).
+function baseDrift(base) {
+  const shade = [];
+  const tint = [];
+  for (const f of Object.values(base)) {
+    if (f[500].C < 0.06) continue;
+    shade.push({ h: f[500].h, d: wrap180(f[950].h - f[500].h) });
+    tint.push({ h: f[500].h, d: wrap180(f[50].h - f[500].h) });
+  }
+  return { shade, tint };
+}
+
+function bendAt(h, cfg) {
+  if (!cfg?.coef) return 0;
+  return (cfg.scale ?? 1) * harmonicBasis(h, cfg.coef.length / 2).reduce((s, v, i) => s + v * cfg.coef[i], 0);
+}
+
+// --- chroma envelope ----------------------------------------------------------------------
+// One curve of relative chroma over the ladder for every family: the base palette's mean share of the
+// gamut per step, fitted as a quadratic in t (0 at the 050, 1 at the 950) and scaled so its peak is 1.
+// A family's share is then the bell times two numbers of its own, light and dark, fitted by least squares
+// to its base ramp on either side of the 500, in place of the ramp's eleven sampled shares.
+function fitChromaBell(base, ladder) {
+  const fams = Object.values(base).filter((f) => f[500].C >= 0.06);
+  const pts = STEPS.map((s) => ({ t: tOf(s), y: fams.reduce((a, f) => a + sampleRamp(rampCurve(f), ladder[s]).share, 0) / fams.length }));
+  const n = 3;
+  const M = Array.from({ length: n }, () => Array(n + 1).fill(0));
+  for (const { t, y } of pts) {
+    const row = [1, t, t * t];
+    for (let r = 0; r < n; r++) {
+      for (let c = 0; c < n; c++) M[r][c] += row[r] * row[c];
+      M[r][n] += row[r] * y;
+    }
+  }
+  for (let i = 0; i < n; i++) for (let r = 0; r < n; r++) {
+    if (r === i) continue;
+    const f = M[r][i] / M[i][i];
+    for (let k = i; k <= n; k++) M[r][k] -= f * M[i][k];
+  }
+  const c = M.map((row, i) => row[n] / row[i]);
+  let peak = 0;
+  for (let t = 0; t <= 1; t += 0.01) peak = Math.max(peak, c[0] + c[1] * t + c[2] * t * t);
+  return { c: c.map((v) => round(v / peak, 4)) };
+}
+const bellAt = (bell, step) => { const t = tOf(step); return bell.c[0] + bell.c[1] * t + bell.c[2] * t * t; };
+
+// A family's light and dark share against the bell: least squares over the steps from the 050 to the 500
+// and from the 500 to the 950.
+function fitEnvelope(curve, ladder, bell) {
+  const fit = (steps) => {
+    let num = 0, den = 0;
+    for (const s of steps) { const b = bellAt(bell, s); num += sampleRamp(curve, ladder[s]).share * b; den += b * b; }
+    return round(num / den, 3);
+  };
+  return { light: fit(STEPS.filter((s) => s <= 500)), dark: fit(STEPS.filter((s) => s >= 500)) };
+}
+
+// --- chroma ceiling -----------------------------------------------------------------------
+// The most chroma a tint may carry, as a function of its lightness: cap(L) = a · (1 − L)^p, fitted by
+// log-linear least squares to the base palette's most chromatic family at each step from the 050 to the
+// 400. Without it the share model lets a hue with a wide gamut near white (yellow) take far more chroma
+// than its neighbours at the same step, which reads as darker. Below the 400 the curve is above any
+// ramp, so it only binds near white.
+function fitChromaCap(base) {
+  const chrom = Object.values(base).filter((f) => f[500].C >= 0.06);
+  const pts = BASE_STEPS.filter((s) => s <= 400).map((s) => ({ x: Math.log(1 - chrom.reduce((a, f) => a + f[s].L, 0) / chrom.length), y: Math.log(Math.max(...chrom.map((f) => f[s].C))) }));
+  const n = pts.length;
+  const mx = pts.reduce((a, pt) => a + pt.x, 0) / n, my = pts.reduce((a, pt) => a + pt.y, 0) / n;
+  const p = pts.reduce((a, pt) => a + (pt.x - mx) * (pt.y - my), 0) / pts.reduce((a, pt) => a + (pt.x - mx) ** 2, 0);
+  return { a: round(Math.exp(my - p * mx), 3), p: round(p, 3) };
+}
+const chromaCapAt = (cap, L) => (cap ? (cap.scale ?? 1) * cap.a * (1 - L) ** cap.p : Infinity);
+
+// The spec's chroma cap resolved: fitted to the base palette ({from: 'base'}), or a and p given outright.
+function chromaCapFrom(spec, base) {
+  if (!spec.chromaCap) return null;
+  const fit = spec.chromaCap.from === 'base' ? fitChromaCap(base) : { a: spec.chromaCap.a, p: spec.chromaCap.p };
+  return { ...fit, scale: spec.chromaCap.scale ?? 1 };
+}
+
+// --- equal luminance ----------------------------------------------------------------------
+// OKLab L credits saturated blues and violets with lightness their luminance does not have, so a row of
+// equal L is not a row of equal luminance, and APCA (which reads luminance) differs across it. With
+// luminance: {equalize: amount} each chromatic step takes the OKLab L at which its luminance equals the
+// neutral's at that step (the ladder's L with no chroma), moved the given share of the way from the
+// ladder's L (0: equal OKLab L; 1: equal luminance). chromaAt gives the step's chroma at any L, since
+// chroma changes with L and luminance with chroma. Luminance rises with L, so bisection.
+function equalizeL(L0, hue, chromaAt, amount) {
+  if (!amount) return L0;
+  const target = luminanceOf({ L: L0, C: 0, h: 0 });
+  let lo = 0, hi = 1;
+  for (let i = 0; i < 40; i++) {
+    const m = (lo + hi) / 2;
+    if (luminanceOf({ L: m, C: chromaAt(m), h: hue }) < target) lo = m; else hi = m;
+  }
+  return L0 + ((lo + hi) / 2 - L0) * amount;
+}
+// The step whose neutral luminance is nearest a colour's: where rows are equal in luminance, the step it sits on.
+function nearestStepByLuminance(ladder, lch) {
+  const y = luminanceOf(lch);
+  return stepsOf(ladder).map((s) => [s, Math.abs(luminanceOf({ L: ladder[s], C: 0, h: 0 }) - y)]).sort((a, b) => a[1] - b[1])[0][0];
+}
+
+// --- gamut cusp ---------------------------------------------------------------------------
+
+// Lightness and chroma of the most chromatic colour of a hue in a space (coarse scan, then refined).
+function cusp(h, space = 'p3') {
+  let best = { L: 0.5, C: 0 };
+  const scan = (from, to, stepSize) => {
+    for (let L = from; L <= to + 1e-9; L += stepSize) {
+      const C = maxChroma(L, h, space);
+      if (C > best.C) best = { L, C };
+    }
+  };
+  scan(0.2, 0.98, 0.02);
+  scan(Math.max(0.05, best.L - 0.02), Math.min(0.99, best.L + 0.02), 0.002);
+  return { L: round(best.L, 3), C: round(best.C, 4) };
+}
+
+// --- alpha blends -------------------------------------------------------------------------
+// Each step as one saturated colour at an alpha over white (lighter than the family's pivot) or black
+// (darker), the way an alpha scale is used. The source is the pivot step's lightness and chroma at the
+// step's own hue, so it follows the bend; the alpha matches the step's luminance in sRGB, where browsers
+// composite, and deltaE says how far the blend sits from the true step.
+function alphaBlend(target, source, over) {
+  const bg = over === 'white' ? 1 : 0;
+  const blendAt = (alpha) => ({ space: 'srgb', rgb: source.rgb.map((c) => bg + (c - bg) * alpha) });
+  // Luminance first: the alpha at which the blend's luminance equals the step's (luminance moves one way
+  // with alpha, so bisection). The hue is the source's, which tracks the step; chroma falls where it must.
+  const y = wcagLuminance(target);
+  let lo = 0, hi = 1;
+  for (let i = 0; i < 30; i++) {
+    const m = (lo + hi) / 2;
+    const ym = wcagLuminance(blendAt(m));
+    if ((over === 'white') === (ym > y)) lo = m; else hi = m;
+  }
+  const alpha = (lo + hi) / 2;
+  const blended = blendAt(alpha);
+  return { over, source: toHex(source), alpha: round(alpha, 3), hex: toHex(blended), deltaE: round(deltaEok(spaceToOklch(target), spaceToOklch(blended)), 4) };
+}
+function alphaSteps(steps, pivot) {
+  const p = steps[pivot].oklch;
+  for (const s of stepsOf(steps)) {
+    const over = s < pivot ? 'white' : 'black';
+    const h = steps[s].oklch.h;
+    // Over white the source is the pivot at the step's hue. Over black a light pivot (amber, yellow) blends
+    // to grey, so the source is the most chromatic sRGB colour of the step's hue instead.
+    const peak = over === 'black' && p.C >= 0.06 ? cusp(h, 'srgb') : p;
+    const source = toGamut({ L: peak.L, C: peak.C, h }, 'srgb');
+    steps[s].alpha = s === pivot ? { over: 'white', source: steps[s].hex, alpha: 1, hex: steps[s].hex, deltaE: 0 } : alphaBlend(toGamut(steps[s].oklch, 'srgb'), source, over);
+  }
+}
+
+// --- swatches ---------------------------------------------------------------------------
+
+// White (or the light tint) is used whenever it clears `whiteMin` Lc, even if black contrasts more.
+function textFor(swatch, whiteMin) {
+  const white = apcaContrast(WHITE, swatch.srgb);
+  const black = apcaContrast(BLACK, swatch.srgb);
+  const best = Math.abs(white) >= whiteMin ? 'white' : Math.abs(black) >= Math.abs(white) ? 'black' : 'white';
+  return { white: round(white, 1), black: round(black, 1), best, bestLc: round(Math.abs(best === 'white' ? white : black), 1) };
+}
+
+function makeSwatch(lch, whiteMin = DEFAULTS.whiteMinLc) {
+  const p3 = toGamut(lch, 'p3');
+  const srgb = toGamut(lch, 'srgb');
+  const swatch = {
+    oklch: { L: round(lch.L, 4), C: round(lch.C, 4), h: round(lch.h, 2) },
+    css: formatOklch(lch),
+    p3: formatP3(p3),
+    p3hex: toP3Hex(p3),
+    hex: toHex(srgb),
+    srgbInGamut: Math.abs(spaceToOklch(srgb).C - lch.C) < 0.002,
+    Y: round(apcaY(p3), 4),
+    p3rgb: p3.rgb.map((v) => round(Math.min(1, Math.max(0, v)), 4)),
+    wavelength: dominantWavelength(lch),
+    srgb,
+  };
+  swatch.text = textFor(swatch, whiteMin);
+  delete swatch.srgb;
+  return swatch;
+}
+
+// Tinted ink for a step: the family step nearest the background that still meets `minLc`, lighter
+// steps first, with white and black as the ends of the ramp. When nothing passes, the strongest
+// candidate is used and flagged.
+function trackTint(steps, s, minLc) {
+  const bg = { space: 'p3', rgb: steps[s].p3rgb };
+  const L0 = steps[s].oklch.L;
+  const candidates = [
+    { ink: 'white', L: 1, hex: '#FFFFFF', p3: 'color(display-p3 1 1 1)', rgb: [1, 1, 1] },
+    { ink: 'black', L: 0, hex: '#000000', p3: 'color(display-p3 0 0 0)', rgb: [0, 0, 0] },
+    ...stepsOf(steps).filter((t) => t !== s).map((t) => ({ ink: String(t), L: steps[t].oklch.L, hex: steps[t].hex, p3: steps[t].p3, rgb: steps[t].p3rgb })),
+  ].map((c) => ({ ...c, lc: round(apcaContrast({ space: 'p3', rgb: c.rgb }, bg), 1) }));
+  const passing = candidates.filter((c) => Math.abs(c.lc) >= minLc);
+  const light = passing.filter((c) => c.L > L0).sort((a, b) => a.L - b.L)[0];
+  const dark = passing.filter((c) => c.L < L0).sort((a, b) => b.L - a.L)[0];
+  const pick = light ?? dark ?? candidates.sort((a, b) => Math.abs(b.lc) - Math.abs(a.lc))[0];
+  return { ink: pick.ink, hex: pick.hex, p3: pick.p3, lc: pick.lc, passes: Math.abs(pick.lc) >= minLc };
+}
+
+function finishFamily(steps, hue500, ladder, opts, naturalStep) {
+  const present = stepsOf(steps);
+  for (const s of present) {
+    const bg = { space: 'p3', rgb: steps[s].p3rgb };
+    steps[s].text.dark = round(apcaContrast({ space: 'p3', rgb: steps[950].p3rgb }, bg), 1);
+    steps[s].text.light = round(apcaContrast({ space: 'p3', rgb: steps[50].p3rgb }, bg), 1);
+    steps[s].text.tint = trackTint(steps, s, opts.textMin);
+  }
+  const peak = cusp(hue500, 'p3');
+  const natural = { ...peak, step: naturalStep ?? nearestStep(ladder, peak.L), cuspStep: nearestStep(ladder, peak.L) };
+  // The designation is read at the natural step: the colour the family is known by.
+  const named = steps[500].oklch.C < 0.06 ? steps[500].oklch : steps[natural.step].oklch;
+  const code = hueLetter(named.h, named.C) + hueCode(named.h, opts.hueFormat, opts.hueRounding);
+  for (const s of present) steps[s].id = `${code}.${String(s).padStart(3, '0')}`;
+  const w500 = steps[500].wavelength;
+  const nms = present.map((s) => steps[s].wavelength).filter((w) => w.nm !== null && w.complementary === w500.complementary).map((w) => w.nm);
+  // The pivot is the family's most chromatic step: a pale cusp step (lime, chartreuse) cannot reach the darks over black.
+  const alphaPivot = code.startsWith('n') ? 500 : present.reduce((best, s) => (steps[s].oklch.C > steps[best].oklch.C ? s : best), present[0]);
+  alphaSteps(steps, alphaPivot);
+  return {
+    code,
+    natural,
+    alphaPivot,
+    wavelength: w500,
+    band: (w500.purity !== null && w500.purity < 0.05 ? 'near-neutral ' : '') + bandName(w500.nm, w500.complementary),
+    wavelengthRange: nms.length ? [Math.min(...nms), Math.max(...nms)] : null,
+  };
+}
+
+// --- generate ---------------------------------------------------------------------------
+
+function generate(spec, base, reference = {}) {
+  const ladder = ladderFrom(spec, base);
+  const opts = {
+    whiteMin: spec.whiteMinLc ?? DEFAULTS.whiteMinLc,
+    textMin: spec.textMinLc ?? DEFAULTS.textMinLc,
+    hueFormat: spec.hueFormat ?? DEFAULTS.hueFormat,
+    hueRounding: spec.hueRounding ?? 10,
+  };
+  const saturation = spec.saturation ?? DEFAULTS.saturation;
+  const chromaCap = chromaCapFrom(spec, base);
+  // The bend: harmonics fitted to the measured drift of the chosen references (the base palette by default).
+  let bendCfg = null;
+  let bendFit = null;
+  if (spec.hueBend?.harmonics) {
+    const own = baseDrift(base);
+    const radix = reference.radix?.scales ? Object.values(reference.radix.scales) : [];
+    const use = spec.hueBend.reference ?? ['base'];
+    const pts = (key) => [...(use.includes('base') ? own[key] : []), ...(use.includes('radix') ? radix.map((r) => ({ h: r.hue9, d: r[key] })) : [])];
+    const shade = fitHarmonics(pts('shade'), spec.hueBend.harmonics);
+    const tint = fitHarmonics(pts('tint'), spec.hueBend.harmonics);
+    bendFit = { harmonics: spec.hueBend.harmonics, scale: spec.hueBend.scale ?? 1, shade, tint };
+    // hueBend.shade and hueBend.tint are the default side multipliers, which a family's shadeBend and tintBend replace.
+    bendCfg = { shade: { coef: shade.coef, scale: bendFit.scale }, tint: { coef: tint.coef, scale: bendFit.scale } };
+  }
+  // Hue offset of a step from the family's pivot (the 500 unless bendPivot says otherwise): the shade bend
+  // below it, the tint bend above it, scaled by distance and by the family's shadeBend and tintBend.
+  // The offset grows as |pos|^ease, so the ramp leaves the pivot without a corner (ease above 1 gives zero
+  // slope there) and reaches the full bend at the ends. shadeDrift and tintDrift add degrees of the
+  // family's own at the ends, eased the same way.
+  const ease = spec.hueBend?.ease ?? DEFAULTS.bendEase;
+  const offsetAt = (hue, s, fam = {}) => {
+    const pos = rampPosition(ladder, s, fam.bendPivot ? Number(fam.bendPivot) : 500);
+    const amount = Math.abs(pos) ** (fam.bendEase ?? ease);
+    if (pos >= 0) return ((bendCfg ? bendAt(hue, bendCfg.shade) : 0) * (fam.shadeBend ?? spec.hueBend?.shade ?? 1) + Number(fam.shadeDrift ?? 0)) * amount;
+    return ((bendCfg ? bendAt(hue, bendCfg.tint) : 0) * (fam.tintBend ?? spec.hueBend?.tint ?? 1) + Number(fam.tintDrift ?? 0)) * amount;
+  };
+  // Chroma scaled toward the ends of the ramp: shadeChroma is the multiplier reached at the 950, tintChroma at the 050.
+  const chromaScaleAt = (s, fam = {}) => {
+    const pos = rampPosition(ladder, s, fam.bendPivot ? Number(fam.bendPivot) : 500);
+    const end = pos >= 0 ? Number(fam.shadeChroma ?? 1) : Number(fam.tintChroma ?? 1);
+    return 1 + (end - 1) * Math.abs(pos);
+  };
+  const bell = spec.chroma?.from === 'bell' ? fitChromaBell(base, ladder) : null;
+  const equalize = Number(spec.luminance?.equalize ?? 0);
+  const ordered = orderedBase(spec, base);
+  // Pass one: each family's pivot hue (the base ramp's 500, given outright, shifted by hand, or set so the
+  // ramp passes through the anchor's hue at its step) and its share of the gamut by step.
+  const prep = {};
+  for (const [name, baseFamily] of Object.entries(ordered)) {
+    const fam = spec.families?.[name] ?? {};
+    const curve = rampCurve(baseFamily);
+    const envelope = bell ? fitEnvelope(curve, ladder, bell) : null;
+    const shareAt = (s) => {
+      if (!envelope) return sampleRamp(curve, ladder[s]).share;
+      const pos = Math.max(0, rampPosition(ladder, s));
+      return bellAt(bell, s) * (envelope.light + (envelope.dark - envelope.light) * pos);
+    };
+    let hue = norm((fam.hue ?? baseFamily[500].h) + Number(fam.hueShift ?? 0));
+    let anchor = null;
+    if (fam.anchor) {
+      const a = parseColor(fam.anchor);
+      const step = fam.anchorStep && fam.anchorStep !== 'auto' ? Number(fam.anchorStep) : equalize ? nearestStepByLuminance(ladder, a) : nearestStep(ladder, a.L);
+      // The offset at the anchor's step depends on the pivot hue; a few passes settle it.
+      hue = a.h;
+      for (let i = 0; i < 4; i++) hue = norm(a.h - offsetAt(hue, step, fam));
+      anchor = { input: fam.anchor, lch: a, step };
+    }
+    prep[name] = { fam, curve, envelope, shareAt, hue, anchor, placed: !!(fam.anchor || fam.hue != null) };
+  }
+  // Hues from the anchors: a family with neither anchor nor hue of its own sits between the nearest anchored
+  // families (in base hue order) at the base palette's proportional spacing, so the anchors stretch the
+  // whole circle rather than moving three families alone. hueShift still applies on top.
+  if (spec.hues === 'anchors') {
+    const chromatic = Object.keys(prep).filter((n) => ordered[n][500].C >= 0.06).sort((a, b) => ordered[a][500].h - ordered[b][500].h);
+    const anchored = chromatic.filter((n) => prep[n].anchor);
+    if (anchored.length >= 2) for (const n of chromatic) {
+      if (prep[n].placed) continue;
+      const h0 = ordered[n][500].h;
+      let prev = anchored[anchored.length - 1], next = anchored[0];
+      for (const a of anchored) { if (ordered[a][500].h <= h0) prev = a; }
+      for (const a of [...anchored].reverse()) { if (ordered[a][500].h > h0) next = a; }
+      const baseSpan = norm(ordered[next][500].h - ordered[prev][500].h) || 360;
+      const u = norm(h0 - ordered[prev][500].h) / baseSpan;
+      const span = baseSpan + wrap180(norm(prep[next].hue - prep[prev].hue) - baseSpan);
+      prep[n].hue = norm(prep[prev].hue + span * u + Number(prep[n].fam.hueShift ?? 0));
+    }
+  }
+  const families = {};
+  const anchors = {};
+  for (const [name, baseFamily] of Object.entries(ordered)) {
+    const { fam, envelope, shareAt, anchor } = prep[name];
+    const hue = prep[name].hue;
+    let scale = (fam.chroma ?? 1) * saturation;
+    // keepChroma scales the family so the anchor's step carries the anchor's chroma.
+    if (anchor && fam.keepChroma && shareAt(anchor.step) > 0) scale *= anchor.lch.C / maxChroma(anchor.lch.L, anchor.lch.h, 'p3') / shareAt(anchor.step);
+    const shift = wrap180(hue - baseFamily[500].h);
+    const steps = {};
+    let share500 = 0;
+    const familyLadder = {};
+    for (const s of STEPS) {
+      const h = norm(hue + offsetAt(hue, s, fam));
+      const share = shareAt(s) * scale * chromaScaleAt(s, fam);
+      if (s === 500) share500 = share;
+      const chromaAt = (L) => Math.min(share * maxChroma(L, h, 'p3'), maxChroma(L, h, 'p3'), chromaCapAt(chromaCap, L));
+      const L = equalizeL(ladder[s], h, chromaAt, equalize);
+      familyLadder[s] = L;
+      const wanted = share * maxChroma(L, h, 'p3');
+      const cap = chromaCapAt(chromaCap, L);
+      const C = chromaAt(L);
+      steps[s] = makeSwatch({ L, C, h }, opts.whiteMin);
+      steps[s].clamped = share > 1;
+      steps[s].capped = wanted > cap;
+    }
+    const hue500 = steps[500].oklch.h;
+    const info = finishFamily(steps, hue500, familyLadder, opts, fam.naturalStep ? Number(fam.naturalStep) : undefined);
+    if (anchor) {
+      const at = steps[anchor.step].oklch;
+      anchor.fit = { deltaE: round(deltaEok(anchor.lch, at), 4), dL: round(at.L - anchor.lch.L, 4), dC: round(at.C - anchor.lch.C, 4) };
+      anchors[name] = { input: anchor.input, lch: { L: round(anchor.lch.L, 4), C: round(anchor.lch.C, 4), h: round(anchor.lch.h, 2) }, step: anchor.step, fit: anchor.fit };
+    }
+    families[name] = { hue: round(hue500, 2), hueShift: round(shift, 1), saturation: round(share500, 3), chromaScale: round(scale, 4), envelope, bend: round(wrap180(steps[950].oklch.h - hue500), 1), peakChroma: round(Math.max(...STEPS.map((s) => steps[s].oklch.C)), 4), ...info, steps };
+  }
+  const ladderFit = ladderFunction(spec, base).fit;
+  return { name: spec.name, ladder, ladderFit, bend: bendCfg, bendFit, saturation, chromaCap, bell, equalize, families, anchors };
+}
+
+// --- continuous field ---------------------------------------------------------------------
+// The same model evaluated at any hue and any step number 0–1000 (white to black): lightness from the
+// ladder function, hue bent by the bend function, chroma as the share interpolated between the two
+// families nearest in hue, applied to the P3 maximum at that lightness and hue.
+function fieldModel(spec, base, reference = {}) {
+  const palette = generate(spec, base, reference);
+  const ladder = palette.ladder;
+  const fn = ladderFunction(spec, base);
+  const ordered = orderedBase(spec, base);
+  // Each family's share by step, as generated (its steps' chroma over the gamut maximum), held past the ends.
+  const fams = Object.keys(ordered)
+    .filter((n) => ordered[n][500].C >= 0.06)
+    .map((n) => {
+      const f = palette.families[n];
+      const pts = STEPS.map((s) => ({ s, share: f.steps[s].oklch.C / maxChroma(f.steps[s].oklch.L, f.steps[s].oklch.h, 'p3') }));
+      const share = (step) => {
+        if (step <= 50) return pts[0].share;
+        if (step >= 950) return pts[pts.length - 1].share;
+        const i = pts.findIndex((p) => p.s > step);
+        const a = pts[i - 1], b = pts[i];
+        return a.share + ((b.share - a.share) * (step - a.s)) / (b.s - a.s);
+      };
+      return { name: n, hue: f.hue, share };
+    })
+    .sort((a, b) => a.hue - b.hue);
+  const shareAt = (h, step) => {
+    const hue = norm(h);
+    let i = fams.findIndex((f) => f.hue > hue);
+    const next = i === -1 ? fams[0] : fams[i];
+    const prev = i === -1 ? fams[fams.length - 1] : i === 0 ? fams[fams.length - 1] : fams[i - 1];
+    const span = norm(next.hue - prev.hue) || 360;
+    const u = norm(hue - prev.hue) / span;
+    const a = prev.share(step), b = next.share(step);
+    return a + (b - a) * u;
+  };
+  const bend = palette.bend;
+  const lightnessAtStep = (step) => Math.min(1, Math.max(0, fn.at(step)));
+  const colorAtStep = (h, step) => {
+    const L = lightnessAtStep(step);
+    const t = (step - 50) / 900;
+    const pos = Math.max(-1, Math.min(1, (t - 0.5) / 0.5));
+    const amount = Math.abs(pos) ** (spec.hueBend?.ease ?? DEFAULTS.bendEase);
+    const offset = !bend ? 0 : pos >= 0 ? bendAt(h, bend.shade) * amount : bendAt(h, bend.tint) * amount;
+    const hue = norm(h + offset);
+    const share = shareAt(h, step);
+    const chromaAt = (l) => Math.min(share * maxChroma(l, hue, 'p3'), maxChroma(l, hue, 'p3'), chromaCapAt(palette.chromaCap, l));
+    const Leq = equalizeL(L, hue, chromaAt, palette.equalize);
+    return { L: Leq, C: chromaAt(Leq), h: hue };
+  };
+  return { palette, lightnessAtStep, shareAt, colorAtStep, families: fams.map((f) => ({ name: f.name, hue: f.hue })) };
+}
+
+// Reads a base palette out of the token file's Tailwind tokens: {red: {50: {L,C,h}, …}, …}.
+function baseFromTokens(tokens) {
+  const base = {};
+  for (const t of tokens.color.tokens) {
+    const m = t.name.match(/^([a-z]+)-(\d+)$/);
+    if (!m || !BASE_STEPS.includes(Number(m[2]))) continue;
+    (base[m[1]] ??= {})[m[2]] = parseColor(t.value);
+  }
+  return base;
+}
+
+// Wraps a base palette (already in OKLCH) in the shape generate() produces, for side-by-side evaluation.
+function describe(base, name) {
+  const families = {};
+  const ladder = Object.fromEntries(BASE_STEPS.map((s) => [s, round(Object.values(base).reduce((sum, f) => sum + f[s].L, 0) / Object.keys(base).length, 4)]));
+  const opts = { whiteMin: DEFAULTS.whiteMinLc, textMin: DEFAULTS.textMinLc, hueFormat: DEFAULTS.hueFormat, hueRounding: 10 };
+  for (const [fam, steps] of Object.entries(base)) {
+    const out = {};
+    for (const s of BASE_STEPS) out[s] = makeSwatch(steps[s]);
+    const info = finishFamily(out, steps[500].h, Object.fromEntries(BASE_STEPS.map((s) => [s, steps[s].L])), opts);
+    const sat = BASE_STEPS.map((s) => steps[s].C / maxChroma(steps[s].L, steps[s].h, 'p3'));
+    families[fam] = { hue: round(steps[500].h, 2), saturation: round(sat.reduce((a, b) => a + b) / sat.length, 3), bend: round(wrap180(steps[950].h - steps[500].h), 1), peakChroma: round(Math.max(...BASE_STEPS.map((s) => steps[s].C)), 4), ...info, steps: out };
+  }
+  return { name, ladder, families, anchors: {} };
+}
+
+// CSS: sRGB hex for every engine, then the OKLCH reference where supported (browsers map it to the display's gamut).
+function toCss(palette, selector = ':root') {
+  const lines = [`/* ${palette.name}: generated by scripts/palette/generate.mjs from palette/spec.json. */`, `${selector} {`];
+  const ok = [];
+  for (const [fam, f] of Object.entries(palette.families)) {
+    for (const s of stepsOf(f.steps)) {
+      lines.push(`  --${fam}-${s}: ${f.steps[s].hex};`);
+      ok.push(`    --${fam}-${s}: ${f.steps[s].css};`);
+    }
+  }
+  lines.push('}', '@supports (color: oklch(0 0 0)) {', `  ${selector} {`, ...ok, '  }', '}');
+  return lines.join('\n') + '\n';
+}
+
+// A Tailwind CSS v4 theme for the palette: `@theme inline` points each --color-* at a runtime custom
+// property, so the hex value serves browsers without oklch() and the OKLCH one overrides it where
+// it is supported. Import after tailwindcss; Tailwind's own palette entries of the same name are replaced.
+function toTailwindCss(palette) {
+  const lines = [`/* ${palette.name}: Tailwind CSS v4 theme, generated by scripts/palette/generate.mjs from palette/spec.json. Import after tailwindcss. */`, '@theme inline {'];
+  for (const [fam, f] of Object.entries(palette.families)) for (const s of stepsOf(f.steps)) lines.push(`  --color-${fam}-${s}: var(--${fam}-${s});`);
+  lines.push('}');
+  return lines.join('\n') + '\n' + toCss(palette).replace(/^\/\*.*\*\/\n/, '');
+}
+
+
+const BASE = {"red":{"50":{"L":0.971,"C":0.013,"h":17.38},"100":{"L":0.936,"C":0.032,"h":17.717},"200":{"L":0.885,"C":0.062,"h":18.334},"300":{"L":0.808,"C":0.114,"h":19.571},"400":{"L":0.704,"C":0.191,"h":22.216},"500":{"L":0.637,"C":0.237,"h":25.331},"600":{"L":0.577,"C":0.245,"h":27.325},"700":{"L":0.505,"C":0.213,"h":27.518},"800":{"L":0.444,"C":0.177,"h":26.899},"900":{"L":0.396,"C":0.141,"h":25.723},"950":{"L":0.258,"C":0.092,"h":26.042}},"orange":{"50":{"L":0.98,"C":0.016,"h":73.684},"100":{"L":0.954,"C":0.038,"h":75.164},"200":{"L":0.901,"C":0.076,"h":70.697},"300":{"L":0.837,"C":0.128,"h":66.29},"400":{"L":0.75,"C":0.183,"h":55.934},"500":{"L":0.705,"C":0.213,"h":47.604},"600":{"L":0.646,"C":0.222,"h":41.116},"700":{"L":0.553,"C":0.195,"h":38.402},"800":{"L":0.47,"C":0.157,"h":37.304},"900":{"L":0.408,"C":0.123,"h":38.172},"950":{"L":0.266,"C":0.079,"h":36.259}},"amber":{"50":{"L":0.987,"C":0.022,"h":95.277},"100":{"L":0.962,"C":0.059,"h":95.617},"200":{"L":0.924,"C":0.12,"h":95.746},"300":{"L":0.879,"C":0.169,"h":91.605},"400":{"L":0.828,"C":0.189,"h":84.429},"500":{"L":0.769,"C":0.188,"h":70.08},"600":{"L":0.666,"C":0.179,"h":58.318},"700":{"L":0.555,"C":0.163,"h":48.998},"800":{"L":0.473,"C":0.137,"h":46.201},"900":{"L":0.414,"C":0.112,"h":45.904},"950":{"L":0.279,"C":0.077,"h":45.635}},"yellow":{"50":{"L":0.987,"C":0.026,"h":102.212},"100":{"L":0.973,"C":0.071,"h":103.193},"200":{"L":0.945,"C":0.129,"h":101.54},"300":{"L":0.905,"C":0.182,"h":98.111},"400":{"L":0.852,"C":0.199,"h":91.936},"500":{"L":0.795,"C":0.184,"h":86.047},"600":{"L":0.681,"C":0.162,"h":75.834},"700":{"L":0.554,"C":0.135,"h":66.442},"800":{"L":0.476,"C":0.114,"h":61.907},"900":{"L":0.421,"C":0.095,"h":57.708},"950":{"L":0.286,"C":0.066,"h":53.813}},"lime":{"50":{"L":0.986,"C":0.031,"h":120.757},"100":{"L":0.967,"C":0.067,"h":122.328},"200":{"L":0.938,"C":0.127,"h":124.321},"300":{"L":0.897,"C":0.196,"h":126.665},"400":{"L":0.841,"C":0.238,"h":128.85},"500":{"L":0.768,"C":0.233,"h":130.85},"600":{"L":0.648,"C":0.2,"h":131.684},"700":{"L":0.532,"C":0.157,"h":131.589},"800":{"L":0.453,"C":0.124,"h":130.933},"900":{"L":0.405,"C":0.101,"h":131.063},"950":{"L":0.274,"C":0.072,"h":132.109}},"green":{"50":{"L":0.982,"C":0.018,"h":155.826},"100":{"L":0.962,"C":0.044,"h":156.743},"200":{"L":0.925,"C":0.084,"h":155.995},"300":{"L":0.871,"C":0.15,"h":154.449},"400":{"L":0.792,"C":0.209,"h":151.711},"500":{"L":0.723,"C":0.219,"h":149.579},"600":{"L":0.627,"C":0.194,"h":149.214},"700":{"L":0.527,"C":0.154,"h":150.069},"800":{"L":0.448,"C":0.119,"h":151.328},"900":{"L":0.393,"C":0.095,"h":152.535},"950":{"L":0.266,"C":0.065,"h":152.934}},"emerald":{"50":{"L":0.979,"C":0.021,"h":166.113},"100":{"L":0.95,"C":0.052,"h":163.051},"200":{"L":0.905,"C":0.093,"h":164.15},"300":{"L":0.845,"C":0.143,"h":164.978},"400":{"L":0.765,"C":0.177,"h":163.223},"500":{"L":0.696,"C":0.17,"h":162.48},"600":{"L":0.596,"C":0.145,"h":163.225},"700":{"L":0.508,"C":0.118,"h":165.612},"800":{"L":0.432,"C":0.095,"h":166.913},"900":{"L":0.378,"C":0.077,"h":168.94},"950":{"L":0.262,"C":0.051,"h":172.552}},"teal":{"50":{"L":0.984,"C":0.014,"h":180.72},"100":{"L":0.953,"C":0.051,"h":180.801},"200":{"L":0.91,"C":0.096,"h":180.426},"300":{"L":0.855,"C":0.138,"h":181.071},"400":{"L":0.777,"C":0.152,"h":181.912},"500":{"L":0.704,"C":0.14,"h":182.503},"600":{"L":0.6,"C":0.118,"h":184.704},"700":{"L":0.511,"C":0.096,"h":186.391},"800":{"L":0.437,"C":0.078,"h":188.216},"900":{"L":0.386,"C":0.063,"h":188.416},"950":{"L":0.277,"C":0.046,"h":192.524}},"cyan":{"50":{"L":0.984,"C":0.019,"h":200.873},"100":{"L":0.956,"C":0.045,"h":203.388},"200":{"L":0.917,"C":0.08,"h":205.041},"300":{"L":0.865,"C":0.127,"h":207.078},"400":{"L":0.789,"C":0.154,"h":211.53},"500":{"L":0.715,"C":0.143,"h":215.221},"600":{"L":0.609,"C":0.126,"h":221.723},"700":{"L":0.52,"C":0.105,"h":223.128},"800":{"L":0.45,"C":0.085,"h":224.283},"900":{"L":0.398,"C":0.07,"h":227.392},"950":{"L":0.302,"C":0.056,"h":229.695}},"sky":{"50":{"L":0.977,"C":0.013,"h":236.62},"100":{"L":0.951,"C":0.026,"h":236.824},"200":{"L":0.901,"C":0.058,"h":230.902},"300":{"L":0.828,"C":0.111,"h":230.318},"400":{"L":0.746,"C":0.16,"h":232.661},"500":{"L":0.685,"C":0.169,"h":237.323},"600":{"L":0.588,"C":0.158,"h":241.966},"700":{"L":0.5,"C":0.134,"h":242.749},"800":{"L":0.443,"C":0.11,"h":240.79},"900":{"L":0.391,"C":0.09,"h":240.876},"950":{"L":0.293,"C":0.066,"h":243.157}},"blue":{"50":{"L":0.97,"C":0.014,"h":254.604},"100":{"L":0.932,"C":0.032,"h":255.585},"200":{"L":0.882,"C":0.059,"h":254.128},"300":{"L":0.809,"C":0.105,"h":251.813},"400":{"L":0.707,"C":0.165,"h":254.624},"500":{"L":0.623,"C":0.214,"h":259.815},"600":{"L":0.546,"C":0.245,"h":262.881},"700":{"L":0.488,"C":0.243,"h":264.376},"800":{"L":0.424,"C":0.199,"h":265.638},"900":{"L":0.379,"C":0.146,"h":265.522},"950":{"L":0.282,"C":0.091,"h":267.935}},"indigo":{"50":{"L":0.962,"C":0.018,"h":272.314},"100":{"L":0.93,"C":0.034,"h":272.788},"200":{"L":0.87,"C":0.065,"h":274.039},"300":{"L":0.785,"C":0.115,"h":274.713},"400":{"L":0.673,"C":0.182,"h":276.935},"500":{"L":0.585,"C":0.233,"h":277.117},"600":{"L":0.511,"C":0.262,"h":276.966},"700":{"L":0.457,"C":0.24,"h":277.023},"800":{"L":0.398,"C":0.195,"h":277.366},"900":{"L":0.359,"C":0.144,"h":278.697},"950":{"L":0.257,"C":0.09,"h":281.288}},"violet":{"50":{"L":0.969,"C":0.016,"h":293.756},"100":{"L":0.943,"C":0.029,"h":294.588},"200":{"L":0.894,"C":0.057,"h":293.283},"300":{"L":0.811,"C":0.111,"h":293.571},"400":{"L":0.702,"C":0.183,"h":293.541},"500":{"L":0.606,"C":0.25,"h":292.717},"600":{"L":0.541,"C":0.281,"h":293.009},"700":{"L":0.491,"C":0.27,"h":292.581},"800":{"L":0.432,"C":0.232,"h":292.759},"900":{"L":0.38,"C":0.189,"h":293.745},"950":{"L":0.283,"C":0.141,"h":291.089}},"purple":{"50":{"L":0.977,"C":0.014,"h":308.299},"100":{"L":0.946,"C":0.033,"h":307.174},"200":{"L":0.902,"C":0.063,"h":306.703},"300":{"L":0.827,"C":0.119,"h":306.383},"400":{"L":0.714,"C":0.203,"h":305.504},"500":{"L":0.627,"C":0.265,"h":303.9},"600":{"L":0.558,"C":0.288,"h":302.321},"700":{"L":0.496,"C":0.265,"h":301.924},"800":{"L":0.438,"C":0.218,"h":303.724},"900":{"L":0.381,"C":0.176,"h":304.987},"950":{"L":0.291,"C":0.149,"h":302.717}},"fuchsia":{"50":{"L":0.977,"C":0.017,"h":320.058},"100":{"L":0.952,"C":0.037,"h":318.852},"200":{"L":0.903,"C":0.076,"h":319.62},"300":{"L":0.833,"C":0.145,"h":321.434},"400":{"L":0.74,"C":0.238,"h":322.16},"500":{"L":0.667,"C":0.295,"h":322.15},"600":{"L":0.591,"C":0.293,"h":322.896},"700":{"L":0.518,"C":0.253,"h":323.949},"800":{"L":0.452,"C":0.211,"h":324.591},"900":{"L":0.401,"C":0.17,"h":325.612},"950":{"L":0.293,"C":0.136,"h":325.661}},"pink":{"50":{"L":0.971,"C":0.014,"h":343.198},"100":{"L":0.948,"C":0.028,"h":342.258},"200":{"L":0.899,"C":0.061,"h":343.231},"300":{"L":0.823,"C":0.12,"h":346.018},"400":{"L":0.718,"C":0.202,"h":349.761},"500":{"L":0.656,"C":0.241,"h":354.308},"600":{"L":0.592,"C":0.249,"h":0.584},"700":{"L":0.525,"C":0.223,"h":3.958},"800":{"L":0.459,"C":0.187,"h":3.815},"900":{"L":0.408,"C":0.153,"h":2.432},"950":{"L":0.284,"C":0.109,"h":3.907}},"rose":{"50":{"L":0.969,"C":0.015,"h":12.422},"100":{"L":0.941,"C":0.03,"h":12.58},"200":{"L":0.892,"C":0.058,"h":10.001},"300":{"L":0.81,"C":0.117,"h":11.638},"400":{"L":0.712,"C":0.194,"h":13.428},"500":{"L":0.645,"C":0.246,"h":16.439},"600":{"L":0.586,"C":0.253,"h":17.585},"700":{"L":0.514,"C":0.222,"h":16.935},"800":{"L":0.455,"C":0.188,"h":13.697},"900":{"L":0.41,"C":0.159,"h":10.272},"950":{"L":0.271,"C":0.105,"h":12.094}},"slate":{"50":{"L":0.984,"C":0.003,"h":247.858},"100":{"L":0.968,"C":0.007,"h":247.896},"200":{"L":0.929,"C":0.013,"h":255.508},"300":{"L":0.869,"C":0.022,"h":252.894},"400":{"L":0.704,"C":0.04,"h":256.788},"500":{"L":0.554,"C":0.046,"h":257.417},"600":{"L":0.446,"C":0.043,"h":257.281},"700":{"L":0.372,"C":0.044,"h":257.287},"800":{"L":0.279,"C":0.041,"h":260.031},"900":{"L":0.208,"C":0.042,"h":265.755},"950":{"L":0.129,"C":0.042,"h":264.695}},"gray":{"50":{"L":0.985,"C":0.002,"h":247.839},"100":{"L":0.967,"C":0.003,"h":264.542},"200":{"L":0.928,"C":0.006,"h":264.531},"300":{"L":0.872,"C":0.01,"h":258.338},"400":{"L":0.707,"C":0.022,"h":261.325},"500":{"L":0.551,"C":0.027,"h":264.364},"600":{"L":0.446,"C":0.03,"h":256.802},"700":{"L":0.373,"C":0.034,"h":259.733},"800":{"L":0.278,"C":0.033,"h":256.848},"900":{"L":0.21,"C":0.034,"h":264.665},"950":{"L":0.13,"C":0.028,"h":261.692}},"zinc":{"50":{"L":0.985,"C":0,"h":0},"100":{"L":0.967,"C":0.001,"h":286.375},"200":{"L":0.92,"C":0.004,"h":286.32},"300":{"L":0.871,"C":0.006,"h":286.286},"400":{"L":0.705,"C":0.015,"h":286.067},"500":{"L":0.552,"C":0.016,"h":285.938},"600":{"L":0.442,"C":0.017,"h":285.786},"700":{"L":0.37,"C":0.013,"h":285.805},"800":{"L":0.274,"C":0.006,"h":286.033},"900":{"L":0.21,"C":0.006,"h":285.885},"950":{"L":0.141,"C":0.005,"h":285.823}},"neutral":{"50":{"L":0.985,"C":0,"h":0},"100":{"L":0.97,"C":0,"h":0},"200":{"L":0.922,"C":0,"h":0},"300":{"L":0.87,"C":0,"h":0},"400":{"L":0.708,"C":0,"h":0},"500":{"L":0.556,"C":0,"h":0},"600":{"L":0.439,"C":0,"h":0},"700":{"L":0.371,"C":0,"h":0},"800":{"L":0.269,"C":0,"h":0},"900":{"L":0.205,"C":0,"h":0},"950":{"L":0.145,"C":0,"h":0}},"stone":{"50":{"L":0.985,"C":0.001,"h":106.423},"100":{"L":0.97,"C":0.001,"h":106.424},"200":{"L":0.923,"C":0.003,"h":48.717},"300":{"L":0.869,"C":0.005,"h":56.366},"400":{"L":0.709,"C":0.01,"h":56.259},"500":{"L":0.553,"C":0.013,"h":58.071},"600":{"L":0.444,"C":0.011,"h":73.639},"700":{"L":0.374,"C":0.01,"h":67.558},"800":{"L":0.268,"C":0.007,"h":34.298},"900":{"L":0.216,"C":0.006,"h":56.043},"950":{"L":0.147,"C":0.004,"h":49.25}}};
+const REPO_SPEC = {
+  "name": "Euclid palette",
+  "note": "Everything is derived in OKLCH. ladder: one L per step, the lightness of the neutral at that step. luminance: {equalize: 1} then moves every chromatic step to the OKLab L whose luminance equals the neutral's, so each row is one luminance and APCA contrast is the same across it (0 keeps equal OKLab L; between is a partial correction); anchors then find their step by luminance. from: apca spaces the steps by equal APCA contrast between top and bottom (against white, black, or both: the mean of the two solutions); from: uniform spaces them by equal OKLab L; from: base fits a curve to Tailwind's mean lightness per step; or give top, mid, bottom and gain, or an explicit lightness map. From the tail step a power term (exponent dive) carries the ladder to black at 1000, continuing its slope so there is no seam. Each family's hue is Tailwind's at the 500; as the ramp leaves the 500 the hue bends by a smooth function of hue (hueBend): a Fourier series with the given number of harmonics, fitted by least squares at build time to the measured drift of the reference palettes (base: Tailwind's own ramps; radix: palette/reference/radix-drift.json), times scale. Four harmonics fitted to Tailwind alone reproduce its drift within 3.3 degrees: shading bends toward red or blue, tinting toward yellow-green or pink; adding Radix to the fit flattens the warm tints and pushes amber onto yellow. Relative saturation is read off the Tailwind ramp at the ladder's lightness (chroma as a share of the Display P3 maximum); saturation multiplies that share. chroma: {from: bell} replaces the sampled shares with one bell over the ladder (a quadratic in step fitted to Tailwind's mean share) times a light and a dark number per family, fitted to its Tailwind ramp on either side of the 500. hues: anchors would place the unanchored families between the anchored ones at Tailwind's proportional spacing (it moves the greens about 10\u00b0 yellower, so it is off). hueBend.shade and hueBend.tint are the default multipliers on each side of the bend (tint 0 holds tints at their pivot hue); a family's shadeBend and tintBend replace them. chromaCap caps chroma near white with a \u00b7 (1 \u2212 L)^p, fitted to Tailwind's most chromatic family at each step from the 050 to the 400 (from: base) or given as a and p, times scale: it keeps a hue with a wide gamut near white (yellow) from taking far more chroma than its neighbours at the same step. Anchors are Byrne's red, yellow and blue: each shifts its family's hue by its difference from Tailwind at the anchor's lightness and marks the step nearest it; keepChroma also scales the family's chroma to the anchor's. hue sets a family's hue outright, hueShift and chroma adjust it by hand; the bend grows as |distance from the pivot|^ease (hueBend.ease, 1.5), so a ramp leaves the pivot without a corner; bendPivot is the step the bend starts from (500), bendEase a family's own ease, shadeBend and tintBend scale the bend on either side of it, shadeDrift and tintDrift add a family's own degrees at the 950 and the 050, and shadeChroma and tintChroma are chroma multipliers reached at those ends; naturalStep moves the circle off the computed cusp step. A family with between: [a, b] is a new ramp mixed from two Tailwind ramps (mix 0.5 is halfway) and placed after a. whiteMinLc: white text wherever it clears this APCA Lc. textMinLc: tinted text is the nearest family step clearing this Lc.",
+  "ladder": {
+    "from": "apca",
+    "against": "both",
+    "top": 0.982,
+    "bottom": 0.279,
+    "tail": 850,
+    "dive": 5
+  },
+  "luminance": {
+    "equalize": 1
+  },
+  "saturation": 1,
+  "chromaCap": {
+    "from": "base",
+    "scale": 1
+  },
+  "hueBend": {
+    "harmonics": 4,
+    "scale": 1,
+    "reference": [
+      "base"
+    ],
+    "ease": 1.5,
+    "tint": 0
+  },
+  "hueFormat": "percent",
+  "whiteMinLc": 60,
+  "textMinLc": 75,
+  "families": {
+    "red": {
+      "anchor": "oklch(0.5647 0.2062 29.02)",
+      "anchorStep": "auto",
+      "star": true,
+      "keepChroma": true
+    },
+    "amber": {
+      "anchor": "oklch(0.8419 0.1626 85.99)",
+      "anchorStep": "auto",
+      "star": true,
+      "naturalStep": 300,
+      "keepChroma": true,
+      "tintBend": 1,
+      "bendPivot": 300,
+      "shadeBend": 1.3,
+      "bendEase": 1,
+      "shadeChroma": 1.3
+    },
+    "green": {
+      "hueShift": -6,
+      "shadeChroma": 1.3
+    },
+    "sky": {
+      "anchor": "oklch(0.4751 0.1008 238.25)",
+      "anchorStep": "auto",
+      "star": true,
+      "keepChroma": true
+    },
+    "yellow": {
+      "hue": 100,
+      "bendPivot": 400,
+      "shadeBend": 1.5
+    },
+    "chartreuse": {
+      "between": [
+        "yellow",
+        "lime"
+      ],
+      "hue": 116
+    },
+    "emerald": {
+      "naturalStep": 400,
+      "shadeChroma": 1.3
+    },
+    "teal": {
+      "naturalStep": 400,
+      "shadeChroma": 1.3
+    },
+    "cyan": {
+      "hueShift": -5,
+      "shadeBend": 0.5,
+      "shadeChroma": 1.3
+    }
+  },
+  "chroma": {
+    "from": "bell"
+  }
+};
+const RADIX = {
+  "source": "@radix-ui/colors 3.0.0 (MIT), light scales, Display P3 values converted to OKLCH",
+  "scales": {
+    "red": {
+      "hue9": 23,
+      "L9": 0.625,
+      "shade": -6.3,
+      "tint": -0.2
+    },
+    "orange": {
+      "hue9": 44.8,
+      "L9": 0.689,
+      "shade": -4,
+      "tint": -4.1
+    },
+    "amber": {
+      "hue9": 81.4,
+      "L9": 0.856,
+      "shade": -27.6,
+      "tint": 3.3
+    },
+    "yellow": {
+      "hue9": 102.1,
+      "L9": 0.927,
+      "shade": -15.5,
+      "tint": 4.4
+    },
+    "lime": {
+      "hue9": 126.1,
+      "L9": 0.888,
+      "shade": -4.9,
+      "tint": -5.4
+    },
+    "green": {
+      "hue9": 157.8,
+      "L9": 0.64,
+      "shade": 6.9,
+      "tint": 1.3
+    },
+    "teal": {
+      "hue9": 182,
+      "L9": 0.649,
+      "shade": 3,
+      "tint": -4.5
+    },
+    "cyan": {
+      "hue9": 221.5,
+      "L9": 0.661,
+      "shade": -2.9,
+      "tint": -2.2
+    },
+    "sky": {
+      "hue9": 217.8,
+      "L9": 0.861,
+      "shade": 23.8,
+      "tint": -5.9
+    },
+    "blue": {
+      "hue9": 251.8,
+      "L9": 0.649,
+      "shade": 7.1,
+      "tint": -4.2
+    },
+    "indigo": {
+      "hue9": 267.1,
+      "L9": 0.544,
+      "shade": 1.5,
+      "tint": 19.3
+    },
+    "violet": {
+      "hue9": 288.1,
+      "L9": 0.542,
+      "shade": -1.3,
+      "tint": 19.9
+    },
+    "purple": {
+      "hue9": 305.9,
+      "L9": 0.555,
+      "shade": -2.1,
+      "tint": 19.5
+    },
+    "pink": {
+      "hue9": 346.1,
+      "L9": 0.617,
+      "shade": -0.6,
+      "tint": -9.8
+    },
+    "crimson": {
+      "hue9": 1.3,
+      "L9": 0.634,
+      "shade": -4.5,
+      "tint": -5
+    },
+    "mint": {
+      "hue9": 178,
+      "L9": 0.87,
+      "shade": 3.5,
+      "tint": 5.7
+    },
+    "grass": {
+      "hue9": 147.4,
+      "L9": 0.652,
+      "shade": 1.2,
+      "tint": -1
+    },
+    "tomato": {
+      "hue9": 33.3,
+      "L9": 0.627,
+      "shade": -2.8,
+      "tint": -10.6
+    }
+  }
+};
+const famsOf = (palette) => Object.keys(palette.families);
+const $ = (id) => document.getElementById(id);
+const fmtL = (L) => Number(L).toFixed(3).replace(/^0/, '');
+const pad = (s) => String(s).padStart(3, '0');
+
+const state = { view: 'proposed', gamut: 'p3', tinted: true, alpha: false, selected: null, hidden: new Set(), spec: null, palettes: {} };
+
+// Edits are kept in this browser against the repo spec they were made on; a rebuilt page with a different
+// repo spec starts from that spec, so a change in the repo is never hidden behind an old saved one.
+const REPO_SPEC_TEXT = JSON.stringify(REPO_SPEC);
+function loadSpec() {
+  try {
+    const saved = JSON.parse(localStorage.getItem('euclid-palette-spec-v3'));
+    if (saved?.repo === REPO_SPEC_TEXT) return saved.spec;
+  } catch {}
+  return structuredClone(REPO_SPEC);
+}
+function saveSpec() {
+  try { localStorage.setItem('euclid-palette-spec-v3', JSON.stringify({ repo: REPO_SPEC_TEXT, spec: state.spec })); } catch {}
+}
+
+function regenerate() {
+  state.palettes.proposed = generate(state.spec, BASE, { radix: RADIX });
+  state.palettes.current ??= describe(BASE, 'Tailwind CSS v4.1');
+}
+
+const cssColor = (sw) => (state.gamut === 'p3' ? sw.p3 : sw.hex);
+const inkFor = (sw) => {
+  if (!state.tinted) return sw.text.best === 'white' ? '#fff' : '#000';
+  return state.gamut === 'p3' ? sw.text.tint.p3 : sw.text.tint.hex;
+};
+const inkHex = (sw) => (!state.tinted ? (sw.text.best === 'white' ? '#FFFFFF' : '#000000') : sw.text.tint.hex);
+const ratio = (sw) => wcagRatio(parseHex(inkHex(sw)), parseHex(sw.hex));
+const inkFails = (sw) => state.tinted && !sw.text.tint.passes;
+
+function renderGrid() {
+  const palette = state.palettes[state.view];
+  $('grid-title').textContent = palette.name;
+  const notes = { proposed: 'One lightness per column; hue and relative saturation read off Tailwind’s ramps at that lightness; anchored on Byrne’s red, yellow and blue.', current: 'Tailwind CSS v4.1 as shipped in tokens.json. Lightness differs by hue at every step.' };
+  $('grid-note').textContent = notes[state.view];
+  const fams = Object.values(palette.families);
+  const having = (s) => fams.filter((f) => f.steps[s]);
+  const meanL = (s) => having(s).reduce((sum, f) => sum + f.steps[s].oklch.L, 0) / having(s).length;
+  const shortL = (L) => Number(L).toFixed(2).replace(/^0/, '');
+  const headL = (s) => (state.view === 'proposed' ? shortL(palette.ladder[s]) : having(s).length ? shortL(meanL(s)) : '–');
+  const rows = [`<thead><tr><th></th>${STEPS.map((s) => `<th>${pad(s)}<span class="nm">${headL(s)}</span></th>`).join('')}</tr></thead><tbody>`];
+  let previousNeutral = false;
+  for (const fam of famsOf(palette)) {
+    const f = palette.families[fam];
+    const neutral = f.code.startsWith('n');
+    if (neutral && !previousNeutral) rows.push(`<tr class="break"><td colspan="${STEPS.length + 1}"></td></tr>`);
+    previousNeutral = neutral;
+    rows.push(`<tr><th><span class="nm">${f.code}</span>${fam}</th>`);
+    for (const s of STEPS) {
+      const sw = f.steps[s];
+      if (!sw) { rows.push('<td></td>'); continue; }
+      const selected = state.selected && state.selected.fam === fam && state.selected.step === s;
+      const anchor = palette.anchors[fam];
+      const star = anchor && anchor.step === s && state.spec.families?.[fam]?.star ? `<span title="Byrne anchor ${anchor.input}">★</span>` : '';
+      const natural = !neutral && f.natural.step === s;
+      const marks = star || natural ? `<span class="marks">${star}${natural ? `<span class="dot" title="natural step: cusp L ${fmtL(f.natural.L)}"></span>` : ''}</span>` : '';
+      const title = inkFails(sw) ? ' title="no family step meets Lc 75; strongest shown"' : natural ? ` title="natural step: cusp L ${fmtL(f.natural.L)}"` : '';
+      if (state.alpha && sw.alpha) {
+        const a = sw.alpha;
+        rows.push(`<td class="c" style="background:${a.hex}"><button type="button" class="sw${natural ? ' natural' : ''}" data-fam="${fam}" data-step="${s}" aria-pressed="${selected}" style="background:${a.hex};color:${inkFor(sw)}" aria-label="${fam} ${s}, ${a.source} at ${Math.round(a.alpha * 100)}% over ${a.over}" title="${a.source} at ${a.alpha} over ${a.over}; ΔE ${a.deltaE} from the true step">${marks}<span class="lc">${Math.round(a.alpha * 100)}%</span><span class="hex">Δ${a.deltaE.toFixed(3).replace(/^0/, '')}</span></button></td>`);
+        continue;
+      }
+      rows.push(`<td class="c" style="background:${sw.hex};background:${cssColor(sw)}"><button type="button" class="sw${natural ? ' natural' : ''}" data-fam="${fam}" data-step="${s}" aria-pressed="${selected}" style="background:${sw.hex};background:${cssColor(sw)};color:${inkFor(sw)}" aria-label="${fam} ${s}${natural ? ', natural step' : ''}"${title}>${marks}<span class="lc">1:${ratio(sw).toFixed(1)}</span><span class="hex">${sw.hex}</span></button></td>`);
+    }
+    rows.push('</tr>');
+  }
+  rows.push('</tbody>');
+  $('grid').innerHTML = rows.join('');
+}
+
+function renderChart() {
+  const svg = $('chart');
+  const W = 760, H = 300, left = 44, right = 16, top = 12, bottom = 28;
+  const x = (i) => left + (i * (W - left - right)) / (STEPS.length - 1);
+  const y = (L) => top + (1 - (L - 0.1) / 0.9) * (H - top - bottom);
+  const palette = state.palettes[state.view];
+  const parts = ['<g class="grid">'];
+  for (const L of [0.2, 0.4, 0.6, 0.8, 1]) parts.push(`<line x1="${left}" x2="${W - right}" y1="${y(L)}" y2="${y(L)}"/><text x="${left - 6}" y="${y(L) + 4}" text-anchor="end">${L.toFixed(1)}</text>`);
+  for (const [i, s] of STEPS.entries()) parts.push(`<text x="${x(i)}" y="${H - 8}" text-anchor="middle">${pad(s)}</text>`);
+  parts.push('</g>');
+  for (const fam of famsOf(palette)) {
+    const f = palette.families[fam];
+    const d = STEPS.map((s, i) => (f.steps[s] ? `${x(i).toFixed(1)},${y(f.steps[s].oklch.L).toFixed(1)}` : null)).filter(Boolean).map((pt, i) => `${i ? 'L' : 'M'}${pt}`).join(' ');
+    parts.push(`<path class="series${state.hidden.has(fam) ? ' dim' : ''}" data-fam="${fam}" d="${d}" stroke="${cssColor(f.steps[500])}"/>`);
+  }
+  parts.push('<circle class="hover" r="5" hidden/>');
+  svg.innerHTML = parts.join('');
+  svg.onmousemove = (e) => {
+    const pt = svg.getBoundingClientRect();
+    const mx = ((e.clientX - pt.left) / pt.width) * W;
+    const my = ((e.clientY - pt.top) / pt.height) * H;
+    const i = Math.max(0, Math.min(STEPS.length - 1, Math.round(((mx - left) / (W - left - right)) * (STEPS.length - 1))));
+    let best = null;
+    for (const fam of famsOf(palette)) {
+      if (state.hidden.has(fam) || !palette.families[fam].steps[STEPS[i]]) continue;
+      const L = palette.families[fam].steps[STEPS[i]].oklch.L;
+      const dy = Math.abs(y(L) - my);
+      if (!best || dy < best.dy) best = { fam, L, dy };
+    }
+    const dot = svg.querySelector('.hover');
+    if (!best || best.dy > 24) { dot.setAttribute('hidden', ''); $('chart-readout').textContent = ''; return; }
+    dot.removeAttribute('hidden');
+    dot.setAttribute('cx', x(i));
+    dot.setAttribute('cy', y(best.L));
+    const sw = palette.families[best.fam].steps[STEPS[i]];
+    $('chart-readout').textContent = `${best.fam}-${pad(STEPS[i])}  L ${fmtL(best.L)}  C ${sw.oklch.C.toFixed(3)}  h ${sw.oklch.h.toFixed(0)}  ${sw.hex}`;
+  };
+  svg.onmouseleave = () => { svg.querySelector('.hover').setAttribute('hidden', ''); };
+}
+
+function renderBendChart() {
+  const svg = $('bend-chart');
+  const W = 760, H = 300, left = 40, right = 12, top = 14, bottom = 26, range = 36;
+  const x = (h) => left + ((((h % 360) + 360) % 360) / 360) * (W - left - right);
+  const y = (d) => top + (1 - (d + range) / (2 * range)) * (H - top - bottom);
+  const cfg = state.palettes.proposed.bend;
+  const wrap = (d) => ((((d + 180) % 360) + 360) % 360) - 180;
+  const parts = ['<g class="grid">'];
+  for (const d of [-30, -15, 15, 30]) parts.push(`<line x1="${left}" x2="${W - right}" y1="${y(d)}" y2="${y(d)}"/><text x="${left - 6}" y="${y(d) + 4}" text-anchor="end">${d > 0 ? '+' : ''}${d}°</text>`);
+  for (const h of [0, 60, 120, 180, 240, 300, 360]) parts.push(`<text x="${x(h === 360 ? 359.99 : h)}" y="${H - 8}" text-anchor="middle">${h}°</text>`);
+  parts.push('</g>');
+  parts.push(`<line class="zero" x1="${left}" x2="${W - right}" y1="${y(0)}" y2="${y(0)}"/>`);
+  if (cfg) {
+    for (const [key, c] of [['shade', cfg.shade], ['tint', cfg.tint]]) {
+      // Zero crossings: downward ones attract when shading, upward ones repel.
+      for (let h = 0; h < 360; h++) { const a = bendAt(h, c), b = bendAt(h + 1, c); if ((a <= 0 && b > 0) || (a > 0 && b <= 0)) parts.push(`<line class="${a > 0 ? 'attr' : 'rep'}" x1="${x(h)}" x2="${x(h)}" y1="${top}" y2="${H - bottom}"/>`); }
+      const d = [];
+      for (let h = 0; h <= 360; h += 2) d.push(`${h ? 'L' : 'M'}${x(h === 360 ? 359.99 : h).toFixed(1)},${y(bendAt(h, c)).toFixed(1)}`);
+      parts.push(`<path class="bend-${key}" d="${d.join(' ')}"/>`);
+    }
+  }
+  const points = [];
+  for (const [fam, f] of Object.entries(BASE)) {
+    if (f[500].C < 0.06) continue;
+    const col = toHex(toGamut(f[500], 'srgb'));
+    points.push({ src: 'Tailwind', fam, h: f[500].h, kind: 'shade', d: wrap(f[950].h - f[500].h), col });
+    points.push({ src: 'Tailwind', fam, h: f[500].h, kind: 'tint', d: wrap(f[50].h - f[500].h), col });
+  }
+  for (const [fam, r] of Object.entries(RADIX.scales)) {
+    const col = toHex(toGamut({ L: r.L9, C: 0.15, h: r.hue9 }, 'srgb'));
+    points.push({ src: 'Radix', fam, h: r.hue9, kind: 'shade', d: r.shade, col, radix: true });
+    points.push({ src: 'Radix', fam, h: r.hue9, kind: 'tint', d: r.tint, col, radix: true });
+  }
+  for (const p of points) {
+    if (p.radix) parts.push(`<rect class="pt radix${p.kind === 'tint' ? ' tint' : ''}" x="${x(p.h) - 3.5}" y="${y(p.d) - 3.5}" width="7" height="7" fill="${p.col}" ${p.kind === 'tint' ? `style="fill:var(--surface);stroke:${p.col}"` : ''}/>`);
+    else parts.push(`<circle class="pt${p.kind === 'tint' ? ' tint' : ''}" cx="${x(p.h)}" cy="${y(p.d)}" r="4.5" fill="${p.col}" ${p.kind === 'tint' ? `style="stroke:${p.col}"` : ''}/>`);
+  }
+  svg.innerHTML = parts.join('');
+  svg.onmousemove = (e) => {
+    const pt = svg.getBoundingClientRect();
+    const mx = ((e.clientX - pt.left) / pt.width) * W;
+    const my = ((e.clientY - pt.top) / pt.height) * H;
+    let best = null;
+    for (const p of points) { const dist = Math.hypot(x(p.h) - mx, y(p.d) - my); if (!best || dist < best.dist) best = { ...p, dist }; }
+    if (!best || best.dist > 18) { $('bend-readout').textContent = ''; return; }
+    const model = cfg ? bendAt(best.h, best.kind === 'shade' ? cfg.shade : cfg.tint) : 0;
+    $('bend-readout').textContent = `${best.src} ${best.fam}  hue ${best.h.toFixed(0)}°  ${best.kind}: ${best.d >= 0 ? '+' : ''}${best.d.toFixed(0)}°  model ${model >= 0 ? '+' : ''}${model.toFixed(0)}°`;
+  };
+  svg.onmouseleave = () => { $('bend-readout').textContent = ''; };
+}
+
+const FIELD_HUE0 = 20; // the hue at the top of the wheel: between rose (16°) and red (25°), so red leads as in the grid
+const FIELD = { cx: 270, cy: 270, r: 232 }; // the wheel inside the 540-pixel canvas, leaving room for the rim labels
+// Hue and step at a canvas point: hue clockwise from the top, step by distance from the centre (0 white, 1000 black).
+const fieldPolar = (x, y) => {
+  const dx = x - FIELD.cx, dy = y - FIELD.cy;
+  return { hue: FIELD_HUE0 + (Math.atan2(dx, -dy) * 180) / Math.PI, step: (Math.hypot(dx, dy) / FIELD.r) * 1000, radius: Math.hypot(dx, dy) };
+};
+// A canvas point for a displayed hue and a step.
+const fieldPoint = (hue, step) => {
+  const a = ((hue - FIELD_HUE0) * Math.PI) / 180;
+  const rs = (step / 1000) * FIELD.r;
+  return [FIELD.cx + Math.sin(a) * rs, FIELD.cy - Math.cos(a) * rs];
+};
+let fieldJob = 0;
+function renderField() {
+  const canvas = $('field');
+  const W = canvas.width, H = canvas.height;
+  // The background is the model without the bend, so each angle is one hue; the bend shows in the family paths.
+  const flat = structuredClone(state.spec);
+  delete flat.hueBend;
+  const model = fieldModel(flat, BASE, { radix: RADIX });
+  state.field = { model };
+  let ctx = null, p3 = false;
+  try { ctx = canvas.getContext('2d', { colorSpace: 'display-p3' }); p3 = !!ctx && ctx.getContextAttributes?.().colorSpace === 'display-p3'; } catch {}
+  if (!ctx) ctx = canvas.getContext('2d');
+  if (!ctx) { $('field-status').textContent = 'canvas unavailable'; renderFieldOverlay(); return; }
+  const space = p3 ? 'p3' : 'srgb';
+  // Start from what is on the canvas, so rows not yet redrawn keep the previous wheel.
+  let img;
+  try { img = ctx.getImageData(0, 0, W, H, p3 ? { colorSpace: 'display-p3' } : undefined); } catch { try { img = p3 ? new ImageData(W, H, { colorSpace: 'display-p3' }) : ctx.createImageData(W, H); } catch { img = ctx.createImageData(W, H); } }
+  const data = img.data;
+  const job = ++fieldJob;
+  $('field-status').textContent = `rendering in ${p3 ? 'Display P3' : 'sRGB'}…`;
+  let row = 0;
+  const chunk = () => {
+    if (job !== fieldJob) return;
+    const start = row;
+    const end = Math.min(H, row + 8);
+    for (; row < end; row++) {
+      for (let col = 0; col < W; col++) {
+        const i = (row * W + col) * 4;
+        const { hue, step, radius } = fieldPolar(col + 0.5, row + 0.5);
+        const cover = Math.min(1, Math.max(0, FIELD.r + 0.5 - radius));
+        if (cover === 0) { data[i + 3] = 0; continue; }
+        const rgb = toGamut(model.colorAtStep(hue, Math.min(1000, step)), space).rgb;
+        data[i] = Math.round(rgb[0] * 255); data[i + 1] = Math.round(rgb[1] * 255); data[i + 2] = Math.round(rgb[2] * 255); data[i + 3] = Math.round(cover * 255);
+      }
+    }
+    ctx.putImageData(img, 0, 0, 0, start, W, end - start);
+    if (row < H) setTimeout(chunk, 0);
+    else $('field-status').textContent = p3 ? 'Display P3' : 'sRGB (this browser has no P3 canvas)';
+  };
+  chunk();
+  renderFieldOverlay();
+}
+
+function renderFieldOverlay() {
+  const svg = $('field-overlay');
+  const { cx, cy, r } = FIELD;
+  const { model } = state.field;
+  const pt = (hue, step) => fieldPoint(hue, step).map((v) => v.toFixed(1)).join(',');
+  const parts = [];
+  if ($('field-steps').checked) {
+    for (const s of STEPS) {
+      const rs = (s / 1000) * r;
+      parts.push(`<circle cx="${cx}" cy="${cy}" r="${rs.toFixed(1)}" fill="none" stroke="rgba(0,0,0,0.25)" stroke-width="${s % 100 ? 0.5 : 1}"/>`);
+      if (s % 100 === 0) parts.push(`<text x="${cx}" y="${(cy + rs + 3).toFixed(1)}" text-anchor="middle" font-size="9" font-family="var(--mono)" fill="#fff" stroke="rgba(0,0,0,0.6)" stroke-width="2" paint-order="stroke">${pad(s)}</text>`);
+    }
+  }
+  if ($('field-hues').checked) for (let hue = 0; hue < 360; hue += 10) parts.push(`<path d="M${pt(hue, 0)} L${pt(hue, 1000)}" fill="none" stroke="rgba(0,0,0,0.25)" stroke-width="${hue % 30 ? 0.5 : 1}"/>`);
+  // The natural step at every hue: where the ladder's lightness meets that hue's gamut cusp (the lightness at
+  // which the hue reaches the most chroma). Lightness falls with step, so bisection.
+  if ($('field-natural').checked) {
+    const d = [];
+    for (let hue = 0; hue <= 360; hue += 3) {
+      const target = cusp(hue, 'p3').L;
+      let lo = 0, hi = 1000;
+      for (let i = 0; i < 24; i++) { const m = (lo + hi) / 2; if (model.lightnessAtStep(m) > target) lo = m; else hi = m; }
+      d.push(`${hue ? 'L' : 'M'}${pt(hue, (lo + hi) / 2)}`);
+    }
+    parts.push(`<path d="${d.join(' ')} Z" fill="none" stroke="rgba(0,0,0,0.6)" stroke-width="1.5"/>`);
+  }
+  // Each family's ramp as a path through its steps by displayed hue, carried straight on to the rim and the
+  // centre; a dot per step, a ring on the natural step.
+  if ($('field-names').checked) {
+    const palette = state.palettes.proposed;
+    for (const f of model.families) {
+      const fam = palette.families[f.name];
+      const hueAt = (s) => fam.steps[s].oklch.h;
+      // Beyond the 950 and the 050 the hue continues at the slope of the last two steps.
+      const wrap = (d) => ((((d + 180) % 360) + 360) % 360) - 180;
+      const rimHue = hueAt(950) + wrap(hueAt(950) - hueAt(900));
+      const centreHue = hueAt(50) + wrap(hueAt(50) - hueAt(100));
+      const d = [`M${pt(rimHue, 1000)}`, ...[...STEPS].reverse().map((s) => `L${pt(hueAt(s), s)}`), `L${pt(centreHue, 0)}`];
+      parts.push(`<path d="${d.join(' ')}" fill="none" stroke="rgba(0,0,0,0.6)" stroke-width="1"/>`);
+      for (const s of STEPS) {
+        const [x, y] = fieldPoint(fam.steps[s].oklch.h, s);
+        const natural = s === fam.natural.step;
+        parts.push(`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${natural ? 4 : 1.75}" fill="${natural ? 'none' : 'rgba(0,0,0,0.6)'}" stroke="rgba(0,0,0,0.75)" stroke-width="${natural ? 1.5 : 0}"/>`);
+      }
+      const [x1, y1] = fieldPoint(rimHue, 1000);
+      const ux = (x1 - cx) / r, uy = (y1 - cy) / r;
+      const anchor = Math.abs(ux) < 0.2 ? 'middle' : ux > 0 ? 'start' : 'end';
+      parts.push(`<text x="${(cx + ux * (r + 7)).toFixed(1)}" y="${(cy + uy * (r + 7) + 3).toFixed(1)}" text-anchor="${anchor}" font-size="9" fill="currentColor" font-family="system-ui">${f.name}</text>`);
+    }
+  }
+  svg.innerHTML = parts.join('');
+}
+
+function renderSpec() {
+  const spec = state.spec;
+  const palette = state.palettes.proposed;
+  const mode = spec.lightness ? 'explicit' : ['base', 'uniform', 'apca'].includes(spec.ladder?.from) ? spec.ladder.from : 'curve';
+  const curve = mode === 'base' && palette.ladderFit ? palette.ladderFit : { ...DEFAULTS.ladder, ...spec.ladder };
+  const explicit = mode === 'explicit';
+  $('ladder-mode').value = mode;
+  $('against-ctl').hidden = mode !== 'apca';
+  $('ladder-against').value = spec.ladder?.against ?? 'white';
+  $('ladder-top').value = curve.top;
+  $('ladder-mid').value = curve.mid;
+  $('ladder-bottom').value = curve.bottom;
+  $('ladder-gain').value = curve.gain;
+  for (const id of ['ladder-top', 'ladder-mid', 'ladder-bottom', 'ladder-gain']) $(id).disabled = mode !== 'curve' && !(['uniform', 'apca'].includes(mode) && ['ladder-top', 'ladder-bottom'].includes(id));
+  $('ladder').innerHTML = STEPS.map((s) => `<label>${pad(s)}<input type="number" id="L-${s}" min="0" max="1" step="0.005" value="${palette.ladder[s]}"${explicit ? '' : ' disabled'}></label>`).join('');
+  $('saturation').value = spec.saturation ?? DEFAULTS.saturation;
+  $('saturation-out').value = Number(spec.saturation ?? DEFAULTS.saturation).toFixed(2);
+  $('cap-on').checked = !!spec.chromaCap;
+  $('cap-scale').value = spec.chromaCap?.scale ?? 1;
+  $('cap-scale').disabled = !spec.chromaCap;
+  const cap = palette.chromaCap;
+  $('equalize').value = spec.luminance?.equalize ?? 0;
+  $('chroma-bell').checked = spec.chroma?.from === 'bell';
+  $('bell-fit').textContent = palette.bell ? `${palette.bell.c.map((v, i) => `${v >= 0 && i ? '+ ' : ''}${v}${['', ' t', ' t²'][i]}`).join(' ')}, Tailwind's mean share over the ladder` : 'off: shares sampled from each Tailwind ramp';
+  $('hues-anchors').checked = spec.hues === 'anchors';
+  $('cap-fit').textContent = cap ? `${cap.a} · (1 − L)^${cap.p}, fitted to Tailwind's most chromatic tints` : 'off';
+  const hb = spec.hueBend ?? {};
+  const bt = $('bend-table');
+  const fit = palette.bendFit;
+  const use = hb.reference ?? ['base'];
+  bt.querySelector('thead').innerHTML = '<tr><th>Hue bend</th><th>Harmonics</th><th>Scale ×</th><th>Shade ×</th><th>Tint ×</th><th>Ease</th><th>Fit to</th><th>Shade coefficients (cos, sin per harmonic)</th><th>RMS</th><th>Tint coefficients</th><th>RMS</th></tr>';
+  bt.querySelector('tbody').innerHTML = `<tr><td>harmonic</td>
+      <td><select id="bend-harmonics" aria-label="harmonics" style="width:64px">${[0, 1, 2, 3, 4, 5].map((n) => `<option value="${n}"${(hb.harmonics ?? 0) === n ? ' selected' : ''}>${n}</option>`).join('')}</select></td>
+      <td><input type="number" id="bend-scale" value="${hb.scale ?? 1}" min="0" max="2" step="0.05" aria-label="bend scale" style="width:64px"></td>
+      <td><input type="number" id="bend-shade" value="${hb.shade ?? 1}" min="0" max="2" step="0.05" aria-label="shade bend scale" style="width:64px"></td>
+      <td><input type="number" id="bend-tint" value="${hb.tint ?? 1}" min="0" max="2" step="0.05" aria-label="tint bend scale" style="width:64px"></td>
+      <td><input type="number" id="bend-ease" value="${hb.ease ?? DEFAULTS.bendEase}" min="1" max="3" step="0.1" aria-label="bend ease" style="width:64px"></td>
+      <td><label class="ctl"><input type="checkbox" id="bend-use-base"${use.includes('base') ? ' checked' : ''}> Tailwind</label> <label class="ctl"><input type="checkbox" id="bend-use-radix"${use.includes('radix') ? ' checked' : ''}> Radix</label></td>
+      <td><span class="readout">${fit ? fit.shade.coef.join(', ') : '–'}</span></td><td><span class="note">${fit ? fit.shade.rms + '°' : '–'}</span></td>
+      <td><span class="readout">${fit ? fit.tint.coef.join(', ') : '–'}</span></td><td><span class="note">${fit ? fit.tint.rms + '°' : '–'}</span></td></tr>`;
+  const opts = (sel) => ['auto', ...STEPS].map((v) => `<option value="${v}"${String(sel ?? 'auto') === String(v) ? ' selected' : ''}>${v}</option>`).join('');
+  $('fams').querySelector('tbody').innerHTML = famsOf(palette).map((fam) => {
+    const f = spec.families?.[fam] ?? {};
+    const a = palette.anchors[fam];
+    const pf = palette.families[fam];
+    return `<tr>
+      <td><span class="chip" style="background:${cssColor(pf.steps[500])}"></span>${fam}</td>
+      <td><span class="readout">${pf.code}</span></td>
+      <td><input type="text" id="anchor-${fam}" value="${f.anchor ?? ''}" placeholder="oklch(L C h)" aria-label="${fam} anchor"></td>
+      <td><select id="anchorStep-${fam}" aria-label="${fam} anchor step">${opts(f.anchorStep)}</select>${a ? ` <span class="note">→ ${pad(a.step)}</span>` : ''}</td>
+      <td><input type="checkbox" id="keep-${fam}"${f.keepChroma ? ' checked' : ''} aria-label="${fam} keep anchor chroma"></td>
+      <td>${a ? `<span class="${Math.abs(a.fit.dL) > 0.04 ? 'fail' : 'pass'}">${a.fit.dL >= 0 ? '+' : ''}${a.fit.dL.toFixed(3)}</span>` : '<span class="note">–</span>'}</td>
+      <td><span class="note">${pf.hue.toFixed(0)}°</span></td>
+      <td><input type="number" id="shift-${fam}" min="-90" max="90" step="1" value="${f.hueShift ?? ''}" placeholder="${a ? pf.hueShift : '0'}" aria-label="${fam} hue shift"></td>
+      <td><span class="note">${pf.bend >= 0 ? '+' : ''}${pf.bend}°</span></td>
+      <td><input type="number" id="chroma-${fam}" min="0" max="2" step="0.05" value="${f.chroma ?? ''}" placeholder="1" aria-label="${fam} saturation multiplier"></td>
+      <td><span class="note">${pf.code.startsWith('n') ? '–' : pf.saturation.toFixed(2)}</span></td>
+      <td><span class="note">${pf.envelope && !pf.code.startsWith('n') ? `${pf.envelope.light.toFixed(2)} / ${pf.envelope.dark.toFixed(2)}` : '–'}</span></td>
+      <td>${pf.code.startsWith('n') ? '<span class="note">–</span>' : `<span class="note">${pad(pf.natural.step)} · cusp L ${fmtL(pf.natural.L)}</span> <select id="natural-${fam}" aria-label="${fam} natural step" style="width:64px">${['auto', ...STEPS].map((v) => `<option value="${v}"${String(f.naturalStep ?? 'auto') === String(v) ? ' selected' : ''}>${v}</option>`).join('')}</select>`}</td>
+      <td><span class="note">${formatWavelength(pf.wavelength)}</span></td>
+    </tr>`;
+  }).join('');
+}
+
+function readSpec() {
+  const spec = state.spec;
+  const mode = $('ladder-mode').value;
+  if (mode === 'explicit') {
+    spec.lightness = Object.fromEntries(STEPS.map((s) => [s, Number($(`L-${s}`).value)]));
+  } else if (mode === 'base') {
+    delete spec.lightness;
+    spec.ladder = { from: 'base' };
+  } else if (mode === 'uniform' || mode === 'apca') {
+    delete spec.lightness;
+    spec.ladder = { from: mode, top: Number($('ladder-top').value), bottom: Number($('ladder-bottom').value) };
+    if (mode === 'apca') spec.ladder.against = $('ladder-against').value;
+  } else {
+    delete spec.lightness;
+    spec.ladder = { top: Number($('ladder-top').value), mid: Number($('ladder-mid').value), bottom: Number($('ladder-bottom').value), gain: Number($('ladder-gain').value) };
+  }
+  spec.saturation = Number($('saturation').value);
+  if ($('cap-on').checked) spec.chromaCap = { from: 'base', scale: Number($('cap-scale').value) }; else delete spec.chromaCap;
+  const harmonics = Number($('bend-harmonics').value);
+  const use = [$('bend-use-base').checked && 'base', $('bend-use-radix').checked && 'radix'].filter(Boolean);
+  if (harmonics) spec.hueBend = { harmonics, scale: Number($('bend-scale').value), shade: Number($('bend-shade').value), tint: Number($('bend-tint').value), ease: Number($('bend-ease').value), reference: use }; else delete spec.hueBend;
+  const equalize = Number($('equalize').value);
+  if (equalize > 0) spec.luminance = { equalize }; else delete spec.luminance;
+  if ($('chroma-bell').checked) spec.chroma = { from: 'bell' }; else delete spec.chroma;
+  if ($('hues-anchors').checked) spec.hues = 'anchors'; else delete spec.hues;
+  spec.families ??= {};
+  for (const fam of famsOf(state.palettes.proposed)) {
+    const f = { ...(spec.families[fam] ?? {}) };
+    delete f.anchor; delete f.anchorStep; delete f.keepChroma; delete f.hueShift; delete f.chroma; delete f.naturalStep;
+    const anchor = $(`anchor-${fam}`).value.trim();
+    if (anchor) { f.anchor = anchor; f.anchorStep = $(`anchorStep-${fam}`).value; if ($(`keep-${fam}`).checked) f.keepChroma = true; }
+    const shift = $(`shift-${fam}`).value;
+    if (shift !== '') f.hueShift = Number(shift);
+    const chroma = $(`chroma-${fam}`).value;
+    if (chroma !== '') f.chroma = Number(chroma);
+    const natural = $(`natural-${fam}`)?.value;
+    if (natural && natural !== 'auto') f.naturalStep = Number(natural);
+    if (Object.keys(f).length) spec.families[fam] = f; else delete spec.families[fam];
+  }
+}
+
+function renderAll({ spec = false } = {}) {
+  renderGrid();
+  renderChart();
+  renderBendChart();
+  if (spec) renderSpec();
+  if (spec) renderField();
+}
+
+function update(status) {
+  try {
+    readSpec();
+    regenerate();
+    saveSpec();
+    $('status').textContent = status ?? '';
+    renderAll({ spec: true });
+  } catch (e) {
+    $('status').textContent = `Spec not applied: ${e.message}`;
+  }
+}
+
+function copy(text, what) {
+  const done = () => { $('status').textContent = `${what} copied.`; };
+  const fallback = () => { $('paste').value = text; $('paste').closest('details').open = true; $('paste').select(); $('status').textContent = `Clipboard unavailable: ${what} is in the box below, selected.`; };
+  if (navigator.clipboard?.writeText) navigator.clipboard.writeText(text).then(done, fallback); else fallback();
+}
+
+// --- wiring ---
+const seg = (ids, key, values) => ids.forEach((id, i) => { $(id).onclick = () => { state[key] = values[i]; ids.forEach((o, j) => $(o).setAttribute('aria-pressed', String(i === j))); renderAll({ spec: key === 'gamut' }); }; });
+seg(['view-proposed', 'view-current'], 'view', ['proposed', 'current']);
+seg(['gamut-p3', 'gamut-srgb'], 'gamut', ['p3', 'srgb']);
+$('tinted').onchange = (e) => { state.tinted = e.target.checked; renderGrid(); };
+$('alpha').onchange = (e) => { state.alpha = e.target.checked; renderGrid(); };
+document.querySelectorAll('.info').forEach((b) => { b.onclick = () => { const open = b.getAttribute('aria-expanded') !== 'true'; b.setAttribute('aria-expanded', String(open)); b.closest('section').querySelectorAll('.about').forEach((p) => p.classList.toggle('open', open)); }; });
+$('field-steps').onchange = renderFieldOverlay;
+$('field-names').onchange = renderFieldOverlay;
+$('field-hues').onchange = renderFieldOverlay;
+$('field-natural').onchange = renderFieldOverlay;
+$('field').addEventListener('mousemove', (e) => {
+  if (!state.field) return;
+  const box = e.currentTarget.getBoundingClientRect();
+  const scale = e.currentTarget.width / box.width;
+  const { hue, step, radius } = fieldPolar((e.clientX - box.left) * scale, (e.clientY - box.top) * scale);
+  if (radius > FIELD.r) { $('field-readout').textContent = ''; return; }
+  const lch = state.field.model.colorAtStep(hue, step);
+  $('field-readout').textContent = `hue ${(((hue % 360) + 360) % 360).toFixed(0)}°  step ${pad(Math.round(step))}  ${formatOklch(lch)}  ${toHex(toGamut(lch, 'srgb'))}  share ${state.field.model.shareAt(hue, step).toFixed(2)}`;
+});
+$('field').addEventListener('mouseleave', () => { $('field-readout').textContent = ''; });
+$('grid').addEventListener('click', (e) => {
+  const b = e.target.closest('.sw');
+  if (!b) return;
+  state.selected = { fam: b.dataset.fam, step: Number(b.dataset.step) };
+  renderGrid();
+  const sw = state.palettes[state.view].families[b.dataset.fam].steps[Number(b.dataset.step)];
+  const done = () => { $('status').textContent = `${sw.hex} copied (${b.dataset.fam}-${pad(b.dataset.step)}).`; };
+  const fail = () => { $('status').textContent = `Clipboard unavailable; ${b.dataset.fam}-${pad(b.dataset.step)} is ${sw.hex}.`; };
+  if (navigator.clipboard?.writeText) navigator.clipboard.writeText(sw.hex).then(done, fail); else fail();
+});
+document.querySelector('.spec').addEventListener('change', (e) => { if (e.target.matches('input, select')) update(); });
+$('saturation').oninput = (e) => { $('saturation-out').value = Number(e.target.value).toFixed(2); };
+$('copy-spec').onclick = () => copy(JSON.stringify(state.spec, null, 2), 'Spec');
+$('copy-palette').onclick = () => copy(JSON.stringify(state.palettes.proposed, null, 2), 'Palette JSON');
+$('copy-css').onclick = () => copy(toCss(state.palettes.proposed), 'CSS');
+$('reset').onclick = () => { state.spec = structuredClone(REPO_SPEC); try { localStorage.removeItem('euclid-palette-spec-v2'); } catch {} regenerate(); renderAll({ spec: true }); $('status').textContent = 'Reset to the spec in the repo.'; };
+$('apply').onclick = () => {
+  try {
+    const spec = JSON.parse($('paste').value);
+    if (!spec.ladder && !spec.lightness) throw new Error('no ladder');
+    state.spec = spec;
+    regenerate();
+    saveSpec();
+    renderAll({ spec: true });
+    $('status').textContent = 'Spec applied.';
+  } catch (e) {
+    $('status').textContent = `Spec not applied: ${e.message}`;
+  }
+};
+
+state.spec = loadSpec();
+regenerate();
+state.selected = { fam: 'blue', step: 500 };
+renderAll({ spec: true });
+</script>

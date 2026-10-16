@@ -140,22 +140,30 @@ function Gallery() {
         </div>
       </Section>
 
-      <Section title="Squircle">
+      <Section title="Corners">
         <div className="tiles">
           <figure>
-            <div className="tile rounded-squircle" style={{ background: 'var(--primary)' }} />
-            <figcaption className="caption">24px (default)</figcaption>
+            <div className="tile rounded-continuous" style={{ background: 'var(--primary)' }} />
+            <figcaption className="caption">Continuous, 24px</figcaption>
           </figure>
           <figure>
-            <div className="tile rounded-squircle" style={{ width: 192, background: 'var(--secondary)' }} />
-            <figcaption className="caption">24px on a 192 × 96 box</figcaption>
+            <div className="tile rounded-continuous" style={{ width: 192, background: 'var(--fab)' }} />
+            <figcaption className="caption">Continuous, 24px on 192 × 96</figcaption>
           </figure>
           <figure>
             <div
-              className="tile rounded-squircle"
+              className="tile rounded-continuous"
               style={{ background: 'var(--slate-700)', ['--squircle-radius' as string]: '12px' }}
             />
-            <figcaption className="caption">12px</figcaption>
+            <figcaption className="caption">Continuous, 12px</figcaption>
+          </figure>
+          <figure>
+            <div className="tile rounded-squircle" style={{ background: 'var(--secondary)' }} />
+            <figcaption className="caption">Squircle, 24px</figcaption>
+          </figure>
+          <figure>
+            <div className="tile squircle-icon" style={{ background: 'var(--slate-700)' }} />
+            <figcaption className="caption">Icon mask, 26%</figcaption>
           </figure>
         </div>
       </Section>

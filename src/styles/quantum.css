@@ -132,17 +132,23 @@ body { margin: 0; font-family: var(--font-sans); background: var(--background); 
 .q-snackbar__label { flex: 1; padding: 14px 0; font-size: 14px; line-height: 20px; letter-spacing: 0.25px; color: var(--on-snackbar); }
 .q-snackbar .q-btn { color: var(--snackbar-action); }
 
-/* Squircle corners, after arfct/squircle. Every rounded rectangle keeps its radius token but gets a continuous-curvature
-   corner where CSS corner-shape is supported (radius x squircle-scale, corner-shape squircle-shape); elsewhere it stays a
-   plain rounded rect. Each element names its radius in --squircle-radius. Pills and circles (chips, FABs, switch, ripples)
-   stay round. .rounded-squircle applies the same to any element (default shape-squircle, 24px; short side >= 60px). */
+/* Corners, after arfct/squircle. Every rounded rectangle keeps its radius token and gets the continuous corner where CSS
+   corner-shape is supported (radius x squircle-scale, corner-shape squircle-shape); elsewhere it stays a plain rounded
+   rect. Each element names its radius in --squircle-radius. Pills and circles (chips, FABs, switch, ripples) stay round.
+   Presets for other elements: .rounded-continuous (the component corner), .rounded-squircle (corner-shape: squircle at
+   twice the radius, a longer and softer corner) and .squircle-icon (the icon mask, 26% of the side). */
 .q-btn, .q-snackbar, .q-field__box { --squircle-radius: var(--shape-small); }
 .q-card, .q-dialog { --squircle-radius: var(--shape-medium); }
 .q-checkbox__box { --squircle-radius: 2px; }
-.rounded-squircle, .q-btn, .q-snackbar, .q-card, .q-dialog, .q-checkbox__box, .q-field--outlined .q-field__box { border-radius: var(--squircle-radius, var(--shape-squircle)); }
+.rounded-continuous, .rounded-squircle, .q-btn, .q-snackbar, .q-card, .q-dialog, .q-checkbox__box, .q-field--outlined .q-field__box { border-radius: var(--squircle-radius, var(--shape-squircle)); }
 .q-field--filled .q-field__box { border-radius: var(--squircle-radius) var(--squircle-radius) 0 0; }
+.squircle-icon { border-radius: 26%; }
 @supports (corner-shape: superellipse(1)) {
-  .rounded-squircle, .q-btn, .q-snackbar, .q-card, .q-dialog, .q-checkbox__box, .q-field--outlined .q-field__box { border-radius: calc(var(--squircle-radius, var(--shape-squircle)) * var(--squircle-scale)); corner-shape: var(--squircle-shape); }
+  .rounded-continuous, .q-btn, .q-snackbar, .q-card, .q-dialog, .q-checkbox__box, .q-field--outlined .q-field__box { border-radius: calc(var(--squircle-radius, var(--shape-squircle)) * var(--squircle-scale)); corner-shape: var(--squircle-shape); }
   .q-field--filled .q-field__box { border-radius: calc(var(--squircle-radius) * var(--squircle-scale)) calc(var(--squircle-radius) * var(--squircle-scale)) 0 0; corner-shape: var(--squircle-shape); }
   .q-state::before, .q-field__box::before { corner-shape: inherit; }
+  .squircle-icon { border-radius: calc(26% * var(--squircle-scale)); corner-shape: var(--squircle-shape); }
+}
+@supports (corner-shape: squircle) {
+  .rounded-squircle { border-radius: calc(var(--squircle-radius, var(--shape-squircle)) * 2); corner-shape: squircle; }
 }
