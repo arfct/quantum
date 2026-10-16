@@ -212,10 +212,7 @@ export function mixFamilies(a, b, t = 0.5) {
 // The base families in order, with spec families declared `between` two of them inserted after the first.
 export function orderedBase(spec, base) {
   const ordered = {};
-  // spec.order lists families to put first, in that order; the rest follow in the base palette's order.
-  const names = [...(spec.order ?? []).filter((n) => base[n]), ...Object.keys(base).filter((n) => !(spec.order ?? []).includes(n))];
-  for (const name of names) {
-    const fam = base[name];
+  for (const [name, fam] of Object.entries(base)) {
     ordered[name] = fam;
     for (const [extra, f] of Object.entries(spec.families ?? {})) {
       if (f.between && f.between[0] === name && base[f.between[0]] && base[f.between[1]]) ordered[extra] = mixFamilies(base[f.between[0]], base[f.between[1]], f.mix ?? 0.5);

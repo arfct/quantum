@@ -95,950 +95,6 @@
   },
   "equalize": 1,
   "families": {
-    "rose": {
-      "hue": 16.44,
-      "hueShift": 0,
-      "saturation": 0.842,
-      "chromaScale": 1,
-      "envelope": {
-        "light": 0.842,
-        "dark": 0.933
-      },
-      "bend": 2.9,
-      "peakChroma": 0.2463,
-      "code": "r05",
-      "natural": {
-        "L": 0.656,
-        "C": 0.2956,
-        "step": 600,
-        "cuspStep": 600
-      },
-      "alphaPivot": 600,
-      "wavelength": {
-        "nm": 630,
-        "purity": 0.407,
-        "complementary": false
-      },
-      "band": "red",
-      "wavelengthRange": [
-        614,
-        645
-      ],
-      "steps": {
-        "50": {
-          "oklch": {
-            "L": 0.9829,
-            "C": 0.0076,
-            "h": 16.44
-          },
-          "css": "oklch(0.9829 0.0076 16.44)",
-          "p3": "color(display-p3 0.9932 0.9713 0.9711)",
-          "p3hex": "#FDF8F8",
-          "hex": "#FEF7F8",
-          "srgbInGamut": true,
-          "Y": 0.9441,
-          "p3rgb": [
-            0.9932,
-            0.9713,
-            0.9711
-          ],
-          "wavelength": {
-            "nm": 614,
-            "purity": 0.012,
-            "complementary": false
-          },
-          "text": {
-            "white": 0,
-            "black": 102.4,
-            "best": "black",
-            "bestLc": 102.4,
-            "dark": 98.1,
-            "light": 0,
-            "tint": {
-              "ink": "800",
-              "hex": "#AC1435",
-              "p3": "color(display-p3 0.6182 0.1537 0.2203)",
-              "lc": 80.3,
-              "passes": true
-            }
-          },
-          "clamped": false,
-          "capped": false,
-          "id": "r05.050",
-          "alpha": {
-            "over": "white",
-            "source": "#FF2A5B",
-            "alpha": 0.037,
-            "hex": "#FFF7F9",
-            "deltaE": 0.0024
-          }
-        },
-        "100": {
-          "oklch": {
-            "L": 0.9567,
-            "C": 0.0204,
-            "h": 16.44
-          },
-          "css": "oklch(0.9567 0.0204 16.44)",
-          "p3": "color(display-p3 0.9847 0.9263 0.9261)",
-          "p3hex": "#FBECEC",
-          "hex": "#FEECEC",
-          "srgbInGamut": true,
-          "Y": 0.8622,
-          "p3rgb": [
-            0.9847,
-            0.9263,
-            0.9261
-          ],
-          "wavelength": {
-            "nm": 615,
-            "purity": 0.034,
-            "complementary": false
-          },
-          "text": {
-            "white": -7.8,
-            "black": 97,
-            "best": "black",
-            "bestLc": 97,
-            "dark": 92.6,
-            "light": 0,
-            "tint": {
-              "ink": "850",
-              "hex": "#91122B",
-              "p3": "color(display-p3 0.5205 0.1294 0.1805)",
-              "lc": 80.6,
-              "passes": true
-            }
-          },
-          "clamped": false,
-          "capped": false,
-          "id": "r05.100",
-          "alpha": {
-            "over": "white",
-            "source": "#FF2A5B",
-            "alpha": 0.094,
-            "hex": "#FFEBF0",
-            "deltaE": 0.0059
-          }
-        },
-        "150": {
-          "oklch": {
-            "L": 0.9302,
-            "C": 0.0349,
-            "h": 16.44
-          },
-          "css": "oklch(0.9302 0.0349 16.44)",
-          "p3": "color(display-p3 0.978 0.8795 0.8796)",
-          "p3hex": "#F9E0E0",
-          "hex": "#FFDFE0",
-          "srgbInGamut": true,
-          "Y": 0.7837,
-          "p3rgb": [
-            0.978,
-            0.8795,
-            0.8796
-          ],
-          "wavelength": {
-            "nm": 616,
-            "purity": 0.06,
-            "complementary": false
-          },
-          "text": {
-            "white": -14,
-            "black": 91.5,
-            "best": "black",
-            "bestLc": 91.5,
-            "dark": 87.1,
-            "light": -10,
-            "tint": {
-              "ink": "850",
-              "hex": "#91122B",
-              "p3": "color(display-p3 0.5205 0.1294 0.1805)",
-              "lc": 75.1,
-              "passes": true
-            }
-          },
-          "clamped": false,
-          "capped": false,
-          "id": "r05.150",
-          "alpha": {
-            "over": "white",
-            "source": "#FF2A5B",
-            "alpha": 0.153,
-            "hex": "#FFDEE6",
-            "deltaE": 0.0093
-          }
-        },
-        "200": {
-          "oklch": {
-            "L": 0.9032,
-            "C": 0.0509,
-            "h": 16.44
-          },
-          "css": "oklch(0.9032 0.0509 16.44)",
-          "p3": "color(display-p3 0.9728 0.8308 0.8316)",
-          "p3hex": "#F8D4D4",
-          "hex": "#FFD2D3",
-          "srgbInGamut": true,
-          "Y": 0.7086,
-          "p3rgb": [
-            0.9728,
-            0.8308,
-            0.8316
-          ],
-          "wavelength": {
-            "nm": 616,
-            "purity": 0.091,
-            "complementary": false
-          },
-          "text": {
-            "white": -20.2,
-            "black": 86,
-            "best": "black",
-            "bestLc": 86,
-            "dark": 81.7,
-            "light": -16.2,
-            "tint": {
-              "ink": "900",
-              "hex": "#750F21",
-              "p3": "color(display-p3 0.4198 0.1034 0.1399)",
-              "lc": 75.2,
-              "passes": true
-            }
-          },
-          "clamped": false,
-          "capped": false,
-          "id": "r05.200",
-          "alpha": {
-            "over": "white",
-            "source": "#FF2A5B",
-            "alpha": 0.214,
-            "hex": "#FFD1DC",
-            "deltaE": 0.0127
-          }
-        },
-        "250": {
-          "oklch": {
-            "L": 0.8755,
-            "C": 0.0687,
-            "h": 16.44
-          },
-          "css": "oklch(0.8755 0.0687 16.44)",
-          "p3": "color(display-p3 0.9687 0.7794 0.7817)",
-          "p3hex": "#F7C7C7",
-          "hex": "#FFC4C6",
-          "srgbInGamut": true,
-          "Y": 0.6364,
-          "p3rgb": [
-            0.9687,
-            0.7794,
-            0.7817
-          ],
-          "wavelength": {
-            "nm": 618,
-            "purity": 0.127,
-            "complementary": false
-          },
-          "text": {
-            "white": -26.5,
-            "black": 80.4,
-            "best": "black",
-            "bestLc": 80.4,
-            "dark": 76.2,
-            "light": -22.3,
-            "tint": {
-              "ink": "950",
-              "hex": "#4E0813",
-              "p3": "color(display-p3 0.2769 0.0598 0.0804)",
-              "lc": 76.2,
-              "passes": true
-            }
-          },
-          "clamped": false,
-          "capped": false,
-          "id": "r05.250",
-          "alpha": {
-            "over": "white",
-            "source": "#FF2A5B",
-            "alpha": 0.28,
-            "hex": "#FFC3D1",
-            "deltaE": 0.0161
-          }
-        },
-        "300": {
-          "oklch": {
-            "L": 0.8474,
-            "C": 0.0881,
-            "h": 16.44
-          },
-          "css": "oklch(0.8474 0.0881 16.44)",
-          "p3": "color(display-p3 0.9652 0.7256 0.7302)",
-          "p3hex": "#F6B9BA",
-          "hex": "#FFB6B9",
-          "srgbInGamut": false,
-          "Y": 0.5679,
-          "p3rgb": [
-            0.9652,
-            0.7256,
-            0.7302
-          ],
-          "wavelength": {
-            "nm": 619,
-            "purity": 0.168,
-            "complementary": false
-          },
-          "text": {
-            "white": -32.8,
-            "black": 74.7,
-            "best": "black",
-            "bestLc": 74.7,
-            "dark": 70.7,
-            "light": -28.4,
-            "tint": {
-              "ink": "black",
-              "hex": "#000000",
-              "p3": "color(display-p3 0 0 0)",
-              "lc": 75.1,
-              "passes": true
-            }
-          },
-          "clamped": false,
-          "capped": false,
-          "id": "r05.300",
-          "alpha": {
-            "over": "white",
-            "source": "#FF2A5B",
-            "alpha": 0.35,
-            "hex": "#FFB4C6",
-            "deltaE": 0.0192
-          }
-        },
-        "350": {
-          "oklch": {
-            "L": 0.8186,
-            "C": 0.1093,
-            "h": 16.44
-          },
-          "css": "oklch(0.8186 0.1093 16.44)",
-          "p3": "color(display-p3 0.9622 0.6683 0.6769)",
-          "p3hex": "#F5AAAD",
-          "hex": "#FFA6AB",
-          "srgbInGamut": false,
-          "Y": 0.5027,
-          "p3rgb": [
-            0.9622,
-            0.6683,
-            0.6769
-          ],
-          "wavelength": {
-            "nm": 620,
-            "purity": 0.216,
-            "complementary": false
-          },
-          "text": {
-            "white": -39,
-            "black": 69.1,
-            "best": "black",
-            "bestLc": 69.1,
-            "dark": 65.2,
-            "light": -34.4,
-            "tint": {
-              "ink": "black",
-              "hex": "#000000",
-              "p3": "color(display-p3 0 0 0)",
-              "lc": 69.6,
-              "passes": false
-            }
-          },
-          "clamped": false,
-          "capped": false,
-          "id": "r05.350",
-          "alpha": {
-            "over": "white",
-            "source": "#FF2A5B",
-            "alpha": 0.424,
-            "hex": "#FFA5BA",
-            "deltaE": 0.022
-          }
-        },
-        "400": {
-          "oklch": {
-            "L": 0.7889,
-            "C": 0.1322,
-            "h": 16.44
-          },
-          "css": "oklch(0.7889 0.1322 16.44)",
-          "p3": "color(display-p3 0.9591 0.607 0.6216)",
-          "p3hex": "#F59B9F",
-          "hex": "#FF959C",
-          "srgbInGamut": false,
-          "Y": 0.4412,
-          "p3rgb": [
-            0.9591,
-            0.607,
-            0.6216
-          ],
-          "wavelength": {
-            "nm": 623,
-            "purity": 0.272,
-            "complementary": false
-          },
-          "text": {
-            "white": -45.1,
-            "black": 63.4,
-            "best": "black",
-            "bestLc": 63.4,
-            "dark": 59.8,
-            "light": -40.3,
-            "tint": {
-              "ink": "black",
-              "hex": "#000000",
-              "p3": "color(display-p3 0 0 0)",
-              "lc": 64.1,
-              "passes": false
-            }
-          },
-          "clamped": false,
-          "capped": false,
-          "id": "r05.400",
-          "alpha": {
-            "over": "white",
-            "source": "#FF2A5B",
-            "alpha": 0.504,
-            "hex": "#FF94AC",
-            "deltaE": 0.024
-          }
-        },
-        "450": {
-          "oklch": {
-            "L": 0.7586,
-            "C": 0.1569,
-            "h": 16.44
-          },
-          "css": "oklch(0.7586 0.1569 16.44)",
-          "p3": "color(display-p3 0.9557 0.5407 0.5644)",
-          "p3hex": "#F48A90",
-          "hex": "#FF838D",
-          "srgbInGamut": false,
-          "Y": 0.3836,
-          "p3rgb": [
-            0.9557,
-            0.5407,
-            0.5644
-          ],
-          "wavelength": {
-            "nm": 626,
-            "purity": 0.335,
-            "complementary": false
-          },
-          "text": {
-            "white": -51.1,
-            "black": 57.8,
-            "best": "black",
-            "bestLc": 57.8,
-            "dark": 54.3,
-            "light": -46.2,
-            "tint": {
-              "ink": "black",
-              "hex": "#000000",
-              "p3": "color(display-p3 0 0 0)",
-              "lc": 58.7,
-              "passes": false
-            }
-          },
-          "clamped": false,
-          "capped": false,
-          "id": "r05.450",
-          "alpha": {
-            "over": "white",
-            "source": "#FF2A5B",
-            "alpha": 0.592,
-            "hex": "#FF819E",
-            "deltaE": 0.0249
-          }
-        },
-        "500": {
-          "oklch": {
-            "L": 0.7272,
-            "C": 0.1835,
-            "h": 16.44
-          },
-          "css": "oklch(0.7272 0.1835 16.44)",
-          "p3": "color(display-p3 0.9517 0.4669 0.5048)",
-          "p3hex": "#F37781",
-          "hex": "#FF6E7E",
-          "srgbInGamut": false,
-          "Y": 0.3299,
-          "p3rgb": [
-            0.9517,
-            0.4669,
-            0.5048
-          ],
-          "wavelength": {
-            "nm": 630,
-            "purity": 0.407,
-            "complementary": false
-          },
-          "text": {
-            "white": -56.9,
-            "black": 52.3,
-            "best": "white",
-            "bestLc": 56.9,
-            "dark": 48.9,
-            "light": -51.9,
-            "tint": {
-              "ink": "white",
-              "hex": "#FFFFFF",
-              "p3": "color(display-p3 1 1 1)",
-              "lc": -55.9,
-              "passes": false
-            }
-          },
-          "clamped": false,
-          "capped": false,
-          "id": "r05.500",
-          "alpha": {
-            "over": "white",
-            "source": "#FF2A5B",
-            "alpha": 0.692,
-            "hex": "#FF6C8E",
-            "deltaE": 0.0237
-          }
-        },
-        "550": {
-          "oklch": {
-            "L": 0.695,
-            "C": 0.2136,
-            "h": 16.51
-          },
-          "css": "oklch(0.695 0.2136 16.51)",
-          "p3": "color(display-p3 0.9492 0.3793 0.4408)",
-          "p3hex": "#F26170",
-          "hex": "#FF536D",
-          "srgbInGamut": false,
-          "Y": 0.2807,
-          "p3rgb": [
-            0.9492,
-            0.3793,
-            0.4408
-          ],
-          "wavelength": {
-            "nm": 636,
-            "purity": 0.494,
-            "complementary": false
-          },
-          "text": {
-            "white": -62.6,
-            "black": 46.8,
-            "best": "white",
-            "bestLc": 62.6,
-            "dark": 43.6,
-            "light": -57.4,
-            "tint": {
-              "ink": "white",
-              "hex": "#FFFFFF",
-              "p3": "color(display-p3 1 1 1)",
-              "lc": -61.4,
-              "passes": false
-            }
-          },
-          "clamped": false,
-          "capped": false,
-          "id": "r05.550",
-          "alpha": {
-            "over": "white",
-            "source": "#FF2A5B",
-            "alpha": 0.816,
-            "hex": "#FF5179",
-            "deltaE": 0.018
-          }
-        },
-        "600": {
-          "oklch": {
-            "L": 0.6617,
-            "C": 0.2463,
-            "h": 16.64
-          },
-          "css": "oklch(0.6617 0.2463 16.64)",
-          "p3": "color(display-p3 0.9459 0.2662 0.3722)",
-          "p3hex": "#F1445F",
-          "hex": "#FF2A5B",
-          "srgbInGamut": false,
-          "Y": 0.2366,
-          "p3rgb": [
-            0.9459,
-            0.2662,
-            0.3722
-          ],
-          "wavelength": {
-            "nm": 644,
-            "purity": 0.595,
-            "complementary": false
-          },
-          "text": {
-            "white": -67.7,
-            "black": 41.9,
-            "best": "white",
-            "bestLc": 67.7,
-            "dark": 38.5,
-            "light": -62.6,
-            "tint": {
-              "ink": "white",
-              "hex": "#FFFFFF",
-              "p3": "color(display-p3 1 1 1)",
-              "lc": -66.6,
-              "passes": false
-            }
-          },
-          "clamped": false,
-          "capped": false,
-          "id": "r05.600",
-          "alpha": {
-            "over": "white",
-            "source": "#FF2A5B",
-            "alpha": 1,
-            "hex": "#FF2A5B",
-            "deltaE": 0
-          }
-        },
-        "650": {
-          "oklch": {
-            "L": 0.6213,
-            "C": 0.2394,
-            "h": 16.82
-          },
-          "css": "oklch(0.6213 0.2394 16.82)",
-          "p3": "color(display-p3 0.8805 0.221 0.3306)",
-          "p3hex": "#E13854",
-          "hex": "#F51A50",
-          "srgbInGamut": true,
-          "Y": 0.1927,
-          "p3rgb": [
-            0.8805,
-            0.221,
-            0.3306
-          ],
-          "wavelength": {
-            "nm": 645,
-            "purity": 0.618,
-            "complementary": false
-          },
-          "text": {
-            "white": -71.3,
-            "black": 38.3,
-            "best": "white",
-            "bestLc": 71.3,
-            "dark": 33,
-            "light": -68.2,
-            "tint": {
-              "ink": "white",
-              "hex": "#FFFFFF",
-              "p3": "color(display-p3 1 1 1)",
-              "lc": -72.2,
-              "passes": false
-            }
-          },
-          "clamped": false,
-          "capped": false,
-          "id": "r05.650",
-          "alpha": {
-            "over": "black",
-            "source": "#FF0050",
-            "alpha": 0.976,
-            "hex": "#F9004E",
-            "deltaE": 0.0098
-          }
-        },
-        "700": {
-          "oklch": {
-            "L": 0.5771,
-            "C": 0.2218,
-            "h": 17.05
-          },
-          "css": "oklch(0.5771 0.2218 17.05)",
-          "p3": "color(display-p3 0.7976 0.1984 0.2948)",
-          "p3hex": "#CB334B",
-          "hex": "#DE1747",
-          "srgbInGamut": true,
-          "Y": 0.1516,
-          "p3rgb": [
-            0.7976,
-            0.1984,
-            0.2948
-          ],
-          "wavelength": {
-            "nm": 642,
-            "purity": 0.622,
-            "complementary": false
-          },
-          "text": {
-            "white": -77,
-            "black": 32.5,
-            "best": "white",
-            "bestLc": 77,
-            "dark": 27.3,
-            "light": -73.9,
-            "tint": {
-              "ink": "white",
-              "hex": "#FFFFFF",
-              "p3": "color(display-p3 1 1 1)",
-              "lc": -77.9,
-              "passes": true
-            }
-          },
-          "clamped": false,
-          "capped": false,
-          "id": "r05.700",
-          "alpha": {
-            "over": "black",
-            "source": "#FF004F",
-            "alpha": 0.885,
-            "hex": "#E20046",
-            "deltaE": 0.0098
-          }
-        },
-        "750": {
-          "oklch": {
-            "L": 0.53,
-            "C": 0.2025,
-            "h": 17.33
-          },
-          "css": "oklch(0.53 0.2025 17.33)",
-          "p3": "color(display-p3 0.7102 0.1762 0.2582)",
-          "p3hex": "#B52D42",
-          "hex": "#C5163E",
-          "srgbInGamut": true,
-          "Y": 0.1145,
-          "p3rgb": [
-            0.7102,
-            0.1762,
-            0.2582
-          ],
-          "wavelength": {
-            "nm": 640,
-            "purity": 0.624,
-            "complementary": false
-          },
-          "text": {
-            "white": -82.7,
-            "black": 26.7,
-            "best": "white",
-            "bestLc": 82.7,
-            "dark": 21.5,
-            "light": -79.4,
-            "tint": {
-              "ink": "50",
-              "hex": "#FEF7F8",
-              "p3": "color(display-p3 0.9932 0.9713 0.9711)",
-              "lc": -79.4,
-              "passes": true
-            }
-          },
-          "clamped": false,
-          "capped": false,
-          "id": "r05.750",
-          "alpha": {
-            "over": "black",
-            "source": "#FF004E",
-            "alpha": 0.79,
-            "hex": "#C9003E",
-            "deltaE": 0.0105
-          }
-        },
-        "800": {
-          "oklch": {
-            "L": 0.4795,
-            "C": 0.1813,
-            "h": 17.67
-          },
-          "css": "oklch(0.4795 0.1813 17.67)",
-          "p3": "color(display-p3 0.6182 0.1537 0.2203)",
-          "p3hex": "#9E2738",
-          "hex": "#AC1435",
-          "srgbInGamut": true,
-          "Y": 0.082,
-          "p3rgb": [
-            0.6182,
-            0.1537,
-            0.2203
-          ],
-          "wavelength": {
-            "nm": 637,
-            "purity": 0.626,
-            "complementary": false
-          },
-          "text": {
-            "white": -88.2,
-            "black": 20.9,
-            "best": "white",
-            "bestLc": 88.2,
-            "dark": 15.8,
-            "light": -84.9,
-            "tint": {
-              "ink": "100",
-              "hex": "#FEECEC",
-              "p3": "color(display-p3 0.9847 0.9263 0.9261)",
-              "lc": -78.9,
-              "passes": true
-            }
-          },
-          "clamped": false,
-          "capped": false,
-          "id": "r05.800",
-          "alpha": {
-            "over": "black",
-            "source": "#FF004D",
-            "alpha": 0.691,
-            "hex": "#B00035",
-            "deltaE": 0.0118
-          }
-        },
-        "850": {
-          "oklch": {
-            "L": 0.4243,
-            "C": 0.1582,
-            "h": 18.08
-          },
-          "css": "oklch(0.4243 0.1582 18.08)",
-          "p3": "color(display-p3 0.5205 0.1294 0.1805)",
-          "p3hex": "#85212E",
-          "hex": "#91122B",
-          "srgbInGamut": true,
-          "Y": 0.0542,
-          "p3rgb": [
-            0.5205,
-            0.1294,
-            0.1805
-          ],
-          "wavelength": {
-            "nm": 634,
-            "purity": 0.626,
-            "complementary": false
-          },
-          "text": {
-            "white": -93.6,
-            "black": 15,
-            "best": "white",
-            "bestLc": 93.6,
-            "dark": 10,
-            "light": -90.2,
-            "tint": {
-              "ink": "150",
-              "hex": "#FFDFE0",
-              "p3": "color(display-p3 0.978 0.8795 0.8796)",
-              "lc": -78.2,
-              "passes": true
-            }
-          },
-          "clamped": false,
-          "capped": false,
-          "id": "r05.850",
-          "alpha": {
-            "over": "black",
-            "source": "#FF014B",
-            "alpha": 0.585,
-            "hex": "#95012C",
-            "deltaE": 0.0128
-          }
-        },
-        "900": {
-          "oklch": {
-            "L": 0.3654,
-            "C": 0.1338,
-            "h": 18.56
-          },
-          "css": "oklch(0.3654 0.1338 18.56)",
-          "p3": "color(display-p3 0.4198 0.1034 0.1399)",
-          "p3hex": "#6B1A24",
-          "hex": "#750F21",
-          "srgbInGamut": true,
-          "Y": 0.0322,
-          "p3rgb": [
-            0.4198,
-            0.1034,
-            0.1399
-          ],
-          "wavelength": {
-            "nm": 631,
-            "purity": 0.626,
-            "complementary": false
-          },
-          "text": {
-            "white": -98.6,
-            "black": 9.2,
-            "best": "white",
-            "bestLc": 98.6,
-            "dark": 0,
-            "light": -95.1,
-            "tint": {
-              "ink": "200",
-              "hex": "#FFD2D3",
-              "p3": "color(display-p3 0.9728 0.8308 0.8316)",
-              "lc": -77.2,
-              "passes": true
-            }
-          },
-          "clamped": false,
-          "capped": false,
-          "id": "r05.900",
-          "alpha": {
-            "over": "black",
-            "source": "#FF034A",
-            "alpha": 0.476,
-            "hex": "#790123",
-            "deltaE": 0.0135
-          }
-        },
-        "950": {
-          "oklch": {
-            "L": 0.2755,
-            "C": 0.0991,
-            "h": 19.37
-          },
-          "css": "oklch(0.2755 0.0991 19.37)",
-          "p3": "color(display-p3 0.2769 0.0598 0.0804)",
-          "p3hex": "#470F15",
-          "hex": "#4E0813",
-          "srgbInGamut": true,
-          "Y": 0.0115,
-          "p3rgb": [
-            0.2769,
-            0.0598,
-            0.0804
-          ],
-          "wavelength": {
-            "nm": 627,
-            "purity": 0.632,
-            "complementary": false
-          },
-          "text": {
-            "white": -104.2,
-            "black": 0,
-            "best": "white",
-            "bestLc": 104.2,
-            "dark": 0,
-            "light": -100.5,
-            "tint": {
-              "ink": "250",
-              "hex": "#FFC4C6",
-              "p3": "color(display-p3 0.9687 0.7794 0.7817)",
-              "lc": -76.6,
-              "passes": true
-            }
-          },
-          "clamped": false,
-          "capped": false,
-          "id": "r05.950",
-          "alpha": {
-            "over": "black",
-            "source": "#FE0046",
-            "alpha": 0.319,
-            "hex": "#510016",
-            "deltaE": 0.0148
-          }
-        }
-      }
-    },
     "red": {
       "hue": 29.53,
       "hueShift": 4.2,
@@ -17083,6 +16139,950 @@
             "alpha": 0.31,
             "hex": "#4F0029",
             "deltaE": 0.0189
+          }
+        }
+      }
+    },
+    "rose": {
+      "hue": 16.44,
+      "hueShift": 0,
+      "saturation": 0.842,
+      "chromaScale": 1,
+      "envelope": {
+        "light": 0.842,
+        "dark": 0.933
+      },
+      "bend": 2.9,
+      "peakChroma": 0.2463,
+      "code": "r05",
+      "natural": {
+        "L": 0.656,
+        "C": 0.2956,
+        "step": 600,
+        "cuspStep": 600
+      },
+      "alphaPivot": 600,
+      "wavelength": {
+        "nm": 630,
+        "purity": 0.407,
+        "complementary": false
+      },
+      "band": "red",
+      "wavelengthRange": [
+        614,
+        645
+      ],
+      "steps": {
+        "50": {
+          "oklch": {
+            "L": 0.9829,
+            "C": 0.0076,
+            "h": 16.44
+          },
+          "css": "oklch(0.9829 0.0076 16.44)",
+          "p3": "color(display-p3 0.9932 0.9713 0.9711)",
+          "p3hex": "#FDF8F8",
+          "hex": "#FEF7F8",
+          "srgbInGamut": true,
+          "Y": 0.9441,
+          "p3rgb": [
+            0.9932,
+            0.9713,
+            0.9711
+          ],
+          "wavelength": {
+            "nm": 614,
+            "purity": 0.012,
+            "complementary": false
+          },
+          "text": {
+            "white": 0,
+            "black": 102.4,
+            "best": "black",
+            "bestLc": 102.4,
+            "dark": 98.1,
+            "light": 0,
+            "tint": {
+              "ink": "800",
+              "hex": "#AC1435",
+              "p3": "color(display-p3 0.6182 0.1537 0.2203)",
+              "lc": 80.3,
+              "passes": true
+            }
+          },
+          "clamped": false,
+          "capped": false,
+          "id": "r05.050",
+          "alpha": {
+            "over": "white",
+            "source": "#FF2A5B",
+            "alpha": 0.037,
+            "hex": "#FFF7F9",
+            "deltaE": 0.0024
+          }
+        },
+        "100": {
+          "oklch": {
+            "L": 0.9567,
+            "C": 0.0204,
+            "h": 16.44
+          },
+          "css": "oklch(0.9567 0.0204 16.44)",
+          "p3": "color(display-p3 0.9847 0.9263 0.9261)",
+          "p3hex": "#FBECEC",
+          "hex": "#FEECEC",
+          "srgbInGamut": true,
+          "Y": 0.8622,
+          "p3rgb": [
+            0.9847,
+            0.9263,
+            0.9261
+          ],
+          "wavelength": {
+            "nm": 615,
+            "purity": 0.034,
+            "complementary": false
+          },
+          "text": {
+            "white": -7.8,
+            "black": 97,
+            "best": "black",
+            "bestLc": 97,
+            "dark": 92.6,
+            "light": 0,
+            "tint": {
+              "ink": "850",
+              "hex": "#91122B",
+              "p3": "color(display-p3 0.5205 0.1294 0.1805)",
+              "lc": 80.6,
+              "passes": true
+            }
+          },
+          "clamped": false,
+          "capped": false,
+          "id": "r05.100",
+          "alpha": {
+            "over": "white",
+            "source": "#FF2A5B",
+            "alpha": 0.094,
+            "hex": "#FFEBF0",
+            "deltaE": 0.0059
+          }
+        },
+        "150": {
+          "oklch": {
+            "L": 0.9302,
+            "C": 0.0349,
+            "h": 16.44
+          },
+          "css": "oklch(0.9302 0.0349 16.44)",
+          "p3": "color(display-p3 0.978 0.8795 0.8796)",
+          "p3hex": "#F9E0E0",
+          "hex": "#FFDFE0",
+          "srgbInGamut": true,
+          "Y": 0.7837,
+          "p3rgb": [
+            0.978,
+            0.8795,
+            0.8796
+          ],
+          "wavelength": {
+            "nm": 616,
+            "purity": 0.06,
+            "complementary": false
+          },
+          "text": {
+            "white": -14,
+            "black": 91.5,
+            "best": "black",
+            "bestLc": 91.5,
+            "dark": 87.1,
+            "light": -10,
+            "tint": {
+              "ink": "850",
+              "hex": "#91122B",
+              "p3": "color(display-p3 0.5205 0.1294 0.1805)",
+              "lc": 75.1,
+              "passes": true
+            }
+          },
+          "clamped": false,
+          "capped": false,
+          "id": "r05.150",
+          "alpha": {
+            "over": "white",
+            "source": "#FF2A5B",
+            "alpha": 0.153,
+            "hex": "#FFDEE6",
+            "deltaE": 0.0093
+          }
+        },
+        "200": {
+          "oklch": {
+            "L": 0.9032,
+            "C": 0.0509,
+            "h": 16.44
+          },
+          "css": "oklch(0.9032 0.0509 16.44)",
+          "p3": "color(display-p3 0.9728 0.8308 0.8316)",
+          "p3hex": "#F8D4D4",
+          "hex": "#FFD2D3",
+          "srgbInGamut": true,
+          "Y": 0.7086,
+          "p3rgb": [
+            0.9728,
+            0.8308,
+            0.8316
+          ],
+          "wavelength": {
+            "nm": 616,
+            "purity": 0.091,
+            "complementary": false
+          },
+          "text": {
+            "white": -20.2,
+            "black": 86,
+            "best": "black",
+            "bestLc": 86,
+            "dark": 81.7,
+            "light": -16.2,
+            "tint": {
+              "ink": "900",
+              "hex": "#750F21",
+              "p3": "color(display-p3 0.4198 0.1034 0.1399)",
+              "lc": 75.2,
+              "passes": true
+            }
+          },
+          "clamped": false,
+          "capped": false,
+          "id": "r05.200",
+          "alpha": {
+            "over": "white",
+            "source": "#FF2A5B",
+            "alpha": 0.214,
+            "hex": "#FFD1DC",
+            "deltaE": 0.0127
+          }
+        },
+        "250": {
+          "oklch": {
+            "L": 0.8755,
+            "C": 0.0687,
+            "h": 16.44
+          },
+          "css": "oklch(0.8755 0.0687 16.44)",
+          "p3": "color(display-p3 0.9687 0.7794 0.7817)",
+          "p3hex": "#F7C7C7",
+          "hex": "#FFC4C6",
+          "srgbInGamut": true,
+          "Y": 0.6364,
+          "p3rgb": [
+            0.9687,
+            0.7794,
+            0.7817
+          ],
+          "wavelength": {
+            "nm": 618,
+            "purity": 0.127,
+            "complementary": false
+          },
+          "text": {
+            "white": -26.5,
+            "black": 80.4,
+            "best": "black",
+            "bestLc": 80.4,
+            "dark": 76.2,
+            "light": -22.3,
+            "tint": {
+              "ink": "950",
+              "hex": "#4E0813",
+              "p3": "color(display-p3 0.2769 0.0598 0.0804)",
+              "lc": 76.2,
+              "passes": true
+            }
+          },
+          "clamped": false,
+          "capped": false,
+          "id": "r05.250",
+          "alpha": {
+            "over": "white",
+            "source": "#FF2A5B",
+            "alpha": 0.28,
+            "hex": "#FFC3D1",
+            "deltaE": 0.0161
+          }
+        },
+        "300": {
+          "oklch": {
+            "L": 0.8474,
+            "C": 0.0881,
+            "h": 16.44
+          },
+          "css": "oklch(0.8474 0.0881 16.44)",
+          "p3": "color(display-p3 0.9652 0.7256 0.7302)",
+          "p3hex": "#F6B9BA",
+          "hex": "#FFB6B9",
+          "srgbInGamut": false,
+          "Y": 0.5679,
+          "p3rgb": [
+            0.9652,
+            0.7256,
+            0.7302
+          ],
+          "wavelength": {
+            "nm": 619,
+            "purity": 0.168,
+            "complementary": false
+          },
+          "text": {
+            "white": -32.8,
+            "black": 74.7,
+            "best": "black",
+            "bestLc": 74.7,
+            "dark": 70.7,
+            "light": -28.4,
+            "tint": {
+              "ink": "black",
+              "hex": "#000000",
+              "p3": "color(display-p3 0 0 0)",
+              "lc": 75.1,
+              "passes": true
+            }
+          },
+          "clamped": false,
+          "capped": false,
+          "id": "r05.300",
+          "alpha": {
+            "over": "white",
+            "source": "#FF2A5B",
+            "alpha": 0.35,
+            "hex": "#FFB4C6",
+            "deltaE": 0.0192
+          }
+        },
+        "350": {
+          "oklch": {
+            "L": 0.8186,
+            "C": 0.1093,
+            "h": 16.44
+          },
+          "css": "oklch(0.8186 0.1093 16.44)",
+          "p3": "color(display-p3 0.9622 0.6683 0.6769)",
+          "p3hex": "#F5AAAD",
+          "hex": "#FFA6AB",
+          "srgbInGamut": false,
+          "Y": 0.5027,
+          "p3rgb": [
+            0.9622,
+            0.6683,
+            0.6769
+          ],
+          "wavelength": {
+            "nm": 620,
+            "purity": 0.216,
+            "complementary": false
+          },
+          "text": {
+            "white": -39,
+            "black": 69.1,
+            "best": "black",
+            "bestLc": 69.1,
+            "dark": 65.2,
+            "light": -34.4,
+            "tint": {
+              "ink": "black",
+              "hex": "#000000",
+              "p3": "color(display-p3 0 0 0)",
+              "lc": 69.6,
+              "passes": false
+            }
+          },
+          "clamped": false,
+          "capped": false,
+          "id": "r05.350",
+          "alpha": {
+            "over": "white",
+            "source": "#FF2A5B",
+            "alpha": 0.424,
+            "hex": "#FFA5BA",
+            "deltaE": 0.022
+          }
+        },
+        "400": {
+          "oklch": {
+            "L": 0.7889,
+            "C": 0.1322,
+            "h": 16.44
+          },
+          "css": "oklch(0.7889 0.1322 16.44)",
+          "p3": "color(display-p3 0.9591 0.607 0.6216)",
+          "p3hex": "#F59B9F",
+          "hex": "#FF959C",
+          "srgbInGamut": false,
+          "Y": 0.4412,
+          "p3rgb": [
+            0.9591,
+            0.607,
+            0.6216
+          ],
+          "wavelength": {
+            "nm": 623,
+            "purity": 0.272,
+            "complementary": false
+          },
+          "text": {
+            "white": -45.1,
+            "black": 63.4,
+            "best": "black",
+            "bestLc": 63.4,
+            "dark": 59.8,
+            "light": -40.3,
+            "tint": {
+              "ink": "black",
+              "hex": "#000000",
+              "p3": "color(display-p3 0 0 0)",
+              "lc": 64.1,
+              "passes": false
+            }
+          },
+          "clamped": false,
+          "capped": false,
+          "id": "r05.400",
+          "alpha": {
+            "over": "white",
+            "source": "#FF2A5B",
+            "alpha": 0.504,
+            "hex": "#FF94AC",
+            "deltaE": 0.024
+          }
+        },
+        "450": {
+          "oklch": {
+            "L": 0.7586,
+            "C": 0.1569,
+            "h": 16.44
+          },
+          "css": "oklch(0.7586 0.1569 16.44)",
+          "p3": "color(display-p3 0.9557 0.5407 0.5644)",
+          "p3hex": "#F48A90",
+          "hex": "#FF838D",
+          "srgbInGamut": false,
+          "Y": 0.3836,
+          "p3rgb": [
+            0.9557,
+            0.5407,
+            0.5644
+          ],
+          "wavelength": {
+            "nm": 626,
+            "purity": 0.335,
+            "complementary": false
+          },
+          "text": {
+            "white": -51.1,
+            "black": 57.8,
+            "best": "black",
+            "bestLc": 57.8,
+            "dark": 54.3,
+            "light": -46.2,
+            "tint": {
+              "ink": "black",
+              "hex": "#000000",
+              "p3": "color(display-p3 0 0 0)",
+              "lc": 58.7,
+              "passes": false
+            }
+          },
+          "clamped": false,
+          "capped": false,
+          "id": "r05.450",
+          "alpha": {
+            "over": "white",
+            "source": "#FF2A5B",
+            "alpha": 0.592,
+            "hex": "#FF819E",
+            "deltaE": 0.0249
+          }
+        },
+        "500": {
+          "oklch": {
+            "L": 0.7272,
+            "C": 0.1835,
+            "h": 16.44
+          },
+          "css": "oklch(0.7272 0.1835 16.44)",
+          "p3": "color(display-p3 0.9517 0.4669 0.5048)",
+          "p3hex": "#F37781",
+          "hex": "#FF6E7E",
+          "srgbInGamut": false,
+          "Y": 0.3299,
+          "p3rgb": [
+            0.9517,
+            0.4669,
+            0.5048
+          ],
+          "wavelength": {
+            "nm": 630,
+            "purity": 0.407,
+            "complementary": false
+          },
+          "text": {
+            "white": -56.9,
+            "black": 52.3,
+            "best": "white",
+            "bestLc": 56.9,
+            "dark": 48.9,
+            "light": -51.9,
+            "tint": {
+              "ink": "white",
+              "hex": "#FFFFFF",
+              "p3": "color(display-p3 1 1 1)",
+              "lc": -55.9,
+              "passes": false
+            }
+          },
+          "clamped": false,
+          "capped": false,
+          "id": "r05.500",
+          "alpha": {
+            "over": "white",
+            "source": "#FF2A5B",
+            "alpha": 0.692,
+            "hex": "#FF6C8E",
+            "deltaE": 0.0237
+          }
+        },
+        "550": {
+          "oklch": {
+            "L": 0.695,
+            "C": 0.2136,
+            "h": 16.51
+          },
+          "css": "oklch(0.695 0.2136 16.51)",
+          "p3": "color(display-p3 0.9492 0.3793 0.4408)",
+          "p3hex": "#F26170",
+          "hex": "#FF536D",
+          "srgbInGamut": false,
+          "Y": 0.2807,
+          "p3rgb": [
+            0.9492,
+            0.3793,
+            0.4408
+          ],
+          "wavelength": {
+            "nm": 636,
+            "purity": 0.494,
+            "complementary": false
+          },
+          "text": {
+            "white": -62.6,
+            "black": 46.8,
+            "best": "white",
+            "bestLc": 62.6,
+            "dark": 43.6,
+            "light": -57.4,
+            "tint": {
+              "ink": "white",
+              "hex": "#FFFFFF",
+              "p3": "color(display-p3 1 1 1)",
+              "lc": -61.4,
+              "passes": false
+            }
+          },
+          "clamped": false,
+          "capped": false,
+          "id": "r05.550",
+          "alpha": {
+            "over": "white",
+            "source": "#FF2A5B",
+            "alpha": 0.816,
+            "hex": "#FF5179",
+            "deltaE": 0.018
+          }
+        },
+        "600": {
+          "oklch": {
+            "L": 0.6617,
+            "C": 0.2463,
+            "h": 16.64
+          },
+          "css": "oklch(0.6617 0.2463 16.64)",
+          "p3": "color(display-p3 0.9459 0.2662 0.3722)",
+          "p3hex": "#F1445F",
+          "hex": "#FF2A5B",
+          "srgbInGamut": false,
+          "Y": 0.2366,
+          "p3rgb": [
+            0.9459,
+            0.2662,
+            0.3722
+          ],
+          "wavelength": {
+            "nm": 644,
+            "purity": 0.595,
+            "complementary": false
+          },
+          "text": {
+            "white": -67.7,
+            "black": 41.9,
+            "best": "white",
+            "bestLc": 67.7,
+            "dark": 38.5,
+            "light": -62.6,
+            "tint": {
+              "ink": "white",
+              "hex": "#FFFFFF",
+              "p3": "color(display-p3 1 1 1)",
+              "lc": -66.6,
+              "passes": false
+            }
+          },
+          "clamped": false,
+          "capped": false,
+          "id": "r05.600",
+          "alpha": {
+            "over": "white",
+            "source": "#FF2A5B",
+            "alpha": 1,
+            "hex": "#FF2A5B",
+            "deltaE": 0
+          }
+        },
+        "650": {
+          "oklch": {
+            "L": 0.6213,
+            "C": 0.2394,
+            "h": 16.82
+          },
+          "css": "oklch(0.6213 0.2394 16.82)",
+          "p3": "color(display-p3 0.8805 0.221 0.3306)",
+          "p3hex": "#E13854",
+          "hex": "#F51A50",
+          "srgbInGamut": true,
+          "Y": 0.1927,
+          "p3rgb": [
+            0.8805,
+            0.221,
+            0.3306
+          ],
+          "wavelength": {
+            "nm": 645,
+            "purity": 0.618,
+            "complementary": false
+          },
+          "text": {
+            "white": -71.3,
+            "black": 38.3,
+            "best": "white",
+            "bestLc": 71.3,
+            "dark": 33,
+            "light": -68.2,
+            "tint": {
+              "ink": "white",
+              "hex": "#FFFFFF",
+              "p3": "color(display-p3 1 1 1)",
+              "lc": -72.2,
+              "passes": false
+            }
+          },
+          "clamped": false,
+          "capped": false,
+          "id": "r05.650",
+          "alpha": {
+            "over": "black",
+            "source": "#FF0050",
+            "alpha": 0.976,
+            "hex": "#F9004E",
+            "deltaE": 0.0098
+          }
+        },
+        "700": {
+          "oklch": {
+            "L": 0.5771,
+            "C": 0.2218,
+            "h": 17.05
+          },
+          "css": "oklch(0.5771 0.2218 17.05)",
+          "p3": "color(display-p3 0.7976 0.1984 0.2948)",
+          "p3hex": "#CB334B",
+          "hex": "#DE1747",
+          "srgbInGamut": true,
+          "Y": 0.1516,
+          "p3rgb": [
+            0.7976,
+            0.1984,
+            0.2948
+          ],
+          "wavelength": {
+            "nm": 642,
+            "purity": 0.622,
+            "complementary": false
+          },
+          "text": {
+            "white": -77,
+            "black": 32.5,
+            "best": "white",
+            "bestLc": 77,
+            "dark": 27.3,
+            "light": -73.9,
+            "tint": {
+              "ink": "white",
+              "hex": "#FFFFFF",
+              "p3": "color(display-p3 1 1 1)",
+              "lc": -77.9,
+              "passes": true
+            }
+          },
+          "clamped": false,
+          "capped": false,
+          "id": "r05.700",
+          "alpha": {
+            "over": "black",
+            "source": "#FF004F",
+            "alpha": 0.885,
+            "hex": "#E20046",
+            "deltaE": 0.0098
+          }
+        },
+        "750": {
+          "oklch": {
+            "L": 0.53,
+            "C": 0.2025,
+            "h": 17.33
+          },
+          "css": "oklch(0.53 0.2025 17.33)",
+          "p3": "color(display-p3 0.7102 0.1762 0.2582)",
+          "p3hex": "#B52D42",
+          "hex": "#C5163E",
+          "srgbInGamut": true,
+          "Y": 0.1145,
+          "p3rgb": [
+            0.7102,
+            0.1762,
+            0.2582
+          ],
+          "wavelength": {
+            "nm": 640,
+            "purity": 0.624,
+            "complementary": false
+          },
+          "text": {
+            "white": -82.7,
+            "black": 26.7,
+            "best": "white",
+            "bestLc": 82.7,
+            "dark": 21.5,
+            "light": -79.4,
+            "tint": {
+              "ink": "50",
+              "hex": "#FEF7F8",
+              "p3": "color(display-p3 0.9932 0.9713 0.9711)",
+              "lc": -79.4,
+              "passes": true
+            }
+          },
+          "clamped": false,
+          "capped": false,
+          "id": "r05.750",
+          "alpha": {
+            "over": "black",
+            "source": "#FF004E",
+            "alpha": 0.79,
+            "hex": "#C9003E",
+            "deltaE": 0.0105
+          }
+        },
+        "800": {
+          "oklch": {
+            "L": 0.4795,
+            "C": 0.1813,
+            "h": 17.67
+          },
+          "css": "oklch(0.4795 0.1813 17.67)",
+          "p3": "color(display-p3 0.6182 0.1537 0.2203)",
+          "p3hex": "#9E2738",
+          "hex": "#AC1435",
+          "srgbInGamut": true,
+          "Y": 0.082,
+          "p3rgb": [
+            0.6182,
+            0.1537,
+            0.2203
+          ],
+          "wavelength": {
+            "nm": 637,
+            "purity": 0.626,
+            "complementary": false
+          },
+          "text": {
+            "white": -88.2,
+            "black": 20.9,
+            "best": "white",
+            "bestLc": 88.2,
+            "dark": 15.8,
+            "light": -84.9,
+            "tint": {
+              "ink": "100",
+              "hex": "#FEECEC",
+              "p3": "color(display-p3 0.9847 0.9263 0.9261)",
+              "lc": -78.9,
+              "passes": true
+            }
+          },
+          "clamped": false,
+          "capped": false,
+          "id": "r05.800",
+          "alpha": {
+            "over": "black",
+            "source": "#FF004D",
+            "alpha": 0.691,
+            "hex": "#B00035",
+            "deltaE": 0.0118
+          }
+        },
+        "850": {
+          "oklch": {
+            "L": 0.4243,
+            "C": 0.1582,
+            "h": 18.08
+          },
+          "css": "oklch(0.4243 0.1582 18.08)",
+          "p3": "color(display-p3 0.5205 0.1294 0.1805)",
+          "p3hex": "#85212E",
+          "hex": "#91122B",
+          "srgbInGamut": true,
+          "Y": 0.0542,
+          "p3rgb": [
+            0.5205,
+            0.1294,
+            0.1805
+          ],
+          "wavelength": {
+            "nm": 634,
+            "purity": 0.626,
+            "complementary": false
+          },
+          "text": {
+            "white": -93.6,
+            "black": 15,
+            "best": "white",
+            "bestLc": 93.6,
+            "dark": 10,
+            "light": -90.2,
+            "tint": {
+              "ink": "150",
+              "hex": "#FFDFE0",
+              "p3": "color(display-p3 0.978 0.8795 0.8796)",
+              "lc": -78.2,
+              "passes": true
+            }
+          },
+          "clamped": false,
+          "capped": false,
+          "id": "r05.850",
+          "alpha": {
+            "over": "black",
+            "source": "#FF014B",
+            "alpha": 0.585,
+            "hex": "#95012C",
+            "deltaE": 0.0128
+          }
+        },
+        "900": {
+          "oklch": {
+            "L": 0.3654,
+            "C": 0.1338,
+            "h": 18.56
+          },
+          "css": "oklch(0.3654 0.1338 18.56)",
+          "p3": "color(display-p3 0.4198 0.1034 0.1399)",
+          "p3hex": "#6B1A24",
+          "hex": "#750F21",
+          "srgbInGamut": true,
+          "Y": 0.0322,
+          "p3rgb": [
+            0.4198,
+            0.1034,
+            0.1399
+          ],
+          "wavelength": {
+            "nm": 631,
+            "purity": 0.626,
+            "complementary": false
+          },
+          "text": {
+            "white": -98.6,
+            "black": 9.2,
+            "best": "white",
+            "bestLc": 98.6,
+            "dark": 0,
+            "light": -95.1,
+            "tint": {
+              "ink": "200",
+              "hex": "#FFD2D3",
+              "p3": "color(display-p3 0.9728 0.8308 0.8316)",
+              "lc": -77.2,
+              "passes": true
+            }
+          },
+          "clamped": false,
+          "capped": false,
+          "id": "r05.900",
+          "alpha": {
+            "over": "black",
+            "source": "#FF034A",
+            "alpha": 0.476,
+            "hex": "#790123",
+            "deltaE": 0.0135
+          }
+        },
+        "950": {
+          "oklch": {
+            "L": 0.2755,
+            "C": 0.0991,
+            "h": 19.37
+          },
+          "css": "oklch(0.2755 0.0991 19.37)",
+          "p3": "color(display-p3 0.2769 0.0598 0.0804)",
+          "p3hex": "#470F15",
+          "hex": "#4E0813",
+          "srgbInGamut": true,
+          "Y": 0.0115,
+          "p3rgb": [
+            0.2769,
+            0.0598,
+            0.0804
+          ],
+          "wavelength": {
+            "nm": 627,
+            "purity": 0.632,
+            "complementary": false
+          },
+          "text": {
+            "white": -104.2,
+            "black": 0,
+            "best": "white",
+            "bestLc": 104.2,
+            "dark": 0,
+            "light": -100.5,
+            "tint": {
+              "ink": "250",
+              "hex": "#FFC4C6",
+              "p3": "color(display-p3 0.9687 0.7794 0.7817)",
+              "lc": -76.6,
+              "passes": true
+            }
+          },
+          "clamped": false,
+          "capped": false,
+          "id": "r05.950",
+          "alpha": {
+            "over": "black",
+            "source": "#FE0046",
+            "alpha": 0.319,
+            "hex": "#510016",
+            "deltaE": 0.0148
           }
         }
       }
