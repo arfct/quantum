@@ -44,6 +44,11 @@
   label.ctl { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); }
   .card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; min-width: 0; }
   .note { font-size: 12px; color: var(--muted); }
+  ul.note { margin: 0; padding-left: 16px; }
+  .info { font: 600 10px/1 var(--mono); width: 16px; height: 16px; border-radius: 50%; border: 1px solid var(--line); background: none; color: var(--muted); cursor: pointer; vertical-align: 2px; margin-left: 6px; }
+  .info[aria-expanded="true"] { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+  .about { display: none; }
+  .about.open { display: block; }
   .grid-wrap { overflow-x: auto; padding: 32px 32px; margin: -16px -32px; }
   table.grid { border-collapse: collapse; border-spacing: 0; table-layout: fixed; min-width: 720px; width: 100%; }
   table.grid th { font-weight: 500; text-align: left; color: var(--muted); font-size: 12px; padding: 0 6px; white-space: nowrap; }
@@ -97,9 +102,6 @@
   .btn.primary { background: var(--accent); color: var(--bg); border-color: transparent; }
   .status { color: var(--muted); font-size: 12px; min-height: 1.4em; }
   textarea { height: 120px; resize: vertical; }
-  table.eval { border-collapse: collapse; width: 100%; font-size: 12px; font-family: var(--mono); }
-  table.eval th, table.eval td { padding: 4px 8px; text-align: left; border-bottom: 1px solid var(--line); white-space: nowrap; }
-  table.eval th { font-family: var(--font); color: var(--muted); font-weight: 500; }
   .fail { color: var(--warn); }
   .pass { color: var(--ok); }
   .chart { width: 100%; height: auto; display: block; }
@@ -107,7 +109,6 @@
   .chart text { fill: var(--muted); font-size: 11px; font-family: var(--font); }
   .chart .series { fill: none; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
   .chart .series.dim { opacity: 0.25; }
-  .chart .cusp { fill: none; stroke-width: 1.5; stroke-dasharray: 4 4; opacity: 0.7; }
   .chart .hover { fill: var(--surface); stroke: var(--fg); stroke-width: 2; }
   .chart .zero { stroke: var(--muted); stroke-width: 1; }
   .chart .attr { stroke: var(--fg); stroke-width: 1; stroke-dasharray: 3 3; opacity: 0.6; }
@@ -118,9 +119,6 @@
   .chart .pt.tint { fill: var(--surface); stroke-width: 2; }
   .chart .pt.radix { stroke: var(--fg); stroke-width: 1; }
   .readout { font-family: var(--mono); font-size: 12px; color: var(--muted); min-height: 1.4em; }
-  .legend { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 12px; color: var(--muted); }
-  .legend button { font: inherit; color: inherit; background: none; border: 0; padding: 2px 0; cursor: pointer; display: inline-flex; align-items: center; }
-  .legend button[aria-pressed="false"] { opacity: 0.4; }
   @media (prefers-reduced-motion: no-preference) { .sw { transition: box-shadow 120ms; } }
 </style>
 
@@ -142,19 +140,20 @@
   </header>
 
   <section class="card">
-    <h2 id="grid-title">Euclid palette</h2>
-    <p class="note" id="grid-note"></p>
-    <p class="note">Every value is derived from the OKLCH reference; the hex is the sRGB gamut mapping. A dot in the corner marks a family's natural step, the one nearest its gamut cusp (where the hue reaches the most chroma); ★ marks where Byrne's red, yellow and blue sit. With Tinted on, text is the family step nearest the colour that still meets APCA Lc 75 (lighter first, white and black as the ends); a square where nothing passes shows the strongest ink and says so in the swatch panel. With it off, text is white wherever white clears Lc 60, else the stronger of white and black. Clicking a square selects it, shows its hex and contrast ratio, and copies the hex. The code under each name is the family's designation: a hue-sector letter (R O Y G B P, or N under chroma 0.06) and OKLCH h at the 500 as hundredths of the circle; a step is written P85.300.</p>
+    <h2><span id="grid-title">Euclid palette</span> <button type="button" class="info" aria-expanded="false" aria-label="About the grid">i</button></h2>
+    <ul class="note"><li>Dot: the family's natural step. ★: Byrne's red, yellow and blue.</li><li>Click a swatch to select it and copy its hex.</li></ul>
+    <p class="note about" id="grid-note"></p>
+    <p class="note about">Every value is derived from the OKLCH reference; the hex is the sRGB gamut mapping. A dot in the corner marks a family's natural step, the one nearest its gamut cusp (where the hue reaches the most chroma); ★ marks where Byrne's red, yellow and blue sit. With Tinted on, text is the family step nearest the colour that still meets APCA Lc 75 (lighter first, white and black as the ends); a square where nothing passes shows the strongest ink and says so in the swatch panel. With it off, text is white wherever white clears Lc 60, else the stronger of white and black. Clicking a square selects it, shows its hex and contrast ratio, and copies the hex. The code under each name is the family's designation: a hue-sector letter (R O Y G B P, or N under chroma 0.06) and OKLCH h at the 500 as hundredths of the circle; a step is written P85.300.</p>
     <div class="grid-wrap"><table class="grid" id="grid" aria-labelledby="grid-title"></table></div>
   </section>
 
   <div class="two">
     <section class="card">
-      <h2>Lightness by step</h2>
-      <p class="note">OKLab L of every family at each step, with the gamut cusp of each family's hue as a dashed line (the lightness where that hue is most saturated). The Euclid ladder is one line; Tailwind spreads up to 0.24 at the 500.</p>
+      <h2>Lightness by step <button type="button" class="info" aria-expanded="false" aria-label="About the chart">i</button></h2>
+      <ul class="note"><li>OKLab L of every family at each step.</li></ul>
+      <p class="note about">OKLab L of every family at each step. The Euclid ladder is one line for the neutrals; chromatic families sit above or below it where their luminance is equalized. Tailwind spreads up to 0.24 at the 500.</p>
       <svg class="chart" id="chart" viewBox="0 0 760 300" role="img" aria-label="Lightness of each family by step"></svg>
       <div class="readout" id="chart-readout">Hover a point for the family, step and lightness.</div>
-      <div class="legend" id="legend"></div>
     </section>
     <section class="card detail" id="detail">
       <h2>Swatch</h2>
@@ -163,8 +162,9 @@
   </div>
 
   <section class="card">
-    <h2>Continuous field</h2>
-    <p class="note">The colour space as a wheel: every angle is one hue, white at the centre (step 0), the ladder outward through 050 … 950, black at the rim (step 1000); from the 850 the ladder continues at its own slope and a power term carries it to the rim. Hue runs clockwise from the top, starting just before red so the families follow the grid's order; chroma is the share interpolated between the two families nearest in hue, applied to the Display P3 maximum. Drawn in P3 where the browser allows, else gamut-mapped to sRGB. Each family is drawn over it as the path its ramp takes from the rim to the centre (continued past the 950 and the 050 at the slope of its last two steps): a dot per step, the natural step ringed, curving where the bend carries the ramp off its pivot hue. Hue lines every 10° (heavier every 30°) and the ladder steps as rings are optional; Natural line traces the step at every hue where the ladder's lightness meets that hue's gamut cusp.</p>
+    <h2>Continuous field <button type="button" class="info" aria-expanded="false" aria-label="About the wheel">i</button></h2>
+    <ul class="note"><li>Hue by angle, white at the centre, black at the rim; each family drawn as the path its ramp takes.</li><li>Rings are the steps; a ring on a path is the natural step.</li></ul>
+    <p class="note about">The colour space as a wheel: every angle is one hue, white at the centre (step 0), the ladder outward through 050 … 950, black at the rim (step 1000); from the 850 the ladder continues at its own slope and a power term carries it to the rim. Hue runs clockwise from the top, starting just before red so the families follow the grid's order; chroma is the share interpolated between the two families nearest in hue, applied to the Display P3 maximum. Drawn in P3 where the browser allows, else gamut-mapped to sRGB. Each family is drawn over it as the path its ramp takes from the rim to the centre (continued past the 950 and the 050 at the slope of its last two steps): a dot per step, the natural step ringed, curving where the bend carries the ramp off its pivot hue. Hue lines every 10° (heavier every 30°) and the ladder steps as rings are optional; Natural line traces the step at every hue where the ladder's lightness meets that hue's gamut cusp.</p>
     <div class="toolbar" style="margin-bottom:8px">
       <label class="ctl"><input type="checkbox" id="field-names" checked> Families</label>
       <label class="ctl"><input type="checkbox" id="field-steps" checked> Step rings</label>
@@ -180,15 +180,17 @@
   </section>
 
   <section class="card">
-    <h2>Hue bend by hue</h2>
-    <p class="note">How far a hue drifts, in degrees, by the time a ramp reaches its end: measured from Tailwind (500 → 950 and 500 → 050) and Radix (9 → 12 and 9 → 1), with the bend function in use drawn over them. Solid line and filled dots: shading. Dashed line and hollow dots: tinting. Squares are Radix. Vertical dashes mark where the curve crosses zero downward (attractors when shading); dotted lines where it crosses upward (repellers).</p>
+    <h2>Hue bend by hue <button type="button" class="info" aria-expanded="false" aria-label="About the bend chart">i</button></h2>
+    <ul class="note"><li>Hue drift at the ramp ends: measured as dots, the fitted bend as lines.</li><li>Solid and filled: shading. Dashed and hollow: tinting. Squares: Radix.</li></ul>
+    <p class="note about">How far a hue drifts, in degrees, by the time a ramp reaches its end: measured from Tailwind (500 → 950 and 500 → 050) and Radix (9 → 12 and 9 → 1), with the bend function in use drawn over them. Solid line and filled dots: shading. Dashed line and hollow dots: tinting. Squares are Radix. Vertical dashes mark where the curve crosses zero downward (attractors when shading); dotted lines where it crosses upward (repellers).</p>
     <svg class="chart" id="bend-chart" viewBox="0 0 760 300" role="img" aria-label="Hue drift against hue, measured and modelled"></svg>
     <div class="readout" id="bend-readout">Hover a point for the family and its drift.</div>
   </section>
 
   <section class="card spec">
-    <h2>Spec</h2>
-    <p class="note">A ladder, Tailwind's ramps, and three anchors. Ladder: one lightness per column, a curve from the top (050), the mid (500) and the bottom (950) with a gain that steepens the middle, fitted by least squares to Tailwind's mean lightness per step (the fitted values show in the fields), set by hand, or replaced by explicit steps; or a perceptual ramp between top and bottom with equal OKLab L steps (equal CIE L* for greys) or equal APCA contrast steps against white or black (APCA is polarity-aware, so the two ramps differ). From the 850 the ladder continues at its own slope and a power term (exponent dive, 5) carries it to black at 1000, which places the 900 and 950; before the 050 the mirror runs to white. Each family's hue and relative saturation are read off its Tailwind ramp at the ladder's lightness (the ramp as a curve over L; saturation as chroma's share of the Display P3 maximum), and Saturation multiplies that share, and Chroma cap limits chroma near white with a curve fitted to Tailwind's most chromatic tints, so a wide-gamut hue such as yellow cannot outrun its neighbours there. Hue starts from Tailwind's 500 and bends as the ramp leaves it by a smooth function of hue: a Fourier series of a few harmonics, fitted by least squares to the measured drift of the reference palettes ticked under Fit to, Tailwind by default (the coefficients show below, scaled by Scale ×); zero harmonics means no bend; an anchor sets the 500 hue so the ramp passes through the anchor at its step. Equal luminance moves each chromatic step to the OKLab L whose luminance matches the neutral's at that step (1 is exact, 0 is equal OKLab L as before), so APCA contrast is the same across a row. Chroma bell replaces the sampled shares with one fitted curve over the ladder times a light and a dark number per family (shown under Envelope); Hues from anchors places the unanchored families between the anchored ones at Tailwind's spacing; Keep C scales a family so its anchor step carries the anchor's chroma. Hue shift and Sat × adjust a family by hand. Edits regenerate the palette here and are kept in this browser; copy the spec into <code>palette/spec.json</code> and run <code>npm run palette</code> to bring a change into the repo.</p>
+    <h2>Spec <button type="button" class="info" aria-expanded="false" aria-label="About the spec">i</button></h2>
+    <ul class="note"><li>Edits regenerate the palette here and are kept in this browser.</li><li>Copy the spec into <code>palette/spec.json</code> and run <code>npm run palette</code> to bring a change into the repo.</li></ul>
+    <p class="note about">A ladder, Tailwind's ramps, and three anchors. Ladder: one lightness per column, a curve from the top (050), the mid (500) and the bottom (950) with a gain that steepens the middle, fitted by least squares to Tailwind's mean lightness per step (the fitted values show in the fields), set by hand, or replaced by explicit steps; or a perceptual ramp between top and bottom with equal OKLab L steps (equal CIE L* for greys) or equal APCA contrast steps against white or black (APCA is polarity-aware, so the two ramps differ). From the 850 the ladder continues at its own slope and a power term (exponent dive, 5) carries it to black at 1000, which places the 900 and 950; before the 050 the mirror runs to white. Each family's hue and relative saturation are read off its Tailwind ramp at the ladder's lightness (the ramp as a curve over L; saturation as chroma's share of the Display P3 maximum), and Saturation multiplies that share, and Chroma cap limits chroma near white with a curve fitted to Tailwind's most chromatic tints, so a wide-gamut hue such as yellow cannot outrun its neighbours there. Hue starts from Tailwind's 500 and bends as the ramp leaves it by a smooth function of hue: a Fourier series of a few harmonics, fitted by least squares to the measured drift of the reference palettes ticked under Fit to, Tailwind by default (the coefficients show below, scaled by Scale ×); zero harmonics means no bend; an anchor sets the 500 hue so the ramp passes through the anchor at its step. Equal luminance moves each chromatic step to the OKLab L whose luminance matches the neutral's at that step (1 is exact, 0 is equal OKLab L as before), so APCA contrast is the same across a row. Chroma bell replaces the sampled shares with one fitted curve over the ladder times a light and a dark number per family (shown under Envelope); Hues from anchors places the unanchored families between the anchored ones at Tailwind's spacing; Keep C scales a family so its anchor step carries the anchor's chroma. Hue shift and Sat × adjust a family by hand. Edits regenerate the palette here and are kept in this browser; copy the spec into <code>palette/spec.json</code> and run <code>npm run palette</code> to bring a change into the repo.</p>
     <div class="sliders">
       <label class="ctl">Ladder <select id="ladder-mode" style="width:auto"><option value="base">Fitted to Tailwind</option><option value="curve">Curve</option><option value="uniform">Equal OKLab L steps</option><option value="apca">Equal APCA contrast steps</option><option value="explicit">Explicit steps</option></select></label>
       <label class="ctl" id="against-ctl">against <select id="ladder-against" style="width:auto"><option value="white">white</option><option value="black">black</option><option value="both">both (mean)</option></select></label>
@@ -231,11 +233,6 @@
     </details>
   </section>
 
-  <section class="card">
-    <h2>Evaluation by step</h2>
-    <p class="note">Across all families at each step: the lightness range, the APCA contrast of white and black text, and how many steps fall outside sRGB. APCA minimums: 90 preferred body, 75 body, 60 large or bold, 45 large headlines, 30 spot text.</p>
-    <div class="grid-wrap"><table class="eval" id="eval"></table></div>
-  </section>
 </div>
 
 <script>
@@ -308,8 +305,7 @@ function renderGrid() {
       const title = inkFails(sw) ? ' title="no family step meets Lc 75; strongest shown"' : natural ? ` title="natural step: cusp L ${fmtL(f.natural.L)}"` : '';
       if (state.alpha && sw.alpha) {
         const a = sw.alpha;
-        const src = parseHex(a.source).rgb.map((c) => Math.round(c * 255)).join(' ');
-        rows.push(`<td class="c" style="background:${a.over}"><button type="button" class="sw${natural ? ' natural' : ''}" data-fam="${fam}" data-step="${s}" aria-pressed="${selected}" style="background:rgb(${src} / ${a.alpha});color:${inkFor(sw)}" aria-label="${fam} ${s}, ${a.source} at ${Math.round(a.alpha * 100)}% over ${a.over}" title="${a.source} at ${a.alpha} over ${a.over}; ΔE ${a.deltaE} from the true step">${marks}<span class="lc">${Math.round(a.alpha * 100)}%</span><span class="hex">Δ${a.deltaE.toFixed(3).replace(/^0/, '')}</span></button></td>`);
+        rows.push(`<td class="c" style="background:${a.hex}"><button type="button" class="sw${natural ? ' natural' : ''}" data-fam="${fam}" data-step="${s}" aria-pressed="${selected}" style="background:${a.hex};color:${inkFor(sw)}" aria-label="${fam} ${s}, ${a.source} at ${Math.round(a.alpha * 100)}% over ${a.over}" title="${a.source} at ${a.alpha} over ${a.over}; ΔE ${a.deltaE} from the true step">${marks}<span class="lc">${Math.round(a.alpha * 100)}%</span><span class="hex">Δ${a.deltaE.toFixed(3).replace(/^0/, '')}</span></button></td>`);
         continue;
       }
       rows.push(`<td class="c" style="background:${sw.hex};background:${cssColor(sw)}"><button type="button" class="sw${natural ? ' natural' : ''}" data-fam="${fam}" data-step="${s}" aria-pressed="${selected}" style="background:${sw.hex};background:${cssColor(sw)};color:${inkFor(sw)}" aria-label="${fam} ${s}${natural ? ', natural step' : ''}"${title}>${marks}<span class="lc">1:${ratio(sw).toFixed(1)}</span><span class="hex">${sw.hex}</span></button></td>`);
@@ -374,7 +370,6 @@ function renderChart() {
     const f = palette.families[fam];
     const d = STEPS.map((s, i) => (f.steps[s] ? `${x(i).toFixed(1)},${y(f.steps[s].oklch.L).toFixed(1)}` : null)).filter(Boolean).map((pt, i) => `${i ? 'L' : 'M'}${pt}`).join(' ');
     parts.push(`<path class="series${state.hidden.has(fam) ? ' dim' : ''}" data-fam="${fam}" d="${d}" stroke="${cssColor(f.steps[500])}"/>`);
-    if (!f.code.startsWith('N') && !state.hidden.has(fam)) parts.push(`<line class="cusp" x1="${x(0)}" x2="${x(STEPS.length - 1)}" y1="${y(f.natural.L)}" y2="${y(f.natural.L)}" stroke="${cssColor(f.steps[500])}"/>`);
   }
   parts.push('<circle class="hover" r="5" hidden/>');
   svg.innerHTML = parts.join('');
@@ -399,7 +394,6 @@ function renderChart() {
     $('chart-readout').textContent = `${best.fam}-${pad(STEPS[i])}  L ${fmtL(best.L)}  C ${sw.oklch.C.toFixed(3)}  h ${sw.oklch.h.toFixed(0)}  ${sw.hex}`;
   };
   svg.onmouseleave = () => { svg.querySelector('.hover').setAttribute('hidden', ''); };
-  $('legend').innerHTML = famsOf(palette).map((fam) => `<button type="button" data-fam="${fam}" aria-pressed="${!state.hidden.has(fam)}"><span class="chip" style="background:${cssColor(palette.families[fam].steps[500])}"></span>${fam} <span class="readout" style="margin-left:4px">${palette.families[fam].code}</span></button>`).join('');
 }
 
 function renderBendChart() {
@@ -562,22 +556,6 @@ function renderFieldOverlay() {
   svg.innerHTML = parts.join('');
 }
 
-function renderEval() {
-  const palette = state.palettes[state.view];
-  const fams = Object.values(palette.families);
-  const head = '<thead><tr><th>Step</th><th>L min</th><th>L max</th><th>Spread</th><th>Lc white</th><th>Lc black</th><th>Best ink</th><th>Tinted ink fails</th><th>Outside sRGB</th></tr></thead>';
-  const rows = STEPS.filter((s) => fams.some((f) => f.steps[s])).map((s) => {
-    const sw = fams.map((f) => f.steps[s]).filter(Boolean);
-    const Ls = sw.map((x) => x.oklch.L);
-    const w = sw.map((x) => Math.abs(x.text.white));
-    const b = sw.map((x) => x.text.black);
-    const spread = Math.max(...Ls) - Math.min(...Ls);
-    const white = sw.filter((x) => x.text.best === 'white').length;
-    return `<tr><td>${pad(s)}</td><td>${fmtL(Math.min(...Ls))}</td><td>${fmtL(Math.max(...Ls))}</td><td class="${spread > 0.02 ? 'fail' : 'pass'}">${fmtL(spread)}</td><td>${Math.min(...w).toFixed(0)}–${Math.max(...w).toFixed(0)}</td><td>${Math.min(...b).toFixed(0)}–${Math.max(...b).toFixed(0)}</td><td>${white ? `white ${white}` : ''}${white && white < fams.length ? ' / ' : ''}${white < fams.length ? `black ${fams.length - white}` : ''}</td><td>${sw.filter((x) => !x.text.tint.passes).length}</td><td>${sw.filter((x) => !x.srgbInGamut).length}</td></tr>`;
-  });
-  $('eval').innerHTML = head + '<tbody>' + rows.join('') + '</tbody>';
-}
-
 function renderSpec() {
   const spec = state.spec;
   const palette = state.palettes.proposed;
@@ -688,7 +666,6 @@ function renderAll({ spec = false } = {}) {
   renderDetail();
   renderChart();
   renderBendChart();
-  renderEval();
   if (spec) renderSpec();
   if (spec) renderField();
 }
@@ -717,6 +694,7 @@ seg(['view-proposed', 'view-current'], 'view', ['proposed', 'current']);
 seg(['gamut-p3', 'gamut-srgb'], 'gamut', ['p3', 'srgb']);
 $('tinted').onchange = (e) => { state.tinted = e.target.checked; renderGrid(); };
 $('alpha').onchange = (e) => { state.alpha = e.target.checked; renderGrid(); };
+document.querySelectorAll('.info').forEach((b) => { b.onclick = () => { const open = b.getAttribute('aria-expanded') !== 'true'; b.setAttribute('aria-expanded', String(open)); b.closest('section').querySelectorAll('.about').forEach((p) => p.classList.toggle('open', open)); }; });
 $('field-steps').onchange = renderFieldOverlay;
 $('field-names').onchange = renderFieldOverlay;
 $('field-hues').onchange = renderFieldOverlay;
@@ -741,13 +719,6 @@ $('grid').addEventListener('click', (e) => {
   const done = () => { $('status').textContent = `${sw.hex} copied (${b.dataset.fam}-${pad(b.dataset.step)}).`; };
   const fail = () => { $('status').textContent = `Clipboard unavailable; ${sw.hex} is in the swatch panel.`; };
   if (navigator.clipboard?.writeText) navigator.clipboard.writeText(sw.hex).then(done, fail); else fail();
-});
-$('legend').addEventListener('click', (e) => {
-  const b = e.target.closest('button');
-  if (!b) return;
-  const fam = b.dataset.fam;
-  if (state.hidden.has(fam)) state.hidden.delete(fam); else state.hidden.add(fam);
-  renderChart();
 });
 document.querySelector('.spec').addEventListener('change', (e) => { if (e.target.matches('input, select')) update(); });
 $('saturation').oninput = (e) => { $('saturation-out').value = Number(e.target.value).toFixed(2); };

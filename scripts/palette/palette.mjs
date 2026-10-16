@@ -35,6 +35,7 @@ import {
   toP3Hex,
   apcaY,
   luminanceOf,
+  wcagLuminance,
   round,
 } from './color.mjs';
 
@@ -380,14 +381,22 @@ export function cusp(h, space = 'p3') {
 // --- alpha blends -------------------------------------------------------------------------
 // Each step as one saturated colour at an alpha over white (lighter than the family's pivot) or black
 // (darker), the way an alpha scale is used. The source is the pivot step's lightness and chroma at the
-// step's own hue, so it follows the bend; the alpha is the least-squares fit in sRGB, where browsers
+// step's own hue, so it follows the bend; the alpha matches the step's luminance in sRGB, where browsers
 // composite, and deltaE says how far the blend sits from the true step.
 export function alphaBlend(target, source, over) {
   const bg = over === 'white' ? 1 : 0;
-  let num = 0, den = 0;
-  for (let i = 0; i < 3; i++) { num += (target.rgb[i] - bg) * (source.rgb[i] - bg); den += (source.rgb[i] - bg) ** 2; }
-  const alpha = den ? Math.min(1, Math.max(0, num / den)) : 0;
-  const blended = { space: 'srgb', rgb: source.rgb.map((c) => bg + (c - bg) * alpha) };
+  const blendAt = (alpha) => ({ space: 'srgb', rgb: source.rgb.map((c) => bg + (c - bg) * alpha) });
+  // Luminance first: the alpha at which the blend's luminance equals the step's (luminance moves one way
+  // with alpha, so bisection). The hue is the source's, which tracks the step; chroma falls where it must.
+  const y = wcagLuminance(target);
+  let lo = 0, hi = 1;
+  for (let i = 0; i < 30; i++) {
+    const m = (lo + hi) / 2;
+    const ym = wcagLuminance(blendAt(m));
+    if ((over === 'white') === (ym > y)) lo = m; else hi = m;
+  }
+  const alpha = (lo + hi) / 2;
+  const blended = blendAt(alpha);
   return { over, source: toHex(source), alpha: round(alpha, 3), hex: toHex(blended), deltaE: round(deltaEok(spaceToOklch(target), spaceToOklch(blended)), 4) };
 }
 function alphaSteps(steps, pivot) {
