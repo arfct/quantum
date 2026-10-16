@@ -1,0 +1,90 @@
+{
+  "name": "Euclid palette",
+  "note": "Everything is derived in OKLCH. ladder: one L per step, the lightness of the neutral at that step. luminance: {equalize: 1} then moves every chromatic step to the OKLab L whose luminance equals the neutral's, so each row is one luminance and APCA contrast is the same across it (0 keeps equal OKLab L; between is a partial correction); anchors then find their step by luminance. from: apca spaces the steps by equal APCA contrast between top and bottom (against white, black, or both: the mean of the two solutions); from: uniform spaces them by equal OKLab L; from: base fits a curve to Tailwind's mean lightness per step; or give top, mid, bottom and gain, or an explicit lightness map. From the tail step a power term (exponent dive) carries the ladder to black at 1000, continuing its slope so there is no seam. Each family's hue is Tailwind's at the 500; as the ramp leaves the 500 the hue bends by a smooth function of hue (hueBend): a Fourier series with the given number of harmonics, fitted by least squares at build time to the measured drift of the reference palettes (base: Tailwind's own ramps; radix: palette/reference/radix-drift.json), times scale. Four harmonics fitted to Tailwind alone reproduce its drift within 3.3 degrees: shading bends toward red or blue, tinting toward yellow-green or pink; adding Radix to the fit flattens the warm tints and pushes amber onto yellow. Relative saturation is read off the Tailwind ramp at the ladder's lightness (chroma as a share of the Display P3 maximum); saturation multiplies that share. chroma: {from: bell} replaces the sampled shares with one bell over the ladder (a quadratic in step fitted to Tailwind's mean share) times a light and a dark number per family, fitted to its Tailwind ramp on either side of the 500. hues: anchors would place the unanchored families between the anchored ones at Tailwind's proportional spacing (it moves the greens about 10\u00b0 yellower, so it is off). hueBend.shade and hueBend.tint are the default multipliers on each side of the bend (tint 0 holds tints at their pivot hue); a family's shadeBend and tintBend replace them. chromaCap caps chroma near white with a \u00b7 (1 \u2212 L)^p, fitted to Tailwind's most chromatic family at each step from the 050 to the 400 (from: base) or given as a and p, times scale: it keeps a hue with a wide gamut near white (yellow) from taking far more chroma than its neighbours at the same step. Anchors are Byrne's red, yellow and blue: each shifts its family's hue by its difference from Tailwind at the anchor's lightness and marks the step nearest it; keepChroma also scales the family's chroma to the anchor's. hue sets a family's hue outright, hueShift and chroma adjust it by hand; the bend grows as |distance from the pivot|^ease (hueBend.ease, 1.5), so a ramp leaves the pivot without a corner; bendPivot is the step the bend starts from (500), bendEase a family's own ease, shadeBend and tintBend scale the bend on either side of it, shadeDrift and tintDrift add a family's own degrees at the 950 and the 050, and shadeChroma and tintChroma are chroma multipliers reached at those ends; naturalStep moves the circle off the computed cusp step. A family with between: [a, b] is a new ramp mixed from two Tailwind ramps (mix 0.5 is halfway) and placed after a. whiteMinLc: white text wherever it clears this APCA Lc. textMinLc: tinted text is the nearest family step clearing this Lc.",
+  "ladder": {
+    "from": "apca",
+    "against": "both",
+    "top": 0.982,
+    "bottom": 0.279,
+    "tail": 850,
+    "dive": 5
+  },
+  "luminance": {
+    "equalize": 1
+  },
+  "saturation": 1,
+  "chromaCap": {
+    "from": "base",
+    "scale": 1
+  },
+  "hueBend": {
+    "harmonics": 4,
+    "scale": 1,
+    "reference": [
+      "base"
+    ],
+    "ease": 1.5,
+    "tint": 0
+  },
+  "hueFormat": "percent",
+  "whiteMinLc": 60,
+  "textMinLc": 75,
+  "families": {
+    "red": {
+      "anchor": "oklch(0.5647 0.2062 29.02)",
+      "anchorStep": "auto",
+      "star": true,
+      "keepChroma": true
+    },
+    "amber": {
+      "anchor": "oklch(0.8419 0.1626 85.99)",
+      "anchorStep": "auto",
+      "star": true,
+      "naturalStep": 300,
+      "keepChroma": true,
+      "tintBend": 1,
+      "bendPivot": 300,
+      "shadeBend": 1.3,
+      "bendEase": 1,
+      "shadeChroma": 1.3
+    },
+    "green": {
+      "hueShift": -6,
+      "shadeChroma": 1.3
+    },
+    "sky": {
+      "anchor": "oklch(0.4751 0.1008 238.25)",
+      "anchorStep": "auto",
+      "star": true,
+      "keepChroma": true
+    },
+    "yellow": {
+      "hue": 100,
+      "bendPivot": 400,
+      "shadeBend": 1.5
+    },
+    "chartreuse": {
+      "between": [
+        "yellow",
+        "lime"
+      ],
+      "hue": 116
+    },
+    "emerald": {
+      "naturalStep": 400,
+      "shadeChroma": 1.3
+    },
+    "teal": {
+      "naturalStep": 400,
+      "shadeChroma": 1.3
+    },
+    "cyan": {
+      "hueShift": -5,
+      "shadeBend": 0.5,
+      "shadeChroma": 1.3
+    }
+  },
+  "chroma": {
+    "from": "bell"
+  }
+}

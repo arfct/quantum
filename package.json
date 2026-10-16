@@ -40,7 +40,9 @@
     "dev": "npm run build:tokens && vite examples",
     "typecheck": "tsc --noEmit",
     "check": "npm run typecheck && npm run build",
-    "test": "vitest run"
+    "test": "vitest run",
+    "palette": "node scripts/palette/generate.mjs && node scripts/palette/build-explorer.mjs",
+    "palette:evaluate": "node scripts/palette/evaluate.mjs"
   },
   "peerDependencies": {
     "react": ">=18",

@@ -78,8 +78,21 @@ src/components/           React components (one file each)
 src/styles/quantum.css    component styles
 docs/                     brand book and component guidelines
 examples/                 Vite gallery used by npm run dev
+palette/                  palette spec, generated palette and the explorer page (npm run palette)
+scripts/palette/          colour maths, palette generator, evaluator and explorer build
 test/                     component tests (npm test)
 ```
+
+### Palette tools
+
+`scripts/palette/` holds the tools for revising the colour palette, kept apart from the tokens until a palette is settled. Everything is derived in OKLCH from `palette/spec.json`: a lightness ladder shared by every family (equal APCA contrast steps between a top and a bottom, the mean of the ramps against white and against black, carried on to black past the 850); each family's hue from Tailwind's 500, bent as the ramp leaves it by a smooth function of hue (a four-harmonic Fourier series fitted at build time to Tailwind's measured drift: toward red or blue when shading, toward yellow-green or pink when tinting); relative saturation as one bell over the ladder (chroma as a share of the Display P3 maximum, fitted to Tailwind's mean) times a light and a dark number per family, capped near white so no hue outruns its neighbours; each chromatic step moved to the OKLab L whose luminance equals the neutral's on that row, so APCA contrast is uniform across a row; and the three anchors (Byrne's red, yellow and blue), each of which sets its family's hue and chroma so the ramp passes through the anchor. A family can hold or scale either side of the bend, move its pivot, and scale its chroma toward the dark end; the spec's `note` field describes every key. `palette/reference/radix-drift.json` holds the Radix measurements the explorer plots. Hex and `display-p3` values are gamut-mapped from the OKLCH reference; each family's natural step is the one nearest its gamut cusp.
+
+```sh
+npm run palette            # spec.json → palette/euclid-palette.json, euclid-palette.css, euclid-tailwind.css, explorer.html
+npm run palette:evaluate   # lightness spread, APCA text contrast and gamut per step; --base for Tailwind
+```
+
+`palette/explorer.html` is a self-contained page that shows Tailwind and Euclid side by side, with APCA (Lc) contrast for the chosen text on every step, a lightness-by-step chart with each hue's cusp, and the spec editable in place. Copy the spec out of it into `palette/spec.json` and run `npm run palette` to bring a change into the repo. `palette/euclid-tailwind.css` is the palette as a Tailwind CSS v4 `@theme`: import it after `tailwindcss` and `bg-red-500` and the rest resolve to the Euclid values, hex where the browser has no `oklch()` and OKLCH where it does. `scripts/palette/color.mjs` has the conversions (sRGB, Display P3, OKLab/OKLCH), CSS Color 4 gamut mapping, APCA, dominant wavelength and the hue-sector designations.
 
 ### Changing tokens
 

@@ -1,0 +1,767 @@
+<title>Euclid Palette Explorer</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+  /* Layout: a neutral tool chrome so the swatches read true. Grid of families × steps on top,
+     the analysis and the selected swatch below it, then the spec controls. */
+  :root {
+    --bg: oklch(0.985 0.003 250);
+    --surface: oklch(1 0 0);
+    --line: oklch(0.9 0.006 250);
+    --fg: oklch(0.25 0.015 250);
+    --muted: oklch(0.55 0.015 250);
+    --accent: oklch(0.51 0.11 240);
+    --ok: oklch(0.52 0.12 155);
+    --warn: oklch(0.6 0.14 60);
+    --font: system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: oklch(0.19 0.008 250); --surface: oklch(0.24 0.008 250); --line: oklch(0.32 0.01 250);
+      --fg: oklch(0.92 0.005 250); --muted: oklch(0.68 0.012 250); --accent: oklch(0.78 0.09 240);
+      --ok: oklch(0.75 0.13 155); --warn: oklch(0.8 0.13 70); color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: oklch(0.19 0.008 250); --surface: oklch(0.24 0.008 250); --line: oklch(0.32 0.01 250);
+    --fg: oklch(0.92 0.005 250); --muted: oklch(0.68 0.012 250); --accent: oklch(0.78 0.09 240);
+    --ok: oklch(0.75 0.13 155); --warn: oklch(0.8 0.13 70); color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 14px/1.45 var(--font); font-variant-numeric: tabular-nums; }
+  .page { padding-block: 20px 48px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); max-width: 1480px; margin: 0 auto; display: grid; gap: 20px; }
+  h1 { font-size: 20px; font-weight: 600; margin: 0; letter-spacing: -0.01em; }
+  h2 { font-size: 13px; font-weight: 600; margin: 0; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+  p { margin: 0; max-width: 68ch; }
+  header { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; }
+  .byrne { display: inline-flex; gap: 2px; vertical-align: -3px; margin-right: 8px; }
+  .byrne i { width: 14px; height: 14px; display: block; }
+  .toolbar { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; }
+  .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; background: var(--surface); }
+  .seg button { font: inherit; color: var(--muted); background: none; border: 0; padding: 5px 10px; cursor: pointer; }
+  .seg button[aria-pressed="true"] { background: var(--accent); color: var(--bg); }
+  .seg button:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+  label.ctl { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; min-width: 0; }
+  .note { font-size: 12px; color: var(--muted); }
+  .grid-wrap { overflow-x: auto; padding: 32px 32px; margin: -16px -32px; }
+  table.grid { border-collapse: collapse; border-spacing: 0; table-layout: fixed; min-width: 720px; width: 100%; }
+  table.grid th { font-weight: 500; text-align: left; color: var(--muted); font-size: 12px; padding: 0 6px; white-space: nowrap; }
+  table.grid th:first-child { width: 120px; }
+  table.grid th .nm { font-family: var(--mono); font-weight: 400; font-size: 11px; color: var(--muted); }
+  table.grid tbody th .nm { display: inline-block; width: 36px; }
+  table.grid thead th .nm { display: block; }
+  table.grid thead th .nm { opacity: 0.5; }
+  table.grid td { padding: 0; line-height: 0; vertical-align: top; }
+  table.grid td.c { background-clip: padding-box; }
+  table.grid tr.break td { height: 14px; }
+  .sw { width: 100%; aspect-ratio: 1; border-radius: 0; padding: 4px 6px; font-size: 11px; line-height: 1.2; cursor: pointer; display: flex; flex-direction: column; justify-content: space-between; border: 0; position: relative; }
+  .sw[aria-pressed="true"] { transform: scale(2); transform-origin: center; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(0, 0, 0, 0.15); z-index: 5; }
+  .sw[aria-pressed="true"] .lc { font-size: 5.5px; }
+  .sw[aria-pressed="true"] .hex { font-size: 4.5px; }
+  .sw[aria-pressed="true"] .marks { font-size: 5.5px; top: 2px; right: 3px; gap: 2px; }
+  .sw[aria-pressed="true"] .dot { width: 3.5px; height: 3.5px; }
+  .sw[aria-pressed="true"] { padding: 2px 3px; }
+  table.grid td.c { position: relative; }
+  table.grid td.c:has(.sw[aria-pressed="true"]) { z-index: 5; }
+  .sw .lc { display: none; }
+  .sw[aria-pressed="true"] .lc { display: block; opacity: 0.85; }
+  .sw .marks { position: absolute; top: 3px; right: 5px; display: flex; gap: 3px; align-items: center; font-size: 11px; line-height: 1; }
+  .sw .dot { width: 7px; height: 7px; border-radius: 50%; background: currentColor; display: inline-block; }
+  .sw .hex { font-weight: 400; font-family: var(--mono); font-size: 9px; letter-spacing: 0.02em; opacity: 0; }
+  .sw[aria-pressed="true"] .hex { opacity: 0.85; }
+  .two { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 20px; }
+  @media (max-width: 900px) { .two { grid-template-columns: 1fr; } }
+  .detail dl { display: grid; grid-template-columns: max-content 1fr; gap: 4px 12px; margin: 10px 0 0; font-family: var(--mono); font-size: 12px; }
+  .detail dt { color: var(--muted); font-family: var(--font); }
+  .detail dd { margin: 0; word-break: break-all; }
+  .chip { display: inline-block; width: 12px; height: 12px; border-radius: 3px; vertical-align: -2px; margin-right: 6px; border: 1px solid var(--line); }
+  .detail .big { height: 72px; border-radius: 6px; display: flex; align-items: flex-end; gap: 10px; padding: 8px 10px; font-size: 12px; margin-top: 8px; }
+  .detail .big span { padding: 2px 6px; border-radius: 3px; }
+  .spec { display: grid; gap: 14px; }
+  .ladder { display: grid; grid-template-columns: repeat(auto-fill, minmax(56px, 1fr)); gap: 6px; }
+  .ladder label { display: grid; gap: 3px; font-size: 11px; color: var(--muted); text-align: left; }
+  input[type="number"], input[type="text"], select, textarea { font: inherit; font-family: var(--mono); font-size: 12px; color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: 4px; padding: 4px 6px; width: 100%; min-width: 0; }
+  input[type="number"]:disabled { color: var(--muted); border-style: dashed; }
+  input[type="range"] { width: 160px; accent-color: var(--accent); }
+  .sliders { display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: center; }
+  .sliders input[type="number"] { width: 72px; }
+  table.fams { border-collapse: collapse; width: 100%; font-size: 12px; }
+  table.fams th, table.fams td { text-align: left; padding: 4px 6px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+  table.fams th { color: var(--muted); font-weight: 500; }
+  table.fams td input[type="text"] { width: 180px; }
+  table.fams td input[type="number"] { width: 64px; }
+  table.fams td select { width: 72px; }
+  .btns { display: flex; flex-wrap: wrap; gap: 8px; }
+  .btn { font: inherit; font-size: 13px; color: var(--fg); background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 6px 12px; cursor: pointer; }
+  .btn.primary { background: var(--accent); color: var(--bg); border-color: transparent; }
+  .status { color: var(--muted); font-size: 12px; min-height: 1.4em; }
+  textarea { height: 120px; resize: vertical; }
+  table.eval { border-collapse: collapse; width: 100%; font-size: 12px; font-family: var(--mono); }
+  table.eval th, table.eval td { padding: 4px 8px; text-align: left; border-bottom: 1px solid var(--line); white-space: nowrap; }
+  table.eval th { font-family: var(--font); color: var(--muted); font-weight: 500; }
+  .fail { color: var(--warn); }
+  .pass { color: var(--ok); }
+  .chart { width: 100%; height: auto; display: block; }
+  .chart .grid line { stroke: var(--line); stroke-width: 1; }
+  .chart text { fill: var(--muted); font-size: 11px; font-family: var(--font); }
+  .chart .series { fill: none; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+  .chart .series.dim { opacity: 0.25; }
+  .chart .cusp { fill: none; stroke-width: 1.5; stroke-dasharray: 4 4; opacity: 0.7; }
+  .chart .hover { fill: var(--surface); stroke: var(--fg); stroke-width: 2; }
+  .chart .zero { stroke: var(--muted); stroke-width: 1; }
+  .chart .attr { stroke: var(--fg); stroke-width: 1; stroke-dasharray: 3 3; opacity: 0.6; }
+  .chart .rep { stroke: var(--muted); stroke-width: 1; stroke-dasharray: 1 3; }
+  .chart .bend-shade { fill: none; stroke: var(--fg); stroke-width: 2; }
+  .chart .bend-tint { fill: none; stroke: var(--fg); stroke-width: 2; stroke-dasharray: 6 4; opacity: 0.7; }
+  .chart .pt { stroke: var(--surface); stroke-width: 1; }
+  .chart .pt.tint { fill: var(--surface); stroke-width: 2; }
+  .chart .pt.radix { stroke: var(--fg); stroke-width: 1; }
+  .readout { font-family: var(--mono); font-size: 12px; color: var(--muted); min-height: 1.4em; }
+  .legend { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 12px; color: var(--muted); }
+  .legend button { font: inherit; color: inherit; background: none; border: 0; padding: 2px 0; cursor: pointer; display: inline-flex; align-items: center; }
+  .legend button[aria-pressed="false"] { opacity: 0.4; }
+  @media (prefers-reduced-motion: no-preference) { .sw { transition: box-shadow 120ms; } }
+</style>
+
+<div class="page">
+  <header>
+    <h1><span class="byrne" aria-hidden="true"><i style="background:#D42A20"></i><i style="background:#0E638E"></i><i style="background:#FAC22B"></i></span>Euclid Palette Explorer</h1>
+    <div class="toolbar">
+      <div class="seg" role="group" aria-label="Palette">
+        <button type="button" id="view-proposed" aria-pressed="true">Euclid</button>
+        <button type="button" id="view-current" aria-pressed="false">Tailwind 4.1</button>
+      </div>
+      <div class="seg" role="group" aria-label="Display gamut">
+        <button type="button" id="gamut-p3" aria-pressed="true">Display P3</button>
+        <button type="button" id="gamut-srgb" aria-pressed="false">sRGB</button>
+      </div>
+      <label class="ctl"><input type="checkbox" id="tinted" checked> Tinted text (nearest family step meeting Lc 75)</label>
+    </div>
+  </header>
+
+  <section class="card">
+    <h2 id="grid-title">Euclid palette</h2>
+    <p class="note" id="grid-note"></p>
+    <p class="note">Every value is derived from the OKLCH reference; the hex is the sRGB gamut mapping. A dot in the corner marks a family's natural step, the one nearest its gamut cusp (where the hue reaches the most chroma); ★ marks where Byrne's red, yellow and blue sit. With Tinted on, text is the family step nearest the colour that still meets APCA Lc 75 (lighter first, white and black as the ends); a square where nothing passes shows the strongest ink and says so in the swatch panel. With it off, text is white wherever white clears Lc 60, else the stronger of white and black. Clicking a square selects it, shows its hex and contrast ratio, and copies the hex. The code under each name is the family's designation: a hue-sector letter (R O Y G B P, or N under chroma 0.06) and OKLCH h at the 500 as hundredths of the circle; a step is written P85.300.</p>
+    <div class="grid-wrap"><table class="grid" id="grid" aria-labelledby="grid-title"></table></div>
+  </section>
+
+  <div class="two">
+    <section class="card">
+      <h2>Lightness by step</h2>
+      <p class="note">OKLab L of every family at each step, with the gamut cusp of each family's hue as a dashed line (the lightness where that hue is most saturated). The Euclid ladder is one line; Tailwind spreads up to 0.24 at the 500.</p>
+      <svg class="chart" id="chart" viewBox="0 0 760 300" role="img" aria-label="Lightness of each family by step"></svg>
+      <div class="readout" id="chart-readout">Hover a point for the family, step and lightness.</div>
+      <div class="legend" id="legend"></div>
+    </section>
+    <section class="card detail" id="detail">
+      <h2>Swatch</h2>
+      <p class="note">Select a swatch in the grid.</p>
+    </section>
+  </div>
+
+  <section class="card">
+    <h2>Continuous field</h2>
+    <p class="note">The colour space as a wheel: every angle is one hue, white at the centre (step 0), the ladder outward through 050 … 950, black at the rim (step 1000); from the 850 the ladder continues at its own slope and a power term carries it to the rim. Hue runs clockwise from the top, starting just before red so the families follow the grid's order; chroma is the share interpolated between the two families nearest in hue, applied to the Display P3 maximum. Drawn in P3 where the browser allows, else gamut-mapped to sRGB. Each family is drawn over it as the path its ramp takes from the rim to the centre (continued past the 950 and the 050 at the slope of its last two steps): a dot per step, the natural step ringed, curving where the bend carries the ramp off its pivot hue. Hue lines every 10° (heavier every 30°) and the ladder steps as rings are optional; Natural line traces the step at every hue where the ladder's lightness meets that hue's gamut cusp.</p>
+    <div class="toolbar" style="margin-bottom:8px">
+      <label class="ctl"><input type="checkbox" id="field-names" checked> Families</label>
+      <label class="ctl"><input type="checkbox" id="field-steps" checked> Step rings</label>
+      <label class="ctl"><input type="checkbox" id="field-hues"> Hue lines</label>
+      <label class="ctl"><input type="checkbox" id="field-natural"> Natural line</label>
+      <span class="status" id="field-status"></span>
+    </div>
+    <div style="position:relative;max-width:540px">
+      <canvas id="field" width="540" height="540" style="width:100%;max-width:540px;height:auto;display:block"></canvas>
+      <svg id="field-overlay" viewBox="0 0 540 540" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none"></svg>
+    </div>
+    <div class="readout" id="field-readout">Hover for the colour at a point.</div>
+  </section>
+
+  <section class="card">
+    <h2>Hue bend by hue</h2>
+    <p class="note">How far a hue drifts, in degrees, by the time a ramp reaches its end: measured from Tailwind (500 → 950 and 500 → 050) and Radix (9 → 12 and 9 → 1), with the bend function in use drawn over them. Solid line and filled dots: shading. Dashed line and hollow dots: tinting. Squares are Radix. Vertical dashes mark where the curve crosses zero downward (attractors when shading); dotted lines where it crosses upward (repellers).</p>
+    <svg class="chart" id="bend-chart" viewBox="0 0 760 300" role="img" aria-label="Hue drift against hue, measured and modelled"></svg>
+    <div class="readout" id="bend-readout">Hover a point for the family and its drift.</div>
+  </section>
+
+  <section class="card spec">
+    <h2>Spec</h2>
+    <p class="note">A ladder, Tailwind's ramps, and three anchors. Ladder: one lightness per column, a curve from the top (050), the mid (500) and the bottom (950) with a gain that steepens the middle, fitted by least squares to Tailwind's mean lightness per step (the fitted values show in the fields), set by hand, or replaced by explicit steps; or a perceptual ramp between top and bottom with equal OKLab L steps (equal CIE L* for greys) or equal APCA contrast steps against white or black (APCA is polarity-aware, so the two ramps differ). From the 850 the ladder continues at its own slope and a power term (exponent dive, 5) carries it to black at 1000, which places the 900 and 950; before the 050 the mirror runs to white. Each family's hue and relative saturation are read off its Tailwind ramp at the ladder's lightness (the ramp as a curve over L; saturation as chroma's share of the Display P3 maximum), and Saturation multiplies that share, and Chroma cap limits chroma near white with a curve fitted to Tailwind's most chromatic tints, so a wide-gamut hue such as yellow cannot outrun its neighbours there. Hue starts from Tailwind's 500 and bends as the ramp leaves it by a smooth function of hue: a Fourier series of a few harmonics, fitted by least squares to the measured drift of the reference palettes ticked under Fit to, Tailwind by default (the coefficients show below, scaled by Scale ×); zero harmonics means no bend; an anchor sets the 500 hue so the ramp passes through the anchor at its step. Equal luminance moves each chromatic step to the OKLab L whose luminance matches the neutral's at that step (1 is exact, 0 is equal OKLab L as before), so APCA contrast is the same across a row. Chroma bell replaces the sampled shares with one fitted curve over the ladder times a light and a dark number per family (shown under Envelope); Hues from anchors places the unanchored families between the anchored ones at Tailwind's spacing; Keep C scales a family so its anchor step carries the anchor's chroma. Hue shift and Sat × adjust a family by hand. Edits regenerate the palette here and are kept in this browser; copy the spec into <code>palette/spec.json</code> and run <code>npm run palette</code> to bring a change into the repo.</p>
+    <div class="sliders">
+      <label class="ctl">Ladder <select id="ladder-mode" style="width:auto"><option value="base">Fitted to Tailwind</option><option value="curve">Curve</option><option value="uniform">Equal OKLab L steps</option><option value="apca">Equal APCA contrast steps</option><option value="explicit">Explicit steps</option></select></label>
+      <label class="ctl" id="against-ctl">against <select id="ladder-against" style="width:auto"><option value="white">white</option><option value="black">black</option><option value="both">both (mean)</option></select></label>
+      <label class="ctl">Top <input type="number" id="ladder-top" min="0.9" max="1" step="0.005"></label>
+      <label class="ctl">Mid (500) <input type="number" id="ladder-mid" min="0.4" max="0.8" step="0.005"></label>
+      <label class="ctl">Bottom <input type="number" id="ladder-bottom" min="0.05" max="0.5" step="0.005"></label>
+      <label class="ctl">Gain <input type="number" id="ladder-gain" min="0.2" max="0.8" step="0.01"></label>
+    </div>
+    <div class="ladder" id="ladder"></div>
+    <div class="sliders">
+      <label class="ctl">Saturation × <input type="range" id="saturation" min="0.5" max="1.4" step="0.01"> <output id="saturation-out"></output></label>
+      <label class="ctl"><input type="checkbox" id="cap-on"> Chroma cap ×</label><input type="number" id="cap-scale" min="0.5" max="1.5" step="0.05" style="width:64px" aria-label="chroma cap scale"> <span class="note" id="cap-fit"></span>
+      <label class="ctl">Equal luminance <input type="number" id="equalize" min="0" max="1" step="0.1" style="width:64px" aria-label="luminance equalization amount"></label>
+      <label class="ctl"><input type="checkbox" id="chroma-bell"> Chroma bell</label> <span class="note" id="bell-fit"></span>
+      <label class="ctl"><input type="checkbox" id="hues-anchors"> Hues from anchors</label>
+    </div>
+    <div class="grid-wrap">
+      <table class="fams" id="bend-table" aria-label="Hue bend">
+        <thead></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div class="grid-wrap">
+      <table class="fams" id="fams">
+        <thead><tr><th>Family</th><th>Code</th><th>Anchor (oklch or hex)</th><th>At step</th><th>Keep C</th><th>Fit ΔL</th><th>Hue at 500</th><th>Hue shift °</th><th>Drift to 950</th><th>Sat ×</th><th>Share at 500</th><th>Envelope light / dark</th><th>Natural (override)</th><th>λ at 500</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div class="btns">
+      <button type="button" class="btn" id="copy-spec">Copy spec JSON</button>
+      <button type="button" class="btn" id="copy-palette">Copy palette JSON</button>
+      <button type="button" class="btn" id="copy-css">Copy CSS</button>
+      <button type="button" class="btn" id="reset">Reset to repo spec</button>
+    </div>
+    <div class="status" id="status"></div>
+    <details>
+      <summary>Paste a spec</summary>
+      <textarea id="paste" aria-label="Spec JSON"></textarea>
+      <div class="btns" style="margin-top:8px"><button type="button" class="btn primary" id="apply">Apply</button></div>
+    </details>
+  </section>
+
+  <section class="card">
+    <h2>Evaluation by step</h2>
+    <p class="note">Across all families at each step: the lightness range, the APCA contrast of white and black text, and how many steps fall outside sRGB. APCA minimums: 90 preferred body, 75 body, 60 large or bold, 45 large headlines, 30 spot text.</p>
+    <div class="grid-wrap"><table class="eval" id="eval"></table></div>
+  </section>
+</div>
+
+<script>
+/*__COLOR__*/
+/*__PALETTE__*/
+const BASE = /*__BASE__*/;
+const REPO_SPEC = /*__SPEC__*/;
+const RADIX = /*__RADIX__*/;
+const famsOf = (palette) => Object.keys(palette.families);
+const $ = (id) => document.getElementById(id);
+const fmtL = (L) => Number(L).toFixed(3).replace(/^0/, '');
+const pad = (s) => String(s).padStart(3, '0');
+
+const state = { view: 'proposed', gamut: 'p3', tinted: true, selected: null, hidden: new Set(), spec: null, palettes: {} };
+
+// Edits are kept in this browser against the repo spec they were made on; a rebuilt page with a different
+// repo spec starts from that spec, so a change in the repo is never hidden behind an old saved one.
+const REPO_SPEC_TEXT = JSON.stringify(REPO_SPEC);
+function loadSpec() {
+  try {
+    const saved = JSON.parse(localStorage.getItem('euclid-palette-spec-v3'));
+    if (saved?.repo === REPO_SPEC_TEXT) return saved.spec;
+  } catch {}
+  return structuredClone(REPO_SPEC);
+}
+function saveSpec() {
+  try { localStorage.setItem('euclid-palette-spec-v3', JSON.stringify({ repo: REPO_SPEC_TEXT, spec: state.spec })); } catch {}
+}
+
+function regenerate() {
+  state.palettes.proposed = generate(state.spec, BASE, { radix: RADIX });
+  state.palettes.current ??= describe(BASE, 'Tailwind CSS v4.1');
+}
+
+const cssColor = (sw) => (state.gamut === 'p3' ? sw.p3 : sw.hex);
+const inkFor = (sw) => {
+  if (!state.tinted) return sw.text.best === 'white' ? '#fff' : '#000';
+  return state.gamut === 'p3' ? sw.text.tint.p3 : sw.text.tint.hex;
+};
+const inkHex = (sw) => (!state.tinted ? (sw.text.best === 'white' ? '#FFFFFF' : '#000000') : sw.text.tint.hex);
+const ratio = (sw) => wcagRatio(parseHex(inkHex(sw)), parseHex(sw.hex));
+const inkFails = (sw) => state.tinted && !sw.text.tint.passes;
+
+function renderGrid() {
+  const palette = state.palettes[state.view];
+  $('grid-title').textContent = palette.name;
+  const notes = { proposed: 'One lightness per column; hue and relative saturation read off Tailwind’s ramps at that lightness; anchored on Byrne’s red, yellow and blue.', current: 'Tailwind CSS v4.1 as shipped in tokens.json. Lightness differs by hue at every step.' };
+  $('grid-note').textContent = notes[state.view];
+  const fams = Object.values(palette.families);
+  const having = (s) => fams.filter((f) => f.steps[s]);
+  const meanL = (s) => having(s).reduce((sum, f) => sum + f.steps[s].oklch.L, 0) / having(s).length;
+  const shortL = (L) => Number(L).toFixed(2).replace(/^0/, '');
+  const headL = (s) => (state.view === 'proposed' ? shortL(palette.ladder[s]) : having(s).length ? shortL(meanL(s)) : '–');
+  const rows = [`<thead><tr><th></th>${STEPS.map((s) => `<th>${pad(s)}<span class="nm">${headL(s)}</span></th>`).join('')}</tr></thead><tbody>`];
+  let previousNeutral = false;
+  for (const fam of famsOf(palette)) {
+    const f = palette.families[fam];
+    const neutral = f.code.startsWith('N');
+    if (neutral && !previousNeutral) rows.push(`<tr class="break"><td colspan="${STEPS.length + 1}"></td></tr>`);
+    previousNeutral = neutral;
+    rows.push(`<tr><th><span class="nm">${f.code}</span>${fam}</th>`);
+    for (const s of STEPS) {
+      const sw = f.steps[s];
+      if (!sw) { rows.push('<td></td>'); continue; }
+      const selected = state.selected && state.selected.fam === fam && state.selected.step === s;
+      const anchor = palette.anchors[fam];
+      const star = anchor && anchor.step === s && state.spec.families?.[fam]?.star ? `<span title="Byrne anchor ${anchor.input}">★</span>` : '';
+      const natural = !neutral && f.natural.step === s;
+      const marks = star || natural ? `<span class="marks">${star}${natural ? `<span class="dot" title="natural step: cusp L ${fmtL(f.natural.L)}"></span>` : ''}</span>` : '';
+      const title = inkFails(sw) ? ' title="no family step meets Lc 75; strongest shown"' : natural ? ` title="natural step: cusp L ${fmtL(f.natural.L)}"` : '';
+      rows.push(`<td class="c" style="background:${sw.hex};background:${cssColor(sw)}"><button type="button" class="sw${natural ? ' natural' : ''}" data-fam="${fam}" data-step="${s}" aria-pressed="${selected}" style="background:${sw.hex};background:${cssColor(sw)};color:${inkFor(sw)}" aria-label="${fam} ${s}${natural ? ', natural step' : ''}"${title}>${marks}<span class="lc">1:${ratio(sw).toFixed(1)}</span><span class="hex">${sw.hex}</span></button></td>`);
+    }
+    rows.push('</tr>');
+  }
+  rows.push('</tbody>');
+  $('grid').innerHTML = rows.join('');
+}
+
+function renderDetail() {
+  const el = $('detail');
+  if (!state.selected) return;
+  const { fam, step } = state.selected;
+  const palette = state.palettes[state.view];
+  const f = palette.families[fam];
+  if (!f) { el.innerHTML = `<h2>Swatch</h2><p class="note">${fam} is not in ${palette.name}. Select a swatch in the grid.</p>`; return; }
+  const sw = f.steps[step];
+  if (!sw) { el.innerHTML = `<h2>Swatch</h2><p class="note">${fam}-${pad(step)} is not in ${palette.name}. Select a swatch in the grid.</p>`; return; }
+  const other = state.palettes[state.view === 'proposed' ? 'current' : 'proposed'].families[fam]?.steps[step];
+  const dE = other ? deltaEok(sw.oklch, other.oklch) : null;
+  const level = (lc) => { const a = Math.abs(lc); return a >= 90 ? 'preferred body' : a >= 75 ? 'body' : a >= 60 ? 'large/bold' : a >= 45 ? 'headline' : a >= 30 ? 'spot' : 'fails'; };
+  const row = (name, lc) => `<dt>${name}</dt><dd>${lc >= 0 ? '+' : ''}${lc.toFixed(1)} <span class="${Math.abs(lc) >= 60 ? 'pass' : 'fail'}">${level(lc)}</span></dd>`;
+  const tint = sw.text.tint;
+  el.innerHTML = `<h2>${fam}-${pad(step)} <span class="note">${sw.id} · ${formatWavelength(sw.wavelength)} · ${palette.name}</span></h2>
+    <div class="big" style="background:${sw.hex};background:${cssColor(sw)}">
+      <span style="color:#fff">white ${Math.abs(sw.text.white).toFixed(0)}</span>
+      <span style="color:#000">black ${sw.text.black.toFixed(0)}</span>
+      <span style="color:${cssColor(f.steps[950])}">950 ${Math.abs(sw.text.dark).toFixed(0)}</span>
+      <span style="color:${cssColor(f.steps[50])}">50 ${Math.abs(sw.text.light).toFixed(0)}</span>
+    </div>
+    <dl>
+      <dt>oklch</dt><dd>${sw.css}</dd>
+      <dt>display-p3</dt><dd>${sw.p3}</dd>
+      <dt>P3 hex</dt><dd>${sw.p3hex} <span class="note">channels only; not CSS</span></dd>
+      <dt>sRGB</dt><dd>${sw.hex}${sw.srgbInGamut ? '' : ' <span class="fail">gamut-mapped</span>'}</dd>
+      <dt>Y (APCA)</dt><dd>${sw.Y.toFixed(4)}</dd>
+      <dt>wavelength</dt><dd>${formatWavelength(sw.wavelength)} ${bandName(sw.wavelength.nm, sw.wavelength.complementary)}${sw.wavelength.purity !== null ? ` · purity ${sw.wavelength.purity.toFixed(2)}` : ' · non-spectral'}</dd>
+      <dt>natural step</dt><dd>${fam}-${pad(f.natural.step)} · cusp L ${fmtL(f.natural.L)} C ${f.natural.C.toFixed(3)}</dd>
+      ${row('Lc white text', sw.text.white)}
+      ${row('Lc black text', sw.text.black)}
+      ${row(`Lc ${fam}-950 text`, sw.text.dark)}
+      ${row(`Lc ${fam}-50 text`, sw.text.light)}
+      <dt>tinted ink</dt><dd><span class="chip" style="background:${tint.hex}"></span>${tint.ink === 'white' || tint.ink === 'black' ? tint.ink : `${fam}-${pad(tint.ink)}`} · Lc ${tint.lc.toFixed(1)}${tint.passes ? '' : ' <span class="fail">below 75</span>'}</dd>
+      ${other ? `<dt>vs ${state.view === 'proposed' ? 'Tailwind' : 'Euclid'}</dt><dd><span class="chip" style="background:${cssColor(other)}"></span>${other.css} · ΔE ${dE.toFixed(3)}</dd>` : ''}
+      ${sw.clamped ? '<dt>chroma</dt><dd class="fail">share above 1; clamped to Display P3</dd>' : ''}
+    </dl>`;
+}
+
+function renderChart() {
+  const svg = $('chart');
+  const W = 760, H = 300, left = 44, right = 16, top = 12, bottom = 28;
+  const x = (i) => left + (i * (W - left - right)) / (STEPS.length - 1);
+  const y = (L) => top + (1 - (L - 0.1) / 0.9) * (H - top - bottom);
+  const palette = state.palettes[state.view];
+  const parts = ['<g class="grid">'];
+  for (const L of [0.2, 0.4, 0.6, 0.8, 1]) parts.push(`<line x1="${left}" x2="${W - right}" y1="${y(L)}" y2="${y(L)}"/><text x="${left - 6}" y="${y(L) + 4}" text-anchor="end">${L.toFixed(1)}</text>`);
+  for (const [i, s] of STEPS.entries()) parts.push(`<text x="${x(i)}" y="${H - 8}" text-anchor="middle">${pad(s)}</text>`);
+  parts.push('</g>');
+  for (const fam of famsOf(palette)) {
+    const f = palette.families[fam];
+    const d = STEPS.map((s, i) => (f.steps[s] ? `${x(i).toFixed(1)},${y(f.steps[s].oklch.L).toFixed(1)}` : null)).filter(Boolean).map((pt, i) => `${i ? 'L' : 'M'}${pt}`).join(' ');
+    parts.push(`<path class="series${state.hidden.has(fam) ? ' dim' : ''}" data-fam="${fam}" d="${d}" stroke="${cssColor(f.steps[500])}"/>`);
+    if (!f.code.startsWith('N') && !state.hidden.has(fam)) parts.push(`<line class="cusp" x1="${x(0)}" x2="${x(STEPS.length - 1)}" y1="${y(f.natural.L)}" y2="${y(f.natural.L)}" stroke="${cssColor(f.steps[500])}"/>`);
+  }
+  parts.push('<circle class="hover" r="5" hidden/>');
+  svg.innerHTML = parts.join('');
+  svg.onmousemove = (e) => {
+    const pt = svg.getBoundingClientRect();
+    const mx = ((e.clientX - pt.left) / pt.width) * W;
+    const my = ((e.clientY - pt.top) / pt.height) * H;
+    const i = Math.max(0, Math.min(STEPS.length - 1, Math.round(((mx - left) / (W - left - right)) * (STEPS.length - 1))));
+    let best = null;
+    for (const fam of famsOf(palette)) {
+      if (state.hidden.has(fam) || !palette.families[fam].steps[STEPS[i]]) continue;
+      const L = palette.families[fam].steps[STEPS[i]].oklch.L;
+      const dy = Math.abs(y(L) - my);
+      if (!best || dy < best.dy) best = { fam, L, dy };
+    }
+    const dot = svg.querySelector('.hover');
+    if (!best || best.dy > 24) { dot.setAttribute('hidden', ''); $('chart-readout').textContent = ''; return; }
+    dot.removeAttribute('hidden');
+    dot.setAttribute('cx', x(i));
+    dot.setAttribute('cy', y(best.L));
+    const sw = palette.families[best.fam].steps[STEPS[i]];
+    $('chart-readout').textContent = `${best.fam}-${pad(STEPS[i])}  L ${fmtL(best.L)}  C ${sw.oklch.C.toFixed(3)}  h ${sw.oklch.h.toFixed(0)}  ${sw.hex}`;
+  };
+  svg.onmouseleave = () => { svg.querySelector('.hover').setAttribute('hidden', ''); };
+  $('legend').innerHTML = famsOf(palette).map((fam) => `<button type="button" data-fam="${fam}" aria-pressed="${!state.hidden.has(fam)}"><span class="chip" style="background:${cssColor(palette.families[fam].steps[500])}"></span>${fam} <span class="readout" style="margin-left:4px">${palette.families[fam].code}</span></button>`).join('');
+}
+
+function renderBendChart() {
+  const svg = $('bend-chart');
+  const W = 760, H = 300, left = 40, right = 12, top = 14, bottom = 26, range = 36;
+  const x = (h) => left + ((((h % 360) + 360) % 360) / 360) * (W - left - right);
+  const y = (d) => top + (1 - (d + range) / (2 * range)) * (H - top - bottom);
+  const cfg = state.palettes.proposed.bend;
+  const wrap = (d) => ((((d + 180) % 360) + 360) % 360) - 180;
+  const parts = ['<g class="grid">'];
+  for (const d of [-30, -15, 15, 30]) parts.push(`<line x1="${left}" x2="${W - right}" y1="${y(d)}" y2="${y(d)}"/><text x="${left - 6}" y="${y(d) + 4}" text-anchor="end">${d > 0 ? '+' : ''}${d}°</text>`);
+  for (const h of [0, 60, 120, 180, 240, 300, 360]) parts.push(`<text x="${x(h === 360 ? 359.99 : h)}" y="${H - 8}" text-anchor="middle">${h}°</text>`);
+  parts.push('</g>');
+  parts.push(`<line class="zero" x1="${left}" x2="${W - right}" y1="${y(0)}" y2="${y(0)}"/>`);
+  if (cfg) {
+    for (const [key, c] of [['shade', cfg.shade], ['tint', cfg.tint]]) {
+      // Zero crossings: downward ones attract when shading, upward ones repel.
+      for (let h = 0; h < 360; h++) { const a = bendAt(h, c), b = bendAt(h + 1, c); if ((a <= 0 && b > 0) || (a > 0 && b <= 0)) parts.push(`<line class="${a > 0 ? 'attr' : 'rep'}" x1="${x(h)}" x2="${x(h)}" y1="${top}" y2="${H - bottom}"/>`); }
+      const d = [];
+      for (let h = 0; h <= 360; h += 2) d.push(`${h ? 'L' : 'M'}${x(h === 360 ? 359.99 : h).toFixed(1)},${y(bendAt(h, c)).toFixed(1)}`);
+      parts.push(`<path class="bend-${key}" d="${d.join(' ')}"/>`);
+    }
+  }
+  const points = [];
+  for (const [fam, f] of Object.entries(BASE)) {
+    if (f[500].C < 0.06) continue;
+    const col = toHex(toGamut(f[500], 'srgb'));
+    points.push({ src: 'Tailwind', fam, h: f[500].h, kind: 'shade', d: wrap(f[950].h - f[500].h), col });
+    points.push({ src: 'Tailwind', fam, h: f[500].h, kind: 'tint', d: wrap(f[50].h - f[500].h), col });
+  }
+  for (const [fam, r] of Object.entries(RADIX.scales)) {
+    const col = toHex(toGamut({ L: r.L9, C: 0.15, h: r.hue9 }, 'srgb'));
+    points.push({ src: 'Radix', fam, h: r.hue9, kind: 'shade', d: r.shade, col, radix: true });
+    points.push({ src: 'Radix', fam, h: r.hue9, kind: 'tint', d: r.tint, col, radix: true });
+  }
+  for (const p of points) {
+    if (p.radix) parts.push(`<rect class="pt radix${p.kind === 'tint' ? ' tint' : ''}" x="${x(p.h) - 3.5}" y="${y(p.d) - 3.5}" width="7" height="7" fill="${p.col}" ${p.kind === 'tint' ? `style="fill:var(--surface);stroke:${p.col}"` : ''}/>`);
+    else parts.push(`<circle class="pt${p.kind === 'tint' ? ' tint' : ''}" cx="${x(p.h)}" cy="${y(p.d)}" r="4.5" fill="${p.col}" ${p.kind === 'tint' ? `style="stroke:${p.col}"` : ''}/>`);
+  }
+  svg.innerHTML = parts.join('');
+  svg.onmousemove = (e) => {
+    const pt = svg.getBoundingClientRect();
+    const mx = ((e.clientX - pt.left) / pt.width) * W;
+    const my = ((e.clientY - pt.top) / pt.height) * H;
+    let best = null;
+    for (const p of points) { const dist = Math.hypot(x(p.h) - mx, y(p.d) - my); if (!best || dist < best.dist) best = { ...p, dist }; }
+    if (!best || best.dist > 18) { $('bend-readout').textContent = ''; return; }
+    const model = cfg ? bendAt(best.h, best.kind === 'shade' ? cfg.shade : cfg.tint) : 0;
+    $('bend-readout').textContent = `${best.src} ${best.fam}  hue ${best.h.toFixed(0)}°  ${best.kind}: ${best.d >= 0 ? '+' : ''}${best.d.toFixed(0)}°  model ${model >= 0 ? '+' : ''}${model.toFixed(0)}°`;
+  };
+  svg.onmouseleave = () => { $('bend-readout').textContent = ''; };
+}
+
+const FIELD_HUE0 = 20; // the hue at the top of the wheel: between rose (16°) and red (25°), so red leads as in the grid
+const FIELD = { cx: 270, cy: 270, r: 232 }; // the wheel inside the 540-pixel canvas, leaving room for the rim labels
+// Hue and step at a canvas point: hue clockwise from the top, step by distance from the centre (0 white, 1000 black).
+const fieldPolar = (x, y) => {
+  const dx = x - FIELD.cx, dy = y - FIELD.cy;
+  return { hue: FIELD_HUE0 + (Math.atan2(dx, -dy) * 180) / Math.PI, step: (Math.hypot(dx, dy) / FIELD.r) * 1000, radius: Math.hypot(dx, dy) };
+};
+// A canvas point for a displayed hue and a step.
+const fieldPoint = (hue, step) => {
+  const a = ((hue - FIELD_HUE0) * Math.PI) / 180;
+  const rs = (step / 1000) * FIELD.r;
+  return [FIELD.cx + Math.sin(a) * rs, FIELD.cy - Math.cos(a) * rs];
+};
+let fieldJob = 0;
+function renderField() {
+  const canvas = $('field');
+  const W = canvas.width, H = canvas.height;
+  // The background is the model without the bend, so each angle is one hue; the bend shows in the family paths.
+  const flat = structuredClone(state.spec);
+  delete flat.hueBend;
+  const model = fieldModel(flat, BASE, { radix: RADIX });
+  state.field = { model };
+  let ctx = null, p3 = false;
+  try { ctx = canvas.getContext('2d', { colorSpace: 'display-p3' }); p3 = !!ctx && ctx.getContextAttributes?.().colorSpace === 'display-p3'; } catch {}
+  if (!ctx) ctx = canvas.getContext('2d');
+  if (!ctx) { $('field-status').textContent = 'canvas unavailable'; renderFieldOverlay(); return; }
+  const space = p3 ? 'p3' : 'srgb';
+  // Start from what is on the canvas, so rows not yet redrawn keep the previous wheel.
+  let img;
+  try { img = ctx.getImageData(0, 0, W, H, p3 ? { colorSpace: 'display-p3' } : undefined); } catch { try { img = p3 ? new ImageData(W, H, { colorSpace: 'display-p3' }) : ctx.createImageData(W, H); } catch { img = ctx.createImageData(W, H); } }
+  const data = img.data;
+  const job = ++fieldJob;
+  $('field-status').textContent = `rendering in ${p3 ? 'Display P3' : 'sRGB'}…`;
+  let row = 0;
+  const chunk = () => {
+    if (job !== fieldJob) return;
+    const start = row;
+    const end = Math.min(H, row + 8);
+    for (; row < end; row++) {
+      for (let col = 0; col < W; col++) {
+        const i = (row * W + col) * 4;
+        const { hue, step, radius } = fieldPolar(col + 0.5, row + 0.5);
+        const cover = Math.min(1, Math.max(0, FIELD.r + 0.5 - radius));
+        if (cover === 0) { data[i + 3] = 0; continue; }
+        const rgb = toGamut(model.colorAtStep(hue, Math.min(1000, step)), space).rgb;
+        data[i] = Math.round(rgb[0] * 255); data[i + 1] = Math.round(rgb[1] * 255); data[i + 2] = Math.round(rgb[2] * 255); data[i + 3] = Math.round(cover * 255);
+      }
+    }
+    ctx.putImageData(img, 0, 0, 0, start, W, end - start);
+    if (row < H) setTimeout(chunk, 0);
+    else $('field-status').textContent = p3 ? 'Display P3' : 'sRGB (this browser has no P3 canvas)';
+  };
+  chunk();
+  renderFieldOverlay();
+}
+
+function renderFieldOverlay() {
+  const svg = $('field-overlay');
+  const { cx, cy, r } = FIELD;
+  const { model } = state.field;
+  const pt = (hue, step) => fieldPoint(hue, step).map((v) => v.toFixed(1)).join(',');
+  const parts = [];
+  if ($('field-steps').checked) {
+    for (const s of STEPS) {
+      const rs = (s / 1000) * r;
+      parts.push(`<circle cx="${cx}" cy="${cy}" r="${rs.toFixed(1)}" fill="none" stroke="rgba(0,0,0,0.25)" stroke-width="${s % 100 ? 0.5 : 1}"/>`);
+      if (s % 100 === 0) parts.push(`<text x="${cx}" y="${(cy + rs + 3).toFixed(1)}" text-anchor="middle" font-size="9" font-family="var(--mono)" fill="#fff" stroke="rgba(0,0,0,0.6)" stroke-width="2" paint-order="stroke">${pad(s)}</text>`);
+    }
+  }
+  if ($('field-hues').checked) for (let hue = 0; hue < 360; hue += 10) parts.push(`<path d="M${pt(hue, 0)} L${pt(hue, 1000)}" fill="none" stroke="rgba(0,0,0,0.25)" stroke-width="${hue % 30 ? 0.5 : 1}"/>`);
+  // The natural step at every hue: where the ladder's lightness meets that hue's gamut cusp (the lightness at
+  // which the hue reaches the most chroma). Lightness falls with step, so bisection.
+  if ($('field-natural').checked) {
+    const d = [];
+    for (let hue = 0; hue <= 360; hue += 3) {
+      const target = cusp(hue, 'p3').L;
+      let lo = 0, hi = 1000;
+      for (let i = 0; i < 24; i++) { const m = (lo + hi) / 2; if (model.lightnessAtStep(m) > target) lo = m; else hi = m; }
+      d.push(`${hue ? 'L' : 'M'}${pt(hue, (lo + hi) / 2)}`);
+    }
+    parts.push(`<path d="${d.join(' ')} Z" fill="none" stroke="rgba(0,0,0,0.6)" stroke-width="1.5"/>`);
+  }
+  // Each family's ramp as a path through its steps by displayed hue, carried straight on to the rim and the
+  // centre; a dot per step, a ring on the natural step.
+  if ($('field-names').checked) {
+    const palette = state.palettes.proposed;
+    for (const f of model.families) {
+      const fam = palette.families[f.name];
+      const hueAt = (s) => fam.steps[s].oklch.h;
+      // Beyond the 950 and the 050 the hue continues at the slope of the last two steps.
+      const wrap = (d) => ((((d + 180) % 360) + 360) % 360) - 180;
+      const rimHue = hueAt(950) + wrap(hueAt(950) - hueAt(900));
+      const centreHue = hueAt(50) + wrap(hueAt(50) - hueAt(100));
+      const d = [`M${pt(rimHue, 1000)}`, ...[...STEPS].reverse().map((s) => `L${pt(hueAt(s), s)}`), `L${pt(centreHue, 0)}`];
+      parts.push(`<path d="${d.join(' ')}" fill="none" stroke="rgba(0,0,0,0.6)" stroke-width="1"/>`);
+      for (const s of STEPS) {
+        const [x, y] = fieldPoint(fam.steps[s].oklch.h, s);
+        const natural = s === fam.natural.step;
+        parts.push(`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${natural ? 4 : 1.75}" fill="${natural ? 'none' : 'rgba(0,0,0,0.6)'}" stroke="rgba(0,0,0,0.75)" stroke-width="${natural ? 1.5 : 0}"/>`);
+      }
+      const [x1, y1] = fieldPoint(rimHue, 1000);
+      const ux = (x1 - cx) / r, uy = (y1 - cy) / r;
+      const anchor = Math.abs(ux) < 0.2 ? 'middle' : ux > 0 ? 'start' : 'end';
+      parts.push(`<text x="${(cx + ux * (r + 7)).toFixed(1)}" y="${(cy + uy * (r + 7) + 3).toFixed(1)}" text-anchor="${anchor}" font-size="9" fill="currentColor" font-family="system-ui">${f.name}</text>`);
+    }
+  }
+  svg.innerHTML = parts.join('');
+}
+
+function renderEval() {
+  const palette = state.palettes[state.view];
+  const fams = Object.values(palette.families);
+  const head = '<thead><tr><th>Step</th><th>L min</th><th>L max</th><th>Spread</th><th>Lc white</th><th>Lc black</th><th>Best ink</th><th>Tinted ink fails</th><th>Outside sRGB</th></tr></thead>';
+  const rows = STEPS.filter((s) => fams.some((f) => f.steps[s])).map((s) => {
+    const sw = fams.map((f) => f.steps[s]).filter(Boolean);
+    const Ls = sw.map((x) => x.oklch.L);
+    const w = sw.map((x) => Math.abs(x.text.white));
+    const b = sw.map((x) => x.text.black);
+    const spread = Math.max(...Ls) - Math.min(...Ls);
+    const white = sw.filter((x) => x.text.best === 'white').length;
+    return `<tr><td>${pad(s)}</td><td>${fmtL(Math.min(...Ls))}</td><td>${fmtL(Math.max(...Ls))}</td><td class="${spread > 0.02 ? 'fail' : 'pass'}">${fmtL(spread)}</td><td>${Math.min(...w).toFixed(0)}–${Math.max(...w).toFixed(0)}</td><td>${Math.min(...b).toFixed(0)}–${Math.max(...b).toFixed(0)}</td><td>${white ? `white ${white}` : ''}${white && white < fams.length ? ' / ' : ''}${white < fams.length ? `black ${fams.length - white}` : ''}</td><td>${sw.filter((x) => !x.text.tint.passes).length}</td><td>${sw.filter((x) => !x.srgbInGamut).length}</td></tr>`;
+  });
+  $('eval').innerHTML = head + '<tbody>' + rows.join('') + '</tbody>';
+}
+
+function renderSpec() {
+  const spec = state.spec;
+  const palette = state.palettes.proposed;
+  const mode = spec.lightness ? 'explicit' : ['base', 'uniform', 'apca'].includes(spec.ladder?.from) ? spec.ladder.from : 'curve';
+  const curve = mode === 'base' && palette.ladderFit ? palette.ladderFit : { ...DEFAULTS.ladder, ...spec.ladder };
+  const explicit = mode === 'explicit';
+  $('ladder-mode').value = mode;
+  $('against-ctl').hidden = mode !== 'apca';
+  $('ladder-against').value = spec.ladder?.against ?? 'white';
+  $('ladder-top').value = curve.top;
+  $('ladder-mid').value = curve.mid;
+  $('ladder-bottom').value = curve.bottom;
+  $('ladder-gain').value = curve.gain;
+  for (const id of ['ladder-top', 'ladder-mid', 'ladder-bottom', 'ladder-gain']) $(id).disabled = mode !== 'curve' && !(['uniform', 'apca'].includes(mode) && ['ladder-top', 'ladder-bottom'].includes(id));
+  $('ladder').innerHTML = STEPS.map((s) => `<label>${pad(s)}<input type="number" id="L-${s}" min="0" max="1" step="0.005" value="${palette.ladder[s]}"${explicit ? '' : ' disabled'}></label>`).join('');
+  $('saturation').value = spec.saturation ?? DEFAULTS.saturation;
+  $('saturation-out').value = Number(spec.saturation ?? DEFAULTS.saturation).toFixed(2);
+  $('cap-on').checked = !!spec.chromaCap;
+  $('cap-scale').value = spec.chromaCap?.scale ?? 1;
+  $('cap-scale').disabled = !spec.chromaCap;
+  const cap = palette.chromaCap;
+  $('equalize').value = spec.luminance?.equalize ?? 0;
+  $('chroma-bell').checked = spec.chroma?.from === 'bell';
+  $('bell-fit').textContent = palette.bell ? `${palette.bell.c.map((v, i) => `${v >= 0 && i ? '+ ' : ''}${v}${['', ' t', ' t²'][i]}`).join(' ')}, Tailwind's mean share over the ladder` : 'off: shares sampled from each Tailwind ramp';
+  $('hues-anchors').checked = spec.hues === 'anchors';
+  $('cap-fit').textContent = cap ? `${cap.a} · (1 − L)^${cap.p}, fitted to Tailwind's most chromatic tints` : 'off';
+  const hb = spec.hueBend ?? {};
+  const bt = $('bend-table');
+  const fit = palette.bendFit;
+  const use = hb.reference ?? ['base'];
+  bt.querySelector('thead').innerHTML = '<tr><th>Hue bend</th><th>Harmonics</th><th>Scale ×</th><th>Shade ×</th><th>Tint ×</th><th>Ease</th><th>Fit to</th><th>Shade coefficients (cos, sin per harmonic)</th><th>RMS</th><th>Tint coefficients</th><th>RMS</th></tr>';
+  bt.querySelector('tbody').innerHTML = `<tr><td>harmonic</td>
+      <td><select id="bend-harmonics" aria-label="harmonics" style="width:64px">${[0, 1, 2, 3, 4, 5].map((n) => `<option value="${n}"${(hb.harmonics ?? 0) === n ? ' selected' : ''}>${n}</option>`).join('')}</select></td>
+      <td><input type="number" id="bend-scale" value="${hb.scale ?? 1}" min="0" max="2" step="0.05" aria-label="bend scale" style="width:64px"></td>
+      <td><input type="number" id="bend-shade" value="${hb.shade ?? 1}" min="0" max="2" step="0.05" aria-label="shade bend scale" style="width:64px"></td>
+      <td><input type="number" id="bend-tint" value="${hb.tint ?? 1}" min="0" max="2" step="0.05" aria-label="tint bend scale" style="width:64px"></td>
+      <td><input type="number" id="bend-ease" value="${hb.ease ?? DEFAULTS.bendEase}" min="1" max="3" step="0.1" aria-label="bend ease" style="width:64px"></td>
+      <td><label class="ctl"><input type="checkbox" id="bend-use-base"${use.includes('base') ? ' checked' : ''}> Tailwind</label> <label class="ctl"><input type="checkbox" id="bend-use-radix"${use.includes('radix') ? ' checked' : ''}> Radix</label></td>
+      <td><span class="readout">${fit ? fit.shade.coef.join(', ') : '–'}</span></td><td><span class="note">${fit ? fit.shade.rms + '°' : '–'}</span></td>
+      <td><span class="readout">${fit ? fit.tint.coef.join(', ') : '–'}</span></td><td><span class="note">${fit ? fit.tint.rms + '°' : '–'}</span></td></tr>`;
+  const opts = (sel) => ['auto', ...STEPS].map((v) => `<option value="${v}"${String(sel ?? 'auto') === String(v) ? ' selected' : ''}>${v}</option>`).join('');
+  $('fams').querySelector('tbody').innerHTML = famsOf(palette).map((fam) => {
+    const f = spec.families?.[fam] ?? {};
+    const a = palette.anchors[fam];
+    const pf = palette.families[fam];
+    return `<tr>
+      <td><span class="chip" style="background:${cssColor(pf.steps[500])}"></span>${fam}</td>
+      <td><span class="readout">${pf.code}</span></td>
+      <td><input type="text" id="anchor-${fam}" value="${f.anchor ?? ''}" placeholder="oklch(L C h)" aria-label="${fam} anchor"></td>
+      <td><select id="anchorStep-${fam}" aria-label="${fam} anchor step">${opts(f.anchorStep)}</select>${a ? ` <span class="note">→ ${pad(a.step)}</span>` : ''}</td>
+      <td><input type="checkbox" id="keep-${fam}"${f.keepChroma ? ' checked' : ''} aria-label="${fam} keep anchor chroma"></td>
+      <td>${a ? `<span class="${Math.abs(a.fit.dL) > 0.04 ? 'fail' : 'pass'}">${a.fit.dL >= 0 ? '+' : ''}${a.fit.dL.toFixed(3)}</span>` : '<span class="note">–</span>'}</td>
+      <td><span class="note">${pf.hue.toFixed(0)}°</span></td>
+      <td><input type="number" id="shift-${fam}" min="-90" max="90" step="1" value="${f.hueShift ?? ''}" placeholder="${a ? pf.hueShift : '0'}" aria-label="${fam} hue shift"></td>
+      <td><span class="note">${pf.bend >= 0 ? '+' : ''}${pf.bend}°</span></td>
+      <td><input type="number" id="chroma-${fam}" min="0" max="2" step="0.05" value="${f.chroma ?? ''}" placeholder="1" aria-label="${fam} saturation multiplier"></td>
+      <td><span class="note">${pf.code.startsWith('N') ? '–' : pf.saturation.toFixed(2)}</span></td>
+      <td><span class="note">${pf.envelope && !pf.code.startsWith('N') ? `${pf.envelope.light.toFixed(2)} / ${pf.envelope.dark.toFixed(2)}` : '–'}</span></td>
+      <td>${pf.code.startsWith('N') ? '<span class="note">–</span>' : `<span class="note">${pad(pf.natural.step)} · cusp L ${fmtL(pf.natural.L)}</span> <select id="natural-${fam}" aria-label="${fam} natural step" style="width:64px">${['auto', ...STEPS].map((v) => `<option value="${v}"${String(f.naturalStep ?? 'auto') === String(v) ? ' selected' : ''}>${v}</option>`).join('')}</select>`}</td>
+      <td><span class="note">${formatWavelength(pf.wavelength)}</span></td>
+    </tr>`;
+  }).join('');
+}
+
+function readSpec() {
+  const spec = state.spec;
+  const mode = $('ladder-mode').value;
+  if (mode === 'explicit') {
+    spec.lightness = Object.fromEntries(STEPS.map((s) => [s, Number($(`L-${s}`).value)]));
+  } else if (mode === 'base') {
+    delete spec.lightness;
+    spec.ladder = { from: 'base' };
+  } else if (mode === 'uniform' || mode === 'apca') {
+    delete spec.lightness;
+    spec.ladder = { from: mode, top: Number($('ladder-top').value), bottom: Number($('ladder-bottom').value) };
+    if (mode === 'apca') spec.ladder.against = $('ladder-against').value;
+  } else {
+    delete spec.lightness;
+    spec.ladder = { top: Number($('ladder-top').value), mid: Number($('ladder-mid').value), bottom: Number($('ladder-bottom').value), gain: Number($('ladder-gain').value) };
+  }
+  spec.saturation = Number($('saturation').value);
+  if ($('cap-on').checked) spec.chromaCap = { from: 'base', scale: Number($('cap-scale').value) }; else delete spec.chromaCap;
+  const harmonics = Number($('bend-harmonics').value);
+  const use = [$('bend-use-base').checked && 'base', $('bend-use-radix').checked && 'radix'].filter(Boolean);
+  if (harmonics) spec.hueBend = { harmonics, scale: Number($('bend-scale').value), shade: Number($('bend-shade').value), tint: Number($('bend-tint').value), ease: Number($('bend-ease').value), reference: use }; else delete spec.hueBend;
+  const equalize = Number($('equalize').value);
+  if (equalize > 0) spec.luminance = { equalize }; else delete spec.luminance;
+  if ($('chroma-bell').checked) spec.chroma = { from: 'bell' }; else delete spec.chroma;
+  if ($('hues-anchors').checked) spec.hues = 'anchors'; else delete spec.hues;
+  spec.families ??= {};
+  for (const fam of famsOf(state.palettes.proposed)) {
+    const f = { ...(spec.families[fam] ?? {}) };
+    delete f.anchor; delete f.anchorStep; delete f.keepChroma; delete f.hueShift; delete f.chroma; delete f.naturalStep;
+    const anchor = $(`anchor-${fam}`).value.trim();
+    if (anchor) { f.anchor = anchor; f.anchorStep = $(`anchorStep-${fam}`).value; if ($(`keep-${fam}`).checked) f.keepChroma = true; }
+    const shift = $(`shift-${fam}`).value;
+    if (shift !== '') f.hueShift = Number(shift);
+    const chroma = $(`chroma-${fam}`).value;
+    if (chroma !== '') f.chroma = Number(chroma);
+    const natural = $(`natural-${fam}`)?.value;
+    if (natural && natural !== 'auto') f.naturalStep = Number(natural);
+    if (Object.keys(f).length) spec.families[fam] = f; else delete spec.families[fam];
+  }
+}
+
+function renderAll({ spec = false } = {}) {
+  renderGrid();
+  renderDetail();
+  renderChart();
+  renderBendChart();
+  renderEval();
+  if (spec) renderSpec();
+  if (spec) renderField();
+}
+
+function update(status) {
+  try {
+    readSpec();
+    regenerate();
+    saveSpec();
+    $('status').textContent = status ?? '';
+    renderAll({ spec: true });
+  } catch (e) {
+    $('status').textContent = `Spec not applied: ${e.message}`;
+  }
+}
+
+function copy(text, what) {
+  const done = () => { $('status').textContent = `${what} copied.`; };
+  const fallback = () => { $('paste').value = text; $('paste').closest('details').open = true; $('paste').select(); $('status').textContent = `Clipboard unavailable: ${what} is in the box below, selected.`; };
+  if (navigator.clipboard?.writeText) navigator.clipboard.writeText(text).then(done, fallback); else fallback();
+}
+
+// --- wiring ---
+const seg = (ids, key, values) => ids.forEach((id, i) => { $(id).onclick = () => { state[key] = values[i]; ids.forEach((o, j) => $(o).setAttribute('aria-pressed', String(i === j))); renderAll({ spec: key === 'gamut' }); }; });
+seg(['view-proposed', 'view-current'], 'view', ['proposed', 'current']);
+seg(['gamut-p3', 'gamut-srgb'], 'gamut', ['p3', 'srgb']);
+$('tinted').onchange = (e) => { state.tinted = e.target.checked; renderGrid(); };
+$('field-steps').onchange = renderFieldOverlay;
+$('field-names').onchange = renderFieldOverlay;
+$('field-hues').onchange = renderFieldOverlay;
+$('field-natural').onchange = renderFieldOverlay;
+$('field').addEventListener('mousemove', (e) => {
+  if (!state.field) return;
+  const box = e.currentTarget.getBoundingClientRect();
+  const scale = e.currentTarget.width / box.width;
+  const { hue, step, radius } = fieldPolar((e.clientX - box.left) * scale, (e.clientY - box.top) * scale);
+  if (radius > FIELD.r) { $('field-readout').textContent = ''; return; }
+  const lch = state.field.model.colorAtStep(hue, step);
+  $('field-readout').textContent = `hue ${(((hue % 360) + 360) % 360).toFixed(0)}°  step ${pad(Math.round(step))}  ${formatOklch(lch)}  ${toHex(toGamut(lch, 'srgb'))}  share ${state.field.model.shareAt(hue, step).toFixed(2)}`;
+});
+$('field').addEventListener('mouseleave', () => { $('field-readout').textContent = ''; });
+$('grid').addEventListener('click', (e) => {
+  const b = e.target.closest('.sw');
+  if (!b) return;
+  state.selected = { fam: b.dataset.fam, step: Number(b.dataset.step) };
+  renderGrid();
+  renderDetail();
+  const sw = state.palettes[state.view].families[b.dataset.fam].steps[Number(b.dataset.step)];
+  const done = () => { $('status').textContent = `${sw.hex} copied (${b.dataset.fam}-${pad(b.dataset.step)}).`; };
+  const fail = () => { $('status').textContent = `Clipboard unavailable; ${sw.hex} is in the swatch panel.`; };
+  if (navigator.clipboard?.writeText) navigator.clipboard.writeText(sw.hex).then(done, fail); else fail();
+});
+$('legend').addEventListener('click', (e) => {
+  const b = e.target.closest('button');
+  if (!b) return;
+  const fam = b.dataset.fam;
+  if (state.hidden.has(fam)) state.hidden.delete(fam); else state.hidden.add(fam);
+  renderChart();
+});
+document.querySelector('.spec').addEventListener('change', (e) => { if (e.target.matches('input, select')) update(); });
+$('saturation').oninput = (e) => { $('saturation-out').value = Number(e.target.value).toFixed(2); };
+$('copy-spec').onclick = () => copy(JSON.stringify(state.spec, null, 2), 'Spec');
+$('copy-palette').onclick = () => copy(JSON.stringify(state.palettes.proposed, null, 2), 'Palette JSON');
+$('copy-css').onclick = () => copy(toCss(state.palettes.proposed), 'CSS');
+$('reset').onclick = () => { state.spec = structuredClone(REPO_SPEC); try { localStorage.removeItem('euclid-palette-spec-v2'); } catch {} regenerate(); renderAll({ spec: true }); $('status').textContent = 'Reset to the spec in the repo.'; };
+$('apply').onclick = () => {
+  try {
+    const spec = JSON.parse($('paste').value);
+    if (!spec.ladder && !spec.lightness) throw new Error('no ladder');
+    state.spec = spec;
+    regenerate();
+    saveSpec();
+    renderAll({ spec: true });
+    $('status').textContent = 'Spec applied.';
+  } catch (e) {
+    $('status').textContent = `Spec not applied: ${e.message}`;
+  }
+};
+
+state.spec = loadSpec();
+regenerate();
+state.selected = { fam: 'blue', step: 500 };
+renderAll({ spec: true });
+</script>
