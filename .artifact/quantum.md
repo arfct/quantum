@@ -23,6 +23,6 @@ Quantum, Artifact's design system, is named after Quantum Paper, the original co
 
 The package holds the tokens as CSS custom properties in a light theme and a dark one, a Tailwind CSS v4 theme and eleven React components, which the first two images show in the repository's example gallery. A brand book and a guideline for each component are kept beside them.
 
-The third image is from the tools for Euclid, a revision of the palette that stays apart from the tokens until it is settled. Euclid is derived in OKLCH from one spec file, on a single lightness ladder shared by every color family, so that APCA contrast is uniform across a row, and its red, yellow and blue ramps are made to pass through Byrne's red, yellow and blue. An explorer page sets the Tailwind and Euclid palettes side by side with the contrast of each step. Quantum is at version 0.1.0, which has not been published to npm.
+The third image is from the tools for Euclid, a revision of the palette that stays apart from the tokens until it is settled. Euclid is derived in OKLCH from one spec file, on a single lightness ladder shared by every color family, so that APCA contrast is uniform across a row, and its red, amber and sky ramps are made to pass through Byrne's red, yellow and blue. An explorer page sets the Tailwind and Euclid palettes side by side with the contrast of each step. Quantum is at version 0.1.0, which has not been published to npm.
 
 TypeScript, React, CSS. 2026.
