@@ -1,6 +1,7 @@
 ---
 title: Quantum
 date: 2026-10
+status: beta
 category: system
 tags: [web, design]
 url: https://github.com/arfct/quantum
@@ -16,7 +17,7 @@ media:
   - src: euclid-explorer.png
     caption: The Euclid palette in its explorer page, each family a row from step 050 to 950, with stars at Byrne's red, yellow and blue
     alt: A grid of color swatches, one hue per row from red through purple and nineteen steps from pale to dark, with small dots and stars on some swatches and one blue swatch enlarged
-unconfirmed: [date]
+unconfirmed: [date, status]
 ---
 
 Quantum, Artifact's design system, is named after Quantum Paper, the original codename of Material Design. From Classic Material Design it keeps the color roles, elevation and 8dp grid, with a blue primary, red floating action buttons and a lime accent taken from the original Material palette. It departs from Material in four places: text is set in the platform's system UI font, icons are Material Symbols Outlined, the Tailwind CSS palette ships as tokens, and rounded rectangles take their corners from Squircle.
